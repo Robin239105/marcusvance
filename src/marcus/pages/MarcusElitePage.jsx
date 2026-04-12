@@ -216,17 +216,7 @@ const MarcusElitePage = () => {
   const [activeFAQ, setActiveFAQ] = useState(null);
   const [activeCategory, setActiveCategory] = useState('general');
 
-  // Auto-detection redirect
-  useEffect(() => {
-    if (location.pathname !== '/') return
-    const lang = navigator.language.toLowerCase()
-    const search = location.search
-    if (lang.startsWith('fr')) {
-      navigate('/fr' + search, { replace: true })
-    } else if (lang.includes('gb') || lang.includes('uk')) {
-      navigate('/uk' + search, { replace: true })
-    }
-  }, [location.pathname, location.search, navigate])
+  // Auto-detection redirect eliminated - handled by RedirectManager
 
   // Sentinel observer for Navbar scroll state
   useEffect(() => {
