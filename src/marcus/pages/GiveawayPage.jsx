@@ -7,8 +7,8 @@ import { Disclaimer } from '../../shared/components/Disclaimer';
 const GiveawayPage = () => {
   const { t, currentLocale } = useLocale();
   const gw = t.marcus.giveaway;
-  const marcusBase = currentLocale === 'default' ? '/marcus' : `/marcus/${currentLocale}`;
-  const feedbackBase = currentLocale === 'default' ? '/marcus/feedback' : `/marcus/feedback/${currentLocale}`;
+  const marcusBase = currentLocale === 'default' ? '/' : `/${currentLocale}`;
+  const feedbackBase = currentLocale === 'default' ? '/feedback' : `/feedback/${currentLocale}`;
 
   return (
     <div className="bg-[#080808] min-h-screen text-[#F5F5F5] font-['Inter'] selection:bg-[#C9A84C]/30 selection:text-[#C9A84C]">

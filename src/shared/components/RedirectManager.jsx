@@ -12,8 +12,8 @@ export const RedirectManager = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if we are at a root-level landing page that supports auto-redirection
-    const isRoot = pathname === '/' || pathname === '/marcus';
+    // Check if we are at the root path which supports auto-redirection
+    const isRoot = pathname === '/';
     
     // Check if we've already redirected this session to avoid loops or annoying the user
     const hasRedirected = sessionStorage.getItem('has_redirected_locale');
@@ -25,13 +25,7 @@ export const RedirectManager = () => {
       if (detected !== 'default') {
         sessionStorage.setItem('has_redirected_locale', 'true');
         
-        let targetPath = pathname;
-        if (pathname === '/') {
-          targetPath = `/${detected}`;
-        } else if (pathname === '/marcus') {
-          targetPath = `/marcus/${detected}`;
-        }
-        
+        let targetPath = `/${detected}`;
         navigate(targetPath, { replace: true });
       } else {
         // Even if default, mark as "redirected" so we don't keep running the detection

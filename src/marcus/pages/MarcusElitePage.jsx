@@ -48,7 +48,7 @@ const ScrollProgress = () => {
 const GiveawayFloatingBadge = () => {
   const { t } = useLocale();
   return (
-    <Link to="/marcus/giveaway" aria-label="Enter the Marcus Vance Giveaway">
+    <Link to="/giveaway" aria-label="Enter the Marcus Vance Giveaway">
       <motion.div 
         initial={{ x: 100 }} animate={{ x: 0 }}
         className="fixed top-1/2 -translate-y-1/2 right-0 z-[101] bg-[#141414] border-y border-l border-[#C9A84C]/30 p-4 pr-5 flex items-center gap-4 cursor-pointer hover:bg-[#1A1A1A] transition-all group shadow-2xl hidden md:flex"
@@ -195,7 +195,7 @@ const EnrollPopup = ({ isOpen, onClose }) => {
                 <div className="w-20 h-20 bg-[#C9A84C] flex items-center justify-center text-black text-4xl mx-auto mb-8">✓</div>
                 <h3 className="font-arena-headline text-5xl text-white mb-4 italic">{t.marcus.enroll.successTitle}</h3>
                 <p className="text-[#A3A3A3] text-sm italic font-light mb-8">{t.marcus.enroll.successSubtitle}</p>
-                <button onClick={() => window.location.href = '/marcus/giveaway'} className="bg-white/10 text-[#C9A84C] px-6 py-4 md:px-10 md:py-4 font-arena-headline text-xl tracking-wider hover:bg-white/20 transition-all uppercase">{t.marcus.enroll.giveawayBtn}</button>
+                <button onClick={() => window.location.href = '/giveaway'} className="bg-white/10 text-[#C9A84C] px-6 py-4 md:px-10 md:py-4 font-arena-headline text-xl tracking-wider hover:bg-white/20 transition-all uppercase">{t.marcus.enroll.giveawayBtn}</button>
               </div>
             )}
             </div>
@@ -218,13 +218,13 @@ const MarcusElitePage = () => {
 
   // Auto-detection redirect
   useEffect(() => {
-    if (location.pathname !== '/marcus') return
+    if (location.pathname !== '/') return
     const lang = navigator.language.toLowerCase()
     const search = location.search
     if (lang.startsWith('fr')) {
-      navigate('/marcus/fr' + search, { replace: true })
+      navigate('/fr' + search, { replace: true })
     } else if (lang.includes('gb') || lang.includes('uk')) {
-      navigate('/marcus/uk' + search, { replace: true })
+      navigate('/uk' + search, { replace: true })
     }
   }, [location.pathname, location.search, navigate])
 
@@ -618,8 +618,8 @@ const MarcusElitePage = () => {
             <p className="text-[#2A2A2A] font-['Oswald'] uppercase tracking-[0.5em] text-[11px]">PRODUCED BY THE ALPHA COLLECTIVE © 2024</p>
           </div>
           <div className="flex gap-12 text-xs font-['Oswald'] uppercase tracking-[0.2em] text-[#3A3A3A]">
-            <Link to="/marcus/giveaway" aria-label="Monthly Giveaway" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.giveaway}</Link>
-            <Link to="/marcus/feedback" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.feedback}</Link>
+            <Link to="/giveaway" aria-label="Monthly Giveaway" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.giveaway}</Link>
+            <Link to="/feedback" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.feedback}</Link>
             <a href="#" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.privacy}</a>
             <a href="#" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.terms}</a>
           </div>

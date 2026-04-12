@@ -8,7 +8,7 @@ const FeedbackPage = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const fb = t.marcus.feedback;
-  const marcusBase = currentLocale === 'default' ? '/marcus' : `/marcus/${currentLocale}`;
+  const marcusBase = currentLocale === 'default' ? '/' : `/${currentLocale}`;
 
   return (
     <div className="bg-[#080808] min-h-screen text-[#F5F5F5] font-['Inter'] selection:bg-[#C9A84C]/30 selection:text-[#C9A84C]">

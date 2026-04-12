@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: process.env.GITHUB_PAGES ? '/Trinity-and-Marcus/' : '/',
+  base: process.env.GITHUB_PAGES ? '/marcusvance/' : '/',
   plugins: [react(), tailwindcss()],
   build: {
     target: 'esnext',
