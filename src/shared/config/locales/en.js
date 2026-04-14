@@ -9,6 +9,7 @@ export const baseEN = {
     heroPreHeader: 'FOR HIGH-PERFORMERS ONLY',
     heroTitle: 'YOUR FIRST HIGH-INCOME STREAM. 7 DAYS.',
     heroSubtitle: 'THE 7-DAY CHALLENGE TO YOUR FIRST DIGITAL INCOME — STARTING FROM SCRATCH',
+    heroScroll: 'SCROLL TO DISCOVER THE METHOD',
     heroStats: `${dynamicStats.startedThisMonth} HIGH-PERFORMERS STARTED THIS MONTH`,
     heroCommunity: 'Join the 93% success rate community',
     heroScroll: 'EXPOSE THE SYSTEM',
@@ -22,10 +23,19 @@ export const baseEN = {
       rating: 'VERIFIED RATING'
     },
     enroll: {
-      giveawayBtn: 'ENTER GIVEAWAY',
-      agreement: 'By enrolling, I agree to receive strategic communications. Unsubscribe in 1-click.',
+      popupTitle: 'YOUR CLUB SEAT.',
+      popupSubtitle: 'SECURE YOUR POSITION IN THE ALPHA COLLECTIVE.',
+      benefitsTitle: 'WHAT YOU ARE UNLOCKING:',
+      benefits: [
+        'COMPLETE 7-DAY PROTOCOL ACCESS',
+        'THE CORE 5 COURSE LIBRARY (POST-QUALIFICATION)',
+        'ELITE COMMUNITY MEMBERSHIP',
+        'SYSTEM TEMPLATES & CHECKLISTS'
+      ],
+      agreement: 'I agree to treat these materials with the professional seriousness required.',
       successTitle: 'ACCESS GRANTED.',
-      successSubtitle: 'Check your inbox. Your Day 1 protocol is arriving.'
+      successSubtitle: 'Check your encryption-ready inbox for the Day 1 Protocol.',
+      giveawayBtn: 'ENTER THE GIVEAWAY'
     },
     trust: {
       noSpam: 'ZERO SPAM',
@@ -45,18 +55,16 @@ export const baseEN = {
       title: 'LATEST iPHONE'
     },
     roadmap: {
-      badge: 'PART 1: THE EXECUTION',
-      title: 'THE 7-DAY PROTOCOL',
-      subtitle: '"Most men stay stuck because they never take the first step. We solve that in 168 hours."',
-      joinCohort: `JOIN THE COHORT OF ${dynamicStats.startedThisMonth} THIS MONTH →`,
+      badge: 'THE PROTOCOL',
+      title: 'THE 7-DAY ROADMAP',
+      subtitle: 'A STEP-BY-STEP EXECUTION GUIDE TO YOUR FIRST LIVE INCOME STREAM.',
+      joinCohort: 'JOIN {count} HIGH-PERFORMERS STARTING TODAY',
       items: [
-        { d: '01', t: 'EMPLOYEE EXORCISM', v: '{currency}97', s: 'Mindset' },
-        { d: '02', t: 'THE MONEY VEHICLE', v: '{currency}97', s: 'Core' },
-        { d: '03', t: 'OFFER ARCHITECTURE', v: '{currency}97', s: 'Core' },
-        { d: '04', t: 'TRAFFIC GHOSTING', v: '{currency}97', s: 'Scale' },
-        { d: '05', t: 'FIRST CAPITAL INJECTION', v: '{currency}97', s: 'Closing' },
-        { d: '06', t: 'AUTOMATION LEGACY', v: '{currency}97', s: 'System' },
-        { d: '07', t: 'THE SCALE PROTOCOL', v: '{currency}97', s: 'Elite' }
+        { d: 'DAY 1', s: 'THE FOUNDATION', t: 'The specific model we use for rapid scaling.', v: 'VALUED AT {currency}497' },
+        { d: 'DAY 2', s: 'THE ACQUISITION', t: 'Finding elite opportunities without experience.', v: 'VALUED AT {currency}297' },
+        { d: 'DAY 3', s: 'THE SYSTEM', t: 'The tech stack that handles 90% of the work.', v: 'VALUED AT {currency}897' },
+        { d: 'DAY 4', s: 'THE TRAFFIC', t: 'How to get high-quality attention instantly.', v: 'VALUED AT {currency}597' },
+        { d: 'DAY 5-7', s: 'THE EXECUTION', t: 'Going from zero to live and generating revenue.', v: 'VALUED AT {currency}1,297' }
       ]
     },
     programme: {

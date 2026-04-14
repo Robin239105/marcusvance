@@ -140,6 +140,24 @@ const TrustBarFull = () => {
   );
 };
 
+const BenefitsList = () => {
+  const { t } = useLocale();
+  const benefits = t.marcus.enroll.benefits || [];
+  return (
+    <div className="flex flex-col gap-4 mt-8">
+      <h4 className="font-['Oswald'] text-[10px] uppercase tracking-[0.3em] text-[#C9A84C] font-bold">{t.marcus.enroll.benefitsTitle}</h4>
+      <ul className="space-y-3">
+        {benefits.map((b, i) => (
+          <li key={i} className="flex items-center gap-3 text-[11px] font-['Oswald'] uppercase tracking-[0.15em] text-[#F5F5F5] italic">
+            <span className="text-[#C9A84C] text-lg">✓</span>
+            {b}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 const EnrollPopup = ({ isOpen, onClose }) => {
   const { t, currency, language } = useLocale();
   const [submitted, setSubmitted] = useState(false);
@@ -152,20 +170,27 @@ const EnrollPopup = ({ isOpen, onClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[200] flex items-center justify-center px-4 bg-black/90 backdrop-blur-xl">
-          <motion.div initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} className="bg-[#141414] border border-[#C9A84C]/30 w-[92vw] max-w-lg relative max-h-[88dvh] flex flex-col overflow-hidden">
-            <button onClick={onClose} className="absolute top-6 right-6 z-10 text-white/20 hover:text-white transition-colors"><XIcon /></button>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[200] flex items-center justify-center px-4 bg-black/95 backdrop-blur-3xl">
+          <motion.div initial={{ scale: 0.95, y: 20 }} animate={{ scale: 1, y: 0 }} className="bg-[#0E0E0E] border border-white/5 w-full max-w-5xl relative max-h-[92dvh] flex flex-col md:flex-row overflow-hidden shadow-2xl shadow-black/50">
+            <button onClick={onClose} className="absolute top-6 right-6 z-[210] text-white/20 hover:text-white transition-colors"><XIcon /></button>
             
-            <div className="overflow-y-auto p-8 md:p-10 no-scrollbar">
-              <div className="text-center mb-10">
-                <h2 className="font-arena-headline text-5xl md:text-6xl text-white mb-4 italic leading-none">{language === 'fr' ? 'SÉCURISER VOTRE PLACE.' : 'SECURE YOUR SEAT.'}</h2>
-                <p className="text-[#A3A3A3] text-sm italic font-light uppercase tracking-widest leading-relaxed">{language === 'fr' ? 'Rejoignez la cohorte aujourd\'hui.' : 'Join the cohort of high-performers today.'}</p>
-              </div>
+            {/* Left Column: Branding (Hidden on mobile or scrollable) */}
+            <div className="hidden lg:flex w-2/5 bg-gradient-to-br from-[#1A1A1A] to-[#0E0E0E] p-12 flex-col justify-between border-r border-white/5 relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C9A84C]/5 blur-[120px] -translate-y-1/2 translate-x-1/2 rounded-full" />
+               <div className="relative z-10">
+                 <img src="/marcus-logo.png" alt="Marcus Vance" className="h-16 w-auto object-contain mb-12 opacity-80" />
+                 <h2 className="font-arena-headline text-5xl text-white mb-4 italic leading-none">{t.marcus.enroll.popupTitle || 'YOUR CLUB SEAT.'}</h2>
+                 <p className="text-[#A3A3A3] text-sm italic font-light uppercase tracking-widest leading-relaxed">{t.marcus.enroll.popupSubtitle || 'SECURE YOUR POSITION.'}</p>
+                 <BenefitsList />
+               </div>
+               <div className="relative z-10">
+                 <p className="text-[10px] font-['Oswald'] uppercase tracking-[0.4em] text-[#3A3A3A]">THE ALPHA COLLECTIVE © 2024</p>
+               </div>
+            </div>
 
+            {/* Right Column: Form */}
+            <div className="flex-1 overflow-y-auto p-10 md:p-16 no-scrollbar bg-[#0E0E0E]">
               {!submitted ? (
-              <form onSubmit={handleFormSubmit} className="flex flex-col gap-5">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-2">
                     <label className="font-['Oswald'] uppercase tracking-[0.2em] text-xs text-[#A3A3A3]">{t.common.nameLabel || 'FIRST NAME'}</label>
                     <input type="text" required className="bg-[#0E0E0E] border border-white/5 py-4 px-6 focus:border-[#C9A84C] outline-none text-sm text-white" placeholder="John" />
                   </div>
@@ -316,13 +341,6 @@ const MarcusElitePage = () => {
                   <span className="font-['Oswald'] text-[12px] text-[#C9A84C] uppercase tracking-[0.3em] font-bold mt-2 italic">{t.marcus.ctaInvestment.replace('{currency}', currency)}</span>
                 </div>
                 <div className="flex items-center gap-4 text-left">
-                  <div className="flex -space-x-2">
-                    {['/avatars/avatar1.webp', '/avatars/avatar2.webp', '/avatars/avatar3.webp'].map((src, i) => (
-                      <div key={i} className="w-10 h-10 rounded-full border-2 border-[#141414] bg-[#1A1A1A] overflow-hidden">
-                        <img src={src} className="w-full h-full object-cover" alt="Alumni" />
-                      </div>
-                    ))}
-                  </div>
                   <p className="font-['Oswald'] text-xs uppercase tracking-[0.2em] text-[#A3A3A3] leading-relaxed">
                     <span className="text-[#C9A84C] font-bold">{t.marcus.heroStats}</span> <br/>
                     <span className="opacity-50 tracking-normal italic uppercase">{t.marcus.heroCommunity}</span>
@@ -362,7 +380,8 @@ const MarcusElitePage = () => {
           </motion.div>
         </section>
 
-         <section className="bg-[#0E0E0E] py-24 border-y border-white/5">
+        {/* PLATFORM AUDIT / STATS */}
+        <section className="bg-gradient-to-br from-[#0E0E0E] to-[#080808] py-24 border-y border-white/5">
            <h2 className="sr-only">Platform Statistics</h2>
            <div className="max-w-7xl mx-auto px-8 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center text-white">
               {stats.map(s => (
@@ -437,8 +456,57 @@ const MarcusElitePage = () => {
            </div>
         </section>
 
-        {/* THE PROGRAMME BLOCKS (PART 2) */}
-        <section className="bg-[#0E0E0E] py-32 md:py-56 border-y border-white/5" id="programme-section">
+        {/* THE CORE PLATFORM PREVIEW */}
+        <section className="bg-[#080808] py-32 md:py-48 border-y border-white/5">
+           <div className="max-w-7xl mx-auto px-8">
+             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+               <Reveal>
+                 <div className="max-w-xl">
+                   <div className="flex items-center gap-3 mb-6">
+                     <div className="w-1.5 h-6 bg-[#C9A84C]" />
+                     <span className="font-['Oswald'] uppercase tracking-[0.3em] text-[11px] text-[#C9A84C] font-bold">{t.marcus.programme.badge}</span>
+                   </div>
+                   <h2 className="font-arena-headline text-6xl md:text-8xl text-white mb-8 italic leading-none uppercase">{t.marcus.programme.title}</h2>
+                   <p className="text-[#A3A3A3] text-lg font-normal italic leading-relaxed mb-12">
+                     {t.marcus.programme.subtitle}
+                   </p>
+                   <ul className="space-y-6">
+                     <li className="flex items-start gap-4">
+                       <span className="text-[#C9A84C] text-xl font-bold mt-1">01</span>
+                       <div>
+                         <h4 className="font-['Oswald'] text-white uppercase tracking-widest mb-1">THE ALPHA INTERFACE</h4>
+                         <p className="text-[#6A6A6A] text-xs font-['Oswald'] uppercase tracking-widest">Real-time data visualization and protocol execution.</p>
+                       </div>
+                     </li>
+                     <li className="flex items-start gap-4">
+                       <span className="text-[#C9A84C] text-xl font-bold mt-1">02</span>
+                       <div>
+                         <h4 className="font-['Oswald'] text-white uppercase tracking-widest mb-1">5 CORE MODULES</h4>
+                         <p className="text-[#6A6A6A] text-xs font-['Oswald'] uppercase tracking-widest">Systems from Foundation to Global Exit strategies.</p>
+                       </div>
+                     </li>
+                   </ul>
+                 </div>
+               </Reveal>
+               
+               <Reveal delay={0.2}>
+                 <div className="relative group">
+                   <div className="absolute -inset-4 bg-[#C9A84C]/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                   <div className="relative border border-white/5 bg-[#0E0E0E] p-2 rounded-xl shadow-2xl overflow-hidden">
+                     <img 
+                       src="/marcus_platform_mockup_v2_1776138837670.png" 
+                       alt="The Marcus Platform" 
+                       className="w-full h-auto rounded-lg filter grayscale-[10%] group-hover:grayscale-0 transition-all duration-700" 
+                     />
+                   </div>
+                 </div>
+               </Reveal>
+             </div>
+           </div>
+        </section>
+
+        {/* THE PROGRAMME CATEGORIES (PART 2) */}
+        <section className="bg-[#141414] py-32 md:py-56 border-y border-white/5" id="programme-section">
            <div className="max-w-7xl mx-auto px-8">
              <div className="text-center mb-24">
                <Reveal>
@@ -476,21 +544,6 @@ const MarcusElitePage = () => {
                  </div>
                </Reveal>
              </div>
-
-             {/* Format Breakdown Row */}
-             <Reveal>
-               <div className="bg-black/40 border-y border-white/5 py-10 px-4 mb-24 overflow-x-auto no-scrollbar">
-                 <div className="flex flex-nowrap md:flex-wrap justify-between gap-12 min-w-max md:min-w-0 md:justify-center">
-                   {t.marcus.programme.unlockStats.map(item => (
-                     <div key={item.l} className="flex flex-col items-center text-center gap-2">
-                       <span className="text-2xl mb-1">{item.i}</span>
-                       <span className="text-white font-arena-headline text-xl tracking-wider leading-none">{item.t}</span>
-                       <span className="text-[#A3A3A3] font-['Oswald'] text-[11px] uppercase tracking-widest">{item.l}</span>
-                     </div>
-                   ))}
-                 </div>
-               </div>
-             </Reveal>
 
              <div className="text-center">
                <Reveal>
