@@ -7,7 +7,7 @@ export const baseEN = {
     navAboutProgramme: 'About the Full Programme',
     navStartBtn: 'START FREE CHALLENGE',
     heroPreHeader: 'FOR HIGH-PERFORMERS ONLY',
-    heroTitle: 'BUILD YOUR FIRST HIGH-INCOME STREAM IN 7 DAYS.',
+    heroTitle: 'YOUR FIRST HIGH-INCOME STREAM. 7 DAYS.',
     heroSubtitle: 'THE 7-DAY CHALLENGE TO YOUR FIRST DIGITAL INCOME — STARTING FROM SCRATCH',
     heroStats: `${dynamicStats.startedThisMonth} HIGH-PERFORMERS STARTED THIS MONTH`,
     heroCommunity: 'Join the 93% success rate community',
@@ -37,7 +37,8 @@ export const baseEN = {
       giveaway: 'GIVEAWAY',
       feedback: 'FEEDBACK',
       privacy: 'PRIVACY',
-      terms: 'TERMS'
+      terms: 'TERMS',
+      philosophy: 'THE METHOD'
     },
     giveaway: {
       badge: 'GIVEAWAY',

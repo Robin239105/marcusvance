@@ -276,6 +276,7 @@ const MarcusElitePage = () => {
           <div className="hidden lg:flex items-center gap-8 text-[11px] font-['Oswald'] uppercase tracking-[0.2em]">
             <a href="#challenge-section" className="text-[#C8C8C8] hover:text-[#C9A84C] transition-colors">{t.marcus.navAboutChallenge}</a>
             <a href="#programme-section" className="text-[#C8C8C8] hover:text-[#C9A84C] transition-colors">{t.marcus.navAboutProgramme}</a>
+            <Link to="/philosophy" className="text-[#C8C8C8] hover:text-[#C9A84C] transition-colors">{t.marcus.footer.philosophy}</Link>
             <LanguageSwitcher variant="marcus" />
             <button onClick={() => setIsEnrollOpen(true)} className="border border-[#C9A84C] text-[#C9A84C] px-8 py-3 hover:bg-[#C9A84C] hover:text-black transition-all">{t.marcus.navStartBtn}</button>
           </div>
@@ -287,7 +288,7 @@ const MarcusElitePage = () => {
 
       <main className="contain-layout">
         {/* HERO */}
-        <section className="relative pt-[220px] pb-32 overflow-hidden contain-paint" id="challenge-section">
+        <section className="relative pt-[160px] pb-32 overflow-hidden contain-paint" id="challenge-section">
           <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
               <div className="flex items-center gap-2 mb-8">
@@ -299,7 +300,7 @@ const MarcusElitePage = () => {
                 {t.marcus.heroTitle}
               </h1>
 
-              <div className="font-['Oswald'] font-bold text-lg md:text-2xl uppercase tracking-wider text-[#C8C8C8] mb-12 border-l-0 lg:border-l-2 border-[#C9A84C] lg:pl-6 italic">
+              <div className="font-['Oswald'] font-bold text-lg md:text-2xl uppercase tracking-wider text-[#C8C8C8] mb-8 border-l-0 lg:border-l-2 border-[#C9A84C] lg:pl-6 italic">
                 {t.marcus.heroSubtitle}
               </div>
 
@@ -344,6 +345,11 @@ const MarcusElitePage = () => {
                <div className="absolute bottom-12 right-0 z-20 bg-[#C9A84C] px-10 py-6">
                  <div className="font-arena-headline text-3xl text-black tracking-widest">{language === 'fr' ? '12 024+ ALUMNI' : '12,024+ ALUMNI'}</div>
                </div>
+            </div>
+            {/* AI Disclaimer */}
+            <div className="mt-4 flex flex-col gap-2 border-t border-white/5 pt-4">
+              <p className="text-[10px] uppercase font-['Oswald'] tracking-[0.2em] text-[#F5F5F5] opacity-50">Marcus Vance is an AI-generated brand persona.</p>
+              <Link to="/philosophy" className="text-[12px] text-[#C9A84C] font-['Oswald'] uppercase tracking-widest underline decoration-[#C9A84C]/50 hover:decoration-[#C9A84C] transition-all">Read the full disclosure</Link>
             </div>
           </div>
           
@@ -607,11 +613,11 @@ const MarcusElitePage = () => {
             <img src="/marcus-logo.png" alt="Marcus Vance" className="h-28 w-auto object-contain opacity-95" />
             <p className="text-[#2A2A2A] font-['Oswald'] uppercase tracking-[0.5em] text-[11px]">PRODUCED BY THE ALPHA COLLECTIVE © 2024</p>
           </div>
-          <div className="flex gap-12 text-xs font-['Oswald'] uppercase tracking-[0.2em] text-[#3A3A3A]">
-            <Link to="/giveaway" aria-label="Monthly Giveaway" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.giveaway}</Link>
-            <Link to="/feedback" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.feedback}</Link>
-            <a href="#" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.privacy}</a>
-            <a href="#" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.terms}</a>
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-4 text-xs font-['Oswald'] uppercase tracking-[0.2em] text-[#3A3A3A]">
+            <Link to="/marcus/giveaway" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.giveaway}</Link>
+            <Link to="/marcus/feedback" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.feedback}</Link>
+            <Link to="/philosophy" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.philosophy}</Link>
+            <Link to="/terms" className="hover:text-[#C9A84C] transition-all">{t.marcus.footer.terms}</Link>
           </div>
           <div className="flex gap-8 items-center opacity-30 invert">
             <InstagramIcon /><YoutubeIcon /><TwitterIcon />

@@ -7,6 +7,8 @@ import { LocaleProvider } from './shared/hooks/useLocale'
 const MarcusElitePage = lazy(() => import('./marcus/pages/MarcusElitePage.jsx'))
 const GiveawayPage = lazy(() => import('./marcus/pages/GiveawayPage.jsx'))
 const FeedbackPage = lazy(() => import('./marcus/pages/FeedbackPage.jsx'))
+const PhilosophyPage = lazy(() => import('./marcus/pages/PhilosophyPage.jsx'))
+const TermsPage = lazy(() => import('./marcus/pages/TermsPage.jsx'))
 
 // Loading fallback for non-blocking paint
 const PageLoader = () => (
@@ -40,6 +42,11 @@ const router = createBrowserRouter([
       ...regions.map(r => ({ path: `/marcus/giveaway/${r}`, element: <GiveawayPage /> })),
       { path: '/marcus/feedback', element: <FeedbackPage /> },
       ...regions.map(r => ({ path: `/marcus/feedback/${r}`, element: <FeedbackPage /> })),
+      
+      { path: '/philosophy', element: <PhilosophyPage /> },
+      ...regions.map(r => ({ path: `/philosophy/${r}`, element: <PhilosophyPage /> })),
+      { path: '/terms', element: <TermsPage /> },
+      ...regions.map(r => ({ path: `/terms/${r}`, element: <TermsPage /> })),
     ]
   }
 ])
