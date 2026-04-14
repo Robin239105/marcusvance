@@ -191,30 +191,33 @@ const EnrollPopup = ({ isOpen, onClose }) => {
             {/* Right Column: Form */}
             <div className="flex-1 overflow-y-auto p-10 md:p-16 no-scrollbar bg-[#0E0E0E]">
               {!submitted ? (
-                    <label className="font-['Oswald'] uppercase tracking-[0.2em] text-xs text-[#A3A3A3]">{t.common.nameLabel || 'FIRST NAME'}</label>
-                    <input type="text" required className="bg-[#0E0E0E] border border-white/5 py-4 px-6 focus:border-[#C9A84C] outline-none text-sm text-white" placeholder="John" />
+                <form onSubmit={handleFormSubmit} className="flex flex-col gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="flex flex-col gap-2">
+                       <label className="font-['Oswald'] uppercase tracking-[0.2em] text-xs text-[#A3A3A3]">{t.common.nameLabel || 'FIRST NAME'}</label>
+                       <input type="text" required className="bg-[#0E0E0E] border border-white/5 py-4 px-6 focus:border-[#C9A84C] outline-none text-sm text-white" placeholder="John" />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label className="font-['Oswald'] uppercase tracking-[0.2em] text-xs text-[#A3A3A3]">{language === 'fr' ? 'NOM' : 'LAST NAME'}</label>
+                      <input type="text" required className="bg-[#0E0E0E] border border-white/5 py-4 px-6 focus:border-[#C9A84C] outline-none text-sm text-white" placeholder="Vance" />
+                    </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="font-['Oswald'] uppercase tracking-[0.2em] text-xs text-[#A3A3A3]">{language === 'fr' ? 'NOM' : 'LAST NAME'}</label>
-                    <input type="text" required className="bg-[#0E0E0E] border border-white/5 py-4 px-6 focus:border-[#C9A84C] outline-none text-sm text-white" placeholder="Vance" />
+                    <label className="font-['Oswald'] uppercase tracking-[0.2em] text-xs text-[#A3A3A3]">{t.common.emailLabel || 'EMAIL ADDRESS'}</label>
+                    <input type="email" required className="bg-[#0E0E0E] border border-white/5 py-4 px-6 focus:border-[#C9A84C] outline-none text-sm text-white" placeholder="john@domain.com" />
                   </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-['Oswald'] uppercase tracking-[0.2em] text-xs text-[#A3A3A3]">{t.common.emailLabel || 'EMAIL ADDRESS'}</label>
-                  <input type="email" required className="bg-[#0E0E0E] border border-white/5 py-4 px-6 focus:border-[#C9A84C] outline-none text-sm text-white" placeholder="john@domain.com" />
-                </div>
-                <div className="flex items-start gap-3 my-4">
-                  <input type="checkbox" required className="w-4 h-4 accent-[#C9A84C] mt-0.5" />
-                  <p className="text-xs text-[#A3A3A3] leading-relaxed italic">{t.marcus.enroll.agreement}</p>
-                </div>
-                <button type="submit" className="bg-[#C9A84C] text-black w-full py-4 md:py-6 font-arena-headline text-xl md:text-2xl whitespace-normal md:whitespace-nowrap flex items-center justify-center text-center leading-tight tracking-wider hover:bg-[#E2C46E] transition-all uppercase italic">
-                   {t.marcus.ctaPrimary}
-                </button>
-                <span className="font-['Oswald'] text-[12px] text-[#C9A84C] uppercase tracking-[0.3em] font-bold mt-2 italic text-center">
-                  {t.marcus.ctaInvestment}
-                </span>
-                <TrustBarFull />
-              </form>
+                  <div className="flex items-start gap-3 my-4">
+                    <input type="checkbox" required className="w-4 h-4 accent-[#C9A84C] mt-0.5" />
+                    <p className="text-xs text-[#A3A3A3] leading-relaxed italic">{t.marcus.enroll.agreement}</p>
+                  </div>
+                  <button type="submit" className="bg-[#C9A84C] text-black w-full py-4 md:py-6 font-arena-headline text-xl md:text-2xl whitespace-normal md:whitespace-nowrap flex items-center justify-center text-center leading-tight tracking-wider hover:bg-[#E2C46E] transition-all uppercase italic">
+                     {t.marcus.ctaPrimary}
+                  </button>
+                  <span className="font-['Oswald'] text-[12px] text-[#C9A84C] uppercase tracking-[0.3em] font-bold mt-2 italic text-center">
+                    {t.marcus.ctaInvestment.replace('{currency}', currency)}
+                  </span>
+                  <TrustBarFull />
+                </form>
             ) : (
               <div className="py-20 text-center">
                 <div className="w-20 h-20 bg-[#C9A84C] flex items-center justify-center text-black text-4xl mx-auto mb-8">✓</div>
