@@ -47,6 +47,7 @@ export const baseEN = {
       agreement: 'I agree to treat these materials with the professional seriousness required.',
       successTitle: 'ACCESS GRANTED.',
       successSubtitle: 'Check your encryption-ready inbox for the Day 1 Protocol.',
+      submitBtn: 'START MY 7-DAY PROTOCOL →',
       giveawayBtn: 'ENTER THE GIVEAWAY'
     },
     trust: {

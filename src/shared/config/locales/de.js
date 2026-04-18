@@ -40,6 +40,7 @@ export const baseDE = {
       agreement: 'Ich verpflichte mich, diese Materialien mit der erforderlichen professionellen Ernsthaftigkeit zu behandeln.',
       successTitle: 'ZUGANG GEWÄHRT.',
       successSubtitle: 'Prüfen Sie Ihren verschlüsselungsbereiten Posteingang für das Tag 1-Protokoll.',
+      submitBtn: 'MEIN 7-TAGE-PROTOKOLL STARTEN →',
       giveawayBtn: 'AM GEWINNSPIEL TEILNEHMEN'
     },
     trust: {

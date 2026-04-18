@@ -840,7 +840,7 @@ const MarcusElitePage = () => {
                       </h2>
                    </div>
 
-                   <div className="space-y-6 mb-12">
+                   <div className="space-y-8 mb-16">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2 text-left">
                           <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.firstName}</label>
@@ -871,6 +871,22 @@ const MarcusElitePage = () => {
                           className="w-full bg-white/5 border border-white/5 p-4 md:p-5 font-oswald text-base text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5"
                         />
                       </div>
+
+                      <div className="flex items-start gap-4 group cursor-pointer pt-4" onClick={() => {}}>
+                         <div className="mt-0.5 w-5 h-5 border border-white/10 rounded flex items-center justify-center group-hover:border-[#C9A84C]/50 transition-colors shrink-0">
+                            <div className="w-2.5 h-2.5 bg-[#C9A84C] rounded-sm opacity-60" />
+                         </div>
+                         <p className="font-oswald text-[9px] text-[#6A6A6A] tracking-[0.2em] uppercase italic leading-loose">
+                            {t.marcus.enroll.agreement}
+                         </p>
+                      </div>
+
+                      <button 
+                        className="w-full bg-[#C9A84C] text-black font-oswald text-sm font-black tracking-[0.4em] py-6 rounded-none uppercase hover:bg-white transition-all duration-700 shadow-[0_0_50px_rgba(201,168,76,0.2)] active:scale-[0.98]"
+                        onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false);}}
+                      >
+                         {t.marcus.enroll.submitBtn}
+                      </button>
                    </div>
 
                    {/* Benefits Checkpoints */}

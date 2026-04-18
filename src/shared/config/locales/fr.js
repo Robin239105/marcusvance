@@ -19,6 +19,7 @@ export default {
       agreement: 'Je m\'engage à traiter ces documents avec le sérieux professionnel requis.',
       successTitle: 'ACCÈS ACCORDÉ.',
       successSubtitle: 'Consultez votre boîte de réception sécurisée pour le protocole du jour 1.',
+      submitBtn: 'LANCER MON PROTOCOLE DE 7 JOURS →',
       giveawayBtn: 'PARTICIPER AU CONCOURS'
     },
     trust: {
