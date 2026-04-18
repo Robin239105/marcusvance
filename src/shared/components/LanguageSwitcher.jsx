@@ -45,6 +45,8 @@ const LanguageSwitcher = () => {
     
     if (pathname.includes('/giveaway')) basePath = '/marcus/giveaway';
     else if (pathname.includes('/feedback')) basePath = '/marcus/feedback';
+    else if (pathname.includes('/philosophy')) basePath = '/philosophy';
+    else if (pathname.includes('/terms')) basePath = '/terms';
     else basePath = ''; // Marcus root
 
     // Construct the new path
@@ -66,10 +68,10 @@ const LanguageSwitcher = () => {
         className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] transition-all group"
       >
         <span className="text-sm">{options.find(o => o.code === (currentLocale.currentLocale || 'default'))?.flag || '🌍'}</span>
-        <span className="text-[10px] font-['Oswald'] uppercase tracking-widest text-stone-400 group-hover:text-[#C9A84C] transition-colors italic font-bold">
+        <span className="text-[10px] font-oswald uppercase tracking-widest text-stone-400 group-hover:text-[#FFD700] transition-colors font-bold">
           {currentLocale.currentLocale === 'default' ? 'Global' : options.find(o => o.code === currentLocale.currentLocale)?.code}
         </span>
-        <div className={`w-1.5 h-1.5 rounded-full bg-[#C9A84C] transition-transform duration-300 ${isOpen ? 'scale-125' : 'scale-75 opacity-50'}`} />
+        <div className={`w-1.5 h-1.5 rounded-full bg-[#FFD700] transition-transform duration-300 ${isOpen ? 'scale-125' : 'scale-75 opacity-50'}`} />
       </button>
 
       <AnimatePresence>
@@ -86,10 +88,10 @@ const LanguageSwitcher = () => {
                 <button
                   key={opt.code}
                   onClick={() => handleSwitch(opt.code)}
-                  className={`w-full flex items-center justify-between gap-3 px-4 py-3.5 text-[10px] font-['Oswald'] tracking-widest uppercase transition-all text-left italic font-bold group text-stone-400 hover:text-[#C9A84C] hover:bg-white/[0.03] ${
+                  className={`w-full flex items-center justify-between gap-3 px-4 py-3.5 text-[10px] font-oswald tracking-widest uppercase transition-all text-left font-bold group text-stone-400 hover:text-[#FFD700] hover:bg-white/[0.03] ${
                     (opt.code === 'default' && currentLocale.currentLocale === 'default') || 
                     (currentLocale.currentLocale === opt.code) 
-                      ? 'text-[#C9A84C] bg-white/[0.02]' 
+                      ? 'text-[#FFD700] bg-white/[0.02]' 
                       : ''
                   }`}
                 >
@@ -97,10 +99,10 @@ const LanguageSwitcher = () => {
                     <span className="text-lg transition-transform group-hover:scale-110 duration-300">{opt.flag}</span>
                     <div className="flex flex-col">
                         <span className="leading-none mb-0.5">{opt.label}</span>
-                        <span className="text-[8px] opacity-40 font-normal not-italic tracking-normal lowercase">{opt.code === 'default' ? 'Global Access' : `Localized region`}</span>
+                        <span className="text-[8px] opacity-40 font-normal tracking-normal lowercase">{opt.code === 'default' ? 'Global Access' : `Localized region`}</span>
                     </div>
                   </div>
-                  <span className="text-[11px] font-normal not-italic px-2 py-0.5 rounded border border-current opacity-30 group-hover:opacity-100 transition-opacity">
+                  <span className="text-[11px] font-normal px-2 py-0.5 rounded border border-current opacity-30 group-hover:opacity-100 transition-opacity">
                     {opt.currency}
                   </span>
                 </button>

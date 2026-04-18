@@ -22,10 +22,23 @@ export const baseFR = {
       rating: 'NOTE VÉRIFIÉE'
     },
     enroll: {
-      giveawayBtn: 'PARTICIPER AU TIRAGE',
+      popupTitle: 'PLACE EN COHORTE.',
+      popupSubtitle: 'SÉCURISEZ VOTRE POSITION DANS L\'ALPHA COLLECTIVE.',
+      firstName: 'PRÉNOM',
+      email: 'EMAIL PROFESSIONNEL',
+      secure: 'ACCÈS RESTREINT | AUCUNE CARTE REQUISE',
+      prestigeBadge: 'PROFIL HAUT POTENTIEL VÉRIFIÉ',
+      benefitsTitle: 'CE QUE VOUS DÉBLOQUEZ :',
+      benefits: [
+        'ACCÈS COMPLET AU PROTOCOLE DE 7 JOURS',
+        'BIBLIOTHÈQUE DES 5 COURS MAGISTRAUX',
+        'ADHÉSION À LA COMMUNAUTÉ D\'ÉLITE',
+        'MODÈLES DE SYSTÈME ET LISTES DE CONTRÔLE'
+      ],
       agreement: 'En m\'inscrivant, j\'accepte de recevoir des communications stratégiques. Désinscription en 1 clic.',
       successTitle: 'ACCÈS ACCORDÉ.',
-      successSubtitle: 'Vérifiez votre boîte de réception. Votre protocole de Jour 1 arrive.'
+      successSubtitle: 'Vérifiez votre boîte de réception. Votre protocole de Jour 1 arrive.',
+      giveawayBtn: 'PARTICIPER AU TIRAGE'
     },
     trust: {
       noSpam: 'ZÉRO SPAM',
@@ -168,7 +181,38 @@ export const baseFR = {
       participationInstructions: 'Les liens d\'entrée directs sont fournis exclusivement dans le tableau de bord de la cohorte pour maintenir l\'intégrité de notre communauté.',
       disclaimer: '* LES GAGNANTS SONT ANNONCÉS LE 1ER DE CHAQUE MOIS PAR EMAIL.',
       privateLink: 'VOTRE EXPÉRIENCE ÉTAIT DIFFÉRENTE ? LAISSEZ UN COMMENTAIRE PRIVÉ À LA PLACE →',
-      backLink: '← Retour au tunnel'
+      backLink: '← Retour à Alpha'
+    },
+    philosophy: {
+      returnLink: 'Retour à Alpha',
+      badge: 'LA PHILOSOPHIE',
+      chapters: [
+        { id: 'chapter-1', label: 'I. LA DIVULGATION', title: 'LA TRANSPARENCE EST L\'AUTORITÉ ULTIME.', content: ['La plupart des programmes cachent leurs divulgations. Ils placent le langage juridique dans un pied de page, en petits caractères, sur une page que personne ne lit. Ils mettent en avant la personnalité, l\'histoire, l\'aspiration - et gardent la réalité pour les petits caractères.', 'Nous faisons les choses différemment. Nous pensons que la clarté est le fondement de la confiance, et la confiance est la seule devise qui compte dans l\'éducation de haute performance. Cette page existe pour définir exactement ce qu\'est cette plateforme, qui est Marcus Vance et ce à quoi vous vous engagez.'] },
+        { id: 'chapter-2', label: 'II. LA MÉTHODOLOGIE', title: 'ÉDUCATION AXÉE SUR LA PERFORMANCE', content: ['La plateforme Marcus Vance est une ressource éducative développée par un collectif d\'entrepreneurs numériques et d\'architectes système. Notre méthodologie est basée sur des résultats binaires : soit le système fonctionne, soit il ne fonctionne pas. Il n\'y a pas de juste milieu.', 'Nous n\'enseignons pas la "théorie". Nous enseignons des protocoles d\'exécution. Chaque cours, liste de contrôle et cahier d\'exercices à l\'intérieur de la bibliothèque complète est extrait d\'opérations réelles menées par notre équipe de développement dans plusieurs secteurs.'] },
+        { id: 'chapter-3', label: 'III. LA VOIX', title: 'MARCUS VANCE', content: ['Marcus Vance est l\'architecte du message. Il représente l\'ethos de l\'Alpha Collective. Sa "voix" est la synthèse de notre expérience collective - des décennies de succès, d\'échecs et de leçons durement acquise dans l\'économie numérique.'] },
+        { id: 'chapter-4', label: 'IV. LE PERSONA DE MARQUE', title: 'LA RÉALITÉ DU "PERSONA DE MARQUE"', content: ['Il est important que vous compreniez que Marcus Vance est un persona de marque généré par l\'IA. Il est un avatar numérique créé pour servir de visage et de voix à notre mission éducative. L\'image que vous voyez est synthétique ; la personnalité est organisée.', 'Pourquoi avons-nous fait cela ? Parce qu\'à l\'ère moderne, le message doit être plus grand qu\'une seule personne. En créant Marcus Vance, nous nous assurons que l\'accent reste entièrement mis sur les enseignements et les résultats, plutôt que sur la vie personnelle ou la célébrité d\'une figure de proue humaine. Marcus ne se fatigue pas. Marcus n\'a pas d\'ego. Marcus est pur protocole.'] },
+        { id: 'chapter-5', label: 'V. L\'AVANTAGE', title: 'POURQUOI LA TRANSPARENCE EST L\'AVANTAGE ULTIME', content: ['Nous vous disons cela d\'emblée car nous pensons que votre intelligence mérite le respect. Si nous commencions cette relation par une tromperie sur le fait que Marcus soit une "vraie" personne au sens traditionnel, nous saperions tout ce que nous enseignons sur l\'intégrité et les normes élevées.', 'Les résultats produits par nos étudiants sont 100% humains et 100% réels. Les stratégies que nous enseignons sont mises en œuvre par des personnes réelles pour générer des revenus réels. L\'avatar est le support ; le succès est le message.'] },
+        { id: 'chapter-6', label: 'VI. VOTRE PARTICIPATION', title: 'VOTRE PARTICIPATION', content: ['Lorsque vous entrez dans le Défi de 7 Jours, vous entrez dans un environnement de haute performance. Nous attendons de vous que vous traitiez ces documents avec le même sérieux que s\'il s\'agissait d\'un rapport confidentiel d\'intelligence économique. Que le "visage" de la marque soit humain ou non n\'est pas pertinent pour l\'utilité du système.'] },
+        { id: 'chapter-7', label: 'VII. NOTE FINALE', title: 'NOTE FINALE', content: ['Nous sommes ici pour vous aider à construire. Rien de plus, rien de moins. Si vous êtes à l\'aise avec un monde où l\'éducation augmentée par l\'IA offre le chemin le plus rapide vers l\'indépendance financière, alors vous êtes au bon endroit.', 'Bienvenue dans l\'ère Alpha.'], cta: 'PRÊT À ÉXÉCUTER ?', btn: 'DÉMARRER LE DÉFI MAINTENANT →', ctaDisclaimer: 'L\'ACCÈS RESTE 100% GRATUIT' }
+      ]
+    },
+    legal: {
+      title: 'PROTOCOLE LÉGAL.',
+      updated: 'Dernière mise à jour : Avril 2024',
+      badge: 'CADRE JURIDIQUE',
+      sections: [
+        { id: 'section-1', label: '1. INTRODUCTION', content: ['Bienvenue sur MarcusVance.io (le "Site"), détenu et exploité par The Alpha Collective ("nous", "notre" ou "nos"). Ces Termes et Conditions ("Termes") régissent votre utilisation de notre Site et votre participation au "Défi de 7 Jours pour un Revenu Élevé" et à tout programme éducatif ultérieur (collectivement, le "Programme").', 'En accédant au Site ou en vous inscrivant au Programme, vous acceptez d\'être lié par ces Termes. Si vous n\'êtes pas d\'accord, vous devez immédiatement cesser toute utilisation de la plateforme.'] },
+        { id: 'section-2', label: '2. LE PROGRAMME', content: ['Le Programme est un service éducatif conçu pour fournir des connaissances commerciales fondamentales et des cadres stratégiques pour l\'entrepreneuriat numérique. Il ne s\'agit pas d\'un service de conseil financier, d\'une garantie de revenus ou d\'une offre d\'emploi.'] },
+        { id: 'section-3', label: '3. PROPRIÉTÉ INTELLECTUELLE', content: ['Tout le contenu fourni, y compris le texte, les logos, l\'audio, la vidéo et les documents stratégiques, est la propriété intellectuelle de The Alpha Collective. Vous bénéficiez d\'une licence limitée, non exclusive et non transférable pour un usage personnel et éducatif uniquement.', 'Toute distribution, revente ou utilisation commerciale non autorisée de nos documents exclusifs est strictement interdite et entraînera la résiliation immédiate de l\'accès et des poursuites judiciaires potentielles.'] },
+        { id: 'section-4', label: '4. PARTICIPATION', content: ['La participation au Programme nécessite un haut niveau d\'engagement moral et de concentration. Nous nous réservons le droit de limiter ou de résilier l\'accès aux personnes qui ne respectent pas nos normes communautaires ou l\'étiquette professionnelle.'] },
+        { id: 'section-5', label: '5. EXCLUSION DE GARANTIES', content: ['Le Site et le Programme sont fournis "tels quels" et "selon disponibilité". Nous ne faisons aucune déclaration ou garantie d\'aucune sorte, expresse ou implicite, concernant l\'exactitude, l\'exhaustivité ou la fiabilité de notre contenu éducatif.', 'AVERTISSEMENT SUR LES REVENUS : Les résultats individuels discutés dans le Programme ne sont pas typiques. Nous ne pouvons pas et ne garantissons pas votre capacité à obtenir des résultats ou à gagner de l\'argent avec nos idées, informations, outils ou stratégies.'] },
+        { id: 'section-6', label: '6. RESPONSABILITÉ', content: ['Dans la mesure maximale permise par la loi, The Alpha Collective ne sera pas responsable des dommages directs, indirects, accessoires ou consécutifs résultant de votre utilisation du Site ou du Programme.'] },
+        { id: 'section-7', label: '7. CONFIDENTIALITÉ DES DONNÉES', content: ['Nous collectons un minimum de données personnelles pour faciliter votre participation. En utilisant nos services, vous consentez à nos pratiques en matière de données telles que décrites dans notre Politique de Confidentialité. Nous utilisons un cryptage sécurisé et ne partageons pas votre nom de famille ou vos coordonnées avec des tiers non autorisés.'] },
+        { id: 'section-8', label: '8. DIVULGATION SUR L\'IA', content: ['DIVULGATION IMPORTANTE : Le persona de marque "Marcus Vance" est un avatar numérique généré par l\'IA. Toutes les représentations visuelles de Marcus Vance sont synthétiques. L\'expertise, la méthodologie et le contenu stratégique sont développés par des experts humains, mais présentés à travers ce persona de marque unifié pour maintenir l\'accent institutionnel.'] },
+        { id: 'section-9', label: '9. TIERS', content: ['Notre Site peut contenir des liens vers des services ou outils tiers. Nous ne sommes pas responsables du contenu, des politiques de confidentialité ou des pratiques des sites Web tiers.'] },
+        { id: 'section-10', label: '10. MODIFICATIONS DES TERMES', content: ['Nous nous réservons le droit de modifier ces Termes à tout moment et sans préavis. Votre utilisation continue du Site après la publication des modifications constitue votre acceptation des Termes révisés.'] },
+        { id: 'section-11', label: '11. LOI APPLICABLE', content: ['Ces Termes seront régis et interprétés conformément aux lois de la juridiction dans laquelle The Alpha Collective est enregistré, sans égard à ses principes de conflit de lois.'] }
+      ]
     }
   },
   trinity: {

@@ -146,11 +146,11 @@ const TimelineSection = () => {
                 <div className="absolute -left-[35px] md:-left-[67px] top-6 w-3 h-3 bg-[#FFD700] rounded-full shadow-[0_0_15px_#FFD700]" />
                 <div className="mv-glass-card p-10 group relative">
                     <div className="flex flex-wrap items-center gap-4 mb-6">
-                        <span className="font-oswald text-[#FFD700] text-3xl tracking-widest font-bold font-italic">{step.day}</span>
+                        <span className="font-oswald text-[#FFD700] text-3xl tracking-widest font-bold">{step.day}</span>
                         <span className="font-oswald bg-[#FFD700]/10 text-[#FFD700] text-[10px] font-bold px-3 py-1 rounded uppercase tracking-[0.2em]">{step.deliverable}</span>
                     </div>
                     <h3 className="font-oswald text-3xl text-white mb-4 group-hover:text-[#FFD700] transition-colors font-bold uppercase">{step.title}</h3>
-                    <p className="text-[#A3A3A3] text-lg italic leading-relaxed max-w-2xl">{step.desc}</p>
+                    <p className="text-[#A3A3A3] text-lg leading-relaxed max-w-2xl font-light">{step.desc}</p>
                 </div>
               </div>
             </Reveal>
@@ -217,7 +217,7 @@ const FAQSection = ({ t }) => {
                   <AnimatePresence>
                     {activeFAQ === i && (
                       <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                        <p className="text-[#A3A3A3] text-sm leading-relaxed pb-10 italic font-normal max-w-2xl">{f.a}</p>
+                        <p className="text-[#A3A3A3] text-sm leading-relaxed pb-10 font-normal max-w-2xl font-light">{f.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -246,7 +246,7 @@ const ProgramReveal = ({ t }) => (
             <div className="mv-glass-card p-10 h-full flex flex-col group">
               <div className="text-4xl mb-6">{cat.i}</div>
               <h3 className="font-oswald text-2xl text-white mb-4 tracking-tighter font-bold uppercase group-hover:text-[#FFD700] transition-colors">{cat.t}</h3>
-              <div className="text-[#FFD700] text-[10px] font-bold tracking-[0.2em] mb-4 uppercase italic opacity-50">{cat.n}</div>
+              <div className="text-[#FFD700] text-[10px] font-bold tracking-[0.2em] mb-4 uppercase opacity-50">{cat.n}</div>
               <p className="text-[#6A6A6A] text-sm leading-relaxed border-t border-white/5 pt-6">{cat.d}</p>
             </div>
           </Reveal>
@@ -264,8 +264,8 @@ const ProgramReveal = ({ t }) => (
       </div>
 
       <div className="mt-20 text-center">
-        <p className="text-[#A3A3A3] font-oswald text-sm italic mb-10 max-w-xl mx-auto leading-relaxed">{t.marcus.programme.exclusivity}</p>
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-[#FFD700] text-black px-12 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold italic shadow-[#FFD700]/20">{t.marcus.programme.cta}</button>
+        <p className="text-[#A3A3A3] font-oswald text-sm mb-10 max-w-xl mx-auto leading-relaxed font-light">{t.marcus.programme.exclusivity}</p>
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-[#FFD700] text-black px-12 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold shadow-[#FFD700]/20">{t.marcus.programme.cta}</button>
       </div>
     </div>
   </section>
@@ -332,7 +332,7 @@ const Methodology = ({ t }) => (
         ].map((item, i) => (
           <Reveal key={i} delay={i * 0.1}>
             <div className="group">
-              <div className="font-oswald text-6xl text-white/5 mb-8 font-bold italic transition-colors group-hover:text-[#FFD700]/10">{item.i}</div>
+              <div className="font-oswald text-6xl text-white/5 mb-8 font-bold transition-colors group-hover:text-[#FFD700]/10">{item.i}</div>
               <h3 className="font-oswald text-2xl text-white mb-4 tracking-wider font-bold uppercase">{item.t}</h3>
               <p className="text-[#6A6A6A] leading-relaxed">{item.d}</p>
             </div>
@@ -413,11 +413,11 @@ const MarcusElitePage = () => {
       {/* --- Header / Nav --- */}
       <nav className={`fixed top-[32px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-6 group">
+          <Link to={currentLocale === 'en' ? '/' : `/${currentLocale}`} className="flex items-center gap-6 group">
             <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-32 w-auto object-contain" />
           </Link>
           <div className="hidden lg:flex items-center gap-10 font-oswald text-xs tracking-[0.3em] font-bold uppercase">
-            <a href="#about" className="hover:text-[#FFD700] transition-colors">{t.marcus.footer.philosophy}</a>
+            <Link to={currentLocale === 'en' ? '/philosophy' : `/philosophy/${currentLocale}`} className="hover:text-[#FFD700] transition-colors">{t.marcus.footer.philosophy}</Link>
             <a href="#roadmap" className="hover:text-[#FFD700] transition-colors">{t.marcus.navAboutChallenge}</a>
             <a href="#faq" className="hover:text-[#FFD700] transition-colors">FAQ</a>
             <LanguageSwitcher variant="marcus" />
@@ -552,16 +552,16 @@ const MarcusElitePage = () => {
       <footer className="py-40 border-t border-white/5 bg-[#050505] relative z-20">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-16 text-center md:text-left">
           <div className="flex flex-col gap-8">
-            <Link to="/" className="flex items-center gap-6 group mx-auto md:mx-0">
+            <Link to={currentLocale === 'en' ? '/' : `/${currentLocale}`} className="flex items-center gap-6 group mx-auto md:mx-0">
               <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-32 w-auto object-contain" />
             </Link>
             <p className="text-[#2A2A2A] font-oswald uppercase tracking-[0.5em] text-[10px] font-bold">PRODUCED BY THE ALPHA COLLECTIVE © 2024</p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-6 text-xs font-oswald uppercase tracking-[0.2em] text-[#3A3A3A] font-bold">
-            <Link to="/marcus/giveaway" className="hover:text-[#FFD700] transition-all">{t.marcus.footer.giveaway}</Link>
-            <Link to="/marcus/feedback" className="hover:text-[#FFD700] transition-all">{t.marcus.footer.feedback}</Link>
-            <Link to="/philosophy" className="hover:text-[#FFD700] transition-all">{t.marcus.footer.philosophy}</Link>
-            <Link to="/terms" className="hover:text-[#FFD700] transition-all">{t.marcus.footer.terms}</Link>
+            <Link to={currentLocale === 'en' ? '/marcus/giveaway' : `/marcus/giveaway/${currentLocale}`} className="hover:text-[#FFD700] transition-all">{t.marcus.footer.giveaway}</Link>
+            <Link to={currentLocale === 'en' ? '/marcus/feedback' : `/marcus/feedback/${currentLocale}`} className="hover:text-[#FFD700] transition-all">{t.marcus.footer.feedback}</Link>
+            <Link to={currentLocale === 'en' ? '/philosophy' : `/philosophy/${currentLocale}`} className="hover:text-[#FFD700] transition-all">{t.marcus.footer.philosophy}</Link>
+            <Link to={currentLocale === 'en' ? '/terms' : `/terms/${currentLocale}`} className="hover:text-[#FFD700] transition-all">{t.marcus.footer.terms}</Link>
           </div>
         </div>
       </footer>
@@ -569,21 +569,112 @@ const MarcusElitePage = () => {
       {/* --- Modals --- */}
       <AnimatePresence>
         {(isEnrollOpen || showExitPopup) && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/98 backdrop-blur-3xl p-6">
-            <div className="max-w-2xl w-full text-center relative">
-               <button onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false);}} className="absolute -top-12 right-0 text-white/20 hover:text-white font-oswald text-xs tracking-widest transition-colors uppercase font-bold">CLOSE [ESC]</button>
-               <div className="text-5xl mb-8 animate-bounce">{isEnrollOpen ? '🗝️' : '⏳'}</div>
-               <SectionHeading 
-                 pre={isEnrollOpen ? t.marcus.enroll.popupTitle : "Wait Before You Exit"}
-                 title={isEnrollOpen ? t.marcus.enroll.popupSubtitle : "Don't Leave Without Day 1"}
-                 subtitle={isEnrollOpen ? t.marcus.enroll.benefitsTitle : "The challenge is 100% free. Day 1 takes 45 minutes and establishes your entire business direction. Don't waste the opportunity."}
-               />
-               <div className="flex flex-col gap-4 max-w-md mx-auto">
-                 <input type="email" placeholder="YOUR@EMAIL.COM" className="bg-white/5 border border-white/10 p-5 font-oswald text-2xl text-[#FFD700] focus:border-[#FFD700] outline-none tracking-widest text-center font-bold" />
-                 <button onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false);}} className="bg-[#FFD700] text-black p-5 font-oswald text-2xl tracking-widest hover:bg-white transition-all uppercase italic font-bold">DECODE PROTOCOL →</button>
-               </div>
-               {showExitPopup && <p className="mt-8 text-[11px] text-white/20 font-oswald tracking-widest uppercase font-bold italic">This link expires when you close this window.</p>}
-            </div>
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }} 
+            className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/95 backdrop-blur-3xl p-4 md:p-12"
+          >
+             <motion.div 
+               initial={{ scale: 0.9, opacity: 0, y: 20 }}
+               animate={{ scale: 1, opacity: 1, y: 0 }}
+               exit={{ scale: 0.9, opacity: 0, y: 20 }}
+               className="bg-[#0A0A0A] w-full max-w-6xl h-full max-h-[850px] flex flex-col md:flex-row shadow-2xl overflow-hidden border border-white/5 relative"
+             >
+                {/* Close Button */}
+                <button 
+                  onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false);}} 
+                  className="absolute top-6 right-6 z-[100] p-2 bg-black/50 hover:bg-white/10 transition-colors rounded-full text-white/40 hover:text-white"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+
+                {/* Left Side: Cinematic Branding */}
+                <div className="hidden md:block w-5/12 relative overflow-hidden bg-neutral-900 border-r border-white/5">
+                   <img 
+                    src="/marcus-standing.webp" 
+                    className="w-full h-full object-cover scale-110 grayscale brightness-90 contrast-[1.1]" 
+                    alt="Marcus Vance Prestige" 
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                   
+                   {/* Prestige Badges */}
+                   <div className="absolute bottom-12 left-12 right-12 space-y-4">
+                      <div className="inline-block bg-[#FFD700] text-black px-3 py-1 font-oswald text-[10px] tracking-[0.2em] font-bold uppercase">
+                        {t.marcus.enroll.prestigeBadge}
+                      </div>
+                      <h3 className="font-oswald text-3xl font-bold text-white tracking-widest uppercase leading-tight">
+                        TRUST THE<br/>PROTOCOL.
+                      </h3>
+                      <div className="flex items-center gap-4 text-white/30 font-oswald text-[10px] tracking-[0.3em] font-bold uppercase pt-4 border-t border-white/10">
+                        <span>SECURITY: LEVEL A</span>
+                        <span className="w-1 h-1 rounded-full bg-white/10" />
+                        <span>ENCRYPTED</span>
+                      </div>
+                   </div>
+                </div>
+
+                {/* Right Side: High-Prestige Form */}
+                <div className="flex-1 flex flex-col p-8 md:p-16 overflow-y-auto">
+                   <div className="mb-12 text-left">
+                      <div className="font-oswald text-[#FFD700] text-[10px] tracking-[0.4em] font-bold uppercase mb-4">
+                        {isEnrollOpen ? t.marcus.enroll.popupTitle : "URGENT PROTOCOL"}
+                      </div>
+                      <h2 className="font-oswald text-4xl md:text-5xl font-bold text-white tracking-tight leading-none uppercase mb-6">
+                        {isEnrollOpen ? t.marcus.enroll.popupSubtitle : "DON'T WASTE THE OPPORTUNITY"}
+                      </h2>
+                      <p className="text-[#6A6A6A] text-sm md:text-base leading-relaxed max-w-md">
+                        {isEnrollOpen ? t.marcus.enroll.benefitsTitle : "The challenge is 100% free. Day 1 takes 45 minutes and establishes your entire business direction. Don't leave without your protocol."}
+                      </p>
+                   </div>
+
+                   <div className="space-y-6 mb-12">
+                      <div className="space-y-2 text-left">
+                        <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.firstName}</label>
+                        <input 
+                          type="text" 
+                          placeholder="EX: MARCUS" 
+                          className="w-full bg-white/5 border border-white/10 p-5 font-oswald text-xl text-white focus:border-[#FFD700] outline-none tracking-widest transition-all placeholder:text-white/5" 
+                        />
+                      </div>
+                      <div className="space-y-2 text-left">
+                        <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.email}</label>
+                        <input 
+                          type="email" 
+                          placeholder="YOUR@BEST-EMAIL.COM" 
+                          className="w-full bg-white/5 border border-white/10 p-5 font-oswald text-xl text-[#FFD700] focus:border-[#FFD700] outline-none tracking-widest transition-all placeholder:text-white/5" 
+                        />
+                      </div>
+                      <button 
+                        onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false);}} 
+                        className="w-full bg-[#FFD700] text-black p-6 font-oswald text-2xl tracking-[0.1em] hover:bg-white transition-all uppercase font-bold shadow-2xl shadow-[#FFD700]/10 flex items-center justify-center gap-4 group"
+                      >
+                        DECODE PROTOCOL
+                        <span className="group-hover:translate-x-2 transition-transform">→</span>
+                      </button>
+                      <div className="flex items-center justify-center gap-3 text-white/20 font-oswald text-[9px] tracking-[0.2em] font-bold uppercase mt-4">
+                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                         {t.marcus.enroll.secure}
+                      </div>
+                   </div>
+
+                   {/* Benefits Checkpoints */}
+                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 pt-8 border-t border-white/5">
+                      {t.marcus.enroll.benefits.map((benefit, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                           <div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#FFD700]/50 shrink-0" />
+                           <span className="font-oswald text-[10px] text-[#A3A3A3] tracking-widest uppercase leading-tight font-bold">{benefit}</span>
+                        </div>
+                      ))}
+                   </div>
+                   
+                   {showExitPopup && (
+                     <p className="mt-12 text-[10px] text-white/20 font-oswald tracking-[0.2em] uppercase text-center border-t border-white/5 pt-6">
+                       THIS UNIQUE ACCESS LINK EXPIRES WHEN YOU CLOSE THIS WINDOW.
+                     </p>
+                   )}
+                </div>
+             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

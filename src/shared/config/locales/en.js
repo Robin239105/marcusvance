@@ -25,6 +25,10 @@ export const baseEN = {
     enroll: {
       popupTitle: 'YOUR CLUB SEAT.',
       popupSubtitle: 'SECURE YOUR POSITION IN THE ALPHA COLLECTIVE.',
+      firstName: 'FIRST NAME',
+      email: 'BUSINESS EMAIL',
+      secure: 'RESTRICTED ACCESS | NO CREDIT CARD REQUIRED',
+      prestigeBadge: 'VERIFIED HIGH-PERFORMER',
       benefitsTitle: 'WHAT YOU ARE UNLOCKING:',
       benefits: [
         'COMPLETE 7-DAY PROTOCOL ACCESS',
@@ -177,7 +181,38 @@ export const baseEN = {
       participationInstructions: 'Direct entry links are provided exclusively within the cohort dashboard to maintain the integrity of our high-performer community.',
       disclaimer: '* WINNERS ANNOUNCED ON THE 1ST OF EVERY MONTH VIA EMAIL.',
       privateLink: 'WAS YOUR EXPERIENCE DIFFERENT? LEAVE PRIVATE FEEDBACK INSTEAD →',
-      backLink: '← Back to funnel'
+      backLink: '← Return to Alpha'
+    },
+    philosophy: {
+      returnLink: 'Return to Alpha',
+      badge: 'THE PHILOSOPHY',
+      chapters: [
+        { id: 'chapter-1', label: 'I. THE DISCLOSURE', title: 'TRANSPARENCY IS THE ULTIMATE AUTHORITY.', content: ['Most programs bury their disclosures. They put the legal language in a footer, in six-point type, on a page nobody reads. They lead with the personality, the story, the aspiration — and save the reality for the fine print.', 'We do things differently. We believe that clarity is the foundation of trust, and trust is the only currency that matters in high-performance education. This page exists to define exactly what this platform is, who Marcus Vance is, and what you are committing to.'] },
+        { id: 'chapter-2', label: 'II. THE METHODOLOGY', title: 'PERFORMANCE-FIRST EDUCATION', content: ['The Marcus Vance platform is an educational resource developed by a collective of digital entrepreneurs and system architects. Our methodology is built on binary outcomes: either the system works, or it doesn\'t. There is no middle ground.', 'We don\'t teach "theory." We teach execution protocols. Every course, checklist, and workbook inside the full library is extracted from real-world operations conducted by our development team across multiple industries.'] },
+        { id: 'chapter-3', label: 'III. THE VOICE', title: 'MARCUS VANCE', content: ['Marcus Vance is the architect of the message. He represents the ethos of the Alpha Collective. His "voice" is the synthesis of our collective experience—decades of successes, failures, and hard-won lessons in the digital economy.'] },
+        { id: 'chapter-4', label: 'IV. THE BRAND PERSONA', title: 'THE REALITY OF THE "BRAND PERSONA"', content: ['It is important for you to understand that Marcus Vance is an AI-generated brand persona. He is a digital avatar created to serve as the face and voice of our educational mission. The image you see is synthetic; the personality is curated.', 'Why did we do this? Because in the modern era, the message must be bigger than any single person. By creating Marcus Vance, we ensure that the focus remains entirely on the teachings and the results, rather than the personal life or celebrity of a human figurehead. Marcus doesn\'t get tired. Marcus doesn\'t have an ego. Marcus is pure protocol.'] },
+        { id: 'chapter-5', label: 'V. THE EDGE', title: 'WHY TRANSPARENCY IS THE ULTIMATE EDGE', content: ['We are telling you this upfront because we believe your intelligence deserves respect. If we began this relationship with a deception about Marcus being a "real" person in the traditional sense, we would undermine everything we teach about integrity and high standards.', 'The results produced by our students are 100% human and 100% real. The strategies we teach are implemented by real people to generate real revenue. The avatar is the medium; the success is the message.'] },
+        { id: 'chapter-6', label: 'VI. PARTICIPATION', title: 'YOUR PARTICIPATION', content: ['When you enter the 7-Day Challenge, you are entering a high-performance environment. We expect you to treat these materials with the same seriousness as you would a confidential business intelligence report. Whether or not the "face" of the brand is human is irrelevant to the utility of the system.'] },
+        { id: 'chapter-7', label: 'VII. FINAL NOTE', title: 'FINAL NOTE', content: ['We are here to help you build. Nothing more, nothing less. If you are comfortable with a world where AI-augmented education provides the fastest path to financial independence, then you are in the right place.', 'Welcome to the era of Alpha.'], cta: 'READY TO EXECUTE?', btn: 'START THE CHALLENGE NOW →', ctaDisclaimer: 'ACCESS REMAINS 100% FREE' }
+      ]
+    },
+    legal: {
+      title: 'LEGAL PROTOCOL.',
+      updated: 'Last Updated: April 2024',
+      badge: 'LEGAL FRAMEWORK',
+      sections: [
+        { id: 'section-1', label: '1. INTRODUCTION', content: ['Welcome to MarcusVance.io (the "Site"), owned and operated by The Alpha Collective ("we," "us," or "our"). These Terms and Conditions ("Terms") govern your use of our Site and participation in the "7-Day High-Income Stream Challenge" and any subsequent educational programs (collectively, the "Program").', 'By accessing the Site or enrolling in the Program, you agree to be bound by these Terms. If you do not agree, you must immediately cease all use of the platform.'] },
+        { id: 'section-2', label: '2. THE PROGRAM', content: ['The Program is an educational service designed to provide foundational business knowledge and strategic frameworks for digital entrepreneurship. It is not a financial advisory service, a guarantee of income, or an employment offer.'] },
+        { id: 'section-3', label: '3. INTELLECTUAL PROPERTY', content: ['All content provided, including text, logos, audio, video, and strategic documents, is the intellectual property of The Alpha Collective. You are granted a limited, non-exclusive, non-transferable license for personal, educational use only.', 'Any unauthorized distribution, resale, or commercial use of our proprietary materials is strictly prohibited and will result in immediate termination of access and potential legal action.'] },
+        { id: 'section-4', label: '4. PARTICIPATION', content: ['Participation in the Program requires a high level of moral commitment and focus. We reserve the right to limit or terminate access for individuals who do not adhere to our community standards or professional etiquette.'] },
+        { id: 'section-5', label: '5. WARRANTIES', content: ['The Site and Program are provided on an "as-is" and "as-available" basis. We make no representations or warranties of any kind, express or implied, regarding the accuracy, completeness, or reliability of our educational content.', 'EARNINGS DISCLAIMER: Any individual results discussed in the Program are not typical. We cannot and do not guarantee your ability to get results or earn any money with our ideas, information, tools, or strategies.'] },
+        { id: 'section-6', label: '6. LIABILITY', content: ['To the maximum extent permitted by law, The Alpha Collective shall not be liable for any direct, indirect, incidental, or consequential damages resulting from your use of the Site or Program.'] },
+        { id: 'section-7', label: '7. DATA PRIVACY', content: ['We collect minimal personal data to facilitate your participation. By using our services, you consent to our data practices as outlined in our Privacy Policy. We utilize secure encryption and do not share your last name or contact details with unauthorized third parties.'] },
+        { id: 'section-8', label: '8. AI DISCLOSURE', content: ['IMPORTANT DISCLOSURE: The brand persona "Marcus Vance" is an AI-generated digital avatar. All visual representations of Marcus Vance are synthetic. The expertise, methodology, and strategic content are developed by human subject matter experts, but presented through this unified brand persona to maintain institutional focus.'] },
+        { id: 'section-9', label: '9. THIRD PARTY', content: ['Our Site may contain links to third-party services or tools. We are not responsible for the content, privacy policies, or practices of any third-party websites.'] },
+        { id: 'section-10', label: '10. MODIFICATIONS', content: ['We reserve the right to modify these Terms at any time without prior notice. Your continued use of the Site after changes are posted constitutes your acceptance of the revised Terms.'] },
+        { id: 'section-11', label: '11. GOVERNING LAW', content: ['These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which The Alpha Collective is registered, without regard to its conflict of law principles.'] }
+      ]
     }
   },
   trinity: {
