@@ -22,10 +22,25 @@ export const baseDE = {
       rating: 'VERIFIZIERTE BEWERTUNG'
     },
     enroll: {
-      giveawayBtn: 'AM GEWINNSPIEL TEILNEHMEN',
-      agreement: 'Mit der Anmeldung stimme ich dem Erhalt strategischer Kommunikation zu. Abmeldung mit 1 Klick.',
+      popupTitle: 'IHR SITZ IM CLUB.',
+      popupSubtitle: 'SICHERN SIE SICH IHRE POSITION IM ALPHA COLLECTIVE.',
+      firstName: 'VORNAME',
+      lastName: 'NACHNAME',
+      email: 'GESCHÄFTS-E-MAIL',
+      emailLabel: 'VERSCHLÜSSELUNGSSCHLÜSSEL (E-MAIL)',
+      secure: 'EINGESCHRÄNKTER ZUGRIFF | KEINE KREDITKARTE ERFORDERLICH',
+      prestigeBadge: 'VERIFIZIERTER HIGH-PERFORMER',
+      benefitsTitle: 'WAS SIE FREISCHALTEN:',
+      benefits: [
+        'VOLLSTÄNDIGER ZUGRIFF AUF DAS 7-TAGE-PROTOKOLL',
+        'DIE CORE 5 KURS-BIBLIOTHEK (NACH QUALIFIZIERUNG)',
+        'ELITE-COMMUNITY-MITGLIEDSCHAFT',
+        'SYSTEM-VORLAGEN & CHECKLISTEN'
+      ],
+      agreement: 'Ich verpflichte mich, diese Materialien mit der erforderlichen professionellen Ernsthaftigkeit zu behandeln.',
       successTitle: 'ZUGANG GEWÄHRT.',
-      successSubtitle: 'Prüfen Sie Ihren Posteingang. Ihr Tag 1-Protokoll trifft ein.'
+      successSubtitle: 'Prüfen Sie Ihren verschlüsselungsbereiten Posteingang für das Tag 1-Protokoll.',
+      giveawayBtn: 'AM GEWINNSPIEL TEILNEHMEN'
     },
     trust: {
       noSpam: 'NULL SPAM',
