@@ -1,30 +1,44 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useLocale } from '../../shared/hooks/useLocale';
 import LanguageSwitcher from '../../shared/components/LanguageSwitcher';
 
 const FeedbackPage = () => {
   const { t, currentLocale } = useLocale();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [submitted, setSubmitted] = useState(false);
 
   const fb = t.marcus.feedback;
   const homePath = currentLocale === 'default' || currentLocale === 'en' ? '/' : `/${currentLocale}`;
 
+  const handleNav = (e, target) => {
+    e.preventDefault();
+    if (location.pathname === homePath || location.pathname === '/') {
+      const element = document.getElementById(target);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(`${homePath}#${target}`);
+    }
+  };
+
   return (
     <div className="bg-[#080808] min-h-screen text-[#F5F5F5] font-['Barlow'] selection:bg-[#FFD700]/30 selection:text-[#FFD700]">
       {/* Header */}
-      <nav className="fixed top-[32px] left-0 right-0 z-[100] bg-black/95 backdrop-blur-md border-b border-white/10 py-3">
+      <nav className="fixed top-[32px] left-0 right-0 z-[100] bg-black/95 backdrop-blur-md border-b border-white/10 py-4">
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
           <Link to={homePath} className="flex items-center gap-4 group">
-            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-12 md:h-14 w-auto object-contain transition-all" />
+            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-16 md:h-20 w-auto object-contain transition-all" />
           </Link>
           
-          <div className="hidden lg:flex items-center gap-8 font-oswald text-[11px] tracking-[0.25em] font-bold uppercase text-[#A3A3A3]">
-            <a href={`${homePath}#method`} className="hover:text-white transition-colors">{t.marcus.nav.method}</a>
+          <div className="hidden lg:flex items-center gap-10 font-oswald text-[11px] tracking-[0.25em] font-bold uppercase text-[#A3A3A3]">
+            <a href="#method" onClick={(e) => handleNav(e, 'method')} className="hover:text-white transition-colors">{t.marcus.nav.method}</a>
             <Link to={currentLocale === 'en' || currentLocale === 'default' ? '/philosophy' : `/philosophy/${currentLocale}`} className="hover:text-white transition-colors">{t.marcus.nav.philosophy}</Link>
-            <a href={`${homePath}#roadmap`} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
-            <a href={`${homePath}#faq`} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
+            <a href="#roadmap" onClick={(e) => handleNav(e, 'roadmap')} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
+            <a href="#faq" onClick={(e) => handleNav(e, 'faq')} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
             <LanguageSwitcher variant="marcus" />
             <Link to={homePath} className="bg-[#FFD700] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</Link>
           </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Reveal } from '../../shared/components/Reveal';
 import dynamicStats from '../../shared/utils/dynamicStats';
 import { useLocale } from '../../shared/hooks/useLocale';
@@ -381,10 +381,24 @@ const WhoItIsFor = ({ t }) => (
 );
 
 const MarcusElitePage = () => {
-  const { t, currency, language, loading, currentLocale } = useLocale();
+  const { t, loading, currentLocale } = useLocale();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isEnrollOpen, setIsEnrollOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showExitPopup, setShowExitPopup] = useState(false);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -401,6 +415,18 @@ const MarcusElitePage = () => {
     };
   }, []);
 
+  const handleNav = (e, target) => {
+    e.preventDefault();
+    if (location.pathname === homePath || location.pathname === '/') {
+      const element = document.getElementById(target);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(`${homePath}#${target}`);
+    }
+  };
+
   const homePath = (currentLocale === 'en' || currentLocale === 'default') ? '/' : `/${currentLocale}`;
 
   if (loading) return null;
@@ -412,17 +438,17 @@ const MarcusElitePage = () => {
       <ToastNotification />
 
       {/* --- Header / Nav --- */}
-      <nav className={`fixed top-[32px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-3' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed top-[32px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
           <Link to={homePath} className="flex items-center gap-4 group">
-            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-12 md:h-14 w-auto object-contain transition-all" />
+            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-16 md:h-20 w-auto object-contain transition-all" />
           </Link>
           
-          <div className="hidden lg:flex items-center gap-8 font-oswald text-[11px] tracking-[0.25em] font-bold uppercase text-[#A3A3A3]">
-            <a href="#method" className="hover:text-white transition-colors">{t.marcus.nav.method}</a>
+          <div className="hidden lg:flex items-center gap-10 font-oswald text-[11px] tracking-[0.25em] font-bold uppercase text-[#A3A3A3]">
+            <a href="#method" onClick={(e) => handleNav(e, 'method')} className="hover:text-white transition-colors">{t.marcus.nav.method}</a>
             <Link to={currentLocale === 'en' || currentLocale === 'default' ? '/philosophy' : `/philosophy/${currentLocale}`} className="hover:text-white transition-colors">{t.marcus.nav.philosophy}</Link>
-            <a href="#roadmap" className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
-            <a href="#faq" className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
+            <a href="#roadmap" onClick={(e) => handleNav(e, 'roadmap')} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
+            <a href="#faq" onClick={(e) => handleNav(e, 'faq')} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
             <LanguageSwitcher variant="marcus" />
             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</button>
           </div>
