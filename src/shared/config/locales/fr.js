@@ -1,7 +1,9 @@
 const monthsFR = ['JANVIER', 'FÉVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN', 'JUILLET', 'AOÛT', 'SEPTEMBRE', 'OCTOBRE', 'NOVEMBRE', 'DÉCEMBRE'];
+const daysFR = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 
 export const baseFR = {
   marcus: {
+    days: daysFR,
     urgencyBar: `⚡ PLUS QUE ${dynamicStats.spotsRemaining} PLACES POUR LE GROUPE DE ${monthsFR[dynamicStats.monthIndex]}`,
     enroll: {
       popupTitle: 'VOTRE SIÈGE AU CLUB.',
@@ -56,8 +58,9 @@ export const baseFR = {
       beginningBadge: '7 JOURS POUR CONSTRUIRE. UNE VIE POUR S\'ÉLEVER.',
       commonHeadings: {
         roadmapPre: 'ÉTAPE 01 : LE DÉFI DE 7 JOURS',
-        roadmapTitle: 'La Feuille de Route du Défi de 7 Jours',
-        roadmapSubtitle: 'Chaque jour produit un actif réel et fonctionnel. Au jour 7, vous avez une entreprise complète — pas un carnet d\'idées.',
+        roadmapTitle: '7 JOURS. 7 LIVRABLES.',
+        roadmapSubtitleItalic: 'Un Système.',
+        roadmapSubtitle: "45 à 90 minutes par jour. Commencez aujourd'hui, vous serez prêt d'ici {day}.",
         methodPre: 'La Méthode',
         methodTitle: 'Les Trois Piliers du Protocole',
         criteriaPre: 'Critères de Sélection',
@@ -87,6 +90,30 @@ export const baseFR = {
         started: 'a commencé le défi',
         referral: 'a rejoint via un parrainage'
       }
+    },
+    problemSection: {
+      pre: 'LE VRAI PROBLÈME',
+      title1: "VOUS N'AVEZ PAS BESOIN DE ",
+      titleGold1: "FORMATION DE BASE.",
+      title2: " VOUS AVEZ BESOIN D'",
+      titleGold2: "UN SYSTÈME QUI FONCTIONNE.",
+      items: [
+        {
+          index: '01.',
+          title: 'DES HEURES CONSOMMÉES, ZÉRO SOURCE ACTIVE CONSTRUITE',
+          desc: "Vous avez acheté 4 formations cette année. Vous avez pris 200 pages de notes. Mais en production, rien ne se vend pendant que vous dormez."
+        },
+        {
+          index: '02.',
+          title: 'LE CHAOS TECHNOLOGIQUE PARALYSE',
+          desc: "Tunnel, automatisation, CRM, paiement – chaque outil a sa propre logique. Vous restez bloqué au premier lien cassé."
+        },
+        {
+          index: '03.',
+          title: 'DES PROMESSES VAGUES, AUCUNE PREUVE',
+          desc: "« 6 chiffres en 6 mois », dit la publicité. Jamais de méthodologie, vous n'êtes plus dupe - mais vous êtes perdu."
+        }
+      ]
     },
     heroTitle: {
        part1: 'VOTRE PREMIER',

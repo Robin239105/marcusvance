@@ -1,7 +1,9 @@
 const monthsEN = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+const daysEN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 export const baseEN = {
   marcus: {
+    days: daysEN,
     urgencyBar: `⚡ ONLY ${dynamicStats.spotsRemaining} COHORT SPOTS REMAINING FOR ${monthsEN[dynamicStats.monthIndex]}`,
     nav: {
       method: 'METHOD',
@@ -28,8 +30,9 @@ export const baseEN = {
       beginningBadge: '7 DAYS TO BUILD. A LIFETIME TO SCALE.',
       commonHeadings: {
         roadmapPre: 'STAGE 01: THE 7-DAY CHALLENGE',
-        roadmapTitle: 'The 7-Day Challenge Roadmap',
-        roadmapSubtitle: 'Each day produces a live, working asset. By Day 7, you have a complete business — not a notebook of ideas.',
+        roadmapTitle: '7 DAYS. 7 DELIVERABLES.',
+        roadmapSubtitleItalic: 'One System.',
+        roadmapSubtitle: "45 to 90 minutes per day. You start today, you'll be ready by {day}.",
         methodPre: 'The Method',
         methodTitle: 'Three Pillars of the Protocol',
         criteriaPre: 'Selection Criteria',
@@ -59,6 +62,30 @@ export const baseEN = {
         started: 'started the challenge',
         referral: 'joined from a referral'
       }
+    },
+    problemSection: {
+      pre: 'THE REAL PROBLEM',
+      title1: "YOU DON'T NEED ",
+      titleGold1: "BASIC TRAINING.",
+      title2: " YOU NEED ",
+      titleGold2: "A SYSTEM THAT WORKS.",
+      items: [
+        {
+          index: '01.',
+          title: 'HOURS CONSUMED, ZERO ACTIVE SOURCES BUILT',
+          desc: 'You bought 4 training courses this year. You took 200 pages of notes. But in production, nothing sells while you sleep.'
+        },
+        {
+          index: '02.',
+          title: 'TECHNOLOGICAL CHAOS PARALYZES',
+          desc: 'Funnel, automation, CRM, payment – each tool has its own logic. You get stuck at the first broken link.'
+        },
+        {
+          index: '03.',
+          title: 'VAGUE PROMISES, NO PROOF',
+          desc: '"6 figures in 6 months," says the ad. Never any methodology, you\'re no longer fooled - but you\'re lost.'
+        }
+      ]
     },
     heroTitle: {
        part1: 'YOUR FIRST',

@@ -1,7 +1,9 @@
 const monthsDE = ['JANUAR', 'FEBRUAR', 'MÄRZ', 'APRIL', 'MAI', 'JUNI', 'JULI', 'AUGUST', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DEZEMBER'];
+const daysDE = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
 
 export const baseDE = {
   marcus: {
+    days: daysDE,
     urgencyBar: `⚡ NUR NOCH ${dynamicStats.spotsRemaining} PLÄTZE FREI FÜR ${monthsDE[dynamicStats.monthIndex]}`,
     nav: {
       method: 'METHODE',
@@ -29,8 +31,9 @@ export const baseDE = {
       beginningBadge: '7 TAGE ZUM AUFBAU. EIN LEBEN LANG ZUM SKALIEREN.',
       commonHeadings: {
         roadmapPre: 'STUFE 01: DIE 7-TAGE-CHALLENGE',
-        roadmapTitle: 'Die 7-Tage-Challenge Roadmap',
-        roadmapSubtitle: 'Jeder Tag produziert einen live funktionsfähigen Asset. An Tag 7 haben Sie ein komplettes Business — kein Notizbuch voller Ideen.',
+        roadmapTitle: '7 TAGE. 7 ERGEBNISSE.',
+        roadmapSubtitleItalic: 'Ein System.',
+        roadmapSubtitle: "45 bis 90 Minuten pro Tag. Fangen Sie heute an, Sie sind fertig bis {day}.",
         methodPre: 'Die Methode',
         methodTitle: 'Drei Säulen des Protokolls',
         criteriaPre: 'Auswahlkriterien',
@@ -60,6 +63,30 @@ export const baseDE = {
         started: 'hat die Challenge gestartet',
         referral: 'ist über eine Empfehlung beigetreten'
       }
+    },
+    problemSection: {
+      pre: 'DAS WAHRE PROBLEM',
+      title1: "SIE BRAUCHEN KEIN ",
+      titleGold1: "BASIS-TRAINING.",
+      title2: " SIE BRAUCHEN ",
+      titleGold2: "EIN SYSTEM, DAS FUNKTIONIERT.",
+      items: [
+        {
+          index: '01.',
+          title: 'STUNDEN KONSUMIERT, NULL AKTIVE QUELLEN GEBAUT',
+          desc: "Sie haben dieses Jahr 4 Kurse gekauft. Sie haben 200 Seiten Notizen gemacht. Aber in der Produktion verkauft sich nichts, während Sie schlafen."
+        },
+        {
+          index: '02.',
+          title: 'TECHNOLOGISCHES CHAOS PARALYSIERT',
+          desc: "Funnel, Automatisierung, CRM, Zahlung – jedes Tool hat seine eigene Logik. Sie bleiben beim ersten defekten Link hängen."
+        },
+        {
+          index: '03.',
+          title: 'VAGE VERSPRECHEN, KEIN BEWEIS',
+          desc: "„6stellig in 6 Monaten“, sagt die Anzeige. Niemals eine Methodik, Sie lassen sich nicht mehr täuschen – aber Sie sind verloren."
+        }
+      ]
     },
     heroTitle: {
        part1: 'IHR ERSTES',

@@ -17,8 +17,14 @@ const spotsRemaining = Math.max(4, 48 - Math.floor(dayOfMonth * 1.4) + (dayOfMon
 // Range: 812 (Day 1) to ~1180 (Day 30)
 const startedThisMonth = 812 + (dayOfMonth * 12) + (dayOfMonth % 5);
 
+// logic: target day for the 7-day challenge (Automation)
+const targetDate = new Date();
+targetDate.setDate(now.getDate() + 7);
+const targetDayIndex = targetDate.getDay();
+
 export const dynamicStats = {
   monthIndex: monthIndex,
+  targetDayIndex: targetDayIndex,
   spotsRemaining: spotsRemaining,
   startedThisMonth: startedThisMonth,
   fullProgrammeTotal: 980, // Static for now as it's the course count

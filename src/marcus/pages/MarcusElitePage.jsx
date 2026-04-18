@@ -154,7 +154,7 @@ const ToastNotification = () => {
   );
 };
 
-const SectionHeading = ({ pre, title, subtitle, centered = true }) => (
+const SectionHeading = ({ pre, title, subtitle, subTitleItalic, centered = true }) => (
   <div className={`mb-16 ${centered ? 'text-center' : 'text-left'}`}>
     {pre && (
       <span className="font-oswald text-[#C9A84C] tracking-[0.3em] text-sm md:text-base uppercase mb-4 block font-bold">
@@ -164,6 +164,11 @@ const SectionHeading = ({ pre, title, subtitle, centered = true }) => (
     <h2 className="font-oswald text-5xl md:text-8xl text-white leading-[0.9] uppercase mb-6 tracking-tight font-bold">
       {title}
     </h2>
+    {subTitleItalic && (
+      <p className="font-barlow-cond text-[#C9A84C] text-2xl md:text-3xl italic mb-6 tracking-widest font-medium">
+        {subTitleItalic}
+      </p>
+    )}
     {subtitle && (
       <p className="text-[#A3A3A3] text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed font-barlow">
         {subtitle}
@@ -171,6 +176,49 @@ const SectionHeading = ({ pre, title, subtitle, centered = true }) => (
     )}
   </div>
 );
+
+const ProblemSection = ({ t }) => {
+  const data = t.marcus.problemSection;
+  if (!data) return null;
+  return (
+    <section className="py-32 bg-[#000000] border-t border-white/5 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="text-left mb-24 max-w-4xl">
+          <Reveal>
+             <span className="font-oswald text-[#C9A84C] tracking-[0.4em] text-sm uppercase mb-4 block font-bold">
+               {data.pre}
+             </span>
+             <h2 className="font-oswald text-5xl md:text-8xl text-white leading-[1] uppercase tracking-tighter font-bold mb-8">
+               {data.title1}
+               <span className="text-[#C9A84C]">{data.titleGold1}</span>
+               <br />
+               {data.title2}
+               <span className="text-[#C9A84C]">{data.titleGold2}</span>
+             </h2>
+          </Reveal>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24">
+          {data.items.map((item, idx) => (
+            <Reveal key={idx} delay={idx * 0.1}>
+              <div className="space-y-6 group">
+                <div className="font-oswald text-5xl md:text-6xl text-[#C9A84C]/40 font-bold group-hover:text-[#C9A84C] transition-colors duration-500">
+                  {item.index}
+                </div>
+                <h3 className="font-oswald text-xl md:text-2xl text-white leading-tight uppercase font-bold tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-[#A3A3A3] text-sm md:text-[15px] font-medium leading-relaxed uppercase tracking-widest break-words">
+                  {item.desc}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const LogoScrollTrack = () => {
   const brands = ["Stripe", "Shopify", "Meta", "Google", "Amazon", "Discord", "Skool", "Paypal"];
@@ -198,13 +246,17 @@ const TimelineSection = ({ t, currency }) => {
     { day: "Day 07", title: "Launch & First Traffic", deliverable: "Open for Biz", desc: "Full funnel tested on mobile and launched to your first real leads. Your business infrastructure is live. What comes next is shown on Day 7." }
   ];
 
+  const targetDay = t.marcus.days[dynamicStats.targetDayIndex];
+  const roadmapSubtitleTranslated = t.marcus.ui.commonHeadings?.roadmapSubtitle?.replace('{day}', targetDay);
+
   return (
     <section className="py-32 bg-[#000000]" id="roadmap">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading 
           pre={t.marcus.ui.commonHeadings?.roadmapPre || t.marcus.programme.stage01Badge}
           title={t.marcus.ui.commonHeadings?.roadmapTitle || "The 7-Day Challenge Roadmap"}
-          subtitle={t.marcus.ui.commonHeadings?.roadmapSubtitle || "Each day produces a live, working asset. By Day 7, you have a complete business — not a notebook of ideas."}
+          subTitleItalic={t.marcus.ui.commonHeadings?.roadmapSubtitleItalic}
+          subtitle={roadmapSubtitleTranslated || "Each day produces a live, working asset. By Day 7, you have a complete business — not a notebook of ideas."}
         />
         <div className="relative pl-8 md:pl-16 border-l border-white/10 space-y-12">
           {steps.map((step, idx) => (
@@ -707,6 +759,7 @@ const MarcusElitePage = () => {
         </section>
 
         <LogoScrollTrack />
+        <ProblemSection t={t} />
         <Methodology t={t} />
         <TheVoice t={t} />
         <WhoItIsFor t={t} />
