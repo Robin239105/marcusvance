@@ -27,7 +27,7 @@ const TermsPage = () => {
     return () => observer.disconnect();
   }, []);
 
-  const homePath = currentLocale === 'en' ? '/' : `/${currentLocale}`;
+  const homePath = (currentLocale === 'en' || currentLocale === 'default') ? '/' : `/${currentLocale}`;
   const philosophyPath = currentLocale === 'en' ? '/philosophy' : `/philosophy/${currentLocale}`;
 
   return (
@@ -86,11 +86,77 @@ const TermsPage = () => {
         </div>
       </main>
 
-      <footer className="py-20 border-t border-white/5 bg-[#050505] text-[#2A2A2A]">
-        <div className="max-w-7xl mx-auto px-8 flex justify-center gap-12 text-[10px] font-oswald uppercase tracking-[0.2em] font-bold">
-          <span>© 2024 THE ALPHA COLLECTIVE</span>
-          <Link to={philosophyPath} className="hover:text-[#FFD700] transition-all">{t.marcus.footer.philosophy}</Link>
-          <Link to={homePath} className="hover:text-[#FFD700] transition-all">RETURN HOME</Link>
+      <footer className="footer bg-[#050505] border-t border-white/5 pt-24 pb-12 relative z-20">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 pb-16 border-bottom border-white/5">
+            {/* Brand Column */}
+            <div className="space-y-6">
+              <Link to={homePath} className="inline-block">
+                <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-20 min-[400px]:h-24 w-auto object-contain brightness-110" />
+              </Link>
+              <p className="text-[#6A6A6A] font-oswald text-[10px] tracking-[0.3em] uppercase leading-relaxed">
+                THE METHOD · THE VOICE · THE PHILOSOPHY
+              </p>
+              <div className="flex flex-wrap gap-3 pt-4">
+                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">VISA</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">MASTERCARD</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">AMEX</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">APPLE PAY</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">₿ BTC</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">Ξ ETH</div>
+              </div>
+            </div>
+
+            {/* Links Column 1 */}
+            <div className="space-y-4">
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">RESOURCES</h4>
+              <ul className="space-y-3">
+                <li><Link to={currentLocale === 'en' ? '/marcus/giveaway' : `/marcus/giveaway/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
+                <li><Link to={currentLocale === 'en' ? '/marcus/feedback' : `/marcus/feedback/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
+                <li><Link to={currentLocale === 'en' ? '/philosophy' : `/philosophy/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.philosophy}</Link></li>
+              </ul>
+            </div>
+
+            {/* Links Column 2 */}
+            <div className="space-y-4">
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">COMPLIANCE</h4>
+              <ul className="space-y-3">
+                <li><Link to={currentLocale === 'en' ? '/terms' : `/terms/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
+                <li><Link to={currentLocale === 'en' ? '/privacy' : `/privacy/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
+                <li><Link to={currentLocale === 'en' ? '/guarantee' : `/guarantee/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.guarantee}</Link></li>
+              </ul>
+            </div>
+
+            {/* Support Column */}
+            <div className="space-y-4 text-left">
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">HEADQUARTERS</h4>
+              <p className="text-[#6A6A6A] font-oswald text-[10px] tracking-widest uppercase leading-loose whitespace-pre-line">
+                {t.marcus.footer.address}
+              </p>
+              <div className="pt-4">
+                <Link to="/contact" className="text-[#FFD700] hover:text-white font-oswald text-[10px] tracking-widest transition-all uppercase font-bold">{t.marcus.footer.contact}</Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-8 pt-12 border-t border-white/5">
+            <p className="text-[#2A2A2A] font-barlow text-[9px] md:text-[10px] tracking-wider uppercase leading-relaxed max-w-6xl">
+              {t.marcus.footer.platformDisclaimer}
+            </p>
+            <p className="text-[#3A3A3A] font-barlow text-[9px] md:text-[10px] tracking-wider uppercase leading-relaxed max-w-6xl">
+              {t.marcus.footer.personaDisclosure}
+            </p>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-12">
+               <span className="text-[#2A2A2A] font-oswald text-[9px] tracking-[0.2em] uppercase font-bold">
+                 {t.marcus.footer.rights}
+               </span>
+               <div className="flex gap-8">
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">INSTAGRAM</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">X (TWITTER)</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">YOUTUBE</a>
+               </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

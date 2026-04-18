@@ -5,7 +5,6 @@ import { Reveal } from '../../shared/components/Reveal';
 import dynamicStats from '../../shared/utils/dynamicStats';
 import { useLocale } from '../../shared/hooks/useLocale';
 import LanguageSwitcher from '../../shared/components/LanguageSwitcher';
-import { Disclaimer } from '../../shared/components/Disclaimer';
 
 // --- Icons ---
 const CheckIcon = ({ className }) => <span className={className}>✓</span>;
@@ -317,7 +316,7 @@ const TheVoice = ({ t }) => (
 );
 
 const Methodology = ({ t }) => (
-  <section className="py-32 bg-[#050505] border-y border-white/5">
+  <section className="py-32 bg-[#050505] border-y border-white/5" id="method">
     <div className="max-w-7xl mx-auto px-8">
       <SectionHeading 
         pre="The Method"
@@ -402,6 +401,8 @@ const MarcusElitePage = () => {
     };
   }, []);
 
+  const homePath = (currentLocale === 'en' || currentLocale === 'default') ? '/' : `/${currentLocale}`;
+
   if (loading) return null;
 
   return (
@@ -413,11 +414,12 @@ const MarcusElitePage = () => {
       {/* --- Header / Nav --- */}
       <nav className={`fixed top-[32px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-          <Link to={currentLocale === 'en' ? '/' : `/${currentLocale}`} className="flex items-center gap-6 group">
-            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-32 w-auto object-contain" />
+          <Link to={homePath} className="flex items-center gap-6 group">
+            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-40 min-[400px]:h-44 md:h-52 w-auto object-contain transition-all" />
           </Link>
           <div className="hidden lg:flex items-center gap-10 font-oswald text-xs tracking-[0.3em] font-bold uppercase">
-            <Link to={currentLocale === 'en' ? '/philosophy' : `/philosophy/${currentLocale}`} className="hover:text-[#FFD700] transition-colors">{t.marcus.footer.philosophy}</Link>
+            <a href="#method" className="hover:text-[#FFD700] transition-colors">{t.marcus.nav.method}</a>
+            <Link to={currentLocale === 'en' ? '/philosophy' : `/philosophy/${currentLocale}`} className="hover:text-[#FFD700] transition-colors">{t.marcus.nav.philosophy}</Link>
             <a href="#roadmap" className="hover:text-[#FFD700] transition-colors">{t.marcus.navAboutChallenge}</a>
             <a href="#faq" className="hover:text-[#FFD700] transition-colors">FAQ</a>
             <LanguageSwitcher variant="marcus" />
@@ -446,7 +448,7 @@ const MarcusElitePage = () => {
                 </Reveal>
                 
                 <Reveal delay={0.1}>
-                  <h1 className="font-barlow-cond text-[56px] min-[400px]:text-[64px] md:text-[90px] lg:text-[110px] leading-[0.82] text-white tracking-tighter mb-10 uppercase font-extrabold pr-4 break-words">
+                  <h1 className="font-barlow-cond text-[13vw] min-[400px]:text-[64px] md:text-[90px] lg:text-[110px] leading-[0.85] text-white tracking-tighter mb-10 uppercase font-extrabold break-words">
                     {t.marcus.heroTitle.split('. ')[0]}<br/>
                     <span className="mv-text-gold-gradient">{t.marcus.heroTitle.split('. ')[1]}</span>
                   </h1>
@@ -547,21 +549,76 @@ const MarcusElitePage = () => {
 
       </main>
 
-      <Disclaimer />
+      <footer className="footer bg-[#050505] border-t border-white/5 pt-24 pb-12 relative z-20">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 pb-16 border-bottom border-white/5">
+            {/* Brand Column */}
+            <div className="space-y-6">
+              <Link to={homePath} className="inline-block">
+                <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-20 min-[400px]:h-24 w-auto object-contain brightness-110" />
+              </Link>
+              <p className="text-[#6A6A6A] font-oswald text-[10px] tracking-[0.3em] uppercase leading-relaxed">
+                THE METHOD · THE VOICE · THE PHILOSOPHY
+              </p>
+              <div className="flex flex-wrap gap-3 pt-4">
+                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">VISA</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">MASTERCARD</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">AMEX</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">APPLE PAY</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">₿ BTC</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">Ξ ETH</div>
+              </div>
+            </div>
 
-      <footer className="py-40 border-t border-white/5 bg-[#050505] relative z-20">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-16 text-center md:text-left">
-          <div className="flex flex-col gap-8">
-            <Link to={currentLocale === 'en' ? '/' : `/${currentLocale}`} className="flex items-center gap-6 group mx-auto md:mx-0">
-              <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-32 w-auto object-contain" />
-            </Link>
-            <p className="text-[#2A2A2A] font-oswald uppercase tracking-[0.5em] text-[10px] font-bold">PRODUCED BY THE ALPHA COLLECTIVE © 2024</p>
+            {/* Links Column 1 */}
+            <div className="space-y-4">
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">RESOURCES</h4>
+              <ul className="space-y-3">
+                <li><Link to={currentLocale === 'en' ? '/marcus/giveaway' : `/marcus/giveaway/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
+                <li><Link to={currentLocale === 'en' ? '/marcus/feedback' : `/marcus/feedback/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
+                <li><Link to={currentLocale === 'en' ? '/philosophy' : `/philosophy/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.philosophy}</Link></li>
+              </ul>
+            </div>
+
+            {/* Links Column 2 */}
+            <div className="space-y-4">
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">COMPLIANCE</h4>
+              <ul className="space-y-3">
+                <li><Link to={currentLocale === 'en' ? '/terms' : `/terms/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
+                <li><Link to={currentLocale === 'en' ? '/privacy' : `/privacy/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
+                <li><Link to={currentLocale === 'en' ? '/guarantee' : `/guarantee/${currentLocale}`} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.guarantee}</Link></li>
+              </ul>
+            </div>
+
+            {/* Support Column */}
+            <div className="space-y-4 text-left">
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">HEADQUARTERS</h4>
+              <p className="text-[#6A6A6A] font-oswald text-[10px] tracking-widest uppercase leading-loose whitespace-pre-line">
+                {t.marcus.footer.address}
+              </p>
+              <div className="pt-4">
+                <Link to="/contact" className="text-[#FFD700] hover:text-white font-oswald text-[10px] tracking-widest transition-all uppercase font-bold">{t.marcus.footer.contact}</Link>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-6 text-xs font-oswald uppercase tracking-[0.2em] text-[#3A3A3A] font-bold">
-            <Link to={currentLocale === 'en' ? '/marcus/giveaway' : `/marcus/giveaway/${currentLocale}`} className="hover:text-[#FFD700] transition-all">{t.marcus.footer.giveaway}</Link>
-            <Link to={currentLocale === 'en' ? '/marcus/feedback' : `/marcus/feedback/${currentLocale}`} className="hover:text-[#FFD700] transition-all">{t.marcus.footer.feedback}</Link>
-            <Link to={currentLocale === 'en' ? '/philosophy' : `/philosophy/${currentLocale}`} className="hover:text-[#FFD700] transition-all">{t.marcus.footer.philosophy}</Link>
-            <Link to={currentLocale === 'en' ? '/terms' : `/terms/${currentLocale}`} className="hover:text-[#FFD700] transition-all">{t.marcus.footer.terms}</Link>
+
+          <div className="space-y-8 pt-12 border-t border-white/5">
+            <p className="text-[#2A2A2A] font-barlow text-[9px] md:text-[10px] tracking-wider uppercase leading-relaxed max-w-6xl">
+              {t.marcus.footer.platformDisclaimer}
+            </p>
+            <p className="text-[#3A3A3A] font-barlow text-[9px] md:text-[10px] tracking-wider uppercase leading-relaxed max-w-6xl">
+              {t.marcus.footer.personaDisclosure}
+            </p>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-12">
+               <span className="text-[#2A2A2A] font-oswald text-[9px] tracking-[0.2em] uppercase font-bold">
+                 {t.marcus.footer.rights}
+               </span>
+               <div className="flex gap-8">
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">INSTAGRAM</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">X (TWITTER)</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">YOUTUBE</a>
+               </div>
+            </div>
           </div>
         </div>
       </footer>

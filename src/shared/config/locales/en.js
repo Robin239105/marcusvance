@@ -3,6 +3,12 @@ import dynamicStats from '../../utils/dynamicStats';
 export const baseEN = {
   marcus: {
     urgencyBar: `⚡ ONLY ${dynamicStats.spotsRemaining} COHORT SPOTS REMAINING FOR ${dynamicStats.currentMonth}`,
+    nav: {
+      method: 'THE METHOD',
+      voice: 'THE VOICE',
+      philosophy: 'THE PHILOSOPHY',
+      enroll: 'START CHALLENGE'
+    },
     navAboutChallenge: 'About the 7-day challenge',
     navAboutProgramme: 'About the Full Programme',
     navStartBtn: 'START FREE CHALLENGE',
@@ -48,11 +54,19 @@ export const baseEN = {
       noCard: 'NO CARD REQUIRED'
     },
     footer: {
-      giveaway: 'GIVEAWAY',
-      feedback: 'FEEDBACK',
-      privacy: 'PRIVACY',
-      terms: 'TERMS',
-      philosophy: 'THE METHOD'
+      giveaway: "GIVEAWAY",
+      feedback: "FEEDBACK",
+      philosophy: "THE PHILOSOPHY",
+      terms: "TERMS & CONDITIONS",
+      privacy: "PRIVACY POLICY",
+      guarantee: "30-DAY GUARANTEE",
+      affiliation: "AFFILIATE PROGRAM",
+      disclaimer: "DISCLAIMER",
+      contact: "CONTACT",
+      rights: "© 2024 LUCKY NORTH STAR LLC — ALL RIGHTS RESERVED.",
+      address: "1309 COFFEEN AVENUE, SUITE 1200\nSHERIDAN, WYOMING 82801 — USA",
+      platformDisclaimer: "DISCLAIMER: This website and the 7-Day Challenge are not affiliated with or endorsed by Facebook™, Instagram™, TikTok™, or Google™. Results mentioned are individual results and are not guaranteed. Building a sustainable online business requires real effort, skills, and sustained commitment. This is not financial, legal, or investment advice of any kind.",
+      personaDisclosure: "\"Marcus Vance\" is an AI-generated educational brand persona. It does not correspond to any real individual, creator, or physical person. All content attributed to this persona is developed by the Lucky North Star LLC team."
     },
     giveaway: {
       badge: 'GIVEAWAY',
