@@ -245,8 +245,8 @@ const MarcusElitePage = () => {
       {/* --- Header / Nav --- */}
       <nav className={`fixed top-[32px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
-            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-16 w-auto" />
+          <Link to="/" className="flex items-center gap-4 group">
+            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-20 w-auto" />
           </Link>
           <div className="hidden lg:flex items-center gap-10 font-oswald text-xs tracking-[0.3em] font-bold uppercase">
             <a href="#about" className="hover:text-[#FFD700] transition-colors">METHOD</a>
@@ -275,7 +275,7 @@ const MarcusElitePage = () => {
                 </Reveal>
                 
                 <Reveal delay={0.1}>
-                  <h1 className="font-bebas text-[72px] md:text-[120px] leading-[0.85] text-white tracking-tighter mb-10 uppercase">
+                  <h1 className="font-barlow-cond text-[64px] md:text-[110px] leading-[0.85] text-white tracking-tighter mb-10 uppercase font-extrabold">
                     Building Real<br/>
                     <span className="mv-text-gold-gradient italic">Wealth Engines</span><br/>
                     From Scratch
@@ -308,19 +308,17 @@ const MarcusElitePage = () => {
                 </Reveal>
               </div>
 
-              <Reveal delay={0.5}>
-                <div className="relative">
-                  <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-3xl shadow-[#FFD700]/5">
-                    <img 
-                      src="/marcus-sitting.webp" 
-                      alt="Marcus Vance" 
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                  {/* Decorative element */}
-                  <div className="absolute -bottom-12 -right-12 w-80 h-80 bg-[#FFD700]/10 blur-[100px] rounded-full -z-10" />
+              <div>
+                <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-3xl shadow-[#FFD700]/5">
+                  <img 
+                    src="/marcus-sitting.webp" 
+                    alt="Marcus Vance" 
+                    className="w-full h-auto object-contain block"
+                  />
                 </div>
-              </Reveal>
+                {/* Decorative element */}
+                <div className="absolute -bottom-16 -right-16 w-96 h-96 bg-[#FFD700]/10 blur-[120px] rounded-full -z-10" />
+              </div>
             </div>
           </div>
           
