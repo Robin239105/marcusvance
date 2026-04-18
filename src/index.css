@@ -29,8 +29,8 @@ body::after {
 .font-barlow-cond { font-family: 'Barlow Condensed', sans-serif; }
 
 :root {
-  --mv-bright-gold: #FFD700;
-  --mv-dark-gold: #D4AF37;
+  --mv-bright-gold: #E6C364;
+  --mv-dark-gold: #C9A84C;
 }
 
 /* --- Animations --- */

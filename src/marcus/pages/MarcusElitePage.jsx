@@ -25,7 +25,7 @@ const ScrollProgress = () => {
   const { scrollYProgress } = useScroll();
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-[3px] bg-[#FFD700] z-[1000] origin-left"
+      className="fixed top-0 left-0 right-0 h-[3px] bg-[#C9A84C] z-[1000] origin-left"
       style={{ scaleX: scrollYProgress }}
     />
   );
@@ -72,7 +72,7 @@ const ToastNotification = () => {
           exit={{ opacity: 0, y: 20, x: -20 }}
           className="fixed bottom-6 left-6 z-[500] mv-glass-card p-3 pr-6 flex items-center gap-4 rounded-xl shadow-2xl pointer-events-none"
         >
-          <div className="w-10 h-10 bg-white/5 border border-[#FFD700]/20 rounded-full flex items-center justify-center font-bebas text-[#FFD700]">
+          <div className="w-10 h-10 bg-white/5 border border-[#C9A84C]/20 rounded-full flex items-center justify-center font-bebas text-[#C9A84C]">
             {toasts[currentToast].i}
           </div>
           <div>
@@ -89,7 +89,7 @@ const ToastNotification = () => {
 const SectionHeading = ({ pre, title, subtitle, centered = true }) => (
   <div className={`mb-16 ${centered ? 'text-center' : 'text-left'}`}>
     {pre && (
-      <span className="font-oswald text-[#FFD700] tracking-[0.3em] text-sm md:text-base uppercase mb-4 block font-bold">
+      <span className="font-oswald text-[#C9A84C] tracking-[0.3em] text-sm md:text-base uppercase mb-4 block font-bold">
         {pre}
       </span>
     )}
@@ -110,7 +110,7 @@ const LogoScrollTrack = () => {
     <div className="bg-[#050505] border-y border-white/5 py-8 overflow-hidden">
       <div className="flex gap-16 animate-scroll-logos w-max px-8">
         {[...brands, ...brands].map((brand, i) => (
-          <div key={i} className="flex items-center gap-2 font-oswald text-sm md:text-lg text-white/20 uppercase tracking-[0.3em] font-bold hover:text-[#FFD700]/30 transition-colors cursor-default whitespace-nowrap">
+          <div key={i} className="flex items-center gap-2 font-oswald text-sm md:text-lg text-white/20 uppercase tracking-[0.3em] font-bold hover:text-[#C9A84C]/30 transition-colors cursor-default whitespace-nowrap">
             <span className="text-xl">◈</span> {brand}
           </div>
         ))}
@@ -142,13 +142,13 @@ const TimelineSection = () => {
           {steps.map((step, idx) => (
             <Reveal key={idx} delay={idx * 0.1}>
               <div className="relative">
-                <div className="absolute -left-[35px] md:-left-[67px] top-6 w-3 h-3 bg-[#FFD700] rounded-full shadow-[0_0_15px_#FFD700]" />
+                <div className="absolute -left-[35px] md:-left-[67px] top-6 w-3 h-3 bg-[#C9A84C] rounded-full shadow-[0_0_15px_#C9A84C]" />
                 <div className="mv-glass-card p-10 group relative">
                     <div className="flex flex-wrap items-center gap-4 mb-6">
-                        <span className="font-oswald text-[#FFD700] text-3xl tracking-widest font-bold">{step.day}</span>
-                        <span className="font-oswald bg-[#FFD700]/10 text-[#FFD700] text-[10px] font-bold px-3 py-1 rounded uppercase tracking-[0.2em]">{step.deliverable}</span>
+                        <span className="font-oswald text-[#C9A84C] text-3xl tracking-widest font-bold">{step.day}</span>
+                        <span className="font-oswald bg-[#C9A84C]/10 text-[#C9A84C] text-[10px] font-bold px-3 py-1 rounded uppercase tracking-[0.2em]">{step.deliverable}</span>
                     </div>
-                    <h3 className="font-oswald text-3xl text-white mb-4 group-hover:text-[#FFD700] transition-colors font-bold uppercase">{step.title}</h3>
+                    <h3 className="font-oswald text-3xl text-white mb-4 group-hover:text-[#C9A84C] transition-colors font-bold uppercase">{step.title}</h3>
                     <p className="text-[#A3A3A3] text-lg leading-relaxed max-w-2xl font-light">{step.desc}</p>
                 </div>
               </div>
@@ -186,8 +186,8 @@ const FAQSection = ({ t }) => {
               }}
               className={`px-6 py-3 font-oswald text-[11px] uppercase tracking-[0.2em] transition-all border font-bold ${
                 activeCategory === key
-                  ? 'bg-[#FFD700] text-black border-[#FFD700]'
-                  : 'bg-transparent text-[#A3A3A3] border-white/10 hover:border-[#FFD700]/50'
+                  ? 'bg-[#C9A84C] text-black border-[#C9A84C]'
+                  : 'bg-transparent text-[#A3A3A3] border-white/10 hover:border-[#C9A84C]/50'
               }`}
             >
               {categories[key]}
@@ -210,8 +210,8 @@ const FAQSection = ({ t }) => {
                     onClick={() => setActiveFAQ(activeFAQ === i ? null : i)}
                     className="w-full flex justify-between items-center py-8 group text-left"
                   >
-                    <span className={`font-oswald text-lg uppercase tracking-wide transition-all font-bold ${activeFAQ === i ? 'text-[#FFD700]' : 'text-white/80 group-hover:text-white'}`}>{f.q}</span>
-                    <span className="text-[#FFD700] text-2xl ml-4">{activeFAQ === i ? '−' : '+'}</span>
+                    <span className={`font-oswald text-lg uppercase tracking-wide transition-all font-bold ${activeFAQ === i ? 'text-[#C9A84C]' : 'text-white/80 group-hover:text-white'}`}>{f.q}</span>
+                    <span className="text-[#C9A84C] text-2xl ml-4">{activeFAQ === i ? '−' : '+'}</span>
                   </button>
                   <AnimatePresence>
                     {activeFAQ === i && (
@@ -244,8 +244,8 @@ const ProgramReveal = ({ t }) => (
           <Reveal key={i} delay={i * 0.1}>
             <div className="mv-glass-card p-10 h-full flex flex-col group">
               <div className="text-4xl mb-6">{cat.i}</div>
-              <h3 className="font-oswald text-2xl text-white mb-4 tracking-tighter font-bold uppercase group-hover:text-[#FFD700] transition-colors">{cat.t}</h3>
-              <div className="text-[#FFD700] text-[10px] font-bold tracking-[0.2em] mb-4 uppercase opacity-50">{cat.n}</div>
+              <h3 className="font-oswald text-2xl text-white mb-4 tracking-tighter font-bold uppercase group-hover:text-[#C9A84C] transition-colors">{cat.t}</h3>
+              <div className="text-[#C9A84C] text-[10px] font-bold tracking-[0.2em] mb-4 uppercase opacity-50">{cat.n}</div>
               <p className="text-[#6A6A6A] text-sm leading-relaxed border-t border-white/5 pt-6">{cat.d}</p>
             </div>
           </Reveal>
@@ -264,7 +264,7 @@ const ProgramReveal = ({ t }) => (
 
       <div className="mt-20 text-center">
         <p className="text-[#A3A3A3] font-oswald text-sm mb-10 max-w-xl mx-auto leading-relaxed font-light">{t.marcus.programme.exclusivity}</p>
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-[#FFD700] text-black px-12 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold shadow-[#FFD700]/20">{t.marcus.programme.cta}</button>
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-[#C9A84C] text-black px-12 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold shadow-[#C9A84C]/20">{t.marcus.programme.cta}</button>
       </div>
     </div>
   </section>
@@ -276,7 +276,7 @@ const FinalCTA = ({ t }) => (
       <Reveal>
         <h2 className="font-oswald text-6xl md:text-9xl text-white mb-10 leading-[0.9] uppercase font-bold pr-4">{t.marcus.finalCTA.title}</h2>
         <div className="flex flex-col items-center gap-10">
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-[#FFD700] text-black px-16 py-8 font-oswald text-3xl tracking-widest hover:bg-white transition-all shadow-[0_0_60px_rgba(255,215,0,0.2)] uppercase font-bold">{t.marcus.ctaPrimary}</button>
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-[#C9A84C] text-black px-16 py-8 font-oswald text-3xl tracking-widest hover:bg-white transition-all shadow-[0_0_60px_rgba(201,168,76,0.2)] uppercase font-bold">{t.marcus.ctaPrimary}</button>
           
           <div className="flex flex-col md:flex-row items-center gap-10 opacity-70">
             <div className="flex items-center gap-4">
@@ -285,7 +285,7 @@ const FinalCTA = ({ t }) => (
                </div>
                <div className="text-left">
                   <div className="font-oswald text-white text-[11px] font-bold tracking-[0.2em] uppercase">{t.marcus.finalCTA.community}</div>
-                  <div className="font-oswald text-[#FFD700] text-[10px] font-bold tracking-[0.2em] uppercase">{t.marcus.finalCTA.successRate}</div>
+                  <div className="font-oswald text-[#C9A84C] text-[10px] font-bold tracking-[0.2em] uppercase">{t.marcus.finalCTA.successRate}</div>
                </div>
             </div>
           </div>
@@ -299,19 +299,19 @@ const TheVoice = ({ t }) => (
   <section className="py-40 relative overflow-hidden bg-[#000000]">
     <div className="max-w-5xl mx-auto px-8 relative z-10 text-center">
       <Reveal>
-        <div className="font-oswald text-[#FFD700] tracking-[0.4em] text-xs font-bold mb-12 uppercase">The Voice of Marcus Vance</div>
+        <div className="font-oswald text-[#C9A84C] tracking-[0.4em] text-xs font-bold mb-12 uppercase">The Voice of Marcus Vance</div>
         <blockquote className="font-oswald text-4xl md:text-6xl text-white leading-[1.1] mb-12 uppercase font-bold tracking-tight">
           "The digital era doesn't reward hard work. <br/>
-          It rewards <span className="text-[#FFD700]">High-Leverage Systems</span> that run while you sleep."
+          It rewards <span className="text-[#C9A84C]">High-Leverage Systems</span> that run while you sleep."
         </blockquote>
-        <div className="w-12 h-1px bg-[#FFD700]/30 mx-auto mb-12" />
+        <div className="w-12 h-1px bg-[#C9A84C]/30 mx-auto mb-12" />
         <p className="text-[#A3A3A3] text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
           I've spent the last decade distilling complex wealth generation models into one repeatable protocol. The 7-Day Challenge isn't just a course—it's your baptism into the elite digital economy.
         </p>
       </Reveal>
     </div>
     {/* Background accent */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] bg-[#FFD700]/[0.02] blur-[150px] -z-10" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] bg-[#C9A84C]/[0.02] blur-[150px] -z-10" />
   </section>
 );
 
@@ -331,7 +331,7 @@ const Methodology = ({ t }) => (
         ].map((item, i) => (
           <Reveal key={i} delay={i * 0.1}>
             <div className="group">
-              <div className="font-oswald text-6xl text-white/5 mb-8 font-bold transition-colors group-hover:text-[#FFD700]/10">{item.i}</div>
+              <div className="font-oswald text-6xl text-white/5 mb-8 font-bold transition-colors group-hover:text-[#C9A84C]/10">{item.i}</div>
               <h3 className="font-oswald text-2xl text-white mb-4 tracking-wider font-bold uppercase">{item.t}</h3>
               <p className="text-[#6A6A6A] leading-relaxed">{item.d}</p>
             </div>
@@ -368,9 +368,9 @@ const WhoItIsFor = ({ t }) => (
           }
         ].map((item, i) => (
           <Reveal key={i} delay={i * 0.1}>
-            <div className="mv-glass-card p-10 border border-white/5 hover:border-[#FFD700]/30 transition-all group h-full">
+            <div className="mv-glass-card p-10 border border-white/5 hover:border-[#C9A84C]/30 transition-all group h-full">
               <div className="text-4xl mb-6">{item.i}</div>
-              <h3 className="font-oswald text-2xl text-white mb-4 tracking-wider font-bold uppercase group-hover:text-[#FFD700] transition-colors">{item.t}</h3>
+              <h3 className="font-oswald text-2xl text-white mb-4 tracking-wider font-bold uppercase group-hover:text-[#C9A84C] transition-colors">{item.t}</h3>
               <p className="text-[#A3A3A3] text-sm leading-relaxed font-light">{item.d}</p>
             </div>
           </Reveal>
@@ -451,11 +451,11 @@ const MarcusElitePage = () => {
             <a href="#roadmap" onClick={(e) => handleNav(e, 'roadmap')} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
             <a href="#faq" onClick={(e) => handleNav(e, 'faq')} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
             <LanguageSwitcher variant="marcus" />
-            <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</button>
+            <button onClick={() => setIsEnrollOpen(true)} className="bg-[#C9A84C] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</button>
           </div>
 
           <div className="lg:hidden text-right flex items-center gap-4">
-             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</button>
+             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</button>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>
@@ -464,15 +464,15 @@ const MarcusElitePage = () => {
       <main>
         {/* --- Hero Section --- */}
         <section className="relative pt-[120px] lg:pt-[220px] pb-32 overflow-hidden" id="about">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[700px] bg-[#FFD700]/[0.05] blur-[150px] rounded-full -translate-y-1/2 pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[700px] bg-[#C9A84C]/[0.05] blur-[150px] rounded-full -translate-y-1/2 pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center text-left">
               <div>
                 <Reveal>
-                  <div className="inline-flex items-center gap-3 border border-[#FFD700]/30 bg-[#FFD700]/10 px-4 py-1.5 rounded-full mb-8">
+                  <div className="inline-flex items-center gap-3 border border-[#C9A84C]/30 bg-[#C9A84C]/10 px-4 py-1.5 rounded-full mb-8">
                     <span className="w-1.5 h-1.5 bg-[#22c55e] rounded-full animate-pulse" />
-                    <span className="font-oswald text-[#FFD700] text-[10px] font-bold tracking-[0.4em] uppercase">{t.marcus.heroPreHeader}</span>
+                    <span className="font-oswald text-[#C9A84C] text-[10px] font-bold tracking-[0.4em] uppercase">{t.marcus.heroPreHeader}</span>
                   </div>
                 </Reveal>
                 
@@ -490,7 +490,7 @@ const MarcusElitePage = () => {
                 </Reveal>
 
                 <Reveal delay={0.25}>
-                  <div className="mb-12 inline-block bg-[#FFD700] px-8 py-4 border border-white/10 shadow-[0_0_30px_rgba(255,215,0,0.1)]">
+                  <div className="mb-12 inline-block bg-[#C9A84C] px-8 py-4 border border-white/10 shadow-[0_0_30px_rgba(201,168,76,0.1)]">
                      <span className="font-oswald text-black text-xl md:text-2xl font-bold tracking-tighter uppercase whitespace-nowrap">
                         {t.marcus.valueStackHeader.replace('{currency}', currency)}
                      </span>
@@ -499,7 +499,7 @@ const MarcusElitePage = () => {
 
                 <Reveal delay={0.3}>
                   <div className="flex flex-col sm:flex-row items-center gap-6">
-                      <button onClick={() => setIsEnrollOpen(true)} className="w-full sm:w-auto bg-[#FFD700] text-black px-10 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold shadow-[#FFD700]/20 whitespace-nowrap">{t.marcus.ctaPrimary}</button>
+                      <button onClick={() => setIsEnrollOpen(true)} className="w-full sm:w-auto bg-[#C9A84C] text-black px-10 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold shadow-[#C9A84C]/20 whitespace-nowrap">{t.marcus.ctaPrimary}</button>
                       <a href="#roadmap" className="font-oswald text-sm text-white/50 hover:text-white transition-colors tracking-widest border-b border-transparent hover:border-white/20 pb-1 uppercase font-bold">{t.marcus.heroScroll} →</a>
                   </div>
                 </Reveal>
@@ -511,7 +511,7 @@ const MarcusElitePage = () => {
                         <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">VERIFIED ALUMNI</div>
                      </div>
                      <div className="text-left">
-                        <div className="font-oswald text-[#FFD700] text-xl font-bold tracking-tighter">93%</div>
+                        <div className="font-oswald text-[#C9A84C] text-xl font-bold tracking-tighter">93%</div>
                         <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">{t.marcus.heroCommunity}</div>
                      </div>
                   </div>
@@ -528,11 +528,11 @@ const MarcusElitePage = () => {
                       />
                       {/* Interactive UI Overlays */}
                       <div className="absolute top-8 left-8 bg-black/80 backdrop-blur-md border border-white/10 p-4 font-oswald text-[10px] tracking-widest uppercase">
-                         <span className="text-[#FFD700]">PROTOCOL:</span> VERIFIED
+                         <span className="text-[#C9A84C]">PROTOCOL:</span> VERIFIED
                       </div>
                    </div>
                    {/* Cinematic background elements */}
-                   <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#FFD700]/10 blur-[100px] rounded-full pointer-events-none" />
+                   <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#C9A84C]/10 blur-[100px] rounded-full pointer-events-none" />
                 </Reveal>
               </div>
             </div>
@@ -559,17 +559,17 @@ const MarcusElitePage = () => {
                 
                 {/* Custom Video Play Decoration */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 backdrop-blur-sm">
-                    <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-[#FFD700] border-b-[12px] border-b-transparent ml-2" />
+                  <div className="w-24 h-24 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 backdrop-blur-sm">
+                    <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-[#C9A84C] border-b-[12px] border-b-transparent ml-2" />
                   </div>
                 </div>
 
                 <div className="absolute bottom-12 left-12 right-12 flex justify-between items-end">
                    <div className="font-oswald text-white font-bold tracking-widest uppercase text-xs">
-                      <span className="text-[#FFD700]">LIVE</span> DASHBOARD PREVIEW
+                      <span className="text-[#C9A84C]">LIVE</span> DASHBOARD PREVIEW
                    </div>
                    <div className="flex gap-4">
-                      {[1, 2, 3].map(i => <div key={i} className="w-2 h-2 rounded-full bg-[#FFD700]/30" />)}
+                      {[1, 2, 3].map(i => <div key={i} className="w-2 h-2 rounded-full bg-[#C9A84C]/30" />)}
                    </div>
                 </div>
               </div>
@@ -602,8 +602,8 @@ const MarcusElitePage = () => {
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">MASTERCARD</div>
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">AMEX</div>
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">APPLE PAY</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">₿ BTC</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">Ξ ETH</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#C9A84C] tracking-widest uppercase">₿ BTC</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#C9A84C] tracking-widest uppercase">Ξ ETH</div>
               </div>
             </div>
 
@@ -611,9 +611,9 @@ const MarcusElitePage = () => {
             <div className="space-y-4">
               <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">RESOURCES</h4>
               <ul className="space-y-3">
-                <li><Link to={getLocalizedPath('/marcus/giveaway')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
-                <li><Link to={getLocalizedPath('/marcus/feedback')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
-                <li><Link to={getLocalizedPath('/philosophy')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.philosophy}</Link></li>
+                <li><Link to={getLocalizedPath('/marcus/giveaway')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
+                <li><Link to={getLocalizedPath('/marcus/feedback')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
+                <li><Link to={getLocalizedPath('/philosophy')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.philosophy}</Link></li>
               </ul>
             </div>
 
@@ -621,9 +621,9 @@ const MarcusElitePage = () => {
             <div className="space-y-4">
               <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">COMPLIANCE</h4>
               <ul className="space-y-3">
-                <li><Link to={getLocalizedPath('/terms')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
-                <li><Link to={getLocalizedPath('/privacy')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
-                <li><Link to={getLocalizedPath('/guarantee')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.guarantee}</Link></li>
+                <li><Link to={getLocalizedPath('/terms')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
+                <li><Link to={getLocalizedPath('/privacy')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
+                <li><Link to={getLocalizedPath('/guarantee')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.guarantee}</Link></li>
               </ul>
             </div>
 
@@ -634,7 +634,7 @@ const MarcusElitePage = () => {
                 {t.marcus.footer.address}
               </p>
               <div className="pt-4">
-                <Link to={getLocalizedPath('/contact')} className="text-[#FFD700] hover:text-white font-oswald text-[10px] tracking-widest transition-all uppercase font-bold">{t.marcus.footer.contact}</Link>
+                <Link to={getLocalizedPath('/contact')} className="text-[#C9A84C] hover:text-white font-oswald text-[10px] tracking-widest transition-all uppercase font-bold">{t.marcus.footer.contact}</Link>
               </div>
             </div>
           </div>
@@ -651,9 +651,9 @@ const MarcusElitePage = () => {
                  {t.marcus.footer.rights}
                </span>
                <div className="flex gap-8">
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">INSTAGRAM</a>
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">X (TWITTER)</a>
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">YOUTUBE</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">INSTAGRAM</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">X (TWITTER)</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">YOUTUBE</a>
                </div>
             </div>
           </div>
@@ -694,7 +694,7 @@ const MarcusElitePage = () => {
                    
                    {/* Prestige Badges */}
                    <div className="absolute bottom-12 left-12 right-12 space-y-4">
-                      <div className="inline-block bg-[#FFD700] text-black px-3 py-1 font-oswald text-[10px] tracking-[0.2em] font-bold uppercase">
+                      <div className="inline-block bg-[#C9A84C] text-black px-3 py-1 font-oswald text-[10px] tracking-[0.2em] font-bold uppercase">
                         {t.marcus.enroll.prestigeBadge}
                       </div>
                       <h3 className="font-oswald text-3xl font-bold text-white tracking-widest uppercase leading-tight">
@@ -711,7 +711,7 @@ const MarcusElitePage = () => {
                 {/* Right Side: High-Prestige Form */}
                 <div className="flex-1 flex flex-col p-8 md:p-16 overflow-y-auto">
                    <div className="mb-12 text-left">
-                      <div className="font-oswald text-[#FFD700] text-[10px] tracking-[0.4em] font-bold uppercase mb-4">
+                      <div className="font-oswald text-[#C9A84C] text-[10px] tracking-[0.4em] font-bold uppercase mb-4">
                         {isEnrollOpen ? t.marcus.enroll.popupTitle : "URGENT PROTOCOL"}
                       </div>
                       <h2 className="font-oswald text-4xl md:text-5xl font-bold text-white tracking-tight leading-none uppercase mb-6">
@@ -728,7 +728,7 @@ const MarcusElitePage = () => {
                         <input 
                           type="text" 
                           placeholder="EX: MARCUS" 
-                          className="w-full bg-white/5 border border-white/10 p-5 font-oswald text-xl text-white focus:border-[#FFD700] outline-none tracking-widest transition-all placeholder:text-white/5" 
+                          className="w-full bg-white/5 border border-white/10 p-5 font-oswald text-xl text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5" 
                         />
                       </div>
                       <div className="space-y-2 text-left">
@@ -736,12 +736,12 @@ const MarcusElitePage = () => {
                         <input 
                           type="email" 
                           placeholder="YOUR@BEST-EMAIL.COM" 
-                          className="w-full bg-white/5 border border-white/10 p-5 font-oswald text-xl text-[#FFD700] focus:border-[#FFD700] outline-none tracking-widest transition-all placeholder:text-white/5" 
+                          className="w-full bg-white/5 border border-white/10 p-5 font-oswald text-xl text-[#C9A84C] focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5" 
                         />
                       </div>
                       <button 
                         onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false);}} 
-                        className="w-full bg-[#FFD700] text-black p-6 font-oswald text-2xl tracking-[0.1em] hover:bg-white transition-all uppercase font-bold shadow-2xl shadow-[#FFD700]/10 flex items-center justify-center gap-4 group"
+                        className="w-full bg-[#C9A84C] text-black p-6 font-oswald text-2xl tracking-[0.1em] hover:bg-white transition-all uppercase font-bold shadow-2xl shadow-[#C9A84C]/10 flex items-center justify-center gap-4 group"
                       >
                         DECODE PROTOCOL
                         <span className="group-hover:translate-x-2 transition-transform">→</span>

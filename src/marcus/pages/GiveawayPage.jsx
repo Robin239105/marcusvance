@@ -25,7 +25,7 @@ const GiveawayPage = () => {
   };
 
   return (
-    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Barlow'] selection:bg-[#FFD700]/30 selection:text-[#FFD700]">
+    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Barlow'] selection:bg-[#C9A84C]/30 selection:text-[#C9A84C]">
       {/* Header */}
       <nav className="fixed top-[32px] left-0 right-0 z-[100] bg-black/95 backdrop-blur-md border-b border-white/10 py-4">
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
@@ -39,11 +39,11 @@ const GiveawayPage = () => {
             <a href="#roadmap" onClick={(e) => handleNav(e, 'roadmap')} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
             <a href="#faq" onClick={(e) => handleNav(e, 'faq')} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
             <LanguageSwitcher variant="marcus" />
-            <Link to={homePath} className="bg-[#FFD700] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</Link>
+            <Link to={homePath} className="bg-[#C9A84C] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</Link>
           </div>
 
           <div className="lg:hidden text-right flex items-center gap-4">
-             <Link to={homePath} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</Link>
+             <Link to={homePath} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</Link>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>
@@ -56,7 +56,7 @@ const GiveawayPage = () => {
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-[#FFD700]/10 blur-3xl rounded-full" />
+            <div className="absolute inset-0 bg-[#C9A84C]/10 blur-3xl rounded-full" />
             <img 
               src="/assets/giveaway-hero.webp" 
               alt="iPhone and Laptop Giveaway" 
@@ -70,15 +70,15 @@ const GiveawayPage = () => {
             className="flex flex-col gap-8"
           >
             <div className="inline-flex items-center gap-3">
-              <div className="w-1.5 h-6 bg-[#FFD700]" />
-              <span className="font-oswald uppercase tracking-[0.3em] text-[10px] text-[#FFD700] font-bold">{gw.badge}</span>
+              <div className="w-1.5 h-6 bg-[#C9A84C]" />
+              <span className="font-oswald uppercase tracking-[0.3em] text-[10px] text-[#C9A84C] font-bold">{gw.badge}</span>
             </div>
 
             <h1 className="font-oswald text-6xl md:text-8xl leading-none tracking-tight text-[#F5F5F5] uppercase font-bold">
               {gw.title.split('&').map((part, i) => (
                 <React.Fragment key={i}>
                   {i === 1 && <br/>}
-                  <span className={i === 1 ? "text-[#FFD700]" : ""}>{i === 1 ? `& ${part}` : part}</span>
+                  <span className={i === 1 ? "text-[#C9A84C]" : ""}>{i === 1 ? `& ${part}` : part}</span>
                 </React.Fragment>
               ))}
             </h1>
@@ -86,7 +86,7 @@ const GiveawayPage = () => {
             <div className="flex flex-col gap-6">
               {gw.steps.map((item, i) => (
                 <div key={i} className="flex gap-6">
-                  <div className="font-oswald text-2xl text-[#FFD700] opacity-30 font-bold">{i + 1}</div>
+                  <div className="font-oswald text-2xl text-[#C9A84C] opacity-30 font-bold">{i + 1}</div>
                   <div>
                     <h3 className="font-oswald text-lg uppercase text-[#F5F5F5] mb-1 font-bold">{item.title}</h3>
                     <p className="text-[#6B6B6B] text-sm leading-relaxed font-light">{item.desc}</p>
@@ -95,7 +95,7 @@ const GiveawayPage = () => {
               ))}
             </div>
 
-            <div className="mt-12 p-8 bg-[#FFD700]/5 border border-[#FFD700]/20 rounded-xl">
+            <div className="mt-12 p-8 bg-[#C9A84C]/5 border border-[#C9A84C]/20 rounded-xl">
               <p className="font-oswald text-sm text-[#F5F5F5] leading-relaxed uppercase tracking-wider font-bold">
                 {gw.participationInstructions}
               </p>
@@ -126,8 +126,8 @@ const GiveawayPage = () => {
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">MASTERCARD</div>
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">AMEX</div>
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">APPLE PAY</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">₿ BTC</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">Ξ ETH</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#C9A84C] tracking-widest uppercase">₿ BTC</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#C9A84C] tracking-widest uppercase">Ξ ETH</div>
               </div>
             </div>
 
@@ -135,9 +135,9 @@ const GiveawayPage = () => {
             <div className="space-y-4">
               <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">RESOURCES</h4>
               <ul className="space-y-3">
-                <li><Link to={getLocalizedPath('/marcus/giveaway')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
-                <li><Link to={getLocalizedPath('/marcus/feedback')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
-                <li><Link to={getLocalizedPath('/philosophy')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.philosophy}</Link></li>
+                <li><Link to={getLocalizedPath('/marcus/giveaway')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
+                <li><Link to={getLocalizedPath('/marcus/feedback')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
+                <li><Link to={getLocalizedPath('/philosophy')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.philosophy}</Link></li>
               </ul>
             </div>
 
@@ -145,9 +145,9 @@ const GiveawayPage = () => {
             <div className="space-y-4">
               <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">COMPLIANCE</h4>
               <ul className="space-y-3">
-                <li><Link to={getLocalizedPath('/terms')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
-                <li><Link to={getLocalizedPath('/privacy')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
-                <li><Link to={getLocalizedPath('/guarantee')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.guarantee}</Link></li>
+                <li><Link to={getLocalizedPath('/terms')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
+                <li><Link to={getLocalizedPath('/privacy')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
+                <li><Link to={getLocalizedPath('/guarantee')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.guarantee}</Link></li>
               </ul>
             </div>
 
@@ -158,7 +158,7 @@ const GiveawayPage = () => {
                 {t.marcus.footer.address}
               </p>
               <div className="pt-4">
-                <Link to={getLocalizedPath('/contact')} className="text-[#FFD700] hover:text-white font-oswald text-[10px] tracking-widest transition-all uppercase font-bold">{t.marcus.footer.contact}</Link>
+                <Link to={getLocalizedPath('/contact')} className="text-[#C9A84C] hover:text-white font-oswald text-[10px] tracking-widest transition-all uppercase font-bold">{t.marcus.footer.contact}</Link>
               </div>
             </div>
           </div>
@@ -175,9 +175,9 @@ const GiveawayPage = () => {
                  {t.marcus.footer.rights}
                </span>
                <div className="flex gap-8">
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">INSTAGRAM</a>
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">X (TWITTER)</a>
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">YOUTUBE</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">INSTAGRAM</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">X (TWITTER)</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">YOUTUBE</a>
                </div>
             </div>
           </div>

@@ -27,7 +27,7 @@ const FeedbackPage = () => {
   };
 
   return (
-    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Barlow'] selection:bg-[#FFD700]/30 selection:text-[#FFD700]">
+    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Barlow'] selection:bg-[#C9A84C]/30 selection:text-[#C9A84C]">
       {/* Header */}
       <nav className="fixed top-[32px] left-0 right-0 z-[100] bg-black/95 backdrop-blur-md border-b border-white/10 py-4">
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
@@ -41,11 +41,11 @@ const FeedbackPage = () => {
             <a href="#roadmap" onClick={(e) => handleNav(e, 'roadmap')} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
             <a href="#faq" onClick={(e) => handleNav(e, 'faq')} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
             <LanguageSwitcher variant="marcus" />
-            <Link to={homePath} className="bg-[#FFD700] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</Link>
+            <Link to={homePath} className="bg-[#C9A84C] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</Link>
           </div>
 
           <div className="lg:hidden text-right flex items-center gap-4">
-             <Link to={homePath} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</Link>
+             <Link to={homePath} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</Link>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>
@@ -59,8 +59,8 @@ const FeedbackPage = () => {
               className="flex flex-col gap-8"
             >
               <div className="inline-flex items-center gap-3 justify-center">
-                <div className="w-1.5 h-6 bg-[#FFD700]" />
-                <span className="font-oswald uppercase tracking-[0.3em] text-[10px] text-[#FFD700] font-bold">{fb.badge}</span>
+                <div className="w-1.5 h-6 bg-[#C9A84C]" />
+                <span className="font-oswald uppercase tracking-[0.3em] text-[10px] text-[#C9A84C] font-bold">{fb.badge}</span>
               </div>
 
               <h1 className="font-oswald text-6xl md:text-8xl text-white mb-4 uppercase font-bold tracking-tight">{fb.title}</h1>
@@ -71,15 +71,15 @@ const FeedbackPage = () => {
               <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="flex flex-col gap-6 text-left">
                 <div className="flex flex-col gap-2">
                   <label className="font-oswald uppercase tracking-widest text-[10px] text-[#6B6B6B] font-bold">{fb.nameLabel}</label>
-                  <input type="text" required className="bg-[#141414] border border-white/5 px-6 py-4 focus:border-[#FFD700] outline-none transition-all text-sm font-oswald tracking-widest uppercase font-bold text-white placeholder:text-white/5" placeholder="EX: MARCUS" />
+                  <input type="text" required className="bg-[#141414] border border-white/5 px-6 py-4 focus:border-[#C9A84C] outline-none transition-all text-sm font-oswald tracking-widest uppercase font-bold text-white placeholder:text-white/5" placeholder="EX: MARCUS" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="font-oswald uppercase tracking-widest text-[10px] text-[#6B6B6B] font-bold">{fb.feedbackLabel}</label>
-                  <textarea required className="bg-[#141414] border border-white/5 px-6 py-4 focus:border-[#FFD700] outline-none h-40 transition-all text-sm resize-none placeholder:text-white/5 font-oswald tracking-widest uppercase font-bold text-[#FFD700]" placeholder={fb.placeholder} />
+                  <textarea required className="bg-[#141414] border border-white/5 px-6 py-4 focus:border-[#C9A84C] outline-none h-40 transition-all text-sm resize-none placeholder:text-white/5 font-oswald tracking-widest uppercase font-bold text-[#C9A84C]" placeholder={fb.placeholder} />
                 </div>
                 <button 
                   type="submit"
-                  className="bg-[#FFD700] text-black w-full py-5 font-oswald text-2xl tracking-wider hover:bg-white transition-all uppercase font-bold shadow-xl shadow-[#FFD700]/10"
+                  className="bg-[#C9A84C] text-black w-full py-5 font-oswald text-2xl tracking-wider hover:bg-white transition-all uppercase font-bold shadow-xl shadow-[#C9A84C]/10"
                 >
                   {fb.submitBtn}
                 </button>
@@ -90,14 +90,14 @@ const FeedbackPage = () => {
               initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
               className="py-20 flex flex-col items-center gap-6"
             >
-              <div className="w-20 h-20 bg-[#FFD700] flex items-center justify-center text-black text-4xl shadow-[0_0_40px_rgba(255,215,0,0.2)]">✓</div>
-              <h2 className="font-oswald text-5xl text-[#FFD700] uppercase font-bold tracking-tight">{fb.successTitle}</h2>
+              <div className="w-20 h-20 bg-[#C9A84C] flex items-center justify-center text-black text-4xl shadow-[0_0_40px_rgba(201,168,76,0.2)]">✓</div>
+              <h2 className="font-oswald text-5xl text-[#C9A84C] uppercase font-bold tracking-tight">{fb.successTitle}</h2>
               <p className="text-[#6B6B6B] text-sm leading-relaxed max-w-sm mx-auto font-light">
                 {fb.successDesc}
               </p>
               <button 
                 onClick={() => window.location.href = homePath}
-                className="mt-8 border border-[#FFD700] text-[#FFD700] px-10 py-3 font-oswald text-xl tracking-wider hover:bg-[#FFD700] hover:text-black transition-all font-bold uppercase"
+                className="mt-8 border border-[#C9A84C] text-[#C9A84C] px-10 py-3 font-oswald text-xl tracking-wider hover:bg-[#C9A84C] hover:text-black transition-all font-bold uppercase"
               >
                 {fb.returnBtn}
               </button>
@@ -122,8 +122,8 @@ const FeedbackPage = () => {
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">MASTERCARD</div>
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">AMEX</div>
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">APPLE PAY</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">₿ BTC</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">Ξ ETH</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#C9A84C] tracking-widest uppercase">₿ BTC</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#C9A84C] tracking-widest uppercase">Ξ ETH</div>
               </div>
             </div>
 
@@ -131,9 +131,9 @@ const FeedbackPage = () => {
             <div className="space-y-4">
               <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">RESOURCES</h4>
               <ul className="space-y-3">
-                <li><Link to={getLocalizedPath('/marcus/giveaway')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
-                <li><Link to={getLocalizedPath('/marcus/feedback')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
-                <li><Link to={getLocalizedPath('/philosophy')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.philosophy}</Link></li>
+                <li><Link to={getLocalizedPath('/marcus/giveaway')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
+                <li><Link to={getLocalizedPath('/marcus/feedback')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
+                <li><Link to={getLocalizedPath('/philosophy')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.philosophy}</Link></li>
               </ul>
             </div>
 
@@ -141,9 +141,9 @@ const FeedbackPage = () => {
             <div className="space-y-4">
               <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">COMPLIANCE</h4>
               <ul className="space-y-3">
-                <li><Link to={getLocalizedPath('/terms')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
-                <li><Link to={getLocalizedPath('/privacy')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
-                <li><Link to={getLocalizedPath('/guarantee')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.guarantee}</Link></li>
+                <li><Link to={getLocalizedPath('/terms')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
+                <li><Link to={getLocalizedPath('/privacy')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
+                <li><Link to={getLocalizedPath('/guarantee')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.guarantee}</Link></li>
               </ul>
             </div>
 
@@ -154,7 +154,7 @@ const FeedbackPage = () => {
                 {t.marcus.footer.address}
               </p>
               <div className="pt-4">
-                <Link to={getLocalizedPath('/contact')} className="text-[#FFD700] hover:text-white font-oswald text-[10px] tracking-widest transition-all uppercase font-bold">{t.marcus.footer.contact}</Link>
+                <Link to={getLocalizedPath('/contact')} className="text-[#C9A84C] hover:text-white font-oswald text-[10px] tracking-widest transition-all uppercase font-bold">{t.marcus.footer.contact}</Link>
               </div>
             </div>
           </div>
@@ -171,9 +171,9 @@ const FeedbackPage = () => {
                  {t.marcus.footer.rights}
                </span>
                <div className="flex gap-8">
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">INSTAGRAM</a>
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">X (TWITTER)</a>
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">YOUTUBE</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">INSTAGRAM</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">X (TWITTER)</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">YOUTUBE</a>
                </div>
             </div>
           </div>

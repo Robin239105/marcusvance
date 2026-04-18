@@ -11,7 +11,7 @@ export default {
         arena: {
           primary: "#e6c364",
           'on-primary': "#3d2e00",
-          'primary-container': "#ffd700",
+          'primary-container': "#c9a84c",
           'on-primary-container': "#503d00",
           'primary-fixed': "#ffe08f",
           'primary-fixed-dim': "#e6c364",
@@ -45,7 +45,7 @@ export default {
           error: "#ffb4ab",
           'on-error': "#690005",
           
-          gold: "#ffd700",
+          gold: "#c9a84c",
           nav: "#080808",
           f5: "#f5f5f5",
           'gray-dark': "#1a1a1a",

@@ -47,7 +47,7 @@ const PhilosophyPage = () => {
   };
 
   return (
-    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Barlow'] selection:bg-[#FFD700]/30 selection:text-[#FFD700]">
+    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Barlow'] selection:bg-[#C9A84C]/30 selection:text-[#C9A84C]">
       {/* Navigation Header */}
       <nav className="fixed top-[32px] left-0 right-0 z-[100] bg-black/95 backdrop-blur-md border-b border-white/10 py-4">
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
@@ -57,15 +57,15 @@ const PhilosophyPage = () => {
           
           <div className="hidden lg:flex items-center gap-10 font-oswald text-[11px] tracking-[0.25em] font-bold uppercase text-[#A3A3A3]">
             <a href="#method" onClick={(e) => handleNav(e, 'method')} className="hover:text-white transition-colors">{t.marcus.nav.method}</a>
-            <Link to={currentLocale === 'en' || currentLocale === 'default' ? '/philosophy' : `/philosophy/${currentLocale}`} className="text-white border-b border-[#FFD700]">{t.marcus.nav.philosophy}</Link>
+            <Link to={currentLocale === 'en' || currentLocale === 'default' ? '/philosophy' : `/philosophy/${currentLocale}`} className="text-white border-b border-[#C9A84C]">{t.marcus.nav.philosophy}</Link>
             <a href="#roadmap" onClick={(e) => handleNav(e, 'roadmap')} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
             <a href="#faq" onClick={(e) => handleNav(e, 'faq')} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
             <LanguageSwitcher variant="marcus" />
-            <Link to={homePath} className="bg-[#FFD700] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</Link>
+            <Link to={homePath} className="bg-[#C9A84C] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</Link>
           </div>
 
           <div className="lg:hidden text-right flex items-center gap-4">
-             <Link to={homePath} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</Link>
+             <Link to={homePath} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</Link>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>
@@ -77,14 +77,14 @@ const PhilosophyPage = () => {
           {/* Sticky TOC */}
           <aside className="lg:w-1/4 hidden lg:block">
             <div className="sticky top-40 flex flex-col gap-8">
-              <div className="w-12 h-1 bg-[#FFD700] mb-4" />
+              <div className="w-12 h-1 bg-[#C9A84C] mb-4" />
               <h2 className="font-oswald text-3xl text-white tracking-wider mb-8 uppercase font-bold">{t.marcus.philosophy.badge}</h2>
               <div className="flex flex-col gap-4">
                 {t.marcus.philosophy.chapters.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })}
-                    className={`text-left font-oswald text-[11px] uppercase tracking-[0.3em] transition-all hover:text-[#FFD700] font-bold ${activeChapter === item.id ? 'text-[#FFD700] pl-4 border-l-2 border-[#FFD700]' : 'text-[#3A3A3A] hover:pl-2'}`}
+                    className={`text-left font-oswald text-[11px] uppercase tracking-[0.3em] transition-all hover:text-[#C9A84C] font-bold ${activeChapter === item.id ? 'text-[#C9A84C] pl-4 border-l-2 border-[#C9A84C]' : 'text-[#3A3A3A] hover:pl-2'}`}
                   >
                     {item.label}
                   </button>
@@ -97,7 +97,7 @@ const PhilosophyPage = () => {
           <div className="lg:w-3/4 max-w-2xl">
             {t.marcus.philosophy.chapters.map((chapter, i) => (
               <section key={chapter.id} id={chapter.id} className={`philosophy-chapter ${i === 6 ? 'mb-64' : 'mb-32'}`}>
-                <span className="font-oswald text-[#FFD700] font-bold tracking-[0.5em] text-xs block mb-8 uppercase">{chapter.label}</span>
+                <span className="font-oswald text-[#C9A84C] font-bold tracking-[0.5em] text-xs block mb-8 uppercase">{chapter.label}</span>
                 <h1 className="font-oswald text-5xl md:text-7xl text-white mb-12 leading-[0.9] font-bold uppercase tracking-tight">{chapter.title}</h1>
                 <div className="space-y-6 text-[#A3A3A3] text-lg leading-relaxed font-light">
                   {chapter.content.map((p, j) => (
@@ -106,11 +106,11 @@ const PhilosophyPage = () => {
                 </div>
 
                 {i === 6 && (
-                  <div className="mt-20 p-12 bg-[#141414] border border-[#FFD700]/20 text-center">
+                  <div className="mt-20 p-12 bg-[#141414] border border-[#C9A84C]/20 text-center">
                     <h3 className="font-oswald text-3xl text-white mb-6 tracking-widest uppercase font-bold">{chapter.cta}</h3>
                     <Link 
                       to={homePath}
-                      className="inline-block bg-[#FFD700] text-black px-12 py-5 font-oswald text-xl tracking-wider hover:bg-white transition-all uppercase font-bold"
+                      className="inline-block bg-[#C9A84C] text-black px-12 py-5 font-oswald text-xl tracking-wider hover:bg-white transition-all uppercase font-bold"
                     >
                       {chapter.btn}
                     </Link>
@@ -139,8 +139,8 @@ const PhilosophyPage = () => {
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">MASTERCARD</div>
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">AMEX</div>
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">APPLE PAY</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">₿ BTC</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#FFD700] tracking-widest uppercase">Ξ ETH</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#C9A84C] tracking-widest uppercase">₿ BTC</div>
+                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#C9A84C] tracking-widest uppercase">Ξ ETH</div>
               </div>
             </div>
 
@@ -148,9 +148,9 @@ const PhilosophyPage = () => {
             <div className="space-y-4">
               <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">RESOURCES</h4>
               <ul className="space-y-3">
-                <li><Link to={getLocalizedPath('/marcus/giveaway')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
-                <li><Link to={getLocalizedPath('/marcus/feedback')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
-                <li><Link to={getLocalizedPath('/philosophy')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.philosophy}</Link></li>
+                <li><Link to={getLocalizedPath('/marcus/giveaway')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
+                <li><Link to={getLocalizedPath('/marcus/feedback')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
+                <li><Link to={getLocalizedPath('/philosophy')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.philosophy}</Link></li>
               </ul>
             </div>
 
@@ -158,9 +158,9 @@ const PhilosophyPage = () => {
             <div className="space-y-4">
               <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">COMPLIANCE</h4>
               <ul className="space-y-3">
-                <li><Link to={getLocalizedPath('/terms')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
-                <li><Link to={getLocalizedPath('/privacy')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
-                <li><Link to={getLocalizedPath('/guarantee')} className="text-[#6A6A6A] hover:text-[#FFD700] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.guarantee}</Link></li>
+                <li><Link to={getLocalizedPath('/terms')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
+                <li><Link to={getLocalizedPath('/privacy')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
+                <li><Link to={getLocalizedPath('/guarantee')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.guarantee}</Link></li>
               </ul>
             </div>
 
@@ -171,7 +171,7 @@ const PhilosophyPage = () => {
                 {t.marcus.footer.address}
               </p>
               <div className="pt-4">
-                <Link to={getLocalizedPath('/contact')} className="text-[#FFD700] hover:text-white font-oswald text-[10px] tracking-widest transition-all uppercase font-bold">{t.marcus.footer.contact}</Link>
+                <Link to={getLocalizedPath('/contact')} className="text-[#C9A84C] hover:text-white font-oswald text-[10px] tracking-widest transition-all uppercase font-bold">{t.marcus.footer.contact}</Link>
               </div>
             </div>
           </div>
@@ -188,9 +188,9 @@ const PhilosophyPage = () => {
                  {t.marcus.footer.rights}
                </span>
                <div className="flex gap-8">
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">INSTAGRAM</a>
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">X (TWITTER)</a>
-                 <a href="#" className="text-[#2A2A2A] hover:text-[#FFD700] font-oswald text-[9px] tracking-widest uppercase transition-all">YOUTUBE</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">INSTAGRAM</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">X (TWITTER)</a>
+                 <a href="#" className="text-[#2A2A2A] hover:text-[#C9A84C] font-oswald text-[9px] tracking-widest uppercase transition-all">YOUTUBE</a>
                </div>
             </div>
           </div>
