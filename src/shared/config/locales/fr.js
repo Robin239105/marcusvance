@@ -38,18 +38,22 @@ export const baseFR = {
       faq: "FAQ",
       enroll: "START"
     },
-    hero: {
-      badge: "PROTOCOLE ÉLITE OUVERT",
-      title1: "DÉCODEZ LE",
-      title2: "SUCCÈS NUMÉRIQUE",
-      subtitle: "Le protocole définitif pour construire une entreprise en ligne à haute valeur ajoutée. Pas de distractions. Pas de remplissage. Juste de l'exécution pure.",
-      cta: "REJOINDRE LE DÉFI",
-      scroll: "DÉCOUVRIR LE SYSTÈME",
-      proof: "2 400+ entrepreneurs inscrits"
-    },
-    urgency: {
-      text: "RESTE : 4 PLACES POUR LE GROUPE D'AVRIL",
-      noCard: "AUCUNE CARTE REQUISE"
+    navAboutChallenge: 'LE DÉFI',
+    navStartBtn: 'COMMENCER LE DÉFI',
+    heroPreHeader: 'RESERVÉ AUX HAUTS POTENTIELS',
+    heroTitle: 'DÉCODEZ LE. SUCCÈS NUMÉRIQUE',
+    heroSubtitle: 'LE PROTOCOLE DÉFINITIF POUR CONSTRUIRE UNE ENTREPRISE EN LIGNE À HAUTE VALEUR AJOUTÉE — SANS REMPLISSAGE.',
+    heroScroll: 'DÉCOUVRIR LE SYSTÈME',
+    heroStats: `${dynamicStats.startedThisMonth} ENTREPRENEURS ONT COMMENCÉ CE MOIS-CI`,
+    heroCommunity: 'Rejoignez la communauté à 93% de réussite',
+    ctaPrimary: 'LANCER MON DÉFI GRATUIT →',
+    ctaInvestment: 'INVESTISSEMENT : {currency}0,00 / COMPLÈTEMENT GRATUIT',
+    valueStackHeader: 'VALEUR TOTALE DU DÉFI : {currency}806+',
+    stats: {
+      started: 'PERSONNES ONT COMMENCÉ CE MOIS-CI',
+      joined: 'ONT REJOINT LE PROGRAMME',
+      launched: 'ONT LANCÉ LEUR ENTREPRISE LE MOIS 1',
+      rating: 'NOTE VÉRIFIÉE'
     },
     footer: {
       giveaway: "CONCOURS",

@@ -3,6 +3,13 @@ import dynamicStats from '../../utils/dynamicStats';
 export const baseDE = {
   marcus: {
     urgencyBar: `⚡ NUR NOCH ${dynamicStats.spotsRemaining} PLÄTZE FREI FÜR ${dynamicStats.currentMonth}`,
+    nav: {
+      method: 'METHODE',
+      philosophy: 'PHILOSOPHIE',
+      challenge: 'CHALLENGE',
+      faq: 'FAQ',
+      enroll: 'START'
+    },
     navAboutChallenge: 'Über die 7-Tage-Challenge',
     navAboutProgramme: 'Über das Gesamtprogramm',
     navStartBtn: 'KOSTENLOSE CHALLENGE STARTEN',
@@ -65,8 +72,22 @@ export const baseDE = {
       personaDisclosure: '"Marcus Vance" ist eine KI-generierte Bildungsmarken-Persona. Sie entspricht keiner realen Einzelperson, keinem Schöpfer und keiner physischen Person. Alle dieser Persona zugeschriebenen Inhalte werden vom Team der Lucky North Star LLC entwickelt.'
     },
     giveaway: {
-      badge: 'GEWINNSPIEL',
-      title: 'NEUESTES iPHONE'
+      badge: 'GEWINNSPIEL: SO FUNKTIONIERT ES',
+      title: 'GEWINNEN SIE DAS NEUESTE iPHONE & MACBOOK PRO',
+      steps: [
+        { title: 'CHALLENGE STARTEN', desc: 'Nehmen Sie an der kostenlosen 7-Tage-Challenge teil, um ein verifiziertes Kohortenmitglied zu werden.' },
+        { title: 'PROTOKOLL ABSCHLIESSEN', desc: 'Führen Sie die täglichen Aufgaben aus. Ihr einzigartiges Teilnahmeportal wird an Tag 7 freigeschaltet.' },
+        { title: 'TEILNAHME', desc: 'Anleitungs-Links befinden sich in Ihrem professionellen Dashboard.' }
+      ],
+      participationInstructions: "Direkte Zugangslinks werden exklusiv im Kohorten-Dashboard bereitgestellt, um die Integrität unserer High-Level-Community zu wahren.",
+      disclaimer: "* DIE GEWINNER WERDEN AM 1. JEDES MONATS PER E-MAIL BEKANNT GEGEBEN.",
+      privateLink: "WAR IHRE ERFAHRUNG ANDERS? HINTERLASSEN SIE STATTDESSEN EINE PRIVATE BEWERTUNG →",
+      backLink: "← Zurück zu Alpha",
+      form: {
+        firstName: "VORNAME",
+        email: "E-MAIL",
+        submit: "BEWERBUNG EINREICHEN"
+      }
     },
     roadmap: {
       badge: 'TEIL 1: DIE AUSFÜHRUNG',
