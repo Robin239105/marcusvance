@@ -221,6 +221,23 @@ export const baseEN = {
       peekInsideTitle: 'PEEK INSIDE THE CURRICULUM',
       peekInsideSubtitle: 'Hover over categories to reveal the deep-dive topics that await after you qualify.'
     },
+    legacyLibrary: {
+      title: 'THE LEGACY LIBRARY',
+      subTitle: 'Once the challenge is completed you receive an invitation. The private library is the densest resource on the market for digital operators; here is what it contains.',
+      valueStack: 'VALUE STACK — LEGACY LIBRARY',
+      items: [
+        { t: 'BUSINESS & ENTREPRENEURSHIP', p: '497', d: '331 resources · startups · solopreneuriat · leadership' },
+        { t: 'MARKETING & SALES', p: '697', d: '600+ resources · funnels · paid ads · SEO · email' },
+        { t: 'BRANDING & CREATION', p: '397', d: '280+ resources · copywriting · content · product' },
+        { t: 'GROWTH & MINDSET', p: '297', d: '400+ resources · productivity · systems · habits' },
+        { t: 'TECH, IA & AUTOMATISATION', p: '597', d: '280+ resources · GPT prompts · n8n · e-commerce' },
+        { t: 'MONTHLY AUDITS + LIVE FILE SWIPING', p: '497', d: 'Case studies · templates · Updated monthly' }
+      ],
+      totalLabel: 'TOTAL VALUE RECONSTRUCTED ALONE',
+      totalValue: '10 200',
+      accessNotice: 'ACCESS IS UNLOCKED ONLY FOR THE ONES WHO HAVE COMPLETED THE 7- DAYS CHALLENGE.',
+      priceReveal: 'The exact price of the life pass will be revealed on day 7 ( silver )'
+    },
     faqCategories: {
       general: "General",
       money: "Money & Revenue",

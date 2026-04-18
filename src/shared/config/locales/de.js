@@ -225,6 +225,23 @@ export const baseDE = {
       peekInsideTitle: 'BLICK IN DAS CURRICULUM',
       peekInsideSubtitle: 'Fahren Sie mit der Maus über die Kategorien, um die tiefgehenden Themen zu enthüllen, die Sie nach Ihrer Qualifizierung erwarten.'
     },
+    legacyLibrary: {
+      title: 'THE LEGACY LIBRARY',
+      subTitle: 'Sobald die Challenge abgeschlossen ist, erhalten Sie eine Einladung. Die private Bibliothek ist die umfassendste Ressource auf dem Markt für digitale Akteure; hier erfahren Sie, was sie enthält.',
+      valueStack: 'VALUE STACK — LEGACY LIBRARY',
+      items: [
+        { t: 'BUSINESS & UNTERNEHMERTUM', p: '497', d: '331 Ressourcen · Startups · Solopreneurship · Führung' },
+        { t: 'MARKETING & VERTRIEB', p: '697', d: '600+ Ressourcen · Funnels · bezahlte Anzeigen · SEO · E-Mail' },
+        { t: 'BRANDING & DESIGN', p: '397', d: '280+ Ressourcen · Copywriting · Content · Produkt' },
+        { t: 'WACHSTUM & MINDSET', p: '297', d: '400+ Ressourcen · Produktivität · Systeme · Gewohnheiten' },
+        { t: 'TECH, KI & AUTOMATISIERUNG', p: '597', d: '280+ Ressourcen · GPT-Prompts · n8n · E-Commerce' },
+        { t: 'MONATLICHE AUDITS + LIVE-DATEIEN', p: '497', d: 'Fallstudien · Vorlagen · Monatliche Aktualisierung' }
+      ],
+      totalLabel: 'GESAMTWERT ALLEIN REKONSTRUIERT',
+      totalValue: '10 200',
+      accessNotice: 'DER ZUGANG IST NUR FÜR DIEJENIGEN FREIGESCHALTET, DIE DIE 7-TAGE-CHALLENGE ABGESCHLOSSEN HABEN.',
+      priceReveal: 'Der genaue Preis des Life-Passes wird an Tag 7 ( silver ) bekannt gegeben'
+    },
     faqCategories: {
       general: "Allgemein",
       money: "Geld & Einnahmen",

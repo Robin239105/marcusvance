@@ -373,61 +373,117 @@ const FAQSection = ({ t }) => {
   );
 };
 
-const ProgramReveal = ({ t }) => (
-  <section className="py-40 bg-[#050505] border-y border-white/5">
-    <div className="max-w-7xl mx-auto px-8">
-      <SectionHeading 
-        pre={t.marcus.programme.stage02Badge}
-        title={t.marcus.programme.title}
-        subtitle={t.marcus.programme.subtitle}
-      />
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 pb-20 border-b border-white/5">
-        {t.marcus.programme.categories.map((cat, i) => (
-          <Reveal key={i} delay={i * 0.1}>
-            <div className="mv-glass-card p-10 h-full flex flex-col group hover:bg-white/[0.02] transition-all">
-              <div className="text-4xl mb-6">{cat.i}</div>
-              <h3 className="font-oswald text-2xl text-white mb-4 tracking-tighter font-bold uppercase group-hover:text-[#C9A84C] transition-colors">{cat.t}</h3>
-              <div className="text-[#C9A84C] text-[10px] font-bold tracking-[0.2em] mb-4 uppercase opacity-50">{cat.n}</div>
-              <p className="text-[#6A6A6A] text-sm leading-relaxed border-t border-white/5 pt-6 mb-6">{cat.d}</p>
-              
-              {/* Peek Inside Topics */}
-              <div className="mt-auto pt-6 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                 <div className="font-oswald text-[8px] text-[#A3A3A3] tracking-[0.3em] uppercase mb-4 font-bold">CORE TOPICS:</div>
-                 <div className="flex flex-wrap gap-2">
-                    {cat.d.split(' · ').slice(0, 4).map((topic, idx) => (
-                      <span key={idx} className="px-2 py-1 bg-white/5 border border-white/5 rounded-[2px] font-oswald text-[8px] text-white/40 tracking-widest uppercase">{topic}</span>
-                    ))}
-                    <span className="px-2 py-1 bg-[#C9A84C]/10 border border-[#C9A84C]/20 rounded-[2px] font-oswald text-[8px] text-[#C9A84C] tracking-widest uppercase">+ {Math.floor(Math.random() * 20) + 10} MORE</span>
-                 </div>
-              </div>
+const LegacyLibrary = ({ t, currency }) => (
+  <section className="py-32 md:py-48 bg-[#000000] border-y border-white/5 relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-8 relative z-10">
+      <div className="flex flex-col lg:flex-row gap-20 items-start">
+        {/* Left: Value Stack */}
+        <div className="w-full lg:w-7/12 order-2 lg:order-1">
+          <Reveal>
+            <div className="font-oswald text-[#C9A84C]/50 text-[10px] tracking-[0.4em] font-bold uppercase mb-8 border-l-2 border-[#C9A84C] pl-4">
+              {t.marcus.legacyLibrary.valueStack}
             </div>
           </Reveal>
-        ))}
-      </div>
 
-      <div className="py-20">
-         <div className="text-center mb-12">
-            <h4 className="font-oswald text-white text-3xl font-bold tracking-tight uppercase mb-4 italic">{t.marcus.programme.peekInsideTitle}</h4>
-            <div className="font-oswald text-[#C9A84C] text-[10px] tracking-[0.4em] font-bold uppercase mb-8">{t.marcus.programme.moreToExplore}</div>
-         </div>
-         <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-4">
-           {t.marcus.programme.unlockStats.map((stat, i) => (
-             <div key={i} className="text-center p-4 bg-white/[0.02] rounded-xl border border-white/5 hover:border-[#C9A84C]/30 transition-all group">
-               <div className="text-xl mb-2 group-hover:scale-110 transition-transform">{stat.i}</div>
-               <div className="font-oswald text-white font-bold text-sm tracking-widest">{stat.t}</div>
-               <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-widest font-bold">{stat.l}</div>
+          <div className="space-y-0">
+            {t.marcus.legacyLibrary.items.map((item, i) => (
+              <Reveal key={i} delay={i * 0.1}>
+                <div className="group py-8 border-b border-white/5 hover:bg-white/[0.01] transition-all px-4 -mx-4">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="font-oswald text-xl md:text-2xl text-white font-bold tracking-tight uppercase group-hover:text-[#C9A84C] transition-colors duration-500">
+                      {item.t}
+                    </h3>
+                    <div className="font-oswald text-lg md:text-xl text-[#C9A84C] font-bold tracking-tighter">
+                      {currency}{item.p}
+                    </div>
+                  </div>
+                  <p className="text-[#6A6A6A] font-oswald text-[10px] md:text-xs tracking-wider uppercase font-bold opacity-60 group-hover:opacity-100 transition-opacity">
+                    {item.d}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+
+            {/* Subtotal Bridge */}
+            <Reveal delay={0.7}>
+              <div className="py-8 flex justify-between items-center opacity-30">
+                <span className="font-oswald text-xs text-white tracking-[0.3em] uppercase">MODULES SUB-TOTAL</span>
+                <span className="font-oswald text-xl text-white tracking-tighter">$ 2 982</span>
+              </div>
+            </Reveal>
+
+            {/* Expansion Line */}
+            <Reveal delay={0.8}>
+              <div className="py-4 flex justify-between items-center border-t-2 border-dashed border-white/10">
+                <span className="font-oswald text-[10px] text-[#A3A3A3] tracking-[0.4em] uppercase">+ 42 MORE SECRETS & MONTHLY UPDATES</span>
+                <span className="font-oswald text-xs text-[#C9A84C] tracking-widest font-bold">PRICELESS</span>
+              </div>
+            </Reveal>
+
+            {/* Final Total */}
+            <Reveal delay={0.9}>
+              <div className="mt-12 p-8 bg-white/[0.02] border border-[#C9A84C]/20 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="text-center md:text-left">
+                  <div className="font-oswald text-[10px] text-[#C9A84C] tracking-[0.4em] font-bold uppercase mb-1">
+                    {t.marcus.legacyLibrary.totalLabel}
+                  </div>
+                  <div className="font-oswald text-[#A3A3A3] text-[9px] tracking-[0.2em] uppercase italic">
+                    * Including all upcoming infrastructure updates
+                  </div>
+                </div>
+                <div className="font-oswald text-5xl md:text-6xl text-white font-bold tracking-tighter">
+                  {currency} {t.marcus.legacyLibrary.totalValue}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* Right: Context & Narrative */}
+        <div className="w-full lg:w-5/12 order-1 lg:order-2 lg:sticky lg:top-32">
+          <Reveal>
+             <div className="font-oswald text-[#C9A84C] text-[12px] tracking-[0.5em] font-bold uppercase mb-8 italic">
+               THE FULL PROTOCOL
              </div>
-           ))}
-         </div>
-      </div>
-
-      <div className="mt-20 text-center border-t border-white/5 pt-20">
-        <p className="text-[#A3A3A3] font-oswald text-sm mb-12 max-w-xl mx-auto leading-relaxed font-light italic">{t.marcus.programme.exclusivity}</p>
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-[#C9A84C] text-black px-12 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold shadow-[#C9A84C]/20">{t.marcus.programme.cta}</button>
-        <p className="mt-6 font-oswald text-[#3A3A3A] text-[10px] tracking-[0.3em] uppercase font-bold">{t.marcus.programme.ctaDisclaimer}</p>
+             <h2 className="font-oswald text-5xl md:text-7xl lg:text-8xl text-white font-bold tracking-tighter leading-[0.9] uppercase mb-12 italic">
+               {t.marcus.legacyLibrary.title}
+             </h2>
+             <div className="w-20 h-1 bg-[#C9A84C] mb-12" />
+             <p className="text-[#A3A3A3] text-lg md:text-xl font-light leading-relaxed mb-12 italic uppercase tracking-wide">
+               {t.marcus.legacyLibrary.subTitle}
+             </p>
+             
+             <div className="p-8 border border-white/5 bg-white/[0.01]">
+                <div className="flex items-center gap-4 mb-6">
+                   <div className="w-12 h-12 rounded-full border border-[#C9A84C]/30 flex items-center justify-center text-[#C9A84C] font-bold">!</div>
+                   <div className="font-oswald text-xs text-white tracking-widest uppercase font-bold">ALUMNI RESTRICTIONS</div>
+                </div>
+                <p className="text-[#6A6A6A] text-[10px] leading-loose tracking-[0.1em] uppercase font-bold">
+                  {t.marcus.legacyLibrary.accessNotice}
+                </p>
+             </div>
+          </Reveal>
+        </div>
       </div>
     </div>
+
+    {/* Footer Disclaimer Strip */}
+    <div className="mt-32 w-full bg-white text-black py-4 overflow-hidden relative z-20">
+       <div className="flex whitespace-nowrap animate-marquee">
+          {[1,2,3,4].map(i => (
+            <div key={i} className="flex items-center mx-8">
+               <span className="font-oswald text-[10px] font-black tracking-[0.3em] uppercase underline mr-4">WARNING:</span>
+               <span className="font-oswald text-[10px] font-bold tracking-[0.2em] uppercase italic">
+                 {t.marcus.legacyLibrary.priceReveal} — {t.marcus.legacyLibrary.priceReveal} — {t.marcus.legacyLibrary.priceReveal}
+               </span>
+            </div>
+          ))}
+       </div>
+    </div>
+
+    {/* Background visual accents */}
+    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#C9A84C]/[0.03] blur-[150px] -z-10 rounded-full" />
+    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#C9A84C]/[0.02] blur-[120px] -z-10 rounded-full translate-y-1/2 -translate-x-1/4" />
   </section>
 );
 
@@ -799,7 +855,7 @@ const MarcusElitePage = () => {
         </section>
 
 
-        <ProgramReveal t={t} />
+        <LegacyLibrary t={t} currency={currency} />
 
         <FAQSection t={t} />
 
