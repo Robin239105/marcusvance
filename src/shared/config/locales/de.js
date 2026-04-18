@@ -1,8 +1,8 @@
-import dynamicStats from '../../utils/dynamicStats';
+const monthsDE = ['JANUAR', 'FEBRUAR', 'MÄRZ', 'APRIL', 'MAI', 'JUNI', 'JULI', 'AUGUST', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DEZEMBER'];
 
 export const baseDE = {
   marcus: {
-    urgencyBar: `⚡ NUR NOCH ${dynamicStats.spotsRemaining} PLÄTZE FREI FÜR ${dynamicStats.currentMonth}`,
+    urgencyBar: `⚡ NUR NOCH ${dynamicStats.spotsRemaining} PLÄTZE FREI FÜR ${monthsDE[dynamicStats.monthIndex]}`,
     nav: {
       method: 'METHODE',
       philosophy: 'PHILOSOPHIE',
@@ -61,11 +61,19 @@ export const baseDE = {
         referral: 'ist über eine Empfehlung beigetreten'
       }
     },
-    heroTitle: 'IHRE ERSTE EINNAHMEQUELLE. IN 7 TAGEN.',
+    heroTitle: {
+       part1: 'IHR ERSTES',
+       part2: 'DIGITALES SYSTEM',
+       part3: 'IN 7 TAGEN.'
+    },
     heroSubtitle: 'DIE 7-TAGE-CHALLENGE ZU IHREM ERSTEN DIGITALEN EINKOMMEN — VON NULL ANFANGEND',
-    heroStats: `${dynamicStats.startedThisMonth} HIGH-PERFORMER HABEN DIESEN MONAT GESTARTET`,
+    heroBullets: [
+      '01. DIE KOSTENLOSE CHALLENGE, ERSTELLT VON UNSEREN KI-SYSTEMEN',
+      '02. ZUGANG ZUR LEGACY-BIBLIOTHEK NACH QUALIFIKATION'
+    ],
     heroCommunity: 'Treten Sie der Community mit 93% Erfolgsquote bei',
     heroScroll: 'SYSTEM OFFENLEGEN',
+    heroStats: `{count} HIGH-PERFORMER SIND DIESEN MONAT BEIGETRETEN`,
     ctaPrimary: 'MEINE KOSTENLOSE CHALLENGE STARTEN →',
     ctaInvestment: 'INVESTITION: {currency}0,00 / VOLLSTÄNDIG KOSTENLOS',
     valueStackHeader: 'GESAMTCHALLENGE-WERT: {currency}806+',

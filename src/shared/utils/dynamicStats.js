@@ -7,7 +7,7 @@
 
 const now = new Date();
 const dayOfMonth = now.getDate();
-const monthName = now.toLocaleString('en-US', { month: 'long' }).toUpperCase();
+const monthIndex = now.getMonth();
 
 // logic: Spots decrease as the month progresses (Urgency)
 // Range: 48 (Day 1) to ~4 (Day 30)
@@ -18,7 +18,7 @@ const spotsRemaining = Math.max(4, 48 - Math.floor(dayOfMonth * 1.4) + (dayOfMon
 const startedThisMonth = 812 + (dayOfMonth * 12) + (dayOfMonth % 5);
 
 export const dynamicStats = {
-  currentMonth: monthName,
+  monthIndex: monthIndex,
   spotsRemaining: spotsRemaining,
   startedThisMonth: startedThisMonth,
   fullProgrammeTotal: 980, // Static for now as it's the course count

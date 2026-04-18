@@ -43,6 +43,20 @@ body::after {
   animation: waterflow 4s linear infinite;
 }
 
+@keyframes mv-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(201, 168, 76, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(201, 168, 76, 0.8), 0 0 10px rgba(201, 168, 76, 0.3);
+  }
+}
+
+.mv-glow {
+  position: relative;
+  animation: mv-pulse-glow 2s infinite ease-in-out;
+}
+
 @keyframes scroll-logos {
   to { transform: translateX(-50%); }
 }

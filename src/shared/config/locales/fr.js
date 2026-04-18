@@ -1,8 +1,8 @@
-import dynamicStats from '../../utils/dynamicStats';
+const monthsFR = ['JANVIER', 'FÉVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN', 'JUILLET', 'AOÛT', 'SEPTEMBRE', 'OCTOBRE', 'NOVEMBRE', 'DÉCEMBRE'];
 
 export const baseFR = {
   marcus: {
-    urgencyBar: `⚡ PLUS QUE ${dynamicStats.spotsRemaining} PLACES POUR LE GROUPE DE ${dynamicStats.currentMonth}`,
+    urgencyBar: `⚡ PLUS QUE ${dynamicStats.spotsRemaining} PLACES POUR LE GROUPE DE ${monthsFR[dynamicStats.monthIndex]}`,
     enroll: {
       popupTitle: 'VOTRE SIÈGE AU CLUB.',
       popupSubtitle: 'SÉCURISEZ VOTRE POSITION DANS LE ALPHA COLLECTIVE.',
@@ -88,10 +88,18 @@ export const baseFR = {
         referral: 'a rejoint via un parrainage'
       }
     },
-    heroTitle: 'VOTRE PREMIER REVENU. EN 7 JOURS.',
+    heroTitle: {
+       part1: 'VOTRE PREMIER',
+       part2: 'SYSTÈME NUMÉRIQUE',
+       part3: 'EN 7 JOURS.'
+    },
     heroSubtitle: 'LE DÉFI DE 7 JOURS POUR VOTRE PREMIER REVENU NUMÉRIQUE — EN PARTANT DE ZÉRO',
+    heroBullets: [
+      '01. LE DÉFI GRATUIT PRODUIT PAR NOS SYSTÈMES D\'IA',
+      '02. ACCÈS À LA BIBLIOTHÈQUE LEGACY APRÈS QUALIFICATION'
+    ],
     heroScroll: 'DÉCOUVRIR LE SYSTÈME',
-    heroStats: `${dynamicStats.startedThisMonth} ENTREPRENEURS ONT COMMENCÉ CE MOIS-CI`,
+    heroStats: `{count} HAUTS POTENTIELS ONT REJOINT LE DÉFI CE MOIS-CI`,
     heroCommunity: 'Rejoignez la communauté à 93% de réussite',
     ctaPrimary: 'LANCER MON DÉFI GRATUIT →',
     ctaInvestment: 'INVESTISSEMENT : {currency}0,00 / COMPLÈTEMENT GRATUIT',

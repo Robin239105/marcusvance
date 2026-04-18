@@ -1,8 +1,8 @@
-import dynamicStats from '../../utils/dynamicStats';
+const monthsEN = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
 
 export const baseEN = {
   marcus: {
-    urgencyBar: `⚡ ONLY ${dynamicStats.spotsRemaining} COHORT SPOTS REMAINING FOR ${dynamicStats.currentMonth}`,
+    urgencyBar: `⚡ ONLY ${dynamicStats.spotsRemaining} COHORT SPOTS REMAINING FOR ${monthsEN[dynamicStats.monthIndex]}`,
     nav: {
       method: 'METHOD',
       philosophy: 'PHILOSOPHY',
@@ -60,12 +60,18 @@ export const baseEN = {
         referral: 'joined from a referral'
       }
     },
-    heroTitle: 'YOUR FIRST HIGH-INCOME STREAM. 7 DAYS.',
+    heroTitle: {
+       part1: 'YOUR FIRST',
+       part2: 'DIGITAL',
+       part3: 'SYSTEM IN 7 DAYS.'
+    },
     heroSubtitle: 'THE 7-DAY CHALLENGE TO YOUR FIRST DIGITAL INCOME — STARTING FROM SCRATCH',
-    heroScroll: 'SCROLL TO DISCOVER THE METHOD',
-    heroStats: `${dynamicStats.startedThisMonth} HIGH-PERFORMERS STARTED THIS MONTH`,
-    heroCommunity: 'Join the 93% success rate community',
+    heroBullets: [
+      '01. THE FREE CHALLENGE PRODUCED BY OUR AI SYSTEMS',
+      '02. ACCESS TO THE LEGACY LIBRARY AFTER QUALIFICATION'
+    ],
     heroScroll: 'EXPOSE THE SYSTEM',
+    heroStats: `{count} HIGH-PERFORMERS JOINED THE CHALLENGE THIS MONTH`,
     ctaPrimary: 'START MY FREE CHALLENGE →',
     ctaInvestment: 'INVESTMENT: {currency}0.00 / COMPLETELY FREE',
     valueStackHeader: 'TOTAL CHALLENGE VALUE: {currency}806+',
