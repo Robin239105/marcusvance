@@ -88,8 +88,8 @@ export const baseFR = {
         referral: 'a rejoint via un parrainage'
       }
     },
-    heroTitle: 'DÉCODEZ LE. SUCCÈS NUMÉRIQUE',
-    heroSubtitle: 'LE PROTOCOLE DÉFINITIF POUR CONSTRUIRE UNE ENTREPRISE EN LIGNE À HAUTE VALEUR AJOUTÉE — SANS REMPLISSAGE.',
+    heroTitle: 'VOTRE PREMIER REVENU. EN 7 JOURS.',
+    heroSubtitle: 'LE DÉFI DE 7 JOURS POUR VOTRE PREMIER REVENU NUMÉRIQUE — EN PARTANT DE ZÉRO',
     heroScroll: 'DÉCOUVRIR LE SYSTÈME',
     heroStats: `${dynamicStats.startedThisMonth} ENTREPRENEURS ONT COMMENCÉ CE MOIS-CI`,
     heroCommunity: 'Rejoignez la communauté à 93% de réussite',
@@ -99,12 +99,12 @@ export const baseFR = {
     stats: {
       started: 'PERSONNES ONT COMMENCÉ CE MOIS-CI',
       joined: 'ONT REJOINT LE PROGRAMME',
-      launched: 'ONT LANCÉ LEUR ENTREPRISE LE MOIS 1',
+      launched: 'ONT LANCÉ LEUR BUSINESS AU MOIS 1',
       rating: 'NOTE VÉRIFIÉE'
     },
     footer: {
       giveaway: "CONCOURS",
-      feedback: "VOTRE AVIS",
+      feedback: "FEEDBACK",
       philosophy: "LA PHILOSOPHIE",
       terms: "CONDITIONS GÉNÉRALES",
       privacy: "POLITIQUE DE CONFIDENTIALITÉ",
@@ -115,70 +115,11 @@ export const baseFR = {
       rights: "© 2025 LUCKY NORTH STAR LLC — TOUS DROITS RÉSERVÉS.",
       address: "1309 COFFEEN AVENUE, SUITE 1200\nSHERIDAN, WYOMING 82801 — USA",
       platformDisclaimer: "AVERTISSEMENT : Ce site web et le Défi de 7 Jours ne sont pas affiliés à ou approuvés par Facebook™, Instagram™, TikTok™ ou Google™. Les résultats mentionnés sont des résultats individuels et ne sont pas garantis. La création d'une entreprise en ligne durable nécessite de réels efforts, des compétences et un engagement soutenu. Ceci ne constitue en aucun cas un conseil financier, juridique ou d'investissement.",
-      personaDisclosure: "\"Marcus Vance\" est un personnage de marque éducatif généré par IA. Il ne correspond à aucun individu, créateur ou personne physique réelle. Tout le contenu attribué à ce personnage est développé par l'équipe de Lucky North Star LLC."
+      personaDisclosure: "\"Marcus Vance\" est un personnage de marque éducatif généré par IA. Il ne correspond à aucun individu réel, créateur ou personne physique. Tout le contenu attribué à ce personnage est développé par l'équipe de Lucky North Star LLC."
     },
     giveaway: {
-      badge: "CONCOURS : COMMENT ÇA MARCHE",
-      title: "GAGNEZ LE DERNIER iPHONE & MACBOOK PRO",
-      steps: [
-        { title: 'COMMENCER LE DÉFI', desc: 'Rejoignez le défi gratuit de 7 jours pour devenir un membre vérifié de la cohorte.' },
-        { title: 'COMPLÉTER LE PROTOCOLE', desc: 'Exécutez les tâches quotidiennes. Votre portail d\'entrée unique se déverrouille au jour 7.' },
-        { title: 'PARTICIPER AU TIRAGE', desc: 'Les liens d\'instruction sont fournis dans votre tableau de bord professionnel.' }
-      ],
-      participationInstructions: "Les liens d'accès direct sont fournis exclusivement dans le tableau de bord de la cohorte pour maintenir l'intégrité de notre communauté de haut niveau.",
-      disclaimer: "* LES GAGNANTS SONT ANNONCÉS LE 1ER DE CHAQUE MOIS PAR E-MAIL.",
-      privateLink: "VOTRE EXPÉRIENCE ÉTAIT DIFFÉRENTE ? LAISSEZ UN AVIS PRIVÉ À LA PLACE →",
-      backLink: "← Retour à Alpha",
-      form: {
-        firstName: "PRÉNOM",
-        email: "E-MAIL",
-        submit: "DÉPOSER VOTRE CANDIDATURE"
-      }
-    },
-    feedback: {
-      badge: "INTELLIGENCE",
-      title: "VOTRE AVIS",
-      subtitle: "Aidez-nous à affiner le protocole. Votre feedback façonne l'avenir de l'Elite.",
-      nameLabel: "NOM COMPLET",
-      emailLabel: "E-MAIL",
-      feedbackLabel: "MESSAGE",
-      placeholder: "Qu'aurions-nous pu faire de mieux ?",
-      submitBtn: "ENVOYER",
-      successTitle: "MERCI POUR VOTRE AVIS.",
-      successDesc: "Nous avons bien reçu votre feedback. Notre équipe l'examine pour garantir la meilleure expérience possible.",
-      returnBtn: "RETOUR AU TABLEAU DE BORD"
-    },
-    programme: {
-      stage01Badge: 'ÉTAPE 01 : LE DÉFI DE 7 JOURS',
-      stage02Badge: 'ÉTAPE 02 : LE PROTOCOLE COMPLET',
-      badge: 'PARTIE 2 : L\'HÉRITAGE',
-      title: 'CE QUI VOUS ATTEND APRÈS...',
-      subtitle: 'Complétez les 7 jours. Gagnez votre invitation à la bibliothèque d\'éducation commerciale numérique la plus complète qui soit.',
-      categories: [
-         { i: '💼', t: 'AFFAIRES & ENTREPRENEURIAT', n: '331 ressources', d: 'Startups · Business en ligne · Freelancing · Solopreneur · Leadership · État d\'esprit' },
-         { i: '📈', t: 'MARKETING & VENTES', n: '600+ ressources', d: 'Marketing numérique · Ventes · Tunnels · Publicité payante · Email Marketing · SEO · Génération de prospects' },
-         { i: '🧠', t: 'CROISSANCE PERSONNELLE', n: '400+ ressources', d: 'Développement personnel · Productivité · Habitudes · Intelligence émotionnelle · Systèmes' },
-         { i: '🎨', t: 'BRANDING & CRÉATION', n: '280+ ressources', d: 'Branding · Rédaction · Création de contenu · Développement de produits · Économie des créateurs' },
-         { i: '⚙️', t: 'TECH & OUTILS', n: '280+ ressources', d: 'IA · Automatisation · E-commerce · Outils technologiques · Finance · Cybersécurité' }
-      ],
-      exclusivity: '"Ceci n\'est pas un cours. C\'est un système d\'exploitation complet pour entreprise numérique. Révélé seulement après avoir terminé le défi."',
-      stats: '980+ RESSOURCES · 47 CATÉGORIES',
-      unlockStats: [
-        { i: '📚', t: '250+', l: 'Livres' },
-        { i: '✅', t: '225+', l: 'Check-lists' },
-        { i: '📖', t: '173+', l: 'Guides' },
-        { i: '🎧', t: '105+', l: 'Audio' },
-        { i: '🤖', t: '89+', l: 'Prompts IA' },
-        { i: '💻', t: '64+', l: 'Cours' },
-        { i: '📓', t: '46+', l: 'Cahiers' },
-        { i: '🛠️', t: '45+', l: 'Outils' },
-        { i: '🎬', t: '61+', l: 'Vidéos' }
-      ],
-      cta: 'S\'INSCRIRE AU DÉFI GRATUIT →',
-      ctaDisclaimer: 'Complétez le défi pour tout débloquer ci-dessus',
-      moreToExplore: '900+ RESSOURCES · 47 CATÉGORIES · MIS À JOUR TOUTES LES SEMAINES',
-      peekInsideTitle: 'UN APERÇU DU CURRICULUM',
-      peekInsideSubtitle: 'Survolez les catégories pour découvrir les sujets profonds qui vous attendent après votre qualification.'
+      badge: 'CONCOURS',
+      title: 'DERNIER iPHONE'
     },
     roadmap: {
       badge: 'LE PROTOCOLE',
@@ -212,6 +153,97 @@ export const baseFR = {
       { t: "LE VISIONNAIRE", d: "Vous voyez le changement dans l'économie numérique et voulez construire une marque qui porte votre héritage, pas seulement un emploi.", i: "👁️" },
       { t: "LE HAUT-POTENTIEL", d: "Vous avez déjà du succès dans votre domaine mais vous vous sentez limité. Vous avez besoin de systèmes à fort levier pour franchir les 50k$ mois.", i: "🚀" }
     ],
+    programme: {
+      stage01Badge: 'ÉTAPE 01 : LE DÉFI DE 7 JOURS',
+      stage02Badge: 'ÉTAPE 02 : LE PROTOCOLE COMPLET',
+      badge: 'PARTIE 2 : L\'HÉRITAGE',
+      title: 'CE QUI VOUS ATTEND APRÈS...',
+      subtitle: 'Complétez les 7 jours. Gagnez votre invitation à la bibliothèque d\'éducation commerciale numérique la plus complète qui soit.',
+      categories: [
+         { i: '💼', t: 'AFFAIRES & ENTREPRENEURIAT', n: '331 ressources', d: 'Startups · Business en ligne · Freelancing · Solopreneur · Leadership · État d\'esprit' },
+         { i: '📈', t: 'MARKETING & VENTES', n: '600+ ressources', d: 'Marketing numérique · Ventes · Tunnels · Publicité payante · Email Marketing · SEO · Génération de prospects' },
+         { i: '🧠', t: 'CROISSANCE PERSONNELLE', n: '400+ ressources', d: 'Développement personnel · Productivité · Habitudes · Intelligence émotionnelle · Systèmes' },
+         { i: '🎨', t: 'BRANDING & CRÉATION', n: '280+ ressources', d: 'Branding · Rédaction · Création de contenu · Développement de produits · Économie des créateurs' },
+         { i: '⚙️', t: 'TECH & OUTILS', n: '280+ ressources', d: 'IA · Automatisation · E-commerce · Outils technologiques · Finance · Cybersécurité' }
+      ],
+      exclusivity: '"Ceci n\'est pas un cours. C\'est un système d\'exploitation complet pour entreprise numérique. Révélé seulement après avoir terminé le défi."',
+      stats: '980+ RESSOURCES · 47 CATÉGORIES',
+      unlockStats: [
+        { i: '📚', t: '250+', l: 'Livres' },
+        { i: '✅', t: '225+', l: 'Check-lists' },
+        { i: '📖', t: '173+', l: 'Guides' },
+        { i: '🎧', t: '105+', l: 'Audio' },
+        { i: '🤖', t: '89+', l: 'Prompts IA' },
+        { i: '💻', t: '64+', l: 'Cours' },
+        { i: '📓', t: '46+', l: 'Cahiers' },
+        { i: '🛠️', t: '45+', l: 'Outils' },
+        { i: '🎬', t: '61+', l: 'Vidéos' }
+      ],
+      cta: 'S\'INSCRIRE AU DÉFI GRATUIT →',
+      ctaDisclaimer: 'Complétez le défi pour tout débloquer ci-dessus',
+      moreToExplore: '900+ RESSOURCES · 47 CATÉGORIES · MIS À JOUR TOUTES LES SEMAINES',
+      peekInsideTitle: 'UN APERÇU DU CURRICULUM',
+      peekInsideSubtitle: 'Survolez les catégories pour découvrir les sujets profonds qui vous attendent après votre qualification.'
+    },
+    faqCategories: {
+      general: "Général",
+      money: "Argent & Revenus",
+      process: "Fonctionnement",
+      after: "Après le Défi",
+      security: "Sécurité & Confiance"
+    },
+    faq: {
+      general: [
+        { q: "Qu'est-ce que le Défi de 7 Jours ?", a: "C'est une opportunité unique de 7 jours pour recevoir un programme éducatif conçu pour auditer les participants — évaluer leur situation actuelle, déterminer où ils en sont dans leur parcours d'entreprise numérique, fournir tous les outils fondamentaux essentiels pour structurer leur(s) idée(s) et tracer les prochaines étapes concrètes pour passer à l'action." },
+        { q: "Est-ce vraiment gratuit ?", a: "Oui, le défi est complètement gratuit — sans frais, aucune carte de crédit requise." }
+      ],
+      money: [
+        { q: "Puis-je vraiment gagner de l'argent en 7 jours ?", a: "C'est possible — pas garanti, mais tout à fait possible ! Nous fournissons les outils et techniques, mais le succès dépend de votre application." }
+      ],
+      process: [
+        { q: "Vais-je construire un véritable business ?", a: "Oui — c'est le but de notre protocole d'exécution." }
+      ],
+      after: [
+        { q: "Que se passe-t-il après les 7 jours ?", a: "Une fois le défi réussi, le programme complet et l'offre détaillée vous seront présentés." }
+      ],
+      security: [
+        { q: "Mes données sont-elles protégées ?", a: "Nous hébergeons notre site via Hostinger et traitons les transactions via Stripe." }
+      ]
+    },
+    finalCTA: {
+      title: 'LE MOMENT D\'AGIR EST MAINTENANT.',
+      community: 'REJOIGNEZ LA COMMUNAUTÉ DE 12 024+ ANCIENS',
+      successRate: '93% DE TAUX DE RÉUSSITE DÈS LE PREMIER MOIS'
+    },
+    feedback: {
+      badge: 'NOUS VOUS ÉCOUTONS',
+      title: 'COMMENT NOUS AMÉLIORER ?',
+      subtitle: 'Votre expérience compte pour nous. Veuillez partager vos commentaires privés ci-dessous afin que nous puissions continuer à affiner le protocole. Vous participez toujours à notre tirage au sort mensuel.',
+      nameLabel: 'VOTRE NOM',
+      feedbackLabel: 'VOTRE FEEDBACK',
+      placeholder: 'Qu\'est-ce qui aurait pu être mieux ?',
+      submitBtn: 'ENVOYER ET PARTICIPER →',
+      successTitle: 'MERCI POUR VOTRE FEEDBACK.',
+      successDesc: 'Nous avons bien reçu vos commentaires et votre participation au concours. Notre équipe les examine pour garantir la meilleure expérience possible.',
+      returnBtn: 'RETOUR AU TABLEAU DE BORD'
+    },
+    giveaway: {
+      badge: 'CONCOURS : FONCTIONNEMENT',
+      title: 'GAGNEZ LE DERNIER iPHONE & MACBOOK PRO',
+      steps: [
+        { title: 'LANCER LE DÉFI', desc: 'Rejoignez le défi gratuit de 7 jours pour devenir un membre vérifié.' },
+        { title: 'COMPLÉTER LE PROTOCOLE', desc: 'Exécutez les tâches quotidiennes. Votre portail d\'entrée unique se débloque au Jour 7.' },
+        { title: 'PARTICIPER AU TIRAGE', desc: 'Des liens d\'instruction sont fournis dans votre tableau de bord professionnel.' }
+      ],
+      participationInstructions: 'L\'accès aux liens est réservé exclusivement au tableau de bord de la cohorte pour maintenir l\'intégrité de notre communauté.',
+      disclaimer: '* GAGNANTS ANNONCÉS LE 1ER DE CHAQUE MOIS PAR E-MAIL.',
+      privateLink: 'VOTRE EXPÉRIENCE ÉTAIT DIFFÉRENTE ? LAISSEZ UN FEEDBACK PRIVÉ →',
+      backLink: '← Retour à Alpha'
+    },
+    philosophy: {
+      returnLink: 'Retour à Alpha',
+      badge: 'LA PHILOSOPHIE',
+      chapters: [
         { id: 'chapter-1', label: 'I. LA DIVULGATION', title: 'LA TRANSPARENCE EST L\'AUTORITÉ ULTIME.', content: ['La plupart des programmes enterrent leurs divulgations. Ils mettent le langage juridique dans un pied de page, en petits caractères, sur une page que personne ne lit. Ils mettent en avant la personnalité, l\'histoire, l\'aspiration — et gardent la réalité pour les petits caractères.', 'Nous faisons les choses différemment. Nous pensons que la clarté est le fondement de la confiance, et la confiance est la seule monnaie qui compte dans l\'éducation de haut niveau. Cette page existe pour définir exactement ce qu\'est cette plateforme, qui est Marcus Vance et ce à quoi vous vous engagez.'] },
         { id: 'chapter-2', label: 'II. LA MÉTHODOLOGIE', title: 'UNE ÉDUCATION BASÉE SUR LA PERFORMANCE', content: ['La plateforme Marcus Vance est une ressource éducative développée par un collectif d\'entrepreneurs numériques et d\'architectes système. Notre méthodologie est basée sur des résultats binaires : soit le système fonctionne, soit il ne fonctionne pas. Il n\'y a pas de juste milieu.', 'Nous n\'enseignons pas de "théorie". Nous enseignons des protocoles d\'exécution. Chaque cours, check-list et cahier d\'exercices à l\'intérieur de la bibliothèque complète est extrait d\'opérations réelles menées par notre équipe de développement dans plusieurs secteurs.'] },
         { id: 'chapter-3', label: 'III. LA VOIX', title: 'MARCUS VANCE', content: ['Marcus Vance est l\'architecte du message. Il représente l\'ethos de l\'Alpha Collective. Sa "voix" est la synthèse de notre expérience collective — des décennies de succès, d\'échecs et de leçons durement acquises dans l\'économie numérique.'] },
@@ -342,51 +374,6 @@ export const baseFR = {
           ] 
         }
       ]
-    },
-    roadmap: {
-      badge: 'PARTIE 1 : L\'EXÉCUTION',
-      title: 'LE PROTOCOLE DE 7 JOURS',
-      subtitle: '"La plupart des gens restent bloqués parce qu\'ils ne font jamais le premier pas. Nous résolvons cela en 168 heures."',
-      joinCohort: `REJOIGNEZ LA COHORTE DE ${dynamicStats.startedThisMonth} CE MOIS-CI →`,
-      items: [
-        { d: '01', t: 'EXORCISME DU SALARIÉ', v: '{currency}97', s: 'Mindset' },
-        { d: '02', t: 'LE VÉHICULE FINANCIER', v: '{currency}97', s: 'Fondations' },
-        { d: '03', t: 'ARCHITECTURE DE L\'OFFRE', v: '{currency}97', s: 'Fondations' },
-        { d: '04', t: 'TRAFIC PHANTOM', v: '{currency}97', s: 'Échelle' },
-        { d: '05', t: 'PREMIÈRE INJECTION DE CAPITAL', v: '{currency}97', s: 'Vente' },
-        { d: '06', t: 'HÉRITAGE DE L\'AUTOMATISATION', v: '{currency}97', s: 'Système' },
-        { d: '07', t: 'LE PROTOCOLE DE PASSAGE À L\'ÉCHELLE', v: '{currency}97', s: 'Élite' }
-      ]
-    },
-    faqCategories: {
-      general: "Général",
-      money: "Argent & Revenus",
-      process: "Fonctionnement",
-      after: "Après le Défi",
-      security: "Sécurité & Confiance"
-    },
-    faq: {
-      general: [
-        { q: "Qu'est-ce que le Défi de 7 Jours ?", a: "C'est une opportunité unique de 7 jours pour recevoir un programme éducatif conçu pour auditer les participants — évaluer leur situation actuelle, déterminer où ils en sont dans leur parcours d'entreprise numérique, fournir tous les outils fondamentaux essentiels pour structurer leur(s) idée(s) et tracer les prochaines étapes concrètes pour passer à l'action." },
-        { q: "Est-ce vraiment gratuit ?", a: "Oui, le défi est complètement gratuit — sans frais, aucune carte de crédit requise." }
-      ],
-      money: [
-        { q: "Puis-je vraiment gagner de l'argent en 7 jours ?", a: "C'est possible — pas garanti, mais tout à fait possible ! Nous fournissons les outils et techniques, mais le succès dépend de votre application." }
-      ],
-      process: [
-        { q: "Vais-je construire un véritable business ?", a: "Oui — c'est le but de notre protocole d'exécution." }
-      ],
-      after: [
-        { q: "Que se passe-t-il après les 7 jours ?", a: "Une fois le défi réussi, le programme complet et l'offre détaillée vous seront présentés." }
-      ],
-      security: [
-        { q: "Mes données sont-elles protégées ?", a: "Nous hébergeons notre site via Hostinger et traitons les transactions via Stripe." }
-      ]
-    },
-    finalCTA: {
-      title: 'LE MOMENT D\'AGIR EST MAINTENANT.',
-      community: 'REJOIGNEZ LA COMMUNAUTÉ DE 12 024+ ANCIENS',
-      successRate: '93% DE TAUX DE RÉUSSITE DÈS LE PREMIER MOIS'
     }
   },
   trinity: {

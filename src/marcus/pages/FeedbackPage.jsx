@@ -45,7 +45,7 @@ const FeedbackPage = () => {
           </div>
 
           <div className="lg:hidden text-right flex items-center gap-4">
-             <Link to={homePath} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</Link>
+             <Link to={homePath} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">{t.marcus.ui.startBtn}</Link>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>
