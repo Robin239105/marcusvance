@@ -245,7 +245,9 @@ const MarcusElitePage = () => {
       {/* --- Header / Nav --- */}
       <nav className={`fixed top-[32px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-          <div className="font-oswald text-2xl tracking-widest text-white font-bold uppercase">MARCUS<span className="text-[#FFD700]">·</span>VANCE</div>
+          <Link to="/" className="flex items-center gap-2 group">
+            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-10 w-auto brightness-0 invert" />
+          </Link>
           <div className="hidden lg:flex items-center gap-10 font-oswald text-xs tracking-[0.3em] font-bold uppercase">
             <a href="#about" className="hover:text-[#FFD700] transition-colors">METHOD</a>
             <a href="#roadmap" className="hover:text-[#FFD700] transition-colors">CHALLENGE</a>
@@ -426,7 +428,9 @@ const MarcusElitePage = () => {
       <footer className="py-24 border-t border-white/5 bg-[#050505] relative z-20">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-16">
           <div>
-            <div className="font-oswald text-4xl text-white mb-4">MARCUS<span className="text-[#FFD700]">·</span>VANCE</div>
+            <Link to="/" className="flex items-center gap-2 mb-6 group">
+              <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-12 w-auto brightness-0 invert" />
+            </Link>
             <p className="text-[#333] font-oswald uppercase tracking-[0.5em] text-[10px] font-bold">© 2024 LUCKY NORTH STAR LLC — WYOMING, USA</p>
           </div>
           <div className="flex flex-wrap gap-x-12 gap-y-6 font-oswald text-[12px] tracking-[0.2em] text-[#555] font-bold uppercase">
