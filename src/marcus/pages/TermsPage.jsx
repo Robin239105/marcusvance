@@ -96,19 +96,5 @@ const TermsPage = () => {
     </div>
   );
 };
-          </div>
-        </div>
-      </main>
-
-      <footer className="py-20 border-t border-white/5 bg-[#050505] text-[#2A2A2A]">
-        <div className="max-w-7xl mx-auto px-8 flex justify-center gap-12 text-[10px] font-['Oswald'] uppercase tracking-[0.2em]">
-          <span>© 2024 THE ALPHA COLLECTIVE</span>
-          <Link to="/philosophy" className="hover:text-[#C9A84C] transition-all">THE PHILOSOPHY</Link>
-          <Link to="/" className="hover:text-[#C9A84C] transition-all">RETURN HOME</Link>
-        </div>
-      </footer>
-    </div>
-  );
-};
 
 export default TermsPage;
