@@ -374,7 +374,7 @@ const FAQSection = ({ t }) => {
 };
 
 const LegacyLibrary = ({ t, currency }) => (
-  <section className="py-32 md:py-48 bg-[#000000] border-y border-white/5 relative overflow-hidden">
+  <section className="py-32 md:py-48 bg-[#000000] border-y border-white/5 relative overflow-hidden" id="library">
     <div className="max-w-7xl mx-auto px-8 relative z-10">
       <div className="flex flex-col lg:flex-row gap-20 items-start">
         {/* Left: Value Stack */}
@@ -532,32 +532,6 @@ const TheVoice = ({ t }) => (
   </section>
 );
 
-const Methodology = ({ t }) => (
-  <section className="py-32 bg-[#050505] border-y border-white/5" id="method">
-    <div className="max-w-7xl mx-auto px-8">
-      <SectionHeading 
-        pre={t.marcus.ui.commonHeadings?.methodPre || "The Method"}
-        title={t.marcus.ui.commonHeadings?.methodTitle || "Three Pillars of the Protocol"}
-        centered={false}
-      />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-20">
-        {(t.marcus.methodologyFull || [
-          { i: "01", t: "AUDIT & ALIGN", d: "Most people fail because they build a business that doesn't fit their life. Day 1 is about ruthless alignment." },
-          { i: "02", t: "INFRASTRUCTURE", d: "We build the engines—funnels, automations, and CRM—before you ever spend a penny on traffic." },
-          { i: "03", t: "LEVERAGE", d: "Once the system is live, we apply high-quality attention to fuel the machine. Scale is the natural outcome." }
-        ]).map((item, i) => (
-          <Reveal key={i} delay={i * 0.1}>
-            <div className="group">
-              <div className="font-oswald text-6xl text-white/5 mb-8 font-bold transition-colors group-hover:text-[#C9A84C]/10">{item.i}</div>
-              <h3 className="font-oswald text-2xl text-white mb-4 tracking-wider font-bold uppercase">{item.t}</h3>
-              <p className="text-[#6A6A6A] leading-relaxed">{item.d}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </div>
-  </section>
-);
 
 const WhoItIsFor = ({ t }) => (
   <section className="py-32 bg-[#050505] border-y border-white/5">
@@ -715,7 +689,7 @@ const MarcusElitePage = () => {
           </Link>
           
           <div className="hidden lg:flex items-center gap-10 font-oswald text-[11px] tracking-[0.25em] font-bold uppercase text-[#A3A3A3]">
-            <a href="#method" onClick={(e) => handleNav(e, 'method')} className="hover:text-white transition-colors">{t.marcus.nav.method}</a>
+            <a href="#library" onClick={(e) => handleNav(e, 'library')} className="hover:text-white transition-colors">{t.marcus.nav.method}</a>
             <Link to={getLocalizedPath('/philosophy')} className="hover:text-white transition-colors">{t.marcus.nav.philosophy}</Link>
             <a href="#roadmap" onClick={(e) => handleNav(e, 'roadmap')} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
             <a href="#faq" onClick={(e) => handleNav(e, 'faq')} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
@@ -816,10 +790,10 @@ const MarcusElitePage = () => {
 
         <LogoScrollTrack />
         <ProblemSection t={t} />
-        <Methodology t={t} />
+        <LegacyLibrary t={t} currency={currency} />
+        <TimelineSection t={t} currency={currency} />
         <TheVoice t={t} />
         <WhoItIsFor t={t} />
-        <TimelineSection t={t} currency={currency} />
         <QualificationBridge t={t} />
 
         {/* Peek Inside Section with Mockup Animation */}
@@ -855,7 +829,6 @@ const MarcusElitePage = () => {
         </section>
 
 
-        <LegacyLibrary t={t} currency={currency} />
 
         <FAQSection t={t} />
 

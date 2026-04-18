@@ -36,7 +36,7 @@ export const baseFR = {
       noCard: 'SANS CARTE'
     },
     nav: {
-      method: "MÉTHODE",
+      method: "BIBLIOTHÈQUE",
       philosophy: "PHILOSOPHIE",
       challenge: "DÉFI",
       faq: "FAQ",

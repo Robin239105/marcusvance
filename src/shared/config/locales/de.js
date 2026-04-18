@@ -8,7 +8,7 @@ export const baseDE = {
     days: daysDE,
     urgencyBar: `⚡ NUR NOCH ${dynamicStats.spotsRemaining} PLÄTZE FREI FÜR ${monthsDE[dynamicStats.monthIndex]}`,
     nav: {
-      method: 'METHODE',
+      method: 'BIBLIOTHEK',
       philosophy: 'PHILOSOPHIE',
       challenge: 'CHALLENGE',
       faq: 'FAQ',
