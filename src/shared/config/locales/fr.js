@@ -62,7 +62,7 @@ export const baseFR = {
         roadmapPre: 'ÉTAPE 01 : LE DÉFI DE 7 JOURS',
         roadmapTitle: '7 JOURS. 7 LIVRABLES.',
         roadmapSubtitleItalic: 'Un Système.',
-        roadmapSubtitle: "45 à 90 minutes par jour. Commencez aujourd'hui, vous serez prêt d'ici {day}.",
+        roadmapSubtitle: "45 à 90 minutes par jour. Commencez aujourd'hui, vous serez prêt d'ici {day}. ( silver )",
         methodPre: 'La Méthode',
         methodTitle: 'Les Trois Piliers du Protocole',
         criteriaPre: 'Critères de Sélection',

@@ -35,7 +35,7 @@ export const baseDE = {
         roadmapPre: 'STUFE 01: DIE 7-TAGE-CHALLENGE',
         roadmapTitle: '7 TAGE. 7 ERGEBNISSE.',
         roadmapSubtitleItalic: 'Ein System.',
-        roadmapSubtitle: "45 bis 90 Minuten pro Tag. Fangen Sie heute an, Sie sind fertig bis {day}.",
+        roadmapSubtitle: "45 bis 90 Minuten pro Tag. Fangen Sie heute an, Sie sind fertig bis {day}. ( silver )",
         methodPre: 'Die Methode',
         methodTitle: 'Drei Säulen des Protokolls',
         criteriaPre: 'Auswahlkriterien',

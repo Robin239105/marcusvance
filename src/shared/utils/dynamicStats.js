@@ -19,7 +19,7 @@ const startedThisMonth = 812 + (dayOfMonth * 12) + (dayOfMonth % 5);
 
 // logic: target day for the 7-day challenge (Automation)
 const targetDate = new Date();
-targetDate.setDate(now.getDate() + 7);
+targetDate.setDate(now.getDate() + 6);
 const targetDayIndex = targetDate.getDay();
 
 export const dynamicStats = {

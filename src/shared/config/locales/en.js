@@ -34,7 +34,7 @@ export const baseEN = {
         roadmapPre: 'STAGE 01: THE 7-DAY CHALLENGE',
         roadmapTitle: '7 DAYS. 7 DELIVERABLES.',
         roadmapSubtitleItalic: 'One System.',
-        roadmapSubtitle: "45 to 90 minutes per day. You start today, you'll be ready by {day}.",
+        roadmapSubtitle: "45 to 90 minutes per day. You start today, you'll be ready by {day}. ( silver )",
         methodPre: 'The Method',
         methodTitle: 'Three Pillars of the Protocol',
         criteriaPre: 'Selection Criteria',
