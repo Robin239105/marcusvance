@@ -4,14 +4,14 @@ export const baseEN = {
   marcus: {
     urgencyBar: `⚡ ONLY ${dynamicStats.spotsRemaining} COHORT SPOTS REMAINING FOR ${dynamicStats.currentMonth}`,
     nav: {
-      method: 'THE METHOD',
-      voice: 'THE VOICE',
-      philosophy: 'THE PHILOSOPHY',
-      enroll: 'START CHALLENGE'
+      method: 'METHOD',
+      philosophy: 'PHILOSOPHY',
+      challenge: 'CHALLENGE',
+      faq: 'FAQ',
+      enroll: 'START'
     },
-    navAboutChallenge: 'About the 7-day challenge',
-    navAboutProgramme: 'About the Full Programme',
-    navStartBtn: 'START FREE CHALLENGE',
+    navAboutChallenge: 'THE CHALLENGE',
+    navStartBtn: 'START CHALLENGE',
     heroPreHeader: 'FOR HIGH-PERFORMERS ONLY',
     heroTitle: 'YOUR FIRST HIGH-INCOME STREAM. 7 DAYS.',
     heroSubtitle: 'THE 7-DAY CHALLENGE TO YOUR FIRST DIGITAL INCOME — STARTING FROM SCRATCH',

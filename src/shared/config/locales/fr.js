@@ -1,10 +1,11 @@
 export default {
   marcus: {
     nav: {
-      method: "LA MÉTHODE",
-      voice: "LA VOIX",
-      philosophy: "LA PHILOSOPHIE",
-      enroll: "S'INSCRIRE"
+      method: "MÉTHODE",
+      philosophy: "PHILOSOPHIE",
+      challenge: "DÉFI",
+      faq: "FAQ",
+      enroll: "START"
     },
     hero: {
       badge: "PROTOCOLE ÉLITE OUVERT",

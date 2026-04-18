@@ -412,21 +412,23 @@ const MarcusElitePage = () => {
       <ToastNotification />
 
       {/* --- Header / Nav --- */}
-      <nav className={`fixed top-[32px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}>
+      <nav className={`fixed top-[32px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-3' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-          <Link to={homePath} className="flex items-center gap-6 group">
-            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-40 min-[400px]:h-44 md:h-52 w-auto object-contain transition-all" />
+          <Link to={homePath} className="flex items-center gap-4 group">
+            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-12 md:h-14 w-auto object-contain transition-all" />
           </Link>
-          <div className="hidden lg:flex items-center gap-10 font-oswald text-xs tracking-[0.3em] font-bold uppercase">
-            <a href="#method" className="hover:text-[#FFD700] transition-colors">{t.marcus.nav.method}</a>
-            <Link to={currentLocale === 'en' ? '/philosophy' : `/philosophy/${currentLocale}`} className="hover:text-[#FFD700] transition-colors">{t.marcus.nav.philosophy}</Link>
-            <a href="#roadmap" className="hover:text-[#FFD700] transition-colors">{t.marcus.navAboutChallenge}</a>
-            <a href="#faq" className="hover:text-[#FFD700] transition-colors">FAQ</a>
+          
+          <div className="hidden lg:flex items-center gap-8 font-oswald text-[11px] tracking-[0.25em] font-bold uppercase text-[#A3A3A3]">
+            <a href="#method" className="hover:text-white transition-colors">{t.marcus.nav.method}</a>
+            <Link to={currentLocale === 'en' || currentLocale === 'default' ? '/philosophy' : `/philosophy/${currentLocale}`} className="hover:text-white transition-colors">{t.marcus.nav.philosophy}</Link>
+            <a href="#roadmap" className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
+            <a href="#faq" className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
             <LanguageSwitcher variant="marcus" />
-            <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-8 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap">{t.marcus.navStartBtn}</button>
+            <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</button>
           </div>
+
           <div className="lg:hidden text-right flex items-center gap-4">
-             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase font-bold whitespace-nowrap">START FREE</button>
+             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</button>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>

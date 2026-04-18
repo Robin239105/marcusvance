@@ -34,15 +34,24 @@ const PhilosophyPage = () => {
   return (
     <div className="bg-[#080808] min-h-screen text-[#F5F5F5] font-['Barlow'] selection:bg-[#FFD700]/30 selection:text-[#FFD700]">
       {/* Navigation Header */}
-      <nav className="fixed top-0 left-0 right-0 z-[100] bg-[#080808]/80 backdrop-blur-md border-b border-white/5 py-6">
-        <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
-          <Link to={homePath} className="flex items-center gap-2 group">
-            <span className="text-[#FFD700] group-hover:-translate-x-1 transition-transform">←</span>
-            <span className="font-oswald uppercase tracking-[0.3em] text-[10px] text-[#A3A3A3] group-hover:text-white transition-colors">{t.marcus.philosophy.returnLink}</span>
+      <nav className="fixed top-[32px] left-0 right-0 z-[100] bg-black/95 backdrop-blur-md border-b border-white/10 py-3">
+        <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
+          <Link to={homePath} className="flex items-center gap-4 group">
+            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-12 md:h-14 w-auto object-contain transition-all" />
           </Link>
-          <img src="/marcus-logo.png" alt="Marcus Vance" className="h-20 w-auto object-contain opacity-50" />
-          <div className="flex items-center gap-6">
-            <LanguageSwitcher />
+          
+          <div className="hidden lg:flex items-center gap-8 font-oswald text-[11px] tracking-[0.25em] font-bold uppercase text-[#A3A3A3]">
+            <a href={`${homePath}#method`} className="hover:text-white transition-colors">{t.marcus.nav.method}</a>
+            <Link to={currentLocale === 'en' || currentLocale === 'default' ? '/philosophy' : `/philosophy/${currentLocale}`} className="text-white border-b border-[#FFD700]">{t.marcus.nav.philosophy}</Link>
+            <a href={`${homePath}#roadmap`} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
+            <a href={`${homePath}#faq`} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
+            <LanguageSwitcher variant="marcus" />
+            <Link to={homePath} className="bg-[#FFD700] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</Link>
+          </div>
+
+          <div className="lg:hidden text-right flex items-center gap-4">
+             <Link to={homePath} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</Link>
+             <LanguageSwitcher variant="marcus" />
           </div>
         </div>
       </nav>
