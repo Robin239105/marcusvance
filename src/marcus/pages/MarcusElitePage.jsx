@@ -343,6 +343,44 @@ const Methodology = ({ t }) => (
   </section>
 );
 
+const WhoItIsFor = ({ t }) => (
+  <section className="py-32 bg-[#050505] border-y border-white/5">
+    <div className="max-w-7xl mx-auto px-8">
+      <SectionHeading 
+        pre="Selection Criteria"
+        title="Who This Is For"
+      />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        {[
+          { 
+            t: "THE STRATEGIST", 
+            d: "You have a deep skill or expertise but no system to monetize it at scale. You are tired of trading hours for dollars.",
+            i: "🎯"
+          },
+          { 
+            t: "THE VISIONARY", 
+            d: "You see the shift in the digital economy and want to build a brand that carries your legacy, not just a job.",
+            i: "👁️"
+          },
+          { 
+            t: "THE HIGH-PERFORMER", 
+            d: "You are already successful in your field but feel capped. You need high-leverage systems to break through to $50k+ months.",
+            i: "🚀"
+          }
+        ].map((item, i) => (
+          <Reveal key={i} delay={i * 0.1}>
+            <div className="mv-glass-card p-10 border border-white/5 hover:border-[#FFD700]/30 transition-all group h-full">
+              <div className="text-4xl mb-6">{item.i}</div>
+              <h3 className="font-oswald text-2xl text-white mb-4 tracking-wider font-bold uppercase group-hover:text-[#FFD700] transition-colors">{item.t}</h3>
+              <p className="text-[#A3A3A3] text-sm leading-relaxed italic font-light">{item.d}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 const MarcusElitePage = () => {
   const { t, currency, language, loading } = useLocale();
   const [isEnrollOpen, setIsEnrollOpen] = useState(false);
@@ -500,7 +538,6 @@ const MarcusElitePage = () => {
           </div>
         </section>
 
-        <TimelineSection t={t} />
 
         <ProgramReveal t={t} />
 
