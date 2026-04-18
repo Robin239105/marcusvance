@@ -460,3 +460,5 @@ export const baseDE = {
     backToHome: 'Zurück zur Startseite',
   }
 };
+
+export default baseDE;

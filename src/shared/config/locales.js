@@ -8,7 +8,7 @@ export const localeRegistry = {
     currencyCode: 'USD',
     flag: '🇺🇸',
     label: 'United States',
-    import: () => import('./locales/en.js').then(m => m.baseEN)
+    import: () => import('./locales/en.js').then(m => m.default || m.baseEN || m)
   },
   uk: {
     language: 'en',
@@ -16,7 +16,7 @@ export const localeRegistry = {
     currencyCode: 'GBP',
     flag: '🇬🇧',
     label: 'United Kingdom',
-    import: () => import('./locales/en.js').then(m => m.baseEN)
+    import: () => import('./locales/en.js').then(m => m.default || m.baseEN || m)
   },
   au: {
     language: 'en',
@@ -24,7 +24,7 @@ export const localeRegistry = {
     currencyCode: 'AUD',
     flag: '🇦🇺',
     label: 'Australia',
-    import: () => import('./locales/en.js').then(m => m.baseEN)
+    import: () => import('./locales/en.js').then(m => m.default || m.baseEN || m)
   },
   ca: {
     language: 'en',
@@ -32,7 +32,7 @@ export const localeRegistry = {
     currencyCode: 'CAD',
     flag: '🇨🇦',
     label: 'Canada',
-    import: () => import('./locales/en.js').then(m => m.baseEN)
+    import: () => import('./locales/en.js').then(m => m.default || m.baseEN || m)
   },
   fr: {
     language: 'fr',
@@ -40,7 +40,7 @@ export const localeRegistry = {
     currencyCode: 'EUR',
     flag: '🇫🇷',
     label: 'France',
-    import: () => import('./locales/fr.js').then(m => m.baseFR)
+    import: () => import('./locales/fr.js').then(m => m.default || m.baseFR || m)
   },
   de: {
     language: 'de',
@@ -48,7 +48,7 @@ export const localeRegistry = {
     currencyCode: 'EUR',
     flag: '🇩🇪',
     label: 'Germany',
-    import: () => import('./locales/de.js').then(m => m.baseDE)
+    import: () => import('./locales/de.js').then(m => m.default || m.baseDE || m)
   },
   default: {
     language: 'en',
@@ -56,6 +56,6 @@ export const localeRegistry = {
     currencyCode: 'EUR',
     flag: '🌍',
     label: 'Global',
-    import: () => import('./locales/en.js').then(m => m.baseEN)
+    import: () => import('./locales/en.js').then(m => m.default || m.baseEN || m)
   }
 };

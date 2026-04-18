@@ -465,3 +465,5 @@ export const baseEN = {
     backToHome: 'Back to home',
   }
 };
+
+export default baseEN;

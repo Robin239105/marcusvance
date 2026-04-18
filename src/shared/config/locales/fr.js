@@ -1,5 +1,8 @@
+import dynamicStats from '../../utils/dynamicStats';
+
 export const baseFR = {
   marcus: {
+    urgencyBar: `⚡ PLUS QUE ${dynamicStats.spotsRemaining} PLACES POUR LE GROUPE DE ${dynamicStats.currentMonth}`,
     enroll: {
       popupTitle: 'VOTRE SIÈGE AU CLUB.',
       popupSubtitle: 'SÉCURISEZ VOTRE POSITION DANS LE ALPHA COLLECTIVE.',
@@ -260,5 +263,12 @@ export const baseFR = {
         }
       ]
     }
+  },
+  common: {
+    startedThisMonth: 'ONT COMMENCÉ CE MOIS-CI',
+    joinedProgramme: 'ONT REJOINT LE PROGRAMME',
+    backToHome: 'Retour à l\'accueil',
   }
 };
+
+export default baseFR;
