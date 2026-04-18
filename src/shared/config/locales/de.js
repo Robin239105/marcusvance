@@ -24,7 +24,42 @@ export const baseDE = {
       compliance: 'COMPLIANCE',
       headquarters: 'HAUPTSITZ',
       encrypted: 'VERSCHLÜSSELT',
-      tagline: 'DIE METHODE · DIE STIMME · DIE PHILOSOPHIE'
+      tagline: 'DIE METHODE · DIE STIMME · DIE PHILOSOPHIE',
+      beginningSubtitle: 'Schließen Sie Stufe 01 ab, um die vollständige Bibliothek für digitale Business-Ausbildung freizuschalten.',
+      beginningBadge: '7 TAGE ZUM AUFBAU. EIN LEBEN LANG ZUM SKALIEREN.',
+      commonHeadings: {
+        roadmapPre: 'STUFE 01: DIE 7-TAGE-CHALLENGE',
+        roadmapTitle: 'Die 7-Tage-Challenge Roadmap',
+        roadmapSubtitle: 'Jeder Tag produziert einen live funktionsfähigen Asset. An Tag 7 haben Sie ein komplettes Business — kein Notizbuch voller Ideen.',
+        methodPre: 'Die Methode',
+        methodTitle: 'Drei Säulen des Protokolls',
+        criteriaPre: 'Auswahlkriterien',
+        criteriaTitle: 'Für wen das ist',
+        faqPre: 'Häufige Fragen',
+        faqTitle: 'Das Protokoll-Audit',
+        dashboardPre: 'Das Dashboard',
+        dashboardTitle: 'Ein Blick in das System'
+      },
+      voiceQuote: {
+        line1: "Die digitale Ära belohnt keine harte Arbeit.",
+        line2: "Sie belohnt {highLeverage}, die laufen, während Sie schlafen.",
+        highLeverage: 'Hocheffiziente Systeme',
+        bio: "Ich habe das letzte Jahrzehnt damit verbracht, komplexe Modelle zur Vermögensbildung in ein einziges, wiederholbares Protokoll zu destillieren. Die 7-Tage-Challenge ist nicht nur ein Kurs — sie ist Ihre Taufe in die digitale Elite-Wirtschaft."
+      },
+      exitModal: {
+        badge: 'DRINGENDES PROTOKOLL',
+        title: "VERSPIELEN SIE NICHT DIE CHANCE",
+        subtitle: 'DIE CHALLENGE IST 100% KOSTENLOS. REHABILITIEREN SIE IHR PROTOKOLL.',
+        disclaimer: 'DIESE ÜBERTRAGUNG ERLISCHT, WENN SIE DIESES FENSTER SCHLIESSEN.'
+      },
+      toast: {
+        enrolled: 'hat sich gerade für Tag 1 angemeldet',
+        completed: 'hat Tag 3 abgeschlossen — Funnel live',
+        joined: 'hat sich gerade registriert',
+        unlocked: 'hat Tag 7 beendet — Zugang freigeschaltet',
+        started: 'hat die Challenge gestartet',
+        referral: 'ist über eine Empfehlung beigetreten'
+      }
     },
     heroTitle: 'BAUEN SIE IHREN ERSTEN HIGH-INCOME STREAM IN 7 TAGEN AUF.',
     heroSubtitle: 'DIE 7-TAGE-CHALLENGE ZU IHREM ERSTEN DIGITALEN EINKOMMEN — VON NULL ANFANGEND',
@@ -102,7 +137,7 @@ export const baseDE = {
       }
     },
     roadmap: {
-      badge: 'TEIL 1: DIE AUSFÜHRUNG',
+      badge: 'STUFE 01: DIE AUSFÜHRUNG',
       title: 'DAS 7-TAGE-PROTOKOLL',
       subtitle: '"Die meisten Männer bleiben stecken, weil sie nie den ersten Schritt machen. Wir lösen das in 168 Stunden."',
       joinCohort: `TRETEN SIE DER KOHORTE VON ${dynamicStats.startedThisMonth} DIESEN MONAT BEI →`,
@@ -114,8 +149,27 @@ export const baseDE = {
         { d: '05', t: 'ERSTE KAPITALINJEKTION', v: '{currency}97', s: 'Closing' },
         { d: '06', t: 'AUTOMATISIERUNGS-ERBE', v: '{currency}97', s: 'System' },
         { d: '07', t: 'DAS SCALE-PROTOKOLL', v: '{currency}97', s: 'Elite' }
+      ],
+      stepsFull: [
+        { day: "Tag 01", title: "Angebot & Kunden-Avatar", deliverable: "Angebots-Satz", desc: "Definieren Sie genau, wem Sie helfen, welche Transformation Sie liefern und wie Sie diese in einem präzisen Satz kommunizieren. Dieser Satz wird zur Überschrift von allem." },
+        { day: "Tag 02", title: "Lead Magnet + Capture Page Live", deliverable: "Live-Seite", desc: "Erstellen Sie einen hochwertigen Lead-Magneten und starten Sie Ihre Capture-Page. Ihre automatisierte Willkommens-E-Mail liefert ihn innerhalb von Minuten nach der Anmeldung." },
+        { day: "Tag 03", title: "5-E-Mail Nurturing-Sequenz Aktiviert", deliverable: "E-Mail-Logik", desc: "Konfigurieren Sie die vollständige vertrauensbildende E-Mail-Sequenz: Lieferung, Empathie, Beweis, Angebot, Abschluss — läuft automatisch rund um die Uhr." },
+        { day: "Tag 04", title: "Hubspot CRM Verbunden", deliverable: "CRM Verkabelt", desc: "Über Automatisierung mit Ihrem Funnel verkabelt. Jeder Lead wird in einer Live-Pipeline verfolgt. Kein heißer Interessent schlüpft jemals wieder durch das Netz." },
+        { day: "Tag 05", title: "Sales Page Veröffentlicht", deliverable: "Sales Funnel", desc: "Eine vollständige Verkaufsseite live im Netz: Transformations-Überschrift, Value Stack, Beweise und CTAs — weltweit für Interessenten verfügbar." },
+        { day: "Tag 06", title: "Zahlung & Buchung Aktiv", deliverable: "Auszahlungs-Modus", desc: "Zahlung oder Cal.com mit Ihrer Angebotsseite verbunden. Sie können jetzt Zahlungen entgegennehmen oder qualifizierte Termine buchen — vollautomatisch." },
+        { day: "Tag 07", title: "Launch & Erster Traffic", deliverable: "Bereit fürs Geschäft", desc: "Vollständiger Funnel auf dem Handy getestet und für Ihre ersten echten Leads gestartet. Ihre Business-Infrastruktur ist live. Die Fortsetzung wird an Tag 7 gezeigt." }
       ]
     },
+    methodologyFull: [
+      { i: "01", t: "AUDIT & AUSRICHTUNG", d: "Die meisten Menschen scheitern, weil sie ein Business aufbauen, das nicht zu ihrem Leben passt. An Tag 1 geht es um rücksichtslose Ausrichtung." },
+      { i: "02", t: "INFRASTRUKTUR", d: "Wir bauen die Motoren — Funnels, Automatisierungen und CRM — bevor Sie jemals einen Cent für Werbung ausgeben." },
+      { i: "03", t: "HEBELWIRKUNG", d: "Sobald das System live ist, nutzen wir hochwertige Aufmerksamkeit, um die Maschine zu füttern. Skalierung ist das natürliche Ergebnis." }
+    ],
+    whoItIsFor: [
+      { t: "DER STRATEGE", d: "Sie verfügen über tiefgehende Fähigkeiten oder Fachkenntnisse, haben aber kein System, um diese im großen Stil zu monetarisieren. Sie haben es satt, Stunden gegen Dollar zu tauschen.", i: "🎯" },
+      { t: "DER VISIONÄR", d: "Sie erkennen den Wandel in der digitalen Wirtschaft und wollen eine Marke aufbauen, die Ihr Vermächtnis trägt, nicht nur einen Job.", i: "👁️" },
+      { t: "DER HIGH-PERFORMER", d: "Sie sind in Ihrem Bereich bereits erfolgreich, fühlen sich aber gedeckelt. Sie brauchen hocheffiziente Systeme, um die 50.000 $-Monate zu knacken.", i: "🚀" }
+    ],
     programme: {
       stage01Badge: 'STUFE 01: DIE 7-TAGE-CHALLENGE',
       stage02Badge: 'STUFE 02: DAS GESAMTPROTOKOLL',

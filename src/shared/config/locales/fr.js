@@ -51,7 +51,42 @@ export const baseFR = {
       compliance: 'CONFORMITÉ',
       headquarters: 'SIÈGE SOCIAL',
       encrypted: 'CHIFFRÉ',
-      tagline: 'LA MÉTHODE · LA VOIX · LA PHILOSOPHIE'
+      tagline: 'LA MÉTHODE · LA VOIX · LA PHILOSOPHIE',
+      beginningSubtitle: 'Complétez l\'étape 01 pour débloquer la bibliothèque complète d\'éducation commerciale numérique.',
+      beginningBadge: '7 JOURS POUR CONSTRUIRE. UNE VIE POUR S\'ÉLEVER.',
+      commonHeadings: {
+        roadmapPre: 'ÉTAPE 01 : LE DÉFI DE 7 JOURS',
+        roadmapTitle: 'La Feuille de Route du Défi de 7 Jours',
+        roadmapSubtitle: 'Chaque jour produit un actif réel et fonctionnel. Au jour 7, vous avez une entreprise complète — pas un carnet d\'idées.',
+        methodPre: 'La Méthode',
+        methodTitle: 'Les Trois Piliers du Protocole',
+        criteriaPre: 'Critères de Sélection',
+        criteriaTitle: 'À Qui s\'Adresse Ce Programme',
+        faqPre: 'Questions Fréquentes',
+        faqTitle: 'L\'Audit du Protocole',
+        dashboardPre: 'Le Tableau de Bord',
+        dashboardTitle: 'Un Aperçu du Système'
+      },
+      voiceQuote: {
+        line1: "L'ère numérique ne récompense pas le travail acharné.",
+        line2: "Elle récompense les {highLeverage} qui tournent pendant que vous dormez.",
+        highLeverage: 'Systèmes à Fort Levier',
+        bio: "J'ai passé la dernière décennie à distiller des modèles complexes de génération de richesse en un protocole unique et reproductible. Le Défi de 7 jours n'est pas seulement un cours — c'est votre baptême dans l'économie numérique d'élite."
+      },
+      exitModal: {
+        badge: 'PROTOCOLE URGENT',
+        title: "NE GASPILLEZ PAS CETTE OPPORTUNITÉ",
+        subtitle: 'LE DÉFI EST 100% GRATUIT. RÉCUPÉREZ VOTRE PROTOCOLE.',
+        disclaimer: 'CETTE TRANSMISSION EXPIRES LORSQUE VOUS FERMEZ CETTE FENÊTRE.'
+      },
+      toast: {
+        enrolled: 'vient de s\'inscrire au Jour 1',
+        completed: 'a terminé le Jour 3 — tunnel en ligne',
+        joined: 'vient de s\'inscrire',
+        unlocked: 'a terminé le Jour 7 — accès débloqué',
+        started: 'a commencé le défi',
+        referral: 'a rejoint via un parrainage'
+      }
     },
     heroTitle: 'DÉCODEZ LE. SUCCÈS NUMÉRIQUE',
     heroSubtitle: 'LE PROTOCOLE DÉFINITIF POUR CONSTRUIRE UNE ENTREPRISE EN LIGNE À HAUTE VALEUR AJOUTÉE — SANS REMPLISSAGE.',
@@ -145,10 +180,38 @@ export const baseFR = {
       peekInsideTitle: 'UN APERÇU DU CURRICULUM',
       peekInsideSubtitle: 'Survolez les catégories pour découvrir les sujets profonds qui vous attendent après votre qualification.'
     },
-    philosophy: {
-      returnLink: 'Retour à Alpha',
-      badge: 'LA PHILOSOPHIE',
-      chapters: [
+    roadmap: {
+      badge: 'LE PROTOCOLE',
+      title: 'LA FEUILLE DE ROUTE SUR 7 JOURS',
+      subtitle: 'UN GUIDE D\'EXÉCUTION ÉTAPE PAR ÉTAPE VERS VOTRE PREMIER REVENU EN DIRECT.',
+      joinCohort: 'REJOIGNEZ {count} HAUTS POTENTIELS COMMENÇANT AUJOURD\'HUI',
+      items: [
+        { d: 'JOUR 1', s: 'LA FONDATION', t: 'Le modèle spécifique que nous utilisons pour une croissance rapide.', v: 'VALEUR : {currency}497' },
+        { d: 'JOUR 2', s: 'L\'ACQUISITION', t: 'Trouver des opportunités d\'élite sans expérience.', v: 'VALEUR : {currency}297' },
+        { d: 'JOUR 3', s: 'LE SYSTÈME', t: 'L\'arsenal technique qui gère 90% du travail.', v: 'VALEUR : {currency}897' },
+        { d: 'JOUR 4', s: 'LE TRAFIC', t: 'Comment obtenir une attention de haute qualité instantanément.', v: 'VALEUR : {currency}597' },
+        { d: 'JOUR 5-7', s: 'L\'EXÉCUTION', t: 'Passer de zéro au direct et générer des revenus.', v: 'VALEUR : {currency}1 297' }
+      ],
+      stepsFull: [
+        { day: "Jour 01", title: "Offre & Avatar Client", deliverable: "Phrase d'Offre", desc: "Définissez exactement qui vous aidez, quelle transformation vous apportez et comment vous la communiquez en une phrase précise. Cette phrase devient le titre de tout." },
+        { day: "Jour 02", title: "Lead Magnet + Page de Capture Live", deliverable: "Page en Direct", desc: "Créez un aimant à prospects de haute valeur et lancez votre page de capture. Votre e-mail de bienvenue automatisé le livre quelques minutes après l'inscription." },
+        { day: "Jour 03", title: "Séquence de Nurturing de 5 Emails Activée", deliverable: "Logique d'Email", desc: "Configurez la séquence complète d'e-mails pour instaurer la confiance : livraison, empathie, preuve, offre, clôture — fonctionnant automatiquement 24h/24 et 7j/7." },
+        { day: "Jour 04", title: "CRM Hubspot Connecté", deliverable: "CRM Câblé", desc: "Câblé à votre tunnel via l'automatisation. Chaque prospect est suivi dans un pipeline en direct. Aucun prospect chaud ne passe plus jamais entre les mailles du filet." },
+        { day: "Jour 05", title: "Page de Vente Publiée", deliverable: "Tunnel de Vente", desc: "Une page de vente complète en ligne : titre de transformation, pile de valeur, preuve et appels à l'action — accessible aux prospects du monde entier." },
+        { day: "Jour 06", title: "Paiement & Réservation Actifs", deliverable: "Mode Paiement", desc: "Paiement ou Cal.com connecté à votre page d'offre. Vous pouvez désormais encaisser des paiements ou réserver des appels qualifiés — de manière totalement automatisée." },
+        { day: "Jour 07", title: "Lancement & Premier Trafic", deliverable: "Ouvert aux Affaires", desc: "Tunnel complet testé sur mobile et lancé auprès de vos premiers vrais prospects. Votre infrastructure commerciale est en direct. La suite est révélée au jour 7." }
+      ]
+    },
+    methodologyFull: [
+      { i: "01", t: "AUDIT & ALIGNEMENT", d: "La plupart des gens échouent parce qu'ils construisent une entreprise qui ne correspond pas à leur vie. Le jour 1 est consacré à un alignement impitoyable." },
+      { i: "02", t: "INFRASTRUCTURE", d: "Nous construisons les moteurs — tunnels, automatisations et CRM — avant même que vous ne dépensiez un centime en publicité." },
+      { i: "03", t: "LEVIER", d: "Une fois le système en ligne, nous appliquons une attention de haute qualité pour alimenter la machine. La croissance est le résultat naturel." }
+    ],
+    whoItIsFor: [
+      { t: "LE STRATÈGE", d: "Vous avez une compétence ou une expertise profonde mais aucun système pour la monétiser à grande échelle. Vous en avez assez d'échanger des heures contre de l'argent.", i: "🎯" },
+      { t: "LE VISIONNAIRE", d: "Vous voyez le changement dans l'économie numérique et voulez construire une marque qui porte votre héritage, pas seulement un emploi.", i: "👁️" },
+      { t: "LE HAUT-POTENTIEL", d: "Vous avez déjà du succès dans votre domaine mais vous vous sentez limité. Vous avez besoin de systèmes à fort levier pour franchir les 50k$ mois.", i: "🚀" }
+    ],
         { id: 'chapter-1', label: 'I. LA DIVULGATION', title: 'LA TRANSPARENCE EST L\'AUTORITÉ ULTIME.', content: ['La plupart des programmes enterrent leurs divulgations. Ils mettent le langage juridique dans un pied de page, en petits caractères, sur une page que personne ne lit. Ils mettent en avant la personnalité, l\'histoire, l\'aspiration — et gardent la réalité pour les petits caractères.', 'Nous faisons les choses différemment. Nous pensons que la clarté est le fondement de la confiance, et la confiance est la seule monnaie qui compte dans l\'éducation de haut niveau. Cette page existe pour définir exactement ce qu\'est cette plateforme, qui est Marcus Vance et ce à quoi vous vous engagez.'] },
         { id: 'chapter-2', label: 'II. LA MÉTHODOLOGIE', title: 'UNE ÉDUCATION BASÉE SUR LA PERFORMANCE', content: ['La plateforme Marcus Vance est une ressource éducative développée par un collectif d\'entrepreneurs numériques et d\'architectes système. Notre méthodologie est basée sur des résultats binaires : soit le système fonctionne, soit il ne fonctionne pas. Il n\'y a pas de juste milieu.', 'Nous n\'enseignons pas de "théorie". Nous enseignons des protocoles d\'exécution. Chaque cours, check-list et cahier d\'exercices à l\'intérieur de la bibliothèque complète est extrait d\'opérations réelles menées par notre équipe de développement dans plusieurs secteurs.'] },
         { id: 'chapter-3', label: 'III. LA VOIX', title: 'MARCUS VANCE', content: ['Marcus Vance est l\'architecte du message. Il représente l\'ethos de l\'Alpha Collective. Sa "voix" est la synthèse de notre expérience collective — des décennies de succès, d\'échecs et de leçons durement acquises dans l\'économie numérique.'] },

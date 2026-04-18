@@ -95,16 +95,27 @@ const UrgencyBar = ({ t }) => (
 );
 
 const ToastNotification = () => {
+  const { t } = useLocale();
   const [currentToast, setCurrentToast] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
+  // Fallback to English if translations missing
+  const actions = t.marcus.ui.toast || {
+    enrolled: 'just enrolled in Day 1',
+    completed: 'completed Day 3 — funnel live',
+    joined: 'just signed up',
+    unlocked: 'finished Day 7 — unlocked access',
+    started: 'started the challenge',
+    referral: 'joined from a referral'
+  };
+
   const toasts = [
-    { i: 'JM', n: 'James M. · Manchester', a: 'just enrolled in Day 1' },
-    { i: 'SC', n: 'Sophie C. · London', a: 'completed Day 3 — funnel live' },
-    { i: 'AO', n: 'Ade O. · Birmingham', a: 'just signed up' },
-    { i: 'RL', n: 'Rachel L. · Leeds', a: 'finished Day 7 — unlocked access' },
-    { i: 'FB', n: 'Fatou B. · Edinburgh', a: 'started the challenge' },
-    { i: 'MK', n: 'Mark K. · Bristol', a: 'joined from a referral' },
+    { i: 'JM', n: 'James M. · Manchester', a: actions.enrolled },
+    { i: 'SC', n: 'Sophie C. · London', a: actions.completed },
+    { i: 'AO', n: 'Ade O. · Birmingham', a: actions.joined },
+    { i: 'RL', n: 'Rachel L. · Leeds', a: actions.unlocked },
+    { i: 'FB', n: 'Fatou B. · Edinburgh', a: actions.started },
+    { i: 'MK', n: 'Mark K. · Bristol', a: actions.referral },
   ];
 
   useEffect(() => {
@@ -176,8 +187,8 @@ const LogoScrollTrack = () => {
   );
 };
 
-const TimelineSection = ({ t }) => {
-  const steps = [
+const TimelineSection = ({ t, currency }) => {
+  const steps = t.marcus.roadmap.stepsFull || [
     { day: "Day 01", title: "Offer & Customer Avatar", deliverable: "Offer Sentence", desc: "Define exactly who you help, what transformation you deliver, and how you communicate it in one precise sentence. This sentence becomes the headline of everything." },
     { day: "Day 02", title: "Lead Magnet + Capture Page Live", deliverable: "Live Page", desc: "Build a high-value lead magnet and launch your capture page. Your automated welcome email delivers it within minutes of opt-in." },
     { day: "Day 03", title: "5-Email Nurturing Sequence Activated", deliverable: "Email Logic", desc: "Configure the complete trust-building email sequence: delivery, empathy, proof, offer, close — running automatically 24/7." },
@@ -191,9 +202,9 @@ const TimelineSection = ({ t }) => {
     <section className="py-32 bg-[#000000]" id="roadmap">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading 
-          pre={t.marcus.programme.stage01Badge}
-          title="The 7-Day Challenge Roadmap"
-          subtitle="Each day produces a live, working asset. By Day 7, you have a complete business — not a notebook of ideas."
+          pre={t.marcus.ui.commonHeadings?.roadmapPre || t.marcus.programme.stage01Badge}
+          title={t.marcus.ui.commonHeadings?.roadmapTitle || "The 7-Day Challenge Roadmap"}
+          subtitle={t.marcus.ui.commonHeadings?.roadmapSubtitle || "Each day produces a live, working asset. By Day 7, you have a complete business — not a notebook of ideas."}
         />
         <div className="relative pl-8 md:pl-16 border-l border-white/10 space-y-12">
           {steps.map((step, idx) => (
@@ -223,14 +234,14 @@ const QualificationBridge = ({ t }) => (
       <Reveal>
         <div className="inline-block px-8 py-4 border border-[#C9A84C]/20 bg-[#C9A84C]/5 mb-10">
           <span className="font-oswald text-[#C9A84C] text-sm md:text-base font-bold tracking-[0.5em] uppercase">
-            7 DAYS TO BUILD. A LIFETIME TO SCALE.
+            {t.marcus.ui.beginningBadge || '7 DAYS TO BUILD. A LIFETIME TO SCALE.'}
           </span>
         </div>
         <h2 className="font-oswald text-4xl md:text-6xl text-white mb-8 uppercase font-bold tracking-tight italic">
           {t.marcus.ui.beginning.split('BEGINNING')[0]}<span className="text-[#C9A84C]">BEGINNING.</span>
         </h2>
         <p className="text-[#6A6A6A] text-lg max-w-2xl mx-auto font-light leading-relaxed uppercase tracking-widest">
-          Complete Stage 01 to unlock the full digital business education library.
+          {t.marcus.ui.beginningSubtitle || 'Complete Stage 01 to unlock the full digital business education library.'}
         </p>
         <div className="mt-16 flex justify-center">
           <div className="w-1 h-24 bg-gradient-to-b from-[#C9A84C] to-transparent" />
@@ -251,8 +262,8 @@ const FAQSection = ({ t }) => {
     <section className="py-32 bg-[#000000]" id="faq">
       <div className="max-w-4xl mx-auto px-8">
         <SectionHeading 
-          pre="Common Questions"
-          title="The Protocol Audit"
+          pre={t.marcus.ui.commonHeadings?.faqPre || "Common Questions"}
+          title={t.marcus.ui.commonHeadings?.faqTitle || "The Protocol Audit"}
         />
         
         {/* Category Tabs */}
@@ -399,12 +410,12 @@ const TheVoice = ({ t }) => (
       <Reveal>
         <div className="font-oswald text-[#C9A84C] tracking-[0.4em] text-xs font-bold mb-12 uppercase">{t.marcus.ui.voice}</div>
         <blockquote className="font-oswald text-4xl md:text-6xl text-white leading-[1.1] mb-12 uppercase font-bold tracking-tight">
-          "The digital era doesn't reward hard work. <br/>
-          It rewards <span className="text-[#C9A84C]">High-Leverage Systems</span> that run while you sleep."
+          "{t.marcus.ui.voiceQuote?.line1 || "The digital era doesn't reward hard work."} <br/>
+          {t.marcus.ui.voiceQuote?.line2?.replace('{highLeverage}', '') || "It rewards "} <span className="text-[#C9A84C]">{t.marcus.ui.voiceQuote?.highLeverage || "High-Leverage Systems"}</span> {t.marcus.ui.voiceQuote?.line2?.split('}')[1] || " that run while you sleep."}"
         </blockquote>
         <div className="w-12 h-1px bg-[#C9A84C]/30 mx-auto mb-12" />
         <p className="text-[#A3A3A3] text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
-          I've spent the last decade distilling complex wealth generation models into one repeatable protocol. The 7-Day Challenge isn't just a course—it's your baptism into the elite digital economy.
+          {t.marcus.ui.voiceQuote?.bio || "I've spent the last decade distilling complex wealth generation models into one repeatable protocol. The 7-Day Challenge isn't just a course—it's your baptism into the elite digital economy."}
         </p>
       </Reveal>
     </div>
@@ -417,16 +428,16 @@ const Methodology = ({ t }) => (
   <section className="py-32 bg-[#050505] border-y border-white/5" id="method">
     <div className="max-w-7xl mx-auto px-8">
       <SectionHeading 
-        pre="The Method"
-        title="Three Pillars of the Protocol"
+        pre={t.marcus.ui.commonHeadings?.methodPre || "The Method"}
+        title={t.marcus.ui.commonHeadings?.methodTitle || "Three Pillars of the Protocol"}
         centered={false}
       />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-20">
-        {[
+        {(t.marcus.methodologyFull || [
           { i: "01", t: "AUDIT & ALIGN", d: "Most people fail because they build a business that doesn't fit their life. Day 1 is about ruthless alignment." },
           { i: "02", t: "INFRASTRUCTURE", d: "We build the engines—funnels, automations, and CRM—before you ever spend a penny on traffic." },
           { i: "03", t: "LEVERAGE", d: "Once the system is live, we apply high-quality attention to fuel the machine. Scale is the natural outcome." }
-        ].map((item, i) => (
+        ]).map((item, i) => (
           <Reveal key={i} delay={i * 0.1}>
             <div className="group">
               <div className="font-oswald text-6xl text-white/5 mb-8 font-bold transition-colors group-hover:text-[#C9A84C]/10">{item.i}</div>
@@ -444,11 +455,11 @@ const WhoItIsFor = ({ t }) => (
   <section className="py-32 bg-[#050505] border-y border-white/5">
     <div className="max-w-7xl mx-auto px-8">
       <SectionHeading 
-        pre="Selection Criteria"
-        title="Who This Is For"
+        pre={t.marcus.ui.commonHeadings?.criteriaPre || "Selection Criteria"}
+        title={t.marcus.ui.commonHeadings?.criteriaTitle || "Who This Is For"}
       />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-        {[
+        {(t.marcus.whoItIsFor || [
           { 
             t: "THE STRATEGIST", 
             d: "You have a deep skill or expertise but no system to monetize it at scale. You are tired of trading hours for dollars.",
@@ -464,7 +475,7 @@ const WhoItIsFor = ({ t }) => (
             d: "You are already successful in your field but feel capped. You need high-leverage systems to break through to $50k+ months.",
             i: "🚀"
           }
-        ].map((item, i) => (
+        ]).map((item, i) => (
           <Reveal key={i} delay={i * 0.1}>
             <div className="mv-glass-card p-10 border border-white/5 hover:border-[#C9A84C]/30 transition-all group h-full">
               <div className="text-4xl mb-6">{item.i}</div>
@@ -659,16 +670,16 @@ const MarcusElitePage = () => {
         <Methodology t={t} />
         <TheVoice t={t} />
         <WhoItIsFor t={t} />
-        <TimelineSection t={t} />
+        <TimelineSection t={t} currency={currency} />
         <QualificationBridge t={t} />
 
         {/* Peek Inside Section with Mockup Animation */}
         <section className="py-32 bg-[#000000] border-t border-white/5 overflow-hidden">
           <div className="max-w-7xl mx-auto px-8">
-            <SectionHeading 
-              pre="The Dashboard"
-              title="A Peek Inside the System"
-            />
+          <SectionHeading 
+            pre={t.marcus.ui.commonHeadings?.dashboardPre || "The Dashboard"}
+            title={t.marcus.ui.commonHeadings?.dashboardTitle || "A Peek Inside the System"}
+          />
             <Reveal delay={0.2}>
               <div className="relative max-w-5xl mx-auto aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer" onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}}>
                 <img src="/marcus_platform_mockup_v2_1776138837670.png" className="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-[2s]" alt="Platform Mockup" />
@@ -712,7 +723,7 @@ const MarcusElitePage = () => {
                 <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-24 min-[400px]:h-28 w-auto object-contain brightness-110" />
               </Link>
               <p className="text-[#6A6A6A] font-oswald text-[10px] tracking-[0.3em] uppercase leading-relaxed">
-                THE METHOD · THE VOICE · THE PHILOSOPHY
+                {t.marcus.ui.tagline}
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">VISA</div>
@@ -807,13 +818,13 @@ const MarcusElitePage = () => {
                    <div className="relative z-10">
                       <img src="/marcus-logo.png" alt="Marcus Vance" className="h-16 w-auto object-contain mb-12 opacity-80" />
                       <div className="font-oswald text-[#C9A84C] text-[10px] tracking-[0.4em] font-bold uppercase mb-4">
-                        {isEnrollOpen ? t.marcus.enroll.prestigeBadge || "EXCLUSIVE SEAT" : "URGENT PROTOCOL"}
+                        {isEnrollOpen ? (t.marcus.enroll.prestigeBadge || "EXCLUSIVE SEAT") : (t.marcus.ui.exitModal?.badge || "URGENT PROTOCOL")}
                       </div>
                       <h2 className="font-oswald text-4xl md:text-5xl font-bold text-white tracking-tight leading-none uppercase mb-6 italic">
-                        {isEnrollOpen ? t.marcus.enroll.popupTitle : "DON'T WASTE THE OPPORTUNITY"}
+                        {isEnrollOpen ? t.marcus.enroll.popupTitle : (t.marcus.ui.exitModal?.title || "DON'T WASTE THE OPPORTUNITY")}
                       </h2>
                       <p className="text-[#A3A3A3] text-sm italic font-light uppercase tracking-widest leading-relaxed mb-8">
-                        {isEnrollOpen ? t.marcus.enroll.popupSubtitle : "THE CHALLENGE IS 100% FREE. RECOVER YOUR PROTOCOL."}
+                        {isEnrollOpen ? t.marcus.enroll.popupSubtitle : (t.marcus.ui.exitModal?.subtitle || "THE CHALLENGE IS 100% FREE. RECOVER YOUR PROTOCOL.")}
                       </p>
                       
                       <BenefitsList />
@@ -833,10 +844,10 @@ const MarcusElitePage = () => {
                 <div className="flex-1 flex flex-col p-8 md:p-16 overflow-y-auto no-scrollbar bg-[#0A0A0A]">
                    <div className="lg:hidden mb-10 text-left">
                       <div className="font-oswald text-[#C9A84C] text-[10px] tracking-[0.4em] font-bold uppercase mb-4">
-                        {isEnrollOpen ? t.marcus.enroll.popupTitle : "URGENT PROTOCOL"}
+                        {isEnrollOpen ? (t.marcus.enroll.prestigeBadge || "EXCLUSIVE SEAT") : (t.marcus.ui.exitModal?.badge || "URGENT PROTOCOL")}
                       </div>
                       <h2 className="font-oswald text-3xl font-bold text-white tracking-tight leading-none uppercase italic">
-                        {isEnrollOpen ? t.marcus.enroll.popupSubtitle : "DON'T WASTE THE OPPORTUNITY"}
+                        {isEnrollOpen ? t.marcus.enroll.popupTitle : (t.marcus.ui.exitModal?.title || "DON'T WASTE THE OPPORTUNITY")}
                       </h2>
                    </div>
 
@@ -902,7 +913,7 @@ const MarcusElitePage = () => {
                    
                    {showExitPopup && (
                      <p className="mt-12 text-center text-[10px] text-white/20 font-oswald tracking-[0.3em] uppercase font-bold italic">
-                       THIS TRANSMISSION EXPIRES WHEN YOU CLOSE THIS WINDOW.
+                       {t.marcus.ui.exitModal?.disclaimer || "THIS TRANSMISSION EXPIRES WHEN YOU CLOSE THIS WINDOW."}
                      </p>
                    )}
                 </div>

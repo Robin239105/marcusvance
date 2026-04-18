@@ -23,7 +23,42 @@ export const baseEN = {
       compliance: 'COMPLIANCE',
       headquarters: 'HEADQUARTERS',
       encrypted: 'ENCRYPTED',
-      tagline: 'THE METHOD · THE VOICE · THE PHILOSOPHY'
+      tagline: 'THE METHOD · THE VOICE · THE PHILOSOPHY',
+      beginningSubtitle: 'Complete Stage 01 to unlock the full digital business education library.',
+      beginningBadge: '7 DAYS TO BUILD. A LIFETIME TO SCALE.',
+      commonHeadings: {
+        roadmapPre: 'STAGE 01: THE 7-DAY CHALLENGE',
+        roadmapTitle: 'The 7-Day Challenge Roadmap',
+        roadmapSubtitle: 'Each day produces a live, working asset. By Day 7, you have a complete business — not a notebook of ideas.',
+        methodPre: 'The Method',
+        methodTitle: 'Three Pillars of the Protocol',
+        criteriaPre: 'Selection Criteria',
+        criteriaTitle: 'Who This Is For',
+        faqPre: 'Common Questions',
+        faqTitle: 'The Protocol Audit',
+        dashboardPre: 'The Dashboard',
+        dashboardTitle: 'A Peek Inside the System'
+      },
+      voiceQuote: {
+        line1: "The digital era doesn't reward hard work.",
+        line2: "It rewards {highLeverage} that run while you sleep.",
+        highLeverage: 'High-Leverage Systems',
+        bio: "I've spent the last decade distilling complex wealth generation models into one repeatable protocol. The 7-Day Challenge isn't just a course—it's your baptism into the elite digital economy."
+      },
+      exitModal: {
+        badge: 'URGENT PROTOCOL',
+        title: "DON'T WASTE THE OPPORTUNITY",
+        subtitle: 'THE CHALLENGE IS 100% FREE. RECOVER YOUR PROTOCOL.',
+        disclaimer: 'THIS TRANSMISSION EXPIRES WHEN YOU CLOSE THIS WINDOW.'
+      },
+      toast: {
+        enrolled: 'just enrolled in Day 1',
+        completed: 'completed Day 3 — funnel live',
+        joined: 'just signed up',
+        unlocked: 'finished Day 7 — unlocked access',
+        started: 'started the challenge',
+        referral: 'joined from a referral'
+      }
     },
     heroTitle: 'YOUR FIRST HIGH-INCOME STREAM. 7 DAYS.',
     heroSubtitle: 'THE 7-DAY CHALLENGE TO YOUR FIRST DIGITAL INCOME — STARTING FROM SCRATCH',
@@ -98,8 +133,27 @@ export const baseEN = {
         { d: 'DAY 3', s: 'THE SYSTEM', t: 'The tech stack that handles 90% of the work.', v: 'VALUED AT {currency}897' },
         { d: 'DAY 4', s: 'THE TRAFFIC', t: 'How to get high-quality attention instantly.', v: 'VALUED AT {currency}597' },
         { d: 'DAY 5-7', s: 'THE EXECUTION', t: 'Going from zero to live and generating revenue.', v: 'VALUED AT {currency}1,297' }
+      ],
+      stepsFull: [
+        { day: "Day 01", title: "Offer & Customer Avatar", deliverable: "Offer Sentence", desc: "Define exactly who you help, what transformation you deliver, and how you communicate it in one precise sentence. This sentence becomes the headline of everything." },
+        { day: "Day 02", title: "Lead Magnet + Capture Page Live", deliverable: "Live Page", desc: "Build a high-value lead magnet and launch your capture page. Your automated welcome email delivers it within minutes of opt-in." },
+        { day: "Day 03", title: "5-Email Nurturing Sequence Activated", deliverable: "Email Logic", desc: "Configure the complete trust-building email sequence: delivery, empathy, proof, offer, close — running automatically 24/7." },
+        { day: "Day 04", title: "Hubspot CRM Connected", deliverable: "CRM Wired", desc: "Wired to your funnel via automation. Every lead is tracked in a live pipeline. No warm prospect ever falls through the cracks again." },
+        { day: "Day 05", title: "Sales Page Published", deliverable: "Sales Funnel", desc: "A complete sales page live online: transformation headline, value stack, proof, and CTAs — available to prospects globally." },
+        { day: "Day 06", title: "Payment & Booking Active", deliverable: "Payout Mode", desc: "Payment or Cal.com connected to your offer page. You can now take payments or book qualified calls — completely automated." },
+        { day: "Day 07", title: "Launch & First Traffic", deliverable: "Open for Biz", desc: "Full funnel tested on mobile and launched to your first real leads. Your business infrastructure is live. What comes next is shown on Day 7." }
       ]
     },
+    methodologyFull: [
+      { i: "01", t: "AUDIT & ALIGN", d: "Most people fail because they build a business that doesn't fit their life. Day 1 is about ruthless alignment." },
+      { i: "02", t: "INFRASTRUCTURE", d: "We build the engines—funnels, automations, and CRM—before you ever spend a penny on traffic." },
+      { i: "03", t: "LEVERAGE", d: "Once the system is live, we apply high-quality attention to fuel the machine. Scale is the natural outcome." }
+    ],
+    whoItIsFor: [
+      { t: "THE STRATEGIST", d: "You have a deep skill or expertise but no system to monetize it at scale. You are tired of trading hours for dollars.", i: "🎯" },
+      { t: "THE VISIONARY", d: "You see the shift in the digital economy and want to build a brand that carries your legacy, not just a job.", i: "👁️" },
+      { t: "THE HIGH-PERFORMER", d: "You are already successful in your field but feel capped. You need high-leverage systems to break through to $50k+ months.", i: "🚀" }
+    ],
     programme: {
       stage01Badge: 'STAGE 01: THE 7-DAY CHALLENGE',
       stage02Badge: 'STAGE 02: THE FULL PROTOCOL',
