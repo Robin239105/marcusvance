@@ -21,6 +21,63 @@ const PlayIcon = () => (
 
 // --- Sub-Components ---
 
+const TrustBarFull = () => {
+  const { t } = useLocale();
+  return (
+    <div className="flex flex-col gap-4 mt-6 border-t border-white/5 pt-6">
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] text-[#A3A3A3] font-oswald uppercase tracking-[0.2em]">
+        <span>{t.marcus.trust.noSpam}</span>
+        <span className="opacity-30">·</span>
+        <span>{t.marcus.trust.unsubscribe}</span>
+        <span className="opacity-30">·</span>
+        <span>{t.marcus.trust.secureData}</span>
+        <span className="opacity-30">·</span>
+        <span>{t.marcus.trust.noCard}</span>
+      </div>
+      <div className="flex items-center justify-center gap-4">
+        <div className="flex -space-x-2">
+          {['1', '2', '3'].map((i) => (
+            <div key={i} className="w-8 h-8 rounded-full border-2 border-black bg-[#111] overflow-hidden">
+              <img 
+                src={`/avatars/avatar${i}.webp`} 
+                className="w-full h-full object-cover grayscale" 
+                alt="Alumni" 
+              />
+            </div>
+          ))}
+        </div>
+        <p className="text-[10px] font-oswald uppercase tracking-widest text-[#C8C8C8] leading-tight text-left">
+          <span className="text-[#C9A84C] font-bold">{t.marcus.heroStats}</span> <br/>
+          <span className="opacity-50">{t.marcus.stats.joined || '2,400+ MEMBERS'}</span>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const BenefitsList = () => {
+  const { t } = useLocale();
+  const benefits = t.marcus.enroll.benefits || [
+    "7-Day Implementation Roadmap",
+    "Complete High-Converting Assets",
+    "Private Discord Entry",
+    "Exclusive Platform Access"
+  ];
+  return (
+    <div className="flex flex-col gap-4 mt-8">
+      <h4 className="font-oswald text-[10px] uppercase tracking-[0.3em] text-[#C9A84C] font-bold">{t.marcus.enroll.benefitsTitle}</h4>
+      <ul className="space-y-4">
+        {benefits.map((b, i) => (
+          <li key={i} className="flex items-start gap-4 text-[10px] md:text-[11px] font-oswald uppercase tracking-[0.15em] text-[#F5F5F5] italic leading-tight">
+            <span className="text-[#C9A84C] text-lg leading-none">✓</span>
+            {b}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 const ScrollProgress = () => {
   const { scrollYProgress } = useScroll();
   return (
@@ -667,87 +724,88 @@ const MarcusElitePage = () => {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }} 
-            className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/95 backdrop-blur-3xl p-4 md:p-12"
+            className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/98 backdrop-blur-3xl p-4 md:p-12"
           >
              <motion.div 
-               initial={{ scale: 0.9, opacity: 0, y: 20 }}
+               initial={{ scale: 0.95, opacity: 0, y: 20 }}
                animate={{ scale: 1, opacity: 1, y: 0 }}
-               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-               className="bg-[#0A0A0A] w-full max-w-6xl h-full max-h-[850px] flex flex-col md:flex-row shadow-2xl overflow-hidden border border-white/5 relative"
+               exit={{ scale: 0.95, opacity: 0, y: 20 }}
+               className="bg-[#0A0A0A] border border-white/5 w-full max-w-6xl h-full md:h-auto max-h-[92dvh] flex flex-col md:flex-row overflow-hidden shadow-2xl relative"
              >
                 {/* Close Button */}
                 <button 
                   onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false);}} 
-                  className="absolute top-6 right-6 z-[100] p-2 bg-black/50 hover:bg-white/10 transition-colors rounded-full text-white/40 hover:text-white"
+                  className="absolute top-6 right-6 z-[210] p-2 bg-black/50 hover:bg-white/10 transition-colors rounded-full text-white/40 hover:text-white"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
-
-                {/* Left Side: Cinematic Branding */}
-                <div className="hidden md:block w-5/12 relative overflow-hidden bg-neutral-900 border-r border-white/5">
-                   <img 
-                    src="/marcus-standing.webp" 
-                    className="w-full h-full object-cover scale-110 grayscale brightness-90 contrast-[1.1]" 
-                    alt="Marcus Vance Prestige" 
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+ 
+                {/* Left Side: Cinematic Branding/Benefits */}
+                <div className="hidden lg:flex w-5/12 bg-gradient-to-br from-[#121212] to-[#0A0A0A] p-12 flex-col justify-between border-r border-white/5 relative overflow-hidden">
+                   <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C9A84C]/5 blur-[120px] -translate-y-1/2 translate-x-1/2 rounded-full" />
                    
-                   {/* Prestige Badges */}
-                   <div className="absolute bottom-12 left-12 right-12 space-y-4">
-                      <div className="inline-block bg-[#C9A84C] text-black px-3 py-1 font-oswald text-[10px] tracking-[0.2em] font-bold uppercase">
-                        {t.marcus.enroll.prestigeBadge}
+                   <div className="relative z-10">
+                      <img src="/marcus-logo.png" alt="Marcus Vance" className="h-16 w-auto object-contain mb-12 opacity-80" />
+                      <div className="font-oswald text-[#C9A84C] text-[10px] tracking-[0.4em] font-bold uppercase mb-4">
+                        {isEnrollOpen ? t.marcus.enroll.prestigeBadge || "EXCLUSIVE SEAT" : "URGENT PROTOCOL"}
                       </div>
-                      <h3 className="font-oswald text-3xl font-bold text-white tracking-widest uppercase leading-tight">
-                        TRUST THE<br/>PROTOCOL.
-                      </h3>
-                      <div className="flex items-center gap-4 text-white/30 font-oswald text-[10px] tracking-[0.3em] font-bold uppercase pt-4 border-t border-white/10">
-                        <span>SECURITY: LEVEL A</span>
-                        <span className="w-1 h-1 rounded-full bg-white/10" />
-                        <span>ENCRYPTED</span>
-                      </div>
+                      <h2 className="font-oswald text-4xl md:text-5xl font-bold text-white tracking-tight leading-none uppercase mb-6 italic">
+                        {isEnrollOpen ? t.marcus.enroll.popupTitle : "DON'T WASTE THE OPPORTUNITY"}
+                      </h2>
+                      <p className="text-[#A3A3A3] text-sm italic font-light uppercase tracking-widest leading-relaxed mb-8">
+                        {isEnrollOpen ? t.marcus.enroll.popupSubtitle : "THE CHALLENGE IS 100% FREE. RECOVER YOUR PROTOCOL."}
+                      </p>
+                      
+                      <BenefitsList />
+                   </div>
+
+                   <div className="relative z-10 pt-12 border-t border-white/5 flex items-center justify-between">
+                     <p className="text-[10px] font-oswald uppercase tracking-[0.4em] text-[#3A3A3A]">THE ALPHA COLLECTIVE © 2024</p>
+                     <div className="flex items-center gap-2 text-white/10 font-oswald text-[8px] tracking-[0.2em] font-bold uppercase">
+                       <span>SECURITY: LEVEL A</span>
+                       <span className="w-1 h-1 rounded-full bg-white/5" />
+                       <span>ENCRYPTED</span>
+                     </div>
                    </div>
                 </div>
-
-                {/* Right Side: High-Prestige Form */}
-                <div className="flex-1 flex flex-col p-8 md:p-16 overflow-y-auto">
-                   <div className="mb-12 text-left">
+ 
+                {/* Right Side: Primary Enrollment Form */}
+                <div className="flex-1 flex flex-col p-8 md:p-16 overflow-y-auto no-scrollbar bg-[#0A0A0A]">
+                   <div className="lg:hidden mb-10 text-left">
                       <div className="font-oswald text-[#C9A84C] text-[10px] tracking-[0.4em] font-bold uppercase mb-4">
                         {isEnrollOpen ? t.marcus.enroll.popupTitle : "URGENT PROTOCOL"}
                       </div>
-                      <h2 className="font-oswald text-4xl md:text-5xl font-bold text-white tracking-tight leading-none uppercase mb-6">
+                      <h2 className="font-oswald text-3xl font-bold text-white tracking-tight leading-none uppercase italic">
                         {isEnrollOpen ? t.marcus.enroll.popupSubtitle : "DON'T WASTE THE OPPORTUNITY"}
                       </h2>
-                      <p className="text-[#6A6A6A] text-sm md:text-base leading-relaxed max-w-md">
-                        {isEnrollOpen ? t.marcus.enroll.benefitsTitle : "The challenge is 100% free. Day 1 takes 45 minutes and establishes your entire business direction. Don't leave without your protocol."}
-                      </p>
                    </div>
 
                    <div className="space-y-6 mb-12">
-                      <div className="space-y-2 text-left">
-                        <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.firstName}</label>
-                        <input 
-                          type="text" 
-                          placeholder="EX: MARCUS" 
-                          className="w-full bg-white/5 border border-white/10 p-5 font-oswald text-xl text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5" 
-                        />
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2 text-left">
+                          <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.firstName}</label>
+                          <input 
+                            type="text" 
+                            required
+                            placeholder="EX: MARCUS" 
+                            className="w-full bg-white/5 border border-white/5 p-4 md:p-5 font-oswald text-base text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5"
+                          />
+                        </div>
+                        <div className="space-y-2 text-left">
+                          <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{language === 'fr' ? 'NOM' : 'LAST NAME'}</label>
+                          <input 
+                            type="text" 
+                            required
+                            placeholder="EX: VANCE" 
+                            className="w-full bg-white/5 border border-white/5 p-4 md:p-5 font-oswald text-base text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5"
+                          />
+                        </div>
                       </div>
+
                       <div className="space-y-2 text-left">
-                        <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.email}</label>
+                        <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">ENCRYPTION KEY (EMAIL)</label>
                         <input 
                           type="email" 
-                          placeholder="YOUR@BEST-EMAIL.COM" 
-                          className="w-full bg-white/5 border border-white/10 p-5 font-oswald text-xl text-[#C9A84C] focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5" 
-                        />
-                      </div>
-                      <button 
-                        onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false);}} 
-                        className="w-full bg-[#C9A84C] text-black p-6 font-oswald text-2xl tracking-[0.1em] hover:bg-white transition-all uppercase font-bold shadow-2xl shadow-[#C9A84C]/10 flex items-center justify-center gap-4 group"
-                      >
-                        DECODE PROTOCOL
-                        <span className="group-hover:translate-x-2 transition-transform">→</span>
-                      </button>
-                      <div className="flex items-center justify-center gap-3 text-white/20 font-oswald text-[9px] tracking-[0.2em] font-bold uppercase mt-4">
-                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                          {t.marcus.enroll.secure}
                       </div>
                    </div>
@@ -756,7 +814,7 @@ const MarcusElitePage = () => {
                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 pt-8 border-t border-white/5">
                       {t.marcus.enroll.benefits.map((benefit, i) => (
                         <div key={i} className="flex items-start gap-3">
-                           <div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#FFD700]/50 shrink-0" />
+                           <div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#C9A84C]/50 shrink-0" />
                            <span className="font-oswald text-[10px] text-[#A3A3A3] tracking-widest uppercase leading-tight font-bold">{benefit}</span>
                         </div>
                       ))}

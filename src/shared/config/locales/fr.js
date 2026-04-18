@@ -1,5 +1,30 @@
 export default {
   marcus: {
+    enroll: {
+      popupTitle: 'VOTRE SIÈGE AU CLUB.',
+      popupSubtitle: 'SÉCURISEZ VOTRE POSITION DANS LE ALPHA COLLECTIVE.',
+      firstName: 'PRÉNOM',
+      email: 'E-MAIL PROFESSIONNEL',
+      secure: 'ACCÈS RESTREINT | AUCUNE CARTE REQUISE',
+      prestigeBadge: 'HAUT-POTENTIEL VÉRIFIÉ',
+      benefitsTitle: 'CE QUE VOUS DÉBLOQUEZ :',
+      benefits: [
+        'ACCÈS COMPLET AU PROTOCOLE DE 7 JOURS',
+        'BIBLIOTHÈQUE DE 5 COURS (APRÈS QUALIFICATION)',
+        'ADHÉSION À LA COMMUNAUTÉ ÉLITE',
+        'MODÈLES DE SYSTÈMES ET CHECK-LISTS'
+      ],
+      agreement: 'Je m\'engage à traiter ces documents avec le sérieux professionnel requis.',
+      successTitle: 'ACCÈS ACCORDÉ.',
+      successSubtitle: 'Consultez votre boîte de réception sécurisée pour le protocole du jour 1.',
+      giveawayBtn: 'PARTICIPER AU CONCOURS'
+    },
+    trust: {
+      noSpam: 'ZÉRO SPAM',
+      unsubscribe: '1-CLICK EXIT',
+      secureData: 'DONNÉES SÉCURISÉES',
+      noCard: 'SANS CARTE'
+    },
     nav: {
       method: "MÉTHODE",
       philosophy: "PHILOSOPHIE",
