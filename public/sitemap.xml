@@ -1,30 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Routes -->
-  <url><loc>https://trinity-and-marcus.vercel.app/</loc><priority>1.0</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/marcus</loc><priority>1.0</priority></url>
-  
-  <!-- Trinity Localized -->
-  <url><loc>https://trinity-and-marcus.vercel.app/us</loc><priority>0.8</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/uk</loc><priority>0.8</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/au</loc><priority>0.8</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/ca</loc><priority>0.8</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/fr</loc><priority>0.8</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/de</loc><priority>0.8</priority></url>
-
-  <!-- Marcus Localized -->
-  <url><loc>https://trinity-and-marcus.vercel.app/marcus/us</loc><priority>0.8</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/marcus/uk</loc><priority>0.8</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/marcus/au</loc><priority>0.8</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/marcus/ca</loc><priority>0.8</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/marcus/fr</loc><priority>0.8</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/marcus/de</loc><priority>0.8</priority></url>
-
-  <!-- Trinity Secondary -->
-  <url><loc>https://trinity-and-marcus.vercel.app/trinity/giveaway</loc><priority>0.6</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/trinity/feedback</loc><priority>0.4</priority></url>
-
-  <!-- Marcus Secondary -->
-  <url><loc>https://trinity-and-marcus.vercel.app/marcus/giveaway</loc><priority>0.6</priority></url>
-  <url><loc>https://trinity-and-marcus.vercel.app/marcus/feedback</loc><priority>0.4</priority></url>
+  <url>
+    <loc>https://marcusvance.vercel.app/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://marcusvance.vercel.app/philosophy</loc>
+    <lastmod>2026-04-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marcusvance.vercel.app/terms</loc>
+    <lastmod>2026-04-18</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>

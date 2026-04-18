@@ -498,6 +498,40 @@ const MarcusElitePage = () => {
   const [showExitPopup, setShowExitPopup] = useState(false);
   const [hasTriggeredPopup, setHasTriggeredPopup] = useState(false);
 
+  // Form State
+  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleEnrollSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('/api/enroll', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (err) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace('#', '');
@@ -521,7 +555,7 @@ const MarcusElitePage = () => {
         const totalHeight = document.documentElement.scrollHeight;
         if (scrollPosition / totalHeight > 0.5) {
           setHasTriggeredPopup(true);
-          {setIsEnrollOpen(true); setHasTriggeredPopup(true);};
+          setIsEnrollOpen(true);
         }
       }
     };
@@ -851,54 +885,84 @@ const MarcusElitePage = () => {
                       </h2>
                    </div>
 
-                   <div className="space-y-8 mb-16">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {!submitStatus ? (
+                      <form onSubmit={handleEnrollSubmit} className="space-y-8 mb-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div className="space-y-2 text-left">
+                            <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.firstName}</label>
+                            <input 
+                              name="firstName"
+                              type="text" 
+                              required
+                              value={formData.firstName}
+                              onChange={handleInputChange}
+                              placeholder="EX: MARCUS" 
+                              className="w-full bg-white/5 border border-white/5 p-4 md:p-5 font-oswald text-base text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5"
+                            />
+                          </div>
+                          <div className="space-y-2 text-left">
+                            <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.lastName}</label>
+                            <input 
+                              name="lastName"
+                              type="text" 
+                              required
+                              value={formData.lastName}
+                              onChange={handleInputChange}
+                              placeholder="EX: VANCE" 
+                              className="w-full bg-white/5 border border-white/5 p-4 md:p-5 font-oswald text-base text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5"
+                            />
+                          </div>
+                        </div>
+
                         <div className="space-y-2 text-left">
-                          <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.firstName}</label>
+                          <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.emailLabel}</label>
                           <input 
-                            type="text" 
+                            name="email"
+                            type="email" 
                             required
-                            placeholder="EX: MARCUS" 
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            placeholder="EX: MARCUS@VANCE.COM" 
                             className="w-full bg-white/5 border border-white/5 p-4 md:p-5 font-oswald text-base text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5"
                           />
                         </div>
-                        <div className="space-y-2 text-left">
-                          <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.lastName}</label>
-                          <input 
-                            type="text" 
-                            required
-                            placeholder="EX: VANCE" 
-                            className="w-full bg-white/5 border border-white/5 p-4 md:p-5 font-oswald text-base text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5"
-                          />
+
+                        <div className="flex items-start gap-4 group cursor-pointer pt-4" onClick={() => {}}>
+                           <div className="mt-0.5 w-5 h-5 border border-white/10 rounded flex items-center justify-center group-hover:border-[#C9A84C]/50 transition-colors shrink-0">
+                              <div className="w-2.5 h-2.5 bg-[#C9A84C] rounded-sm opacity-60" />
+                           </div>
+                           <p className="font-oswald text-[9px] text-[#6A6A6A] tracking-[0.2em] uppercase italic leading-loose">
+                              {t.marcus.enroll.agreement}
+                           </p>
                         </div>
-                      </div>
 
-                      <div className="space-y-2 text-left">
-                        <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.emailLabel}</label>
-                        <input 
-                          type="email" 
-                          required
-                          placeholder="EX: MARCUS@VANCE.COM" 
-                          className="w-full bg-white/5 border border-white/5 p-4 md:p-5 font-oswald text-base text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5"
-                        />
+                        <button 
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full bg-[#C9A84C] text-black font-oswald text-sm font-black tracking-[0.4em] py-6 rounded-none uppercase hover:bg-white transition-all duration-700 shadow-[0_0_50px_rgba(201,168,76,0.2)] active:scale-[0.98] disabled:opacity-50"
+                        >
+                           {isSubmitting ? (t.marcus.ui.processing || "PROCESSING PROTOCOL...") : t.marcus.enroll.submitBtn}
+                        </button>
+                      </form>
+                    ) : (
+                      <div className="flex flex-col items-center justify-center py-20 text-center space-y-6">
+                        <div className="w-20 h-20 bg-[#C9A84C] flex items-center justify-center text-black text-4xl shadow-[0_0_40px_rgba(201,168,76,0.2)]">✓</div>
+                        <h2 className="font-oswald text-4xl text-[#C9A84C] uppercase font-bold tracking-tight">
+                          {submitStatus === 'success' ? (t.marcus.ui.successTitle || "PROTOCOL INITIATED") : "ERROR IN TRANSMISSION"}
+                        </h2>
+                        <p className="text-[#A3A3A3] text-sm leading-relaxed max-w-sm font-light uppercase tracking-widest italic">
+                          {submitStatus === 'success' 
+                            ? (t.marcus.ui.successDesc || "Check your email. Your Day 1 roadmap is being prepared.") 
+                            : "There was an issue processing your enrollment. Please try again."}
+                        </p>
+                        <button 
+                          onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false); setSubmitStatus(null); setFormData({ firstName: '', lastName: '', email: '' });}}
+                          className="mt-8 border border-[#C9A84C] text-[#C9A84C] px-10 py-3 font-oswald text-xl tracking-wider hover:bg-[#C9A84C] hover:text-black transition-all font-bold uppercase"
+                        >
+                          {t.marcus.ui.close || "CLOSE"}
+                        </button>
                       </div>
-
-                      <div className="flex items-start gap-4 group cursor-pointer pt-4" onClick={() => {}}>
-                         <div className="mt-0.5 w-5 h-5 border border-white/10 rounded flex items-center justify-center group-hover:border-[#C9A84C]/50 transition-colors shrink-0">
-                            <div className="w-2.5 h-2.5 bg-[#C9A84C] rounded-sm opacity-60" />
-                         </div>
-                         <p className="font-oswald text-[9px] text-[#6A6A6A] tracking-[0.2em] uppercase italic leading-loose">
-                            {t.marcus.enroll.agreement}
-                         </p>
-                      </div>
-
-                      <button 
-                        className="w-full bg-[#C9A84C] text-black font-oswald text-sm font-black tracking-[0.4em] py-6 rounded-none uppercase hover:bg-white transition-all duration-700 shadow-[0_0_50px_rgba(201,168,76,0.2)] active:scale-[0.98]"
-                        onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false);}}
-                      >
-                         {t.marcus.enroll.submitBtn}
-                      </button>
-                   </div>
+                    )}
 
                    {/* Benefits Checkpoints */}
                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 pt-8 border-t border-white/5">

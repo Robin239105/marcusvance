@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://trinity-and-marcus.vercel.app/sitemap.xml
+Sitemap: https://marcusvance.vercel.app/sitemap.xml
