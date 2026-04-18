@@ -421,10 +421,10 @@ const MarcusElitePage = () => {
             <a href="#roadmap" className="hover:text-[#FFD700] transition-colors">{t.marcus.navAboutChallenge}</a>
             <a href="#faq" className="hover:text-[#FFD700] transition-colors">FAQ</a>
             <LanguageSwitcher variant="marcus" />
-            <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-8 py-2.5 hover:bg-white transition-all shadow-lg font-bold">{t.marcus.navStartBtn}</button>
+            <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-8 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap">{t.marcus.navStartBtn}</button>
           </div>
           <div className="lg:hidden text-right flex items-center gap-4">
-             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase font-bold">START FREE</button>
+             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase font-bold whitespace-nowrap">START FREE</button>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>
