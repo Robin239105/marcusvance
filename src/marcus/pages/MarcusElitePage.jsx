@@ -381,7 +381,7 @@ const WhoItIsFor = ({ t }) => (
 );
 
 const MarcusElitePage = () => {
-  const { t, loading, currentLocale } = useLocale();
+  const { t, currency, loading, currentLocale } = useLocale();
   const navigate = useNavigate();
   const location = useLocation();
   const [isEnrollOpen, setIsEnrollOpen] = useState(false);
