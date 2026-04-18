@@ -47,6 +47,14 @@ const router = createBrowserRouter([
       ...regions.map(r => ({ path: `/philosophy/${r}`, element: <PhilosophyPage /> })),
       { path: '/terms', element: <TermsPage /> },
       ...regions.map(r => ({ path: `/terms/${r}`, element: <TermsPage /> })),
+      
+      // Legal & Support fallbacks
+      { path: '/privacy', element: <TermsPage /> },
+      ...regions.map(r => ({ path: `/privacy/${r}`, element: <TermsPage /> })),
+      { path: '/guarantee', element: <TermsPage /> },
+      ...regions.map(r => ({ path: `/guarantee/${r}`, element: <TermsPage /> })),
+      { path: '/contact', element: <MarcusElitePage /> },
+      ...regions.map(r => ({ path: `/contact/${r}`, element: <MarcusElitePage /> })),
     ]
   }
 ])
