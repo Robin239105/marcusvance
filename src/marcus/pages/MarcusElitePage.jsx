@@ -246,7 +246,7 @@ const MarcusElitePage = () => {
       <nav className={`fixed top-[32px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-10 w-auto brightness-0 invert" />
+            <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-16 w-auto" />
           </Link>
           <div className="hidden lg:flex items-center gap-10 font-oswald text-xs tracking-[0.3em] font-bold uppercase">
             <a href="#about" className="hover:text-[#FFD700] transition-colors">METHOD</a>
@@ -275,7 +275,7 @@ const MarcusElitePage = () => {
                 </Reveal>
                 
                 <Reveal delay={0.1}>
-                  <h1 className="font-oswald text-[56px] md:text-[90px] leading-[0.95] text-white tracking-tight mb-10 font-bold uppercase">
+                  <h1 className="font-bebas text-[72px] md:text-[120px] leading-[0.85] text-white tracking-tighter mb-10 uppercase">
                     Building Real<br/>
                     <span className="mv-text-gold-gradient italic">Wealth Engines</span><br/>
                     From Scratch
@@ -309,22 +309,16 @@ const MarcusElitePage = () => {
               </div>
 
               <Reveal delay={0.5}>
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10 h-1/4 bottom-0" />
-                  <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-3xl shadow-[#FFD700]/5">
+                <div className="relative">
+                  <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-3xl shadow-[#FFD700]/5">
                     <img 
                       src="/marcus-sitting.webp" 
                       alt="Marcus Vance" 
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                      className="w-full h-auto object-contain"
                     />
-                    <div className="absolute top-6 left-6 z-20">
-                      <div className="font-oswald bg-black/80 backdrop-blur-md border border-white/10 text-white text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-widest">
-                        Marcus Vance / Protocol Lead
-                      </div>
-                    </div>
                   </div>
                   {/* Decorative element */}
-                  <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-[#FFD700]/10 blur-[80px] rounded-full -z-10" />
+                  <div className="absolute -bottom-12 -right-12 w-80 h-80 bg-[#FFD700]/10 blur-[100px] rounded-full -z-10" />
                 </div>
               </Reveal>
             </div>
@@ -429,7 +423,7 @@ const MarcusElitePage = () => {
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-16">
           <div>
             <Link to="/" className="flex items-center gap-2 mb-6 group">
-              <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-12 w-auto brightness-0 invert" />
+              <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-16 w-auto" />
             </Link>
             <p className="text-[#333] font-oswald uppercase tracking-[0.5em] text-[10px] font-bold">© 2024 LUCKY NORTH STAR LLC — WYOMING, USA</p>
           </div>
