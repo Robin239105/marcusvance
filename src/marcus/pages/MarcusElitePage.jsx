@@ -792,7 +792,7 @@ const MarcusElitePage = () => {
                           />
                         </div>
                         <div className="space-y-2 text-left">
-                          <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{language === 'fr' ? 'NOM' : 'LAST NAME'}</label>
+                          <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.lastName}</label>
                           <input 
                             type="text" 
                             required
@@ -803,10 +803,13 @@ const MarcusElitePage = () => {
                       </div>
 
                       <div className="space-y-2 text-left">
-                        <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">ENCRYPTION KEY (EMAIL)</label>
+                        <label className="font-oswald text-[10px] text-white/30 tracking-[0.3em] font-bold uppercase ml-1">{t.marcus.enroll.emailLabel}</label>
                         <input 
                           type="email" 
-                         {t.marcus.enroll.secure}
+                          required
+                          placeholder="EX: MARCUS@VANCE.COM" 
+                          className="w-full bg-white/5 border border-white/5 p-4 md:p-5 font-oswald text-base text-white focus:border-[#C9A84C] outline-none tracking-widest transition-all placeholder:text-white/5"
+                        />
                       </div>
                    </div>
 
@@ -819,10 +822,11 @@ const MarcusElitePage = () => {
                         </div>
                       ))}
                    </div>
+                   <TrustBarFull />
                    
                    {showExitPopup && (
-                     <p className="mt-12 text-[10px] text-white/20 font-oswald tracking-[0.2em] uppercase text-center border-t border-white/5 pt-6">
-                       THIS UNIQUE ACCESS LINK EXPIRES WHEN YOU CLOSE THIS WINDOW.
+                     <p className="mt-12 text-center text-[10px] text-white/20 font-oswald tracking-[0.3em] uppercase font-bold italic">
+                       THIS TRANSMISSION EXPIRES WHEN YOU CLOSE THIS WINDOW.
                      </p>
                    )}
                 </div>

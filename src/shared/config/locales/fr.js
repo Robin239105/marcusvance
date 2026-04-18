@@ -4,7 +4,9 @@ export default {
       popupTitle: 'VOTRE SIÈGE AU CLUB.',
       popupSubtitle: 'SÉCURISEZ VOTRE POSITION DANS LE ALPHA COLLECTIVE.',
       firstName: 'PRÉNOM',
+      lastName: 'NOM',
       email: 'E-MAIL PROFESSIONNEL',
+      emailLabel: 'CLÉ D\'ENCRYPTAGE (E-MAIL)',
       secure: 'ACCÈS RESTREINT | AUCUNE CARTE REQUISE',
       prestigeBadge: 'HAUT-POTENTIEL VÉRIFIÉ',
       benefitsTitle: 'CE QUE VOUS DÉBLOQUEZ :',
@@ -90,22 +92,6 @@ export default {
         submit: "ENVOYER"
       }
     },
-    enroll: {
-      badge: "ACCÈS IMMÉDIAT",
-      popupTitle: "ACCÈS AU DÉFI",
-      popupSubtitle: "COMMENCEZ LE JOUR 1",
-      benefitsTitle: "DANS LES 45 PROCHAINES MINUTES :",
-      benefits: [
-        "Définissez votre offre en une phrase",
-        "Activez votre infrastructure de capture",
-        "Établissez votre direction stratégique",
-        "Accès au réseau Alpha"
-      ],
-      firstName: "PRÉNOM",
-      email: "E-MAIL",
-      submit: "DÉCODER LE PROTOCOLE",
-      secure: "SYSTÈME SÉCURISÉ",
-      prestigeBadge: "🔓 ACCÈS GRATUIT"
     }
   }
 };
