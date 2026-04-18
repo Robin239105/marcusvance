@@ -444,6 +444,7 @@ const MarcusElitePage = () => {
   const [isEnrollOpen, setIsEnrollOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showExitPopup, setShowExitPopup] = useState(false);
+  const [hasTriggeredPopup, setHasTriggeredPopup] = useState(false);
 
   useEffect(() => {
     if (location.hash) {
@@ -458,9 +459,26 @@ const MarcusElitePage = () => {
   }, [location]);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      // Logic for sticky nav
+      setIsScrolled(window.scrollY > 50);
+
+      // Logic for 50% scroll trigger
+      if (!hasTriggeredPopup) {
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const totalHeight = document.documentElement.scrollHeight;
+        if (scrollPosition / totalHeight > 0.5) {
+          setHasTriggeredPopup(true);
+          {setIsEnrollOpen(true); setHasTriggeredPopup(true);};
+        }
+      }
+    };
+
     const handleMouseLeave = (e) => {
-        if (e.clientY <= 0) setShowExitPopup(true);
+        if (e.clientY <= 0 && !hasTriggeredPopup) {
+            setHasTriggeredPopup(true);
+            setShowExitPopup(true);
+        }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -470,7 +488,7 @@ const MarcusElitePage = () => {
         window.removeEventListener('scroll', handleScroll);
         document.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []);
+  }, [hasTriggeredPopup]);
 
   const handleNav = (e, target) => {
     e.preventDefault();
@@ -508,11 +526,11 @@ const MarcusElitePage = () => {
             <a href="#roadmap" onClick={(e) => handleNav(e, 'roadmap')} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
             <a href="#faq" onClick={(e) => handleNav(e, 'faq')} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
             <LanguageSwitcher variant="marcus" />
-            <button onClick={() => setIsEnrollOpen(true)} className="bg-[#C9A84C] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</button>
+            <button onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} className="bg-[#C9A84C] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</button>
           </div>
 
           <div className="lg:hidden text-right flex items-center gap-4">
-             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</button>
+             <button onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</button>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>
@@ -556,7 +574,7 @@ const MarcusElitePage = () => {
 
                 <Reveal delay={0.3}>
                   <div className="flex flex-col sm:flex-row items-center gap-6">
-                      <button onClick={() => setIsEnrollOpen(true)} className="w-full sm:w-auto bg-[#C9A84C] text-black px-10 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold shadow-[#C9A84C]/20 whitespace-nowrap">{t.marcus.ctaPrimary}</button>
+                      <button onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} className="w-full sm:w-auto bg-[#C9A84C] text-black px-10 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold shadow-[#C9A84C]/20 whitespace-nowrap">{t.marcus.ctaPrimary}</button>
                       <a href="#roadmap" className="font-oswald text-sm text-white/50 hover:text-white transition-colors tracking-widest border-b border-transparent hover:border-white/20 pb-1 uppercase font-bold">{t.marcus.heroScroll} →</a>
                   </div>
                 </Reveal>
@@ -610,7 +628,7 @@ const MarcusElitePage = () => {
               title="A Peek Inside the System"
             />
             <Reveal delay={0.2}>
-              <div className="relative max-w-5xl mx-auto aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer" onClick={() => setIsEnrollOpen(true)}>
+              <div className="relative max-w-5xl mx-auto aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer" onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}}>
                 <img src="/marcus_platform_mockup_v2_1776138837670.png" className="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-[2s]" alt="Platform Mockup" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                 
