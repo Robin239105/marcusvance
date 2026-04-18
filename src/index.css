@@ -1,70 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700&family=Oswald:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply antialiased bg-arena-background text-arena-on-surface leading-normal;
+    @apply antialiased bg-[#000000] text-[#F5F5F5] font-['Outfit'] leading-normal selection:bg-[#FFD700]/30 selection:text-[#FFD700];
   }
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48;
-  vertical-align: middle;
+/* --- Grain Effect --- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-@keyframes bounce-slow {
-  0%, 100% {
-    transform: translateY(0) rotate(-3deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(-3deg);
-  }
+/* --- Typography --- */
+.font-bebas { font-family: 'Bebas Neue', cursive; }
+.font-outfit { font-family: 'Outfit', sans-serif; }
+.font-oswald { font-family: 'Oswald', sans-serif; }
+
+:root {
+  --mv-bright-gold: #FFD700;
+  --mv-dark-gold: #D4AF37;
 }
 
-.animate-bounce-slow {
-  animation: bounce-slow 3.2s ease-in-out infinite;
+/* --- Animations --- */
+@keyframes waterflow {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
 }
 
-.glass-nav {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+.animate-waterflow {
+  animation: waterflow 4s linear infinite;
 }
 
-.marcus-elite {
-  --mv-gold-a: #e6c364;
-  --mv-gold-b: #c9a84c;
+@keyframes scroll-logos {
+  to { transform: translateX(-50%); }
 }
 
-.marcus-elite .mv-bg-gold-gradient {
-  background: linear-gradient(135deg, var(--mv-gold-a) 0%, var(--mv-gold-b) 100%);
+.animate-scroll-logos {
+  animation: scroll-logos 30s linear infinite;
 }
 
-.marcus-elite .mv-text-gradient {
-  background: linear-gradient(135deg, var(--mv-gold-a) 0%, var(--mv-gold-b) 100%);
+@keyframes shinebar {
+  to { background-position: 300% 0; }
+}
+
+.animate-shinebar {
+  background: linear-gradient(90deg, #D4AF37, #FFD700, #D4AF37);
+  background-size: 300% 100%;
+  animation: shinebar 6s linear infinite;
+}
+
+/* --- Waterline Shimmer --- */
+.waterline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  overflow: hidden;
+  background: linear-gradient(90deg, transparent 0%, var(--mv-bright-gold) 20%, #FFF 40%, var(--mv-bright-gold) 60%, transparent 80%, var(--mv-bright-gold) 100%);
+  background-size: 200% 100%;
+}
+
+.waterline-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 215, 0, 0.06));
+  pointer-events: none;
+}
+
+/* --- UI Components --- */
+.mv-glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.mv-glass-card:hover {
+  border-color: rgba(255, 215, 0, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-4px);
+}
+
+.mv-text-gold-gradient {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-.marcus-elite .mv-text-shadow-gold {
-  text-shadow: 0 0 20px rgba(201, 168, 76, 0.4);
-}
-
-.marcus-elite .mv-ghost-border {
-  border: 1px solid rgba(201, 168, 76, 0.2);
-}
-
-.marcus-elite .mv-premium-glow {
-  box-shadow: 0 20px 40px rgba(201, 168, 76, 0.12);
-}
-
-.font-arena-headline {
-  font-family: 'Oswald Local', sans-serif;
 }
 
 html {
@@ -78,19 +113,12 @@ html, body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
 
-#root {
-  min-height: 100dvh;
-}
+#root { min-height: 100dvh; }
