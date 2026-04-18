@@ -94,11 +94,11 @@ const SectionHeading = ({ pre, title, subtitle, centered = true }) => (
         {pre}
       </span>
     )}
-    <h2 className="font-bebas text-5xl md:text-8xl text-white leading-[0.9] uppercase mb-6 tracking-tight">
+    <h2 className="font-oswald text-5xl md:text-8xl text-white leading-[0.9] uppercase mb-6 tracking-tight font-bold">
       {title}
     </h2>
     {subtitle && (
-      <p className="text-[#A3A3A3] text-lg md:text-xl font-light italic max-w-2xl mx-auto leading-relaxed">
+      <p className="text-[#A3A3A3] text-lg md:text-xl font-light italic max-w-2xl mx-auto leading-relaxed font-barlow">
         {subtitle}
       </p>
     )}
@@ -146,10 +146,10 @@ const TimelineSection = () => {
                 <div className="absolute -left-[35px] md:-left-[67px] top-6 w-3 h-3 bg-[#FFD700] rounded-full shadow-[0_0_15px_#FFD700]" />
                 <div className="mv-glass-card p-10 group relative">
                     <div className="flex flex-wrap items-center gap-4 mb-6">
-                        <span className="font-bebas text-[#FFD700] text-3xl tracking-widest">{step.day}</span>
+                        <span className="font-oswald text-[#FFD700] text-3xl tracking-widest font-bold font-italic">{step.day}</span>
                         <span className="font-oswald bg-[#FFD700]/10 text-[#FFD700] text-[10px] font-bold px-3 py-1 rounded uppercase tracking-[0.2em]">{step.deliverable}</span>
                     </div>
-                    <h3 className="font-bebas text-3xl text-white mb-4 group-hover:text-[#FFD700] transition-colors">{step.title}</h3>
+                    <h3 className="font-oswald text-3xl text-white mb-4 group-hover:text-[#FFD700] transition-colors font-bold uppercase">{step.title}</h3>
                     <p className="text-[#A3A3A3] text-lg italic leading-relaxed max-w-2xl">{step.desc}</p>
                 </div>
               </div>
@@ -198,7 +198,7 @@ const WhoItIsFor = () => {
             <Reveal key={i} delay={i * 0.1}>
               <div className="mv-glass-card p-10 flex flex-col h-full border-t border-t-white/10 group">
                 <span className="font-oswald text-[#FFD700] text-[10px] font-bold tracking-[0.3em] uppercase mb-6">{p.label}</span>
-                <h3 className="font-bebas text-3xl text-white mb-4 tracking-wide group-hover:text-[#FFD700] transition-colors">{p.title}</h3>
+                <h3 className="font-oswald text-3xl text-white mb-4 tracking-wide group-hover:text-[#FFD700] transition-colors font-bold uppercase">{p.title}</h3>
                 <p className="text-[#A3A3A3] text-sm mb-6 border-b border-white/5 pb-6">{p.p}</p>
                 <p className="text-[#FFD700]/70 text-sm italic mb-8 border-l-2 border-[#FFD700]/30 pl-4">"{p.q}"</p>
                 <div className="mt-auto bg-white/5 p-4 rounded text-xs text-[#6A6A6A] leading-relaxed uppercase tracking-wider font-bold italic">
@@ -237,7 +237,7 @@ const MarcusElitePage = () => {
   if (loading) return null;
 
   return (
-    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Outfit'] overflow-x-hidden group/main">
+    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Barlow'] overflow-x-hidden group/main">
       <ScrollProgress />
       <UrgencyBar />
       <ToastNotification />
@@ -245,8 +245,8 @@ const MarcusElitePage = () => {
       {/* --- Header / Nav --- */}
       <nav className={`fixed top-[32px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-          <div className="font-bebas text-2xl tracking-widest text-white">MARCUS<span className="text-[#FFD700]">·</span>VANCE</div>
-          <div className="hidden lg:flex items-center gap-10 font-bebas text-lg tracking-[0.2em]">
+          <div className="font-oswald text-2xl tracking-widest text-white font-bold uppercase">MARCUS<span className="text-[#FFD700]">·</span>VANCE</div>
+          <div className="hidden lg:flex items-center gap-10 font-oswald text-xs tracking-[0.3em] font-bold uppercase">
             <a href="#about" className="hover:text-[#FFD700] transition-colors">METHOD</a>
             <a href="#roadmap" className="hover:text-[#FFD700] transition-colors">CHALLENGE</a>
             <a href="#forwho" className="hover:text-[#FFD700] transition-colors">PROFILES</a>
@@ -259,49 +259,73 @@ const MarcusElitePage = () => {
 
       <main>
         {/* --- Hero Section --- */}
-        <section className="relative pt-[220px] pb-32 overflow-hidden" id="about">
+        <section className="relative pt-[120px] lg:pt-[220px] pb-32 overflow-hidden" id="about">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[700px] bg-[#FFD700]/[0.05] blur-[150px] rounded-full -translate-y-1/2 pointer-events-none" />
           
-          <div className="max-w-7xl mx-auto px-8 text-center relative z-10">
-            <Reveal>
-              <div className="inline-flex items-center gap-3 border border-[#FFD700]/30 bg-[#FFD700]/10 px-4 py-1.5 rounded-full mb-8">
-                <span className="w-1.5 h-1.5 bg-[#22c55e] rounded-full animate-pulse" />
-                <span className="font-oswald text-[#FFD700] text-[10px] font-bold tracking-[0.4em] uppercase">7-Day Free Challenge — Open Now</span>
+          <div className="max-w-7xl mx-auto px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-left">
+              <div>
+                <Reveal>
+                  <div className="inline-flex items-center gap-3 border border-[#FFD700]/30 bg-[#FFD700]/10 px-4 py-1.5 rounded-full mb-8">
+                    <span className="w-1.5 h-1.5 bg-[#22c55e] rounded-full animate-pulse" />
+                    <span className="font-oswald text-[#FFD700] text-[10px] font-bold tracking-[0.4em] uppercase">7-Day Free Challenge — Open Now</span>
+                  </div>
+                </Reveal>
+                
+                <Reveal delay={0.1}>
+                  <h1 className="font-oswald text-[56px] md:text-[90px] leading-[0.95] text-white tracking-tight mb-10 font-bold uppercase">
+                    Building Real<br/>
+                    <span className="mv-text-gold-gradient italic">Wealth Engines</span><br/>
+                    From Scratch
+                  </h1>
+                </Reveal>
+
+                <Reveal delay={0.2}>
+                  <p className="text-[#A3A3A3] text-lg md:text-xl font-light italic max-w-xl mb-12 leading-relaxed">
+                    The <strong>Marcus Vance Protocol</strong> gives you the complete blueprint to launch your digital stream. No prior experience. No hidden fees. 100% free to start.
+                  </p>
+                </Reveal>
+
+                <Reveal delay={0.3}>
+                  <div className="flex flex-col sm:flex-row items-center gap-6">
+                      <button onClick={() => setIsEnrollOpen(true)} className="w-full sm:w-auto bg-[#FFD700] text-black px-12 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold italic">CLAIM FREE ACCESS</button>
+                      <a href="#roadmap" className="font-oswald text-sm text-white/50 hover:text-white transition-colors tracking-widest border-b border-transparent hover:border-white/20 pb-1 uppercase font-bold">SEE THE 7 DAYS →</a>
+                  </div>
+                </Reveal>
+
+                <Reveal delay={0.4}>
+                  <div className="mt-12 flex items-center gap-10 border-t border-white/5 pt-12">
+                     <div className="flex -space-x-3">
+                          {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-[#111] overflow-hidden"><img src={`/avatars/avatar${(i%3)+1}.webp`} /></div>)}
+                     </div>
+                     <div className="text-left">
+                         <div className="text-[#FFD700] font-bold text-lg leading-none">★★★★★</div>
+                         <div className="text-[10px] font-oswald text-[#6A6A6A] tracking-widest mt-1 uppercase font-bold">2,400+ ENROLLED & GROWING</div>
+                     </div>
+                  </div>
+                </Reveal>
               </div>
-            </Reveal>
-            
-            <Reveal delay={0.1}>
-              <h1 className="font-bebas text-[64px] md:text-[140px] leading-[0.85] text-white tracking-tighter mb-10">
-                Building Real<br/>
-                <span className="mv-text-gold-gradient italic">Wealth Engines</span><br/>
-                From Scratch — Free
-              </h1>
-            </Reveal>
 
-            <Reveal delay={0.2}>
-              <p className="text-[#A3A3A3] text-lg md:text-2xl font-light italic max-w-3xl mx-auto mb-16 leading-relaxed">
-                The <strong>Marcus Vance Protocol</strong> gives you the complete blueprint to launch your digital stream. No prior experience. No hidden fees. 100% free to start.
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.3}>
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                  <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-12 py-7 md:px-20 md:py-8 font-bebas text-3xl md:text-4xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase italic">CLAIM FREE ACCESS</button>
-                  <a href="#roadmap" className="font-bebas text-xl text-white/50 hover:text-white transition-colors tracking-widest border-b border-transparent hover:border-white/20 pb-1">SEE THE 7 DAYS →</a>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.4}>
-                <div className="mt-12 flex items-center justify-center gap-10 border-t border-white/5 pt-12">
-                   <div className="flex -space-x-3">
-                        {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-[#111] overflow-hidden"><img src={`/avatars/avatar${(i%3)+1}.webp`} /></div>)}
-                   </div>
-                   <div className="text-left">
-                       <div className="text-[#FFD700] font-bold text-lg leading-none">★★★★★</div>
-                       <div className="text-[10px] font-oswald text-[#6A6A6A] tracking-widest mt-1 uppercase">2,400+ ENROLLED & GROWING</div>
-                   </div>
+              <Reveal delay={0.5}>
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10 h-1/4 bottom-0" />
+                  <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-3xl shadow-[#FFD700]/5">
+                    <img 
+                      src="/marcus-sitting.webp" 
+                      alt="Marcus Vance" 
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    />
+                    <div className="absolute top-6 left-6 z-20">
+                      <div className="font-oswald bg-black/80 backdrop-blur-md border border-white/10 text-white text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-widest">
+                        Marcus Vance / Protocol Lead
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative element */}
+                  <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-[#FFD700]/10 blur-[80px] rounded-full -z-10" />
                 </div>
-            </Reveal>
+              </Reveal>
+            </div>
           </div>
           
           <div className="waterline-glow h-[80px]" />
@@ -317,7 +341,7 @@ const MarcusElitePage = () => {
              <div className="max-w-4xl mx-auto px-6 text-center">
                 <Reveal>
                   <div className="font-oswald border border-[#FFD700]/30 bg-[#FFD700]/5 text-[#FFD700] inline-block px-6 py-2 rounded-full text-xs tracking-widest font-bold mb-10 uppercase">🔐 Exclusive Selection</div>
-                  <h2 className="font-bebas text-5xl md:text-8xl text-white mb-8 italic leading-none">
+                  <h2 className="font-oswald text-5xl md:text-8xl text-white mb-8 font-italic leading-none font-bold uppercase">
                     THE CHALLENGE IS THE GATEWAY<br/>
                     <span className="text-[#FFD700]">TO THE PROGRAMME.</span>
                   </h2>
@@ -358,7 +382,7 @@ const MarcusElitePage = () => {
                 <Reveal>
                   <div className="mv-glass-card p-12 h-full">
                     <div className="text-4xl mb-6">🛡️</div>
-                    <h3 className="font-bebas text-4xl text-white mb-4 uppercase">No-Questions Guarantee</h3>
+                    <h3 className="font-oswald text-4xl text-white mb-4 uppercase font-bold">No-Questions Guarantee</h3>
                     <p className="text-[#A3A3A3] text-sm italic mb-8 border-l-2 border-[#FFD700]/20 pl-4">If the purchased content does not meet your expectations, request a refund within 30 days. No questions asked.</p>
                     <p className="text-[10px] text-[#6A6A6A] font-oswald uppercase tracking-widest font-bold">Standard 30-Day Protection applies to all collective purchases.</p>
                   </div>
@@ -366,11 +390,11 @@ const MarcusElitePage = () => {
                 <Reveal delay={0.2}>
                   <div className="mv-glass-card p-12 h-full border-[#FFD700]/20">
                     <div className="text-4xl mb-6">🤝</div>
-                    <h3 className="font-bebas text-4xl text-white mb-4 uppercase">The 40% Affiliate Program</h3>
+                    <h3 className="font-oswald text-4xl text-white mb-4 uppercase font-bold">The 40% Affiliate Program</h3>
                     <p className="text-[#A3A3A3] text-sm italic mb-8">Turn your network into equity. Share the method, earn 40% recurring on every sale — for life.</p>
                     <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div className="bg-white/5 p-4 rounded text-center"><div className="font-bebas text-2xl text-[#FFD700]">40%</div><div className="text-[9px] font-oswald text-[#6A6A6A] uppercase font-bold tracking-widest">Commission</div></div>
-                        <div className="bg-white/5 p-4 rounded text-center"><div className="font-bebas text-2xl text-[#FFD700]">30D</div><div className="text-[9px] font-oswald text-[#6A6A6A] uppercase font-bold tracking-widest">Cookie</div></div>
+                        <div className="bg-white/5 p-4 rounded text-center"><div className="font-oswald text-2xl text-[#FFD700] font-bold">40%</div><div className="text-[9px] font-oswald text-[#6A6A6A] uppercase font-bold tracking-widest">Commission</div></div>
+                        <div className="bg-white/5 p-4 rounded text-center"><div className="font-oswald text-2xl text-[#FFD700] font-bold">30D</div><div className="text-[9px] font-oswald text-[#6A6A6A] uppercase font-bold tracking-widest">Cookie</div></div>
                     </div>
                   </div>
                 </Reveal>
@@ -384,9 +408,9 @@ const MarcusElitePage = () => {
             <div className="mv-glass-card p-12 md:p-16 max-w-xl mx-auto border-white/10 group relative overflow-hidden">
                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FFD700] to-transparent" />
                <div className="flex flex-col gap-6">
-                 <input type="text" placeholder="FIRST NAME" className="bg-[#111] border border-white/5 p-6 font-bebas text-2xl text-white focus:border-[#FFD700] outline-none tracking-widest text-center" />
-                 <input type="email" placeholder="YOUR@BEST-EMAIL.COM" className="bg-[#111] border border-white/5 p-6 font-bebas text-2xl text-[#FFD700] focus:border-[#FFD700] outline-none tracking-widest text-center" />
-                 <button onClick={() => setIsEnrollOpen(false)} className="bg-[#FFD700] text-black p-6 md:p-8 font-bebas text-3xl md:text-4xl tracking-widest hover:bg-white transition-all uppercase italic shadow-2xl">CLAIM FREE ACCESS →</button>
+                 <input type="text" placeholder="FIRST NAME" className="bg-[#111] border border-white/5 p-6 font-oswald text-2xl text-white focus:border-[#FFD700] outline-none tracking-widest text-center font-bold" />
+                 <input type="email" placeholder="YOUR@BEST-EMAIL.COM" className="bg-[#111] border border-white/5 p-6 font-oswald text-2xl text-[#FFD700] focus:border-[#FFD700] outline-none tracking-widest text-center font-bold" />
+                 <button onClick={() => setIsEnrollOpen(false)} className="bg-[#FFD700] text-black p-6 md:p-8 font-oswald text-3xl md:text-4xl tracking-widest hover:bg-white transition-all uppercase font-bold italic shadow-2xl">CLAIM FREE ACCESS →</button>
                  <div className="flex flex-col items-center gap-2 mt-4 text-[#444] font-oswald text-[10px] tracking-widest font-bold italic">
                    <span>SECURE ACCESS PROTOCOL 5.0 LIVE</span>
                    <div className="flex gap-2 opacity-50"><LanguageSwitcher variant="marcus" /></div>
@@ -402,7 +426,7 @@ const MarcusElitePage = () => {
       <footer className="py-24 border-t border-white/5 bg-[#050505] relative z-20">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-16">
           <div>
-            <div className="font-bebas text-4xl text-white mb-4">MARCUS<span className="text-[#FFD700]">·</span>VANCE</div>
+            <div className="font-oswald text-4xl text-white mb-4">MARCUS<span className="text-[#FFD700]">·</span>VANCE</div>
             <p className="text-[#333] font-oswald uppercase tracking-[0.5em] text-[10px] font-bold">© 2024 LUCKY NORTH STAR LLC — WYOMING, USA</p>
           </div>
           <div className="flex flex-wrap gap-x-12 gap-y-6 font-oswald text-[12px] tracking-[0.2em] text-[#555] font-bold uppercase">
@@ -427,7 +451,7 @@ const MarcusElitePage = () => {
                  subtitle={isEnrollOpen ? "Enter your email to receive your first challenge protocol." : "The challenge is 100% free. Day 1 takes 45 minutes and establishes your entire business direction. Don't waste the opportunity."}
                />
                <div className="flex flex-col gap-4 max-w-md mx-auto">
-                 <input type="email" placeholder="YOUR@EMAIL.COM" className="bg-white/5 border border-white/10 p-5 font-bebas text-2xl text-[#FFD700] focus:border-[#FFD700] outline-none tracking-widest text-center" />
+                 <input type="email" placeholder="YOUR@EMAIL.COM" className="bg-white/5 border border-white/10 p-5 font-oswald text-2xl text-[#FFD700] focus:border-[#FFD700] outline-none tracking-widest text-center font-bold" />
                  <button onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false);}} className="bg-[#FFD700] text-black p-5 font-bebas text-2xl tracking-widest hover:bg-white transition-all uppercase italic">DECODE PROTOCOL →</button>
                </div>
                {showExitPopup && <p className="mt-8 text-[11px] text-white/20 font-oswald tracking-widest uppercase font-bold italic">This link expires when you close this window.</p>}

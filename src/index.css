@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700&family=Oswald:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700&family=Oswald:wght@400;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply antialiased bg-[#000000] text-[#F5F5F5] font-['Outfit'] leading-normal selection:bg-[#FFD700]/30 selection:text-[#FFD700];
+    @apply antialiased bg-[#000000] text-[#F5F5F5] font-['Barlow'] leading-normal selection:bg-[#FFD700]/30 selection:text-[#FFD700];
   }
 }
 
@@ -25,6 +25,8 @@ body::after {
 .font-bebas { font-family: 'Bebas Neue', cursive; }
 .font-outfit { font-family: 'Outfit', sans-serif; }
 .font-oswald { font-family: 'Oswald', sans-serif; }
+.font-barlow { font-family: 'Barlow', sans-serif; }
+.font-barlow-cond { font-family: 'Barlow Condensed', sans-serif; }
 
 :root {
   --mv-bright-gold: #FFD700;
