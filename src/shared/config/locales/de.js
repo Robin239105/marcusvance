@@ -14,6 +14,18 @@ export const baseDE = {
     navAboutProgramme: 'Über das Gesamtprogramm',
     navStartBtn: 'KOSTENLOSE CHALLENGE STARTEN',
     heroPreHeader: 'NUR FÜR HIGH-PERFORMER',
+    ui: {
+      beginning: 'DIE CHALLENGE IST ERST DER ANFANG.',
+      voice: 'Die Stimme von Marcus Vance',
+      startBtn: 'START',
+      verifiedAlumni: 'VERIFIZIERTE ALUMNI',
+      livePreview: 'LIVE DASHBOARD VORSCHAU',
+      resources: 'RESSOURCEN',
+      compliance: 'COMPLIANCE',
+      headquarters: 'HAUPTSITZ',
+      encrypted: 'VERSCHLÜSSELT',
+      tagline: 'DIE METHODE · DIE STIMME · DIE PHILOSOPHIE'
+    },
     heroTitle: 'BAUEN SIE IHREN ERSTEN HIGH-INCOME STREAM IN 7 TAGEN AUF.',
     heroSubtitle: 'DIE 7-TAGE-CHALLENGE ZU IHREM ERSTEN DIGITALEN EINKOMMEN — VON NULL ANFANGEND',
     heroStats: `${dynamicStats.startedThisMonth} HIGH-PERFORMER HABEN DIESEN MONAT GESTARTET`,

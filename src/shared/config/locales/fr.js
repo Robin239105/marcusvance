@@ -41,6 +41,18 @@ export const baseFR = {
     navAboutChallenge: 'LE DÉFI',
     navStartBtn: 'COMMENCER LE DÉFI',
     heroPreHeader: 'RESERVÉ AUX HAUTS POTENTIELS',
+    ui: {
+      beginning: 'LE DÉFI N\'EST QUE LE DÉBUT.',
+      voice: 'La Voix de Marcus Vance',
+      startBtn: 'COMMENCER',
+      verifiedAlumni: 'ANCIENS VÉRIFIÉS',
+      livePreview: 'APERÇU DU TABLEAU DE BORD EN DIRECT',
+      resources: 'RESSOURCES',
+      compliance: 'CONFORMITÉ',
+      headquarters: 'SIÈGE SOCIAL',
+      encrypted: 'CHIFFRÉ',
+      tagline: 'LA MÉTHODE · LA VOIX · LA PHILOSOPHIE'
+    },
     heroTitle: 'DÉCODEZ LE. SUCCÈS NUMÉRIQUE',
     heroSubtitle: 'LE PROTOCOLE DÉFINITIF POUR CONSTRUIRE UNE ENTREPRISE EN LIGNE À HAUTE VALEUR AJOUTÉE — SANS REMPLISSAGE.',
     heroScroll: 'DÉCOUVRIR LE SYSTÈME',
@@ -90,15 +102,16 @@ export const baseFR = {
     },
     feedback: {
       badge: "INTELLIGENCE",
-      title: "VOTRE",
-      titleGold: "AVIS",
+      title: "VOTRE AVIS",
       subtitle: "Aidez-nous à affiner le protocole. Votre feedback façonne l'avenir de l'Elite.",
-      form: {
-        name: "NOM COMPLET",
-        email: "E-MAIL",
-        message: "MESSAGE",
-        submit: "ENVOYER"
-      }
+      nameLabel: "NOM COMPLET",
+      emailLabel: "E-MAIL",
+      feedbackLabel: "MESSAGE",
+      placeholder: "Qu'aurions-nous pu faire de mieux ?",
+      submitBtn: "ENVOYER",
+      successTitle: "MERCI POUR VOTRE AVIS.",
+      successDesc: "Nous avons bien reçu votre feedback. Notre équipe l'examine pour garantir la meilleure expérience possible.",
+      returnBtn: "RETOUR AU TABLEAU DE BORD"
     },
     programme: {
       stage01Badge: 'ÉTAPE 01 : LE DÉFI DE 7 JOURS',
@@ -266,6 +279,126 @@ export const baseFR = {
           ] 
         }
       ]
+    },
+    roadmap: {
+      badge: 'PARTIE 1 : L\'EXÉCUTION',
+      title: 'LE PROTOCOLE DE 7 JOURS',
+      subtitle: '"La plupart des gens restent bloqués parce qu\'ils ne font jamais le premier pas. Nous résolvons cela en 168 heures."',
+      joinCohort: `REJOIGNEZ LA COHORTE DE ${dynamicStats.startedThisMonth} CE MOIS-CI →`,
+      items: [
+        { d: '01', t: 'EXORCISME DU SALARIÉ', v: '{currency}97', s: 'Mindset' },
+        { d: '02', t: 'LE VÉHICULE FINANCIER', v: '{currency}97', s: 'Fondations' },
+        { d: '03', t: 'ARCHITECTURE DE L\'OFFRE', v: '{currency}97', s: 'Fondations' },
+        { d: '04', t: 'TRAFIC PHANTOM', v: '{currency}97', s: 'Échelle' },
+        { d: '05', t: 'PREMIÈRE INJECTION DE CAPITAL', v: '{currency}97', s: 'Vente' },
+        { d: '06', t: 'HÉRITAGE DE L\'AUTOMATISATION', v: '{currency}97', s: 'Système' },
+        { d: '07', t: 'LE PROTOCOLE DE PASSAGE À L\'ÉCHELLE', v: '{currency}97', s: 'Élite' }
+      ]
+    },
+    faqCategories: {
+      general: "Général",
+      money: "Argent & Revenus",
+      process: "Fonctionnement",
+      after: "Après le Défi",
+      security: "Sécurité & Confiance"
+    },
+    faq: {
+      general: [
+        { q: "Qu'est-ce que le Défi de 7 Jours ?", a: "C'est une opportunité unique de 7 jours pour recevoir un programme éducatif conçu pour auditer les participants — évaluer leur situation actuelle, déterminer où ils en sont dans leur parcours d'entreprise numérique, fournir tous les outils fondamentaux essentiels pour structurer leur(s) idée(s) et tracer les prochaines étapes concrètes pour passer à l'action." },
+        { q: "Est-ce vraiment gratuit ?", a: "Oui, le défi est complètement gratuit — sans frais, aucune carte de crédit requise." }
+      ],
+      money: [
+        { q: "Puis-je vraiment gagner de l'argent en 7 jours ?", a: "C'est possible — pas garanti, mais tout à fait possible ! Nous fournissons les outils et techniques, mais le succès dépend de votre application." }
+      ],
+      process: [
+        { q: "Vais-je construire un véritable business ?", a: "Oui — c'est le but de notre protocole d'exécution." }
+      ],
+      after: [
+        { q: "Que se passe-t-il après les 7 jours ?", a: "Une fois le défi réussi, le programme complet et l'offre détaillée vous seront présentés." }
+      ],
+      security: [
+        { q: "Mes données sont-elles protégées ?", a: "Nous hébergeons notre site via Hostinger et traitons les transactions via Stripe." }
+      ]
+    },
+    finalCTA: {
+      title: 'LE MOMENT D\'AGIR EST MAINTENANT.',
+      community: 'REJOIGNEZ LA COMMUNAUTÉ DE 12 024+ ANCIENS',
+      successRate: '93% DE TAUX DE RÉUSSITE DÈS LE PREMIER MOIS'
+    }
+  },
+  trinity: {
+    urgencyBar: `🔥 Plus que ${dynamicStats.spotsRemaining} places — Le défi se remplit vite`,
+    hero: {
+      title: 'VOTRE PREMIER REVENU NUMÉRIQUE EN 5 JOURS.',
+      subtitle: 'Le défi pour créer une offre irrésistible et attirer vos premiers clients.',
+    },
+    nav: {
+      challenge: 'Le Défi de 5 Jours',
+      programme: 'À propos du Programme Complet',
+      freePdfBtn: 'PDF Gratuit',
+    },
+    giveawayBadge: {
+      line1: 'DERNIÈRE ÉTAPE : SÉLECTION DU GAGNANT',
+      line2: 'TIRAGE EN COURS'
+    },
+    ctaPrimary: 'LANCER LE DÉFI GRATUIT →',
+    ctaInvestment: 'INVESTISSEMENT : {currency}0,00 / COMPLÈTEMENT GRATUIT',
+    valueStackHeader: 'VALEUR TOTALE DU DÉFI : {currency}599+',
+    programmeTitle: 'CE QUI VOUS ATTEND APRÈS...',
+    faqCategories: {
+      general: "Général",
+      money: "Argent & Revenus",
+      process: "Fonctionnement",
+      after: "Après le Défi",
+      security: "Sécurité & Confiance"
+    },
+    faq: {
+      general: [
+        { q: "Qu'est-ce que le Défi de 5 Jours ?", a: "Un programme accéléré pour structurer votre offre et lancer votre business numérique." }
+      ]
+    },
+    paths: {
+      pathATitle: 'VOIE A : LUTTE CONSTANTE',
+      pathAContent: 'Continuez comme avant et espérez un résultat différent.',
+      pathBTitle: 'VOIE B : ACTION DÉCISIVE',
+      pathBContent: 'Rejoignez plus de 12 000 femmes qui décident de commencer aujourd\'hui.'
+    },
+    finalCTA: {
+      freePdfBtn: 'PDF Gratuit'
+    },
+    enrollPopup: {
+      firstName: 'PRÉNOM',
+      email: 'VOTRE MEILLEUR E-MAIL',
+      secure: 'CONNEXION SÉCURISÉE | PAS DE CARTE REQUISE'
+    },
+    feedback: {
+      badge: 'COMMUNICATION PRIVÉE',
+      title: 'Feedback',
+      titleSuffix: 'Direct.',
+      subtitle: '"Votre expérience compte. Si nos standards d\'excellence ne sont pas atteints, je veux l\'entendre directement de votre part."',
+      feedbackLabel: 'Feedback Détaillé',
+      placeholder: 'Qu\'aurions-nous pu faire de mieux ?',
+      emailLabel: 'E-mail Privé',
+      nameLabel: 'Nom Complet',
+      submitBtn: 'Envoyer le Feedback Privé →',
+      disclaimer: '* Trinity examine personnellement tous les commentaires critiques chaque semaine.',
+      backToGiveaway: 'Retour au Tirage au Sort →'
+    },
+    giveaway: {
+      badge: 'CONCOURS : DERNIÈRE ÉTAPE',
+      title: 'Vous êtes à',
+      titleSuffix: 'une étape',
+      titleEnd: 'de la sélection.',
+      subtitle: '"Notre communauté repose sur l\'intégrité. Votre portail d\'entrée unique est fourni après le défi pour garantir un feedback vérifié."',
+      steps: [
+        { n: '01', t: 'Réussissez notre défi "Authority" de 5 jours' },
+        { n: '02', t: 'Accédez au portail de tirage via votre tableau de bord Alumni' },
+        { n: '03', t: 'Suivez les instructions sécurisées fournies pour participer' }
+      ],
+      participationInstructions: 'L\'accès au lien est réservé aux participants vérifiés. Vérifiez votre e-mail de bienvenue pour vos identifiants.',
+      disclaimer: '* Les gagnants sont annoncés le 1er de chaque mois par e-mail privé.',
+      privateLink: 'Laisser un feedback privé à la place →',
+      backLink: '← Retour au tunnel'
     }
   },
   common: {

@@ -227,7 +227,7 @@ const QualificationBridge = ({ t }) => (
           </span>
         </div>
         <h2 className="font-oswald text-4xl md:text-6xl text-white mb-8 uppercase font-bold tracking-tight italic">
-          THE CHALLENGE IS JUST THE <span className="text-[#C9A84C]">BEGINNING.</span>
+          {t.marcus.ui.beginning.split('BEGINNING')[0]}<span className="text-[#C9A84C]">BEGINNING.</span>
         </h2>
         <p className="text-[#6A6A6A] text-lg max-w-2xl mx-auto font-light leading-relaxed uppercase tracking-widest">
           Complete Stage 01 to unlock the full digital business education library.
@@ -397,7 +397,7 @@ const TheVoice = ({ t }) => (
   <section className="py-40 relative overflow-hidden bg-[#000000]">
     <div className="max-w-5xl mx-auto px-8 relative z-10 text-center">
       <Reveal>
-        <div className="font-oswald text-[#C9A84C] tracking-[0.4em] text-xs font-bold mb-12 uppercase">The Voice of Marcus Vance</div>
+        <div className="font-oswald text-[#C9A84C] tracking-[0.4em] text-xs font-bold mb-12 uppercase">{t.marcus.ui.voice}</div>
         <blockquote className="font-oswald text-4xl md:text-6xl text-white leading-[1.1] mb-12 uppercase font-bold tracking-tight">
           "The digital era doesn't reward hard work. <br/>
           It rewards <span className="text-[#C9A84C]">High-Leverage Systems</span> that run while you sleep."
@@ -571,7 +571,7 @@ const MarcusElitePage = () => {
           </div>
 
           <div className="lg:hidden text-right flex items-center gap-4">
-             <button onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">START</button>
+             <button onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">{t.marcus.ui.startBtn}</button>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>
@@ -624,7 +624,7 @@ const MarcusElitePage = () => {
                   <div className="mt-12 flex items-center gap-10 border-t border-white/5 pt-12">
                      <div className="text-left">
                         <div className="font-oswald text-white text-xl font-bold tracking-tighter">12,024+</div>
-                        <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">VERIFIED ALUMNI</div>
+                        <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">{t.marcus.ui.verifiedAlumni}</div>
                      </div>
                      <div className="text-left">
                         <div className="font-oswald text-[#C9A84C] text-xl font-bold tracking-tighter">93%</div>
@@ -683,7 +683,7 @@ const MarcusElitePage = () => {
 
                 <div className="absolute bottom-12 left-12 right-12 flex justify-between items-end">
                    <div className="font-oswald text-white font-bold tracking-widest uppercase text-xs">
-                      <span className="text-[#C9A84C]">LIVE</span> DASHBOARD PREVIEW
+                      <span className="text-[#C9A84C]">LIVE</span> {t.marcus.ui.livePreview.replace('LIVE', '').trim()}
                    </div>
                    <div className="flex gap-4">
                       {[1, 2, 3].map(i => <div key={i} className="w-2 h-2 rounded-full bg-[#C9A84C]/30" />)}
@@ -726,7 +726,7 @@ const MarcusElitePage = () => {
 
             {/* Links Column 1 */}
             <div className="space-y-4">
-              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">RESOURCES</h4>
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">{t.marcus.ui.resources}</h4>
               <ul className="space-y-3">
                 <li><Link to={getLocalizedPath('/marcus/giveaway')} className="text-[#A1A1A1] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
                 <li><Link to={getLocalizedPath('/marcus/feedback')} className="text-[#A1A1A1] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
@@ -736,7 +736,7 @@ const MarcusElitePage = () => {
 
             {/* Links Column 2 */}
             <div className="space-y-4">
-              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">COMPLIANCE</h4>
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">{t.marcus.ui.compliance}</h4>
               <ul className="space-y-3">
                 <li><Link to={getLocalizedPath('/terms')} className="text-[#A1A1A1] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
                 <li><Link to={getLocalizedPath('/privacy')} className="text-[#A1A1A1] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
@@ -746,7 +746,7 @@ const MarcusElitePage = () => {
 
             {/* Support Column */}
             <div className="space-y-4 text-left">
-              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">HEADQUARTERS</h4>
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">{t.marcus.ui.headquarters}</h4>
               <p className="text-[#A1A1A1] font-oswald text-[10px] tracking-widest uppercase leading-loose whitespace-pre-line">
                 {t.marcus.footer.address}
               </p>
@@ -824,7 +824,7 @@ const MarcusElitePage = () => {
                      <div className="flex items-center gap-2 text-white/10 font-oswald text-[8px] tracking-[0.2em] font-bold uppercase">
                        <span>SECURITY: LEVEL A</span>
                        <span className="w-1 h-1 rounded-full bg-white/5" />
-                       <span>ENCRYPTED</span>
+                       <span>{t.marcus.ui.encrypted}</span>
                      </div>
                    </div>
                 </div>

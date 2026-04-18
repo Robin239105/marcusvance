@@ -13,6 +13,18 @@ export const baseEN = {
     navAboutChallenge: 'THE CHALLENGE',
     navStartBtn: 'START CHALLENGE',
     heroPreHeader: 'FOR HIGH-PERFORMERS ONLY',
+    ui: {
+      beginning: 'THE CHALLENGE IS JUST THE BEGINNING.',
+      voice: 'The Voice of Marcus Vance',
+      startBtn: 'START',
+      verifiedAlumni: 'VERIFIED ALUMNI',
+      livePreview: 'LIVE DASHBOARD PREVIEW',
+      resources: 'RESOURCES',
+      compliance: 'COMPLIANCE',
+      headquarters: 'HEADQUARTERS',
+      encrypted: 'ENCRYPTED',
+      tagline: 'THE METHOD · THE VOICE · THE PHILOSOPHY'
+    },
     heroTitle: 'YOUR FIRST HIGH-INCOME STREAM. 7 DAYS.',
     heroSubtitle: 'THE 7-DAY CHALLENGE TO YOUR FIRST DIGITAL INCOME — STARTING FROM SCRATCH',
     heroScroll: 'SCROLL TO DISCOVER THE METHOD',

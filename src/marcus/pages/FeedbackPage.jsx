@@ -115,7 +115,7 @@ const FeedbackPage = () => {
                 <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-24 min-[400px]:h-28 w-auto object-contain brightness-110" />
               </Link>
               <p className="text-[#6A6A6A] font-oswald text-[10px] tracking-[0.3em] uppercase leading-relaxed">
-                THE METHOD · THE VOICE · THE PHILOSOPHY
+                {t.marcus.ui.tagline}
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
                 <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">VISA</div>
@@ -129,7 +129,7 @@ const FeedbackPage = () => {
 
             {/* Links Column 1 */}
             <div className="space-y-4">
-              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">RESOURCES</h4>
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">{t.marcus.ui.resources}</h4>
               <ul className="space-y-3">
                 <li><Link to={getLocalizedPath('/marcus/giveaway')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.giveaway}</Link></li>
                 <li><Link to={getLocalizedPath('/marcus/feedback')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.feedback}</Link></li>
@@ -139,7 +139,7 @@ const FeedbackPage = () => {
 
             {/* Links Column 2 */}
             <div className="space-y-4">
-              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">COMPLIANCE</h4>
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">{t.marcus.ui.compliance}</h4>
               <ul className="space-y-3">
                 <li><Link to={getLocalizedPath('/terms')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.terms}</Link></li>
                 <li><Link to={getLocalizedPath('/privacy')} className="text-[#6A6A6A] hover:text-[#C9A84C] font-oswald text-[10px] tracking-widest transition-all uppercase">{t.marcus.footer.privacy}</Link></li>
@@ -149,7 +149,7 @@ const FeedbackPage = () => {
 
             {/* Support Column */}
             <div className="space-y-4 text-left">
-              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">HEADQUARTERS</h4>
+              <h4 className="font-oswald text-white text-[10px] tracking-[0.4em] uppercase font-bold mb-6">{t.marcus.ui.headquarters}</h4>
               <p className="text-[#6A6A6A] font-oswald text-[10px] tracking-widest uppercase leading-loose whitespace-pre-line">
                 {t.marcus.footer.address}
               </p>
