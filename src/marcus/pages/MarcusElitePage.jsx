@@ -176,7 +176,7 @@ const LogoScrollTrack = () => {
   );
 };
 
-const TimelineSection = () => {
+const TimelineSection = ({ t }) => {
   const steps = [
     { day: "Day 01", title: "Offer & Customer Avatar", deliverable: "Offer Sentence", desc: "Define exactly who you help, what transformation you deliver, and how you communicate it in one precise sentence. This sentence becomes the headline of everything." },
     { day: "Day 02", title: "Lead Magnet + Capture Page Live", deliverable: "Live Page", desc: "Build a high-value lead magnet and launch your capture page. Your automated welcome email delivers it within minutes of opt-in." },
@@ -191,7 +191,7 @@ const TimelineSection = () => {
     <section className="py-32 bg-[#000000]" id="roadmap">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading 
-          pre="What You'll Build"
+          pre={t.marcus.programme.stage01Badge}
           title="The 7-Day Challenge Roadmap"
           subtitle="Each day produces a live, working asset. By Day 7, you have a complete business — not a notebook of ideas."
         />
@@ -216,6 +216,29 @@ const TimelineSection = () => {
     </section>
   );
 };
+
+const QualificationBridge = ({ t }) => (
+  <section className="py-24 bg-gradient-to-b from-black to-[#050505] relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-8 text-center relative z-10">
+      <Reveal>
+        <div className="inline-block px-8 py-4 border border-[#C9A84C]/20 bg-[#C9A84C]/5 mb-10">
+          <span className="font-oswald text-[#C9A84C] text-sm md:text-base font-bold tracking-[0.5em] uppercase">
+            7 DAYS TO BUILD. A LIFETIME TO SCALE.
+          </span>
+        </div>
+        <h2 className="font-oswald text-4xl md:text-6xl text-white mb-8 uppercase font-bold tracking-tight italic">
+          THE CHALLENGE IS JUST THE <span className="text-[#C9A84C]">BEGINNING.</span>
+        </h2>
+        <p className="text-[#6A6A6A] text-lg max-w-2xl mx-auto font-light leading-relaxed uppercase tracking-widest">
+          Complete Stage 01 to unlock the full digital business education library.
+        </p>
+        <div className="mt-16 flex justify-center">
+          <div className="w-1 h-24 bg-gradient-to-b from-[#C9A84C] to-transparent" />
+        </div>
+      </Reveal>
+    </div>
+  </section>
+);
 
 const FAQSection = ({ t }) => {
   const [activeCategory, setActiveCategory] = useState('general');
@@ -291,37 +314,55 @@ const ProgramReveal = ({ t }) => (
   <section className="py-40 bg-[#050505] border-y border-white/5">
     <div className="max-w-7xl mx-auto px-8">
       <SectionHeading 
-        pre={t.marcus.programme.badge}
+        pre={t.marcus.programme.stage02Badge}
         title={t.marcus.programme.title}
         subtitle={t.marcus.programme.subtitle}
       />
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 pb-20 border-b border-white/5">
         {t.marcus.programme.categories.map((cat, i) => (
           <Reveal key={i} delay={i * 0.1}>
-            <div className="mv-glass-card p-10 h-full flex flex-col group">
+            <div className="mv-glass-card p-10 h-full flex flex-col group hover:bg-white/[0.02] transition-all">
               <div className="text-4xl mb-6">{cat.i}</div>
               <h3 className="font-oswald text-2xl text-white mb-4 tracking-tighter font-bold uppercase group-hover:text-[#C9A84C] transition-colors">{cat.t}</h3>
               <div className="text-[#C9A84C] text-[10px] font-bold tracking-[0.2em] mb-4 uppercase opacity-50">{cat.n}</div>
-              <p className="text-[#6A6A6A] text-sm leading-relaxed border-t border-white/5 pt-6">{cat.d}</p>
+              <p className="text-[#6A6A6A] text-sm leading-relaxed border-t border-white/5 pt-6 mb-6">{cat.d}</p>
+              
+              {/* Peek Inside Topics */}
+              <div className="mt-auto pt-6 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                 <div className="font-oswald text-[8px] text-[#A3A3A3] tracking-[0.3em] uppercase mb-4 font-bold">CORE TOPICS:</div>
+                 <div className="flex flex-wrap gap-2">
+                    {cat.d.split(' · ').slice(0, 4).map((topic, idx) => (
+                      <span key={idx} className="px-2 py-1 bg-white/5 border border-white/5 rounded-[2px] font-oswald text-[8px] text-white/40 tracking-widest uppercase">{topic}</span>
+                    ))}
+                    <span className="px-2 py-1 bg-[#C9A84C]/10 border border-[#C9A84C]/20 rounded-[2px] font-oswald text-[8px] text-[#C9A84C] tracking-widest uppercase">+ {Math.floor(Math.random() * 20) + 10} MORE</span>
+                 </div>
+              </div>
             </div>
           </Reveal>
         ))}
       </div>
 
-      <div className="mt-24 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-4">
-        {t.marcus.programme.unlockStats.map((stat, i) => (
-          <div key={i} className="text-center p-4 bg-white/[0.02] rounded-xl border border-white/5">
-            <div className="text-xl mb-2">{stat.i}</div>
-            <div className="font-oswald text-white font-bold text-sm tracking-widest">{stat.t}</div>
-            <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-widest font-bold">{stat.l}</div>
-          </div>
-        ))}
+      <div className="py-20">
+         <div className="text-center mb-12">
+            <h4 className="font-oswald text-white text-3xl font-bold tracking-tight uppercase mb-4 italic">{t.marcus.programme.peekInsideTitle}</h4>
+            <div className="font-oswald text-[#C9A84C] text-[10px] tracking-[0.4em] font-bold uppercase mb-8">{t.marcus.programme.moreToExplore}</div>
+         </div>
+         <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-4">
+           {t.marcus.programme.unlockStats.map((stat, i) => (
+             <div key={i} className="text-center p-4 bg-white/[0.02] rounded-xl border border-white/5 hover:border-[#C9A84C]/30 transition-all group">
+               <div className="text-xl mb-2 group-hover:scale-110 transition-transform">{stat.i}</div>
+               <div className="font-oswald text-white font-bold text-sm tracking-widest">{stat.t}</div>
+               <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-widest font-bold">{stat.l}</div>
+             </div>
+           ))}
+         </div>
       </div>
 
-      <div className="mt-20 text-center">
-        <p className="text-[#A3A3A3] font-oswald text-sm mb-10 max-w-xl mx-auto leading-relaxed font-light">{t.marcus.programme.exclusivity}</p>
+      <div className="mt-20 text-center border-t border-white/5 pt-20">
+        <p className="text-[#A3A3A3] font-oswald text-sm mb-12 max-w-xl mx-auto leading-relaxed font-light italic">{t.marcus.programme.exclusivity}</p>
         <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-[#C9A84C] text-black px-12 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold shadow-[#C9A84C]/20">{t.marcus.programme.cta}</button>
+        <p className="mt-6 font-oswald text-[#3A3A3A] text-[10px] tracking-[0.3em] uppercase font-bold">{t.marcus.programme.ctaDisclaimer}</p>
       </div>
     </div>
   </section>
@@ -618,7 +659,8 @@ const MarcusElitePage = () => {
         <Methodology t={t} />
         <TheVoice t={t} />
         <WhoItIsFor t={t} />
-        <TimelineSection />
+        <TimelineSection t={t} />
+        <QualificationBridge t={t} />
 
         {/* Peek Inside Section with Mockup Animation */}
         <section className="py-32 bg-[#000000] border-t border-white/5 overflow-hidden">

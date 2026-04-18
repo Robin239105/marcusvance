@@ -91,6 +91,38 @@ export default {
         message: "MESSAGE",
         submit: "ENVOYER"
       }
+    },
+    programme: {
+      stage01Badge: 'ÉTAPE 01 : LE DÉFI DE 7 JOURS',
+      stage02Badge: 'ÉTAPE 02 : LE PROTOCOLE COMPLET',
+      badge: 'PARTIE 2 : L\'HÉRITAGE',
+      title: 'CE QUI VOUS ATTEND APRÈS...',
+      subtitle: 'Complétez les 7 jours. Gagnez votre invitation à la bibliothèque d\'éducation commerciale numérique la plus complète qui soit.',
+      categories: [
+         { i: '💼', t: 'AFFAIRES & ENTREPRENEURIAT', n: '331 ressources', d: 'Startups · Business en ligne · Freelancing · Solopreneur · Leadership · État d\'esprit' },
+         { i: '📈', t: 'MARKETING & VENTES', n: '600+ ressources', d: 'Marketing numérique · Ventes · Tunnels · Publicité payante · Email Marketing · SEO · Génération de prospects' },
+         { i: '🧠', t: 'CROISSANCE PERSONNELLE', n: '400+ ressources', d: 'Développement personnel · Productivité · Habitudes · Intelligence émotionnelle · Systèmes' },
+         { i: '🎨', t: 'BRANDING & CRÉATION', n: '280+ ressources', d: 'Branding · Rédaction · Création de contenu · Développement de produits · Économie des créateurs' },
+         { i: '⚙️', t: 'TECH & OUTILS', n: '280+ ressources', d: 'IA · Automatisation · E-commerce · Outils technologiques · Finance · Cybersécurité' }
+      ],
+      exclusivity: '"Ceci n\'est pas un cours. C\'est un système d\'exploitation complet pour entreprise numérique. Révélé seulement après avoir terminé le défi."',
+      stats: '980+ RESSOURCES · 47 CATÉGORIES',
+      unlockStats: [
+        { i: '📚', t: '250+', l: 'Livres' },
+        { i: '✅', t: '225+', l: 'Check-lists' },
+        { i: '📖', t: '173+', l: 'Guides' },
+        { i: '🎧', t: '105+', l: 'Audio' },
+        { i: '🤖', t: '89+', l: 'Prompts IA' },
+        { i: '💻', t: '64+', l: 'Cours' },
+        { i: '📓', t: '46+', l: 'Cahiers' },
+        { i: '🛠️', t: '45+', l: 'Outils' },
+        { i: '🎬', t: '61+', l: 'Vidéos' }
+      ],
+      cta: 'S\'INSCRIRE AU DÉFI GRATUIT →',
+      ctaDisclaimer: 'Complétez le défi pour tout débloquer ci-dessus',
+      moreToExplore: '900+ RESSOURCES · 47 CATÉGORIES · MIS À JOUR TOUTES LES SEMAINES',
+      peekInsideTitle: 'UN APERÇU DU CURRICULUM',
+      peekInsideSubtitle: 'Survolez les catégories pour découvrir les sujets profonds qui vous attendent après votre qualification.'
     }
   }
 };

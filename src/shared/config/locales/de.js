@@ -74,6 +74,8 @@ export const baseDE = {
       ]
     },
     programme: {
+      stage01Badge: 'STUFE 01: DIE 7-TAGE-CHALLENGE',
+      stage02Badge: 'STUFE 02: DAS GESAMTPROTOKOLL',
       badge: 'TEIL 2: DAS ERBE',
       title: 'WAS SIE DANACH ERWARTET...',
       subtitle: 'Beenden Sie die 7 Tage. Verdienen Sie sich Ihre Einladung zur umfassendsten digitalen Business-Education-Bibliothek, die es gibt.',
@@ -98,7 +100,10 @@ export const baseDE = {
         { i: '🎬', t: '61+', l: 'Videos' }
       ],
       cta: 'JETZT ANMELDEN →',
-      ctaDisclaimer: 'Schließen Sie die Challenge ab, um alles oben Freizuschalten'
+      ctaDisclaimer: 'Schließen Sie die Challenge ab, um alles oben Freizuschalten',
+      moreToExplore: '980+ RESSOURCEN · 47 KATEGORIEN · WÖCHENTLICH AKTUALISIERT',
+      peekInsideTitle: 'BLICK IN DAS CURRICULUM',
+      peekInsideSubtitle: 'Fahren Sie mit der Maus über die Kategorien, um die tiefgehenden Themen zu enthüllen, die Sie nach Ihrer Qualifizierung erwarten.'
     },
     faqCategories: {
       general: "Allgemein",

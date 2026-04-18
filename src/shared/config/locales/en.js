@@ -88,6 +88,8 @@ export const baseEN = {
       ]
     },
     programme: {
+      stage01Badge: 'STAGE 01: THE 7-DAY CHALLENGE',
+      stage02Badge: 'STAGE 02: THE FULL PROTOCOL',
       badge: 'PART 2: THE LEGACY',
       title: 'WHAT AWAITS AFTER...',
       subtitle: 'Complete the 7 days. Earn your invitation to the most comprehensive digital business education library available.',
@@ -112,7 +114,10 @@ export const baseEN = {
         { i: '🎬', t: '61+', l: 'Videos' }
       ],
       cta: 'ENROLL IN THE FREE 7-DAY CHALLENGE →',
-      ctaDisclaimer: 'Complete the challenge to unlock everything above'
+      ctaDisclaimer: 'Complete the challenge to unlock everything above',
+      moreToExplore: '900+ RESOURCES · 47 CATEGORIES · UPDATED WEEKLY',
+      peekInsideTitle: 'PEEK INSIDE THE CURRICULUM',
+      peekInsideSubtitle: 'Hover over categories to reveal the deep-dive topics that await after you qualify.'
     },
     faqCategories: {
       general: "General",
