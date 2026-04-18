@@ -98,7 +98,7 @@ const SectionHeading = ({ pre, title, subtitle, centered = true }) => (
       {title}
     </h2>
     {subtitle && (
-      <p className="text-[#A3A3A3] text-lg md:text-xl font-light italic max-w-2xl mx-auto leading-relaxed font-barlow">
+      <p className="text-[#A3A3A3] text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed font-barlow">
         {subtitle}
       </p>
     )}
@@ -275,9 +275,9 @@ const FinalCTA = ({ t }) => (
   <section className="py-40 bg-[#000000] text-center border-t border-white/5">
     <div className="max-w-4xl mx-auto px-8 relative">
       <Reveal>
-        <h2 className="font-oswald text-6xl md:text-9xl text-white mb-10 leading-[0.9] uppercase font-bold italic pr-4">{t.marcus.finalCTA.title}</h2>
+        <h2 className="font-oswald text-6xl md:text-9xl text-white mb-10 leading-[0.9] uppercase font-bold pr-4">{t.marcus.finalCTA.title}</h2>
         <div className="flex flex-col items-center gap-10">
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-[#FFD700] text-black px-16 py-8 font-oswald text-3xl tracking-widest hover:bg-white transition-all shadow-[0_0_60px_rgba(255,215,0,0.2)] uppercase font-bold italic">{t.marcus.ctaPrimary}</button>
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="bg-[#FFD700] text-black px-16 py-8 font-oswald text-3xl tracking-widest hover:bg-white transition-all shadow-[0_0_60px_rgba(255,215,0,0.2)] uppercase font-bold">{t.marcus.ctaPrimary}</button>
           
           <div className="flex flex-col md:flex-row items-center gap-10 opacity-70">
             <div className="flex items-center gap-4">
@@ -301,12 +301,12 @@ const TheVoice = ({ t }) => (
     <div className="max-w-5xl mx-auto px-8 relative z-10 text-center">
       <Reveal>
         <div className="font-oswald text-[#FFD700] tracking-[0.4em] text-xs font-bold mb-12 uppercase">The Voice of Marcus Vance</div>
-        <blockquote className="font-oswald text-4xl md:text-6xl text-white leading-[1.1] mb-12 italic uppercase font-bold tracking-tight">
+        <blockquote className="font-oswald text-4xl md:text-6xl text-white leading-[1.1] mb-12 uppercase font-bold tracking-tight">
           "The digital era doesn't reward hard work. <br/>
           It rewards <span className="text-[#FFD700]">High-Leverage Systems</span> that run while you sleep."
         </blockquote>
         <div className="w-12 h-1px bg-[#FFD700]/30 mx-auto mb-12" />
-        <p className="text-[#A3A3A3] text-lg md:text-xl font-light italic max-w-2xl mx-auto leading-relaxed">
+        <p className="text-[#A3A3A3] text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
           I've spent the last decade distilling complex wealth generation models into one repeatable protocol. The 7-Day Challenge isn't just a course—it's your baptism into the elite digital economy.
         </p>
       </Reveal>
@@ -334,7 +334,7 @@ const Methodology = ({ t }) => (
             <div className="group">
               <div className="font-oswald text-6xl text-white/5 mb-8 font-bold italic transition-colors group-hover:text-[#FFD700]/10">{item.i}</div>
               <h3 className="font-oswald text-2xl text-white mb-4 tracking-wider font-bold uppercase">{item.t}</h3>
-              <p className="text-[#6A6A6A] leading-relaxed italic">{item.d}</p>
+              <p className="text-[#6A6A6A] leading-relaxed">{item.d}</p>
             </div>
           </Reveal>
         ))}
@@ -372,7 +372,7 @@ const WhoItIsFor = ({ t }) => (
             <div className="mv-glass-card p-10 border border-white/5 hover:border-[#FFD700]/30 transition-all group h-full">
               <div className="text-4xl mb-6">{item.i}</div>
               <h3 className="font-oswald text-2xl text-white mb-4 tracking-wider font-bold uppercase group-hover:text-[#FFD700] transition-colors">{item.t}</h3>
-              <p className="text-[#A3A3A3] text-sm leading-relaxed italic font-light">{item.d}</p>
+              <p className="text-[#A3A3A3] text-sm leading-relaxed font-light">{item.d}</p>
             </div>
           </Reveal>
         ))}
@@ -424,7 +424,7 @@ const MarcusElitePage = () => {
             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-8 py-2.5 hover:bg-white transition-all shadow-lg font-bold">{t.marcus.navStartBtn}</button>
           </div>
           <div className="lg:hidden text-right flex items-center gap-4">
-             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase italic shadow-lg">START FREE</button>
+             <button onClick={() => setIsEnrollOpen(true)} className="bg-[#FFD700] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase font-bold">START FREE</button>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>
@@ -448,19 +448,19 @@ const MarcusElitePage = () => {
                 <Reveal delay={0.1}>
                   <h1 className="font-barlow-cond text-[56px] min-[400px]:text-[64px] md:text-[90px] lg:text-[110px] leading-[0.82] text-white tracking-tighter mb-10 uppercase font-extrabold pr-4 break-words">
                     {t.marcus.heroTitle.split('. ')[0]}<br/>
-                    <span className="mv-text-gold-gradient italic">{t.marcus.heroTitle.split('. ')[1]}</span>
+                    <span className="mv-text-gold-gradient">{t.marcus.heroTitle.split('. ')[1]}</span>
                   </h1>
                 </Reveal>
 
                 <Reveal delay={0.2}>
-                  <p className="text-[#A3A3A3] text-lg md:text-xl font-light italic max-w-xl mb-12 leading-relaxed">
+                  <p className="text-[#A3A3A3] text-lg md:text-xl font-light max-w-xl mb-12 leading-relaxed">
                     {t.marcus.heroSubtitle}
                   </p>
                 </Reveal>
 
                 <Reveal delay={0.3}>
                   <div className="flex flex-col sm:flex-row items-center gap-6">
-                      <button onClick={() => setIsEnrollOpen(true)} className="w-full sm:w-auto bg-[#FFD700] text-black px-12 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold italic shadow-[#FFD700]/20">{t.marcus.ctaPrimary}</button>
+                      <button onClick={() => setIsEnrollOpen(true)} className="w-full sm:w-auto bg-[#FFD700] text-black px-10 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-bold shadow-[#FFD700]/20 whitespace-nowrap">{t.marcus.ctaPrimary}</button>
                       <a href="#roadmap" className="font-oswald text-sm text-white/50 hover:text-white transition-colors tracking-widest border-b border-transparent hover:border-white/20 pb-1 uppercase font-bold">{t.marcus.heroScroll} →</a>
                   </div>
                 </Reveal>
@@ -468,11 +468,11 @@ const MarcusElitePage = () => {
                 <Reveal delay={0.4}>
                   <div className="mt-12 flex items-center gap-10 border-t border-white/5 pt-12">
                      <div className="text-left">
-                        <div className="font-oswald text-white text-xl font-bold tracking-tighter italic">12,024+</div>
+                        <div className="font-oswald text-white text-xl font-bold tracking-tighter">12,024+</div>
                         <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">VERIFIED ALUMNI</div>
                      </div>
                      <div className="text-left">
-                        <div className="font-oswald text-[#FFD700] text-xl font-bold tracking-tighter italic">93%</div>
+                        <div className="font-oswald text-[#FFD700] text-xl font-bold tracking-tighter">93%</div>
                         <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">{t.marcus.heroCommunity}</div>
                      </div>
                   </div>
@@ -483,7 +483,7 @@ const MarcusElitePage = () => {
                 <Reveal delay={0.3} direction="left">
                    <div className="relative z-10 w-full aspect-[4/5] bg-neutral-900 overflow-hidden shadow-2xl border border-white/5 group/portrait">
                       <img 
-                        src="/marcus-portrait-hq.png" 
+                        src="/marcus-standing.webp" 
                         alt="Marcus Vance"
                         className="w-full h-full object-cover grayscale brightness-110 contrast-110 group-hover:scale-105 transition-transform duration-700"
                       />
