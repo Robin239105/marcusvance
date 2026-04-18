@@ -484,9 +484,17 @@ const MarcusElitePage = () => {
                 </Reveal>
 
                 <Reveal delay={0.2}>
-                  <p className="text-[#A3A3A3] text-lg md:text-xl font-light max-w-xl mb-12 leading-relaxed">
+                  <p className="text-[#A3A3A3] text-lg md:text-xl font-light italic max-w-xl mb-12 leading-relaxed uppercase">
                     {t.marcus.heroSubtitle}
                   </p>
+                </Reveal>
+
+                <Reveal delay={0.25}>
+                  <div className="mb-12 inline-block bg-[#FFD700] px-8 py-4 border border-white/10 shadow-[0_0_30px_rgba(255,215,0,0.1)]">
+                     <span className="font-oswald text-black text-xl md:text-2xl font-bold tracking-tighter uppercase whitespace-nowrap">
+                        {t.marcus.valueStackHeader.replace('{currency}', currency)}
+                     </span>
+                  </div>
                 </Reveal>
 
                 <Reveal delay={0.3}>

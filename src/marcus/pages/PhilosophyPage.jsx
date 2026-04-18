@@ -47,7 +47,7 @@ const PhilosophyPage = () => {
   };
 
   return (
-    <div className="bg-[#080808] min-h-screen text-[#F5F5F5] font-['Barlow'] selection:bg-[#FFD700]/30 selection:text-[#FFD700]">
+    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Barlow'] selection:bg-[#FFD700]/30 selection:text-[#FFD700]">
       {/* Navigation Header */}
       <nav className="fixed top-[32px] left-0 right-0 z-[100] bg-black/95 backdrop-blur-md border-b border-white/10 py-4">
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
