@@ -490,6 +490,7 @@ const LegacyLibrary = ({ t, currency }) => {
     {/* Background visual accents */}
     <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#C9A84C]/[0.03] blur-[150px] -z-10 rounded-full" />
     <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#C9A84C]/[0.02] blur-[120px] -z-10 rounded-full translate-y-1/2 -translate-x-1/4" />
+  </section>
   );
 };
 
