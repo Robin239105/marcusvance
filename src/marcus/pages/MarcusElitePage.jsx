@@ -790,8 +790,8 @@ const MarcusElitePage = () => {
 
         <LogoScrollTrack />
         <ProblemSection t={t} />
-        <LegacyLibrary t={t} currency={currency} />
         <TimelineSection t={t} currency={currency} />
+        <LegacyLibrary t={t} currency={currency} />
         <TheVoice t={t} />
         <WhoItIsFor t={t} />
         <QualificationBridge t={t} />
