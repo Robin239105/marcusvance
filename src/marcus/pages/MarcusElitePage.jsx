@@ -820,7 +820,7 @@ const MarcusElitePage = () => {
                    </div>
 
                    <div className="relative z-10 pt-12 border-t border-white/5 flex items-center justify-between">
-                     <p className="text-[10px] font-oswald uppercase tracking-[0.4em] text-[#3A3A3A]">THE ALPHA COLLECTIVE © 2024</p>
+                     <p className="text-[10px] font-oswald uppercase tracking-[0.4em] text-[#3A3A3A]">THE ALPHA COLLECTIVE © 2025</p>
                      <div className="flex items-center gap-2 text-white/10 font-oswald text-[8px] tracking-[0.2em] font-bold uppercase">
                        <span>SECURITY: LEVEL A</span>
                        <span className="w-1 h-1 rounded-full bg-white/5" />

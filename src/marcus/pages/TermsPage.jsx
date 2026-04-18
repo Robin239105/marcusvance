@@ -15,10 +15,10 @@ const TermsPage = () => {
     const handleInitialScroll = () => {
       const path = location.pathname.split('/').filter(Boolean)[0]; // get 'privacy' or 'guarantee'
       if (path === 'privacy') {
-        const el = document.getElementById('section-7');
+        const el = document.getElementById('section-8');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       } else if (path === 'guarantee') {
-        const el = document.getElementById('section-5');
+        const el = document.getElementById('section-7');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       } else {
         window.scrollTo(0, 0);

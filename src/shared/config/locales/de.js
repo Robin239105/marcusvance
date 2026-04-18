@@ -51,8 +51,17 @@ export const baseDE = {
     footer: {
       giveaway: 'GEWINNSPIEL',
       feedback: 'FEEDBACK',
+      philosophy: 'DIE PHILOSOPHIE',
+      terms: 'BEDINGUNGEN',
       privacy: 'DATENSCHUTZ',
-      terms: 'BEDINGUNGEN'
+      guarantee: '30-TAGE-GARANTIE',
+      affiliation: 'PARTNERPROGRAMM',
+      disclaimer: 'HAFTUNGSAUSSCHLUSS',
+      contact: 'KONTAKT',
+      rights: '© 2025 LUCKY NORTH STAR LLC — ALLE RECHTE VORBEHALTEN.',
+      address: '1309 COFFEEN AVENUE, SUITE 1200\nSHERIDAN, WYOMING 82801 — USA',
+      platformDisclaimer: 'HAFTUNGSAUSSCHLUSS: Diese Website und die 7-Tage-Challenge stehen in keiner Verbindung zu Facebook™, Instagram™, TikTok™ oder Google™ und werden nicht von diesen unterstützt. Die genannten Ergebnisse sind Einzelergebnisse und werden nicht garantiert. Der Aufbau eines nachhaltigen Online-Geschäfts erfordert echten Einsatz, Fähigkeiten und anhaltendes Engagement. Dies stellt keine Finanz-, Rechts- oder Anlageberatung dar.',
+      personaDisclosure: '"Marcus Vance" ist eine KI-generierte Bildungsmarken-Persona. Sie entspricht keiner realen Einzelperson, keinem Schöpfer und keiner physischen Person. Alle dieser Persona zugeschriebenen Inhalte werden vom Team der Lucky North Star LLC entwickelt.'
     },
     giveaway: {
       badge: 'GEWINNSPIEL',
@@ -189,6 +198,141 @@ export const baseDE = {
       disclaimer: '* GEWINNER WERDEN AM 1. JEDEN MONATS PER E-MAIL BENACHRICHTIGT.',
       privateLink: 'WAR IHRE ERFAHRUNG ANDERS? GEBEN SIE STATTDESSEN PRIVATES FEEDBACK →',
       backLink: '← Zurück zum Tunnel'
+    },
+    philosophy: {
+      returnLink: 'Zurück zu Alpha',
+      badge: 'DIE PHILOSOPHIE',
+      chapters: [
+        { id: 'chapter-1', label: 'I. DIE OFFENLEGUNG', title: 'TRANSPARENZ IST DIE ULTIMATIVE AUTORITÄT.', content: ['Die meisten Programme begraben ihre Offenlegungen. Sie setzen die Rechtssprache in eine Fußzeile, in Sechs-Punkt-Schrift, auf eine Seite, die niemand liest. Sie führen mit der Persönlichkeit, der Geschichte, dem Streben — und heben sich die Realität für das Kleingedruckte auf.', 'Wir machen die Dinge anders. Wir glauben, dass Klarheit die Grundlage für Vertrauen ist, und Vertrauen ist die einzige Währung, die in der High-Performance-Bildung zählt. Diese Seite existiert, um genau zu definieren, was diese Plattform ist, wer Marcus Vance ist und wozu Sie sich verpflichten.'] },
+        { id: 'chapter-2', label: 'II. DIE METHODIK', title: 'PERFORMANCE-FIRST BILDUNG', content: ['Die Marcus Vance Plattform ist eine Bildungsressource, die von einem Kollektiv digitaler Unternehmer und Systemarchitekten entwickelt wurde. Unsere Methodik baut auf binären Ergebnissen auf: Entweder das System funktioniert, oder es funktioniert nicht. Es gibt keinen Mittelweg.', 'Wir lehren keine "Theorie". Wir lehren Ausführungsprotokolle. Jeder Kurs, jede Checkliste und jedes Workbook in der vollständigen Bibliothek wurde aus realen Operationen extrahiert, die von unserem Entwicklungsteam in verschiedenen Branchen durchgeführt wurden.'] },
+        { id: 'chapter-3', label: 'III. DIE STIMME', title: 'MARCUS VANCE', content: ['Marcus Vance ist der Architekt der Botschaft. Er repräsentiert das Ethos des Alpha Collective. Seine "Stimme" ist die Synthese unserer kollektiven Erfahrung — Jahrzehnte voller Erfolge, Misserfolge und hart erkämpfter Lektionen in der digitalen Wirtschaft.'] },
+        { id: 'chapter-4', label: 'IV. DIE MARKEN-PERSONA', title: 'DIE REALITÄT DER "MARKEN-PERSONA"', content: ['Es ist wichtig für Sie zu verstehen, dass Marcus Vance eine KI-generierte Marken-Persona ist. Er ist ein digitaler Avatar, der geschaffen wurde, um als Gesicht und Stimme unserer Bildungsmission zu dienen. Das Bild, das Sie sehen, ist synthetisch; die Persönlichkeit ist kuratiert.', 'Warum haben wir das getan? Weil in der modernen Ära die Botschaft größer sein muss als eine einzelne Person. Indem wir Marcus Vance geschaffen haben, stellen wir sicher, dass der Fokus vollständig auf den Lehren und den Ergebnissen bleibt, anstatt auf dem Privatleben oder der Berühmtheit einer menschlichen Identifikationsfigur. Marcus wird nicht müde. Marcus hat kein Ego. Marcus ist reines Protokoll.'] },
+        { id: 'chapter-5', label: 'V. DER VORTEIL', title: 'WARUM TRANSPARENZ DER ULTIMATIVE VORTEIL IST', content: ['Wir sagen Ihnen das vorab, weil wir glauben, dass Ihre Intelligenz Respekt verdient. Wenn wir diese Beziehung mit einer Täuschung darüber begonnen hätten, dass Marcus eine "reale" Person im traditionellen Sinne ist, würden wir alles untergraben, was wir über Integrität und hohe Standards lehren.', 'Die von unseren Studenten erzielten Ergebnisse sind zu 100 % menschlich und zu 100 % real. Die von uns gelehrten Strategien werden von realen Menschen umgesetzt, um reale Einnahmen zu generieren. Der Avatar ist das Medium; der Erfolg ist die Botschaft.'] },
+        { id: 'chapter-6', label: 'VI. TEILNAHME', title: 'IHRE TEILNAHME', content: ['Wenn Sie die 7-Tage-Challenge starten, betreten Sie eine High-Performance-Umgebung. Wir erwarten von Ihnen, dass Sie diese Materialien mit dem gleichen Ernst behandeln wie einen vertraulichen Business-Intelligence-Bericht. Ob das "Gesicht" der Marke menschlich ist oder nicht, ist für den Nutzen des Systems irrelevant.'] },
+        { id: 'chapter-7', label: 'VII. SCHLUSSBEMERKUNG', title: 'SCHLUSSBEMERKUNG', content: ['Wir sind hier, um Ihnen beim Aufbau zu helfen. Nicht mehr und nicht weniger. Wenn Sie sich in einer Welt wohlfühlen, in der KI-gestützte Bildung den schnellsten Weg zur finanziellen Unabhängigkeit bietet, dann sind Sie hier richtig.', 'Willkommen in der Ära von Alpha.'], cta: 'BEREIT ZUR AUSFÜHRUNG?', btn: 'CHALLENGE JETZT STARTEN →', ctaDisclaimer: 'DER ZUGANG BLEIBT ZU 100 % KOSTENLOS' }
+      ]
+    },
+    legal: {
+      title: 'RECHTLICHE DOKUMENTATION.',
+      updated: 'Zuletzt aktualisiert: 13. Juli 2025',
+      badge: 'COMPLIANCE-RAHMEN',
+      sections: [
+        { 
+          id: 'section-1', 
+          label: '1. NUTZUNGSBEDINGUNGEN', 
+          content: [
+            'BITTE LESEN SIE DIESE BEDINGUNGEN SORGFÄLTIG DURCH, BEVOR SIE DIE PLATTFORM NUTZEN. Durch die Nutzung der Marcus Vance Method Plattform erklären Sie sich mit diesen Bedingungen einverstanden. Wenn Sie nicht einverstanden sind, nutzen Sie die Plattform nicht.',
+            'ÜBERBLICK: Lucky North Star LLC betreibt die Marcus Vance Method Plattform und bietet Zugang zu digitalen Bildungsinhalten, einschließlich der kostenlosen 7-Tage-Funnel-Challenge und dem kostenpflichtigen Gesamtprogramm (Bibliothek mit über 900 Kursen). Diese Bedingungen gelten für jeglichen Zugriff, unabhängig davon, ob der Nutzer ein zahlender Kunde ist. Marcus Vance ist eine KI-generierte Marken-Persona und keine reale Einzelperson.',
+            'ZULÄSSIGE NUTZUNG: Sie dürfen die Plattform ausschließlich für rechtmäßige, persönliche, nicht-kommerzielle Bildungszwecke nutzen. Sie erklären sich damit einverstanden, nicht: (a) gegen geltende Gesetze zu verstoßen; (b) auf nicht-öffentliche Bereiche zuzugreifen; (c) Schwachstellen zu prüfen; (d) unaufgeforderte kommerzielle Mitteilungen zu senden; (e) die Systemintegrität zu beeinträchtigen; (f) unangemessene Lasten zu verursachen; (g) Viren oder Schadsoftware hochzuladen; (h) personenbezogene Daten ohne Genehmigung zu sammeln; (i) Scraper oder Roboter zu verwenden; (j) Schutzmaßnahmen zu umgehen; (k) Inhalte zu framen oder zu spiegeln; (l) die Software der Plattform zurückzuentwickeln.',
+            'INHALTLICHE RICHTIGKEIT: Obwohl wir uns um die Richtigkeit der Informationen bemühen, geben wir keine Zusicherungen oder Garantien hinsichtlich der Zuverlässigkeit oder Vollständigkeit der Inhalte. Kursinhalte spiegeln methodische Prinzipien wider und stellen keine professionelle Beratung dar.',
+            'VERFÜGBARKEIT DER SEITE: Wir garantieren keinen ununterbrochenen oder fehlerfreien Zugriff. Die Plattform kann für Wartungsarbeiten oder Updates ausgesetzt werden. Wir übernehmen keine Haftung für Verluste, die durch Nichtverfügbarkeit entstehen.',
+            'ANWENDBARES RECHT: Diese Bedingungen unterliegen den Gesetzen des Bundesstaates Wyoming, USA. Zwingende Verbraucherschutzbestimmungen in Ihrem Wohnsitzland bleiben unberührt.'
+          ] 
+        },
+        { 
+          id: 'section-2', 
+          label: '2. ELEKTRONISCHE KOMMUNIKATION', 
+          content: [
+            'EINWILLIGUNG: Wenn Sie ein Konto erstellen oder an einer Challenge teilnehmen, erklären Sie sich damit einverstanden, elektronische Mitteilungen von Lucky North Star LLC zu erhalten. Dies umfasst E-Mail, SMS und In-Platform-Benachrichtigungen.',
+            'TRANSAKTIONSMITTEILUNGEN: Erforderlich für den Kontobetrieb, einschließlich Verifizierung, Belegen, Sicherheitswarnungen und rechtlichen Hinweisen. Diese können nicht abbestellt werden, solange das Konto aktiv ist.',
+            'MARKETING-MITTEILUNGEN: Werbeangebote und Newsletter werden nur mit entsprechender Einwilligung versendet. Sie können sich jederzeit über die Kontoeinstellungen oder Abmeldelinks abmelden.',
+            'KANÄLE: Alle E-Mails kommen von unserer offiziellen Domain. SMS-Marketing erfordert eine explizite Zustimmung; antworten Sie mit STOP, um abzubestellen. Wir halten uns an US CAN-SPAM, UK PECR und die EU ePrivacy-Richtlinie.',
+            'EXKLUSIVER KANAL: Alle formalen rechtlichen Hinweise und Support-Anfragen MÜSSEN über das interne Support-Portal eingereicht werden. Lucky North Star LLC bearbeitet keine externen E-Mails für formale Zustellungszwecke.'
+          ] 
+        },
+        { 
+          id: 'section-3', 
+          label: '3. URHEBERRECHT UND DATENBANKRECHTE', 
+          content: [
+            'EIGENTUM: Alle Inhalte — Kursmaterialien, Audio, Frameworks, Logos und die Markenidentität von Marcus Vance — sind ausschließliches Eigentum von Lucky North Star LLC oder seinen Lizenzgebern.',
+            'SCHUTZ: Inhalte sind unter dem US Copyright Act, UK CDPA und EU-Richtlinien geschützt. Wir halten Sui-generis-Datenbankrechte an der Sammlung und Anordnung unserer Ressourcen.',
+            'URHEBERPERSÖNLICHKEITSRECHTE: Soweit vorhanden, machen Urheber ihre Rechte auf Namensnennung und Integrität gemäß den geltenden Gesetzen geltend.',
+            'ZULÄSSIGE NUTZUNG: Ihnen wird eine begrenzte Lizenz für die persönliche Nutzung zu Bildungszwecken gewährt. Vervielfältigung, Weiterverkauf, kommerzielle Verwertung oder die Erstellung abgeleiteter Werke sind strengstens untersagt.',
+            'DMCA-COMPLIANCE: Wir reagieren auf Hinweise auf angebliche Urheberrechtsverletzungen gemäß dem Digital Millennium Copyright Act. Hinweise müssen über das interne Support-Portal eingereicht werden.'
+          ] 
+        },
+        { 
+          id: 'section-4', 
+          label: '4. MARKENRICHTLINIE', 
+          content: [
+            'EIGENE MARKEN: "The Marcus Vance Method™", "Marcus Vance™", "Lucky North Star™" und "The 7-Day Funnel Challenge™" sind weltweit geschützte Marken.',
+            'VERBOTE: Sie dürfen unsere Marken nicht im Zusammenhang mit Produkten oder Dienstleistungen verwenden, die nicht von uns stammen, in einer Weise, die Verwechslungen hervorrufen könnte oder die Marke herabsetzt.',
+            'PERSONA-NUTZUNG: Sie dürfen nicht behaupten, dass Marcus Vance eine reale Person ist, oder die Persona in einer Weise verwenden, die unserer KI-Persona-Offenlegung widerspricht.',
+            'ZULÄSSIGE REFERENZEN: Sachliche und genaue Referenzen sind erlaubt, sofern sie keine offizielle Zugehörigkeit, Befürwortung oder Sponsoring implizieren.'
+          ] 
+        },
+        { 
+          id: 'section-5', 
+          label: '5. IHR KONTO', 
+          content: [
+            'REGISTRIERUNG: Der Zugriff auf kostenpflichtige Funktionen erfordert den vollständigen gesetzlichen Namen, eine gültige E-Mail-Adresse und ein sicheres Passwort. Sie sind für die Kontosicherheit und die Aktualität Ihrer Daten verantwortlich.',
+            'NICHT-ÜBERTRAGBARKEIT: Ihr Konto ist streng persönlich. Es darf nicht geteilt, verliehen, abgetreten, verkauft oder von einer anderen Person als dem registrierten Inhaber verwendet werden. Verstöße führen zur sofortigen Kündigung.',
+            'EIN KONTO PRO PERSON: Mehrere Konten pro Person sind untersagt. Wir behalten uns das Recht vor, doppelte Konten zusammenzuführen oder zu kündigen.',
+            'VERIFIZIERUNG: Wir behalten uns das Recht vor, eine Identitätsprüfung (Ausweis, E-Mail-Bestätigung) zu verlangen, bevor wir bedeutende Transaktionen oder Rückerstattungsanträge bearbeiten.',
+            'INAKTIVITÄT: Konten, die 24 Monate lang inaktiv sind, können nach vorheriger Ankündigung deaktiviert werden. Es gilt eine 6-monatige Kulanzfrist für die Reaktivierung vor der endgültigen Löschung.'
+          ] 
+        },
+        { 
+          id: 'section-6', 
+          label: '6. ZAHLUNGSRICHTLINIEN', 
+          content: [
+            'KOSTENLOS VS. KOSTENPFLICHTIG: Die 7-Tage-Challenge ist kostenlos. Das Gesamtprogramm ist ein kostenpflichtiges Produkt. Die Preise sind in USD angegeben und können ohne Vorankündigung geändert werden.',
+            'STRIPE: Kartenzahlungen werden über Stripe abgewickelt. Wir speichern keine vollständigen Kartendaten. Für alle Transaktionen wird eine SSL/TLS-Verschlüsselung verwendet.',
+            'KRYPTOWÄHRUNG: BTC, ETH und USDC werden akzeptiert. KRYPTOWÄHRUNGSTRANSAKTIONEN SIND UNWIDERRUFLICH. Einmal gesendet, können sie nicht storniert werden. Sie tragen die volle Verantwortung für die Richtigkeit der Wallet-Adresse.',
+            'KRYPTO-RÜCKERSTATTUNGEN: Falls berechtigt, werden Rückerstattungen für Krypto-Zahlungen in USD per Banküberweisung oder Kartengutschrift ausgestellt. Wir leisten keine Rückerstattungen in Kryptowährung.',
+            'STEUERN: Geltende Verkaufssteuer, MwSt. oder GST werden beim Checkout basierend auf Ihrem Standort berechnet.'
+          ] 
+        },
+        { 
+          id: 'section-7', 
+          label: '7. KÄUFERSCHUTZRICHTLINIE', 
+          content: [
+            'ABDECKUNG: Deckt die Nichtbereitstellung des digitalen Zugangs, anhaltende technische Nichterreichbarkeit (>72h), wesentliche Falschbeschreibungen, unbefugte Belastungen und doppelte Belastungen ab.',
+            'AUSSCHLÜSSE: Deckt keine Unzufriedenheit mit der Inhaltsqualität, das Nichterreichen spezifischer Geschäftsergebnisse, Ansprüche nach 30 Tagen oder Fehler von Drittanbietern ab.',
+            'RÜCKERSTATTUNGSGARANTIE: Ansprüche, bei denen auf mehr als fünf (5) Kursinhalte zugegriffen wurde, sind von der 30-tägigen Rückerstattungsgarantie ausgeschlossen.',
+            'ANSPRÜCHE: Müssen innerhalb von 30 Tagen nach dem Kauf über das interne Support-Portal eingereicht werden. Ergebnisse sind Rückerstattungen, technische Behebung oder Neubereitstellung.',
+            'CHARGEBACKS: Wir raten von Rückbuchungen (Chargebacks) ab, bevor das interne Streitbeilegungsverfahren abgeschlossen ist. Betrügerische Rückbuchungen können zur Kontokündigung und Meldung an Behörden führen.'
+          ] 
+        },
+        { 
+          id: 'section-8', 
+          label: '8. DATENSCHUTZERKLÄRUNG', 
+          content: [
+            'ERHEBUNG: Wir erheben Identitätsdaten (Name, Benutzername), Kontaktdaten (E-Mail, Telefon), technische Daten (IP, Browser) und Nutzungsdaten, um die Plattformdienste bereitzustellen.',
+            'RECHTSGRUNDLAGE: Wir verarbeiten Daten auf Basis der Vertragserfüllung (Kontoverwaltung), berechtigter Interessen (Sicherheit, Analyse) und rechtlicher Verpflichtungen (Steuern, Geldwäscheprävention).',
+            'COOKIES: Notwendige Cookies ermöglichen die Authentifizierung. Analyse- und Marketing-Cookies erfordern Ihre explizite Zustimmung.',
+            'WEITERGABE: Wir verkaufen Ihre Daten nicht. Wir teilen sie nur mit wesentlichen Auftragsverarbeitern (Stripe, E-Mail-Dienstleister) im Rahmen strenger Datenverarbeitungsvereinbarungen.',
+            'IHRE RECHTE: Gemäß DSGVO (EU/UK) und CCPA (Kalifornien) haben Sie Rechte auf Auskunft, Berichtigung, Löschung und Portabilität. Reichen Sie alle Anfragen über das interne Support-Portal ein.'
+          ] 
+        },
+        { 
+          id: 'section-9', 
+          label: '9. ANTI-PIRATERIE-RICHTLINIE', 
+          content: [
+            'VERBOT: Die unbefugte Vervielfältigung, Verbreitung oder Nachahmung von Inhalten, Markenidentifikatoren oder der Marcus Vance Method Methodik ist strengstens untersagt.',
+            'DURCHSETZUNG: Wir überwachen aktiv Verstöße und veranlassen DMCA-Takedowns, versenden Unterlassungserklärungen und kündigen Konten, die an Fälschungen oder Piraterie beteiligt sind.',
+            'AUTORISIERTE QUELLE: Nur die offizielle Plattform ist berechtigt, Zugang zu gewähren. Drittanbieter-Reseller oder Aggregate-Seiten sind betrügerisch.'
+          ] 
+        },
+        { 
+          id: 'section-10', 
+          label: '10. KOMMUNIKATION MIT REPRÄSENTANTEN', 
+          content: [
+            'AUTORISIERTE KANÄLE: Die offizielle Kommunikation ist auf das interne Support-Portal, In-Platform-Benachrichtigungen und offizielle E-Mail-Domains des Unternehmens beschränkt.',
+            'UNAUTORISIERTE KANÄLE: Mitarbeiter sind nicht berechtigt, über persönliche soziale Medien, WhatsApp oder Discord in Geschäftsangelegenheiten zu kommunizieren.',
+            'BETRUGSWARNUNG: Wir werden Sie niemals nach Ihrem Passwort fragen oder Zahlungen außerhalb des offiziellen Platform-Checkouts anfordern. Melden Sie solche Anfragen sofort.'
+          ] 
+        },
+        { 
+          id: 'section-11', 
+          label: '11. VERPFLICHTENDE OFFENLEGUNGEN', 
+          content: [
+            'KI-OFFENLEGUNG: Marcus Vance ist eine KI-generierte Marken-Persona und keine reale Person. Inhalte repräsentieren kollektive institutionelle Expertise, keine individuelle Autobiografie.',
+            'KEINE PROFESSIONELLE BERATUNG: Nichts in diesem Programm stellt eine Finanz-, Rechts-, Anlage-, Steuer- oder medizinische Beratung dar. Die Umsetzung erfolgt auf eigenes Risiko.',
+            'COMPLIANCE: Diese Dokumentation ist so konzipiert, dass sie den FTC-Richtlinien, der DSGVO, dem CCPA, dem TCPA und den geltenden Gesetzen in den USA, UK und der EU entspricht.'
+          ] 
+        }
+      ]
     }
   },
   trinity: {

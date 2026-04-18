@@ -65,7 +65,7 @@ export const baseEN = {
       affiliation: "AFFILIATE PROGRAM",
       disclaimer: "DISCLAIMER",
       contact: "CONTACT",
-      rights: "© 2024 LUCKY NORTH STAR LLC — ALL RIGHTS RESERVED.",
+      rights: "© 2025 LUCKY NORTH STAR LLC — ALL RIGHTS RESERVED.",
       address: "1309 COFFEEN AVENUE, SUITE 1200\nSHERIDAN, WYOMING 82801 — USA",
       platformDisclaimer: "DISCLAIMER: This website and the 7-Day Challenge are not affiliated with or endorsed by Facebook™, Instagram™, TikTok™, or Google™. Results mentioned are individual results and are not guaranteed. Building a sustainable online business requires real effort, skills, and sustained commitment. This is not financial, legal, or investment advice of any kind.",
       personaDisclosure: "\"Marcus Vance\" is an AI-generated educational brand persona. It does not correspond to any real individual, creator, or physical person. All content attributed to this persona is developed by the Lucky North Star LLC team."
@@ -218,21 +218,125 @@ export const baseEN = {
       ]
     },
     legal: {
-      title: 'LEGAL PROTOCOL.',
-      updated: 'Last Updated: April 2024',
-      badge: 'LEGAL FRAMEWORK',
+      title: 'LEGAL DOCUMENT SUITE.',
+      updated: 'Last Updated: July 13, 2025',
+      badge: 'GOVERNANCE FRAMEWORK',
       sections: [
-        { id: 'section-1', label: '1. INTRODUCTION', content: ['Welcome to MarcusVance.io (the "Site"), owned and operated by The Alpha Collective ("we," "us," or "our"). These Terms and Conditions ("Terms") govern your use of our Site and participation in the "7-Day High-Income Stream Challenge" and any subsequent educational programs (collectively, the "Program").', 'By accessing the Site or enrolling in the Program, you agree to be bound by these Terms. If you do not agree, you must immediately cease all use of the platform.'] },
-        { id: 'section-2', label: '2. THE PROGRAM', content: ['The Program is an educational service designed to provide foundational business knowledge and strategic frameworks for digital entrepreneurship. It is not a financial advisory service, a guarantee of income, or an employment offer.'] },
-        { id: 'section-3', label: '3. INTELLECTUAL PROPERTY', content: ['All content provided, including text, logos, audio, video, and strategic documents, is the intellectual property of The Alpha Collective. You are granted a limited, non-exclusive, non-transferable license for personal, educational use only.', 'Any unauthorized distribution, resale, or commercial use of our proprietary materials is strictly prohibited and will result in immediate termination of access and potential legal action.'] },
-        { id: 'section-4', label: '4. PARTICIPATION', content: ['Participation in the Program requires a high level of moral commitment and focus. We reserve the right to limit or terminate access for individuals who do not adhere to our community standards or professional etiquette.'] },
-        { id: 'section-5', label: '5. WARRANTIES', content: ['The Site and Program are provided on an "as-is" and "as-available" basis. We make no representations or warranties of any kind, express or implied, regarding the accuracy, completeness, or reliability of our educational content.', 'EARNINGS DISCLAIMER: Any individual results discussed in the Program are not typical. We cannot and do not guarantee your ability to get results or earn any money with our ideas, information, tools, or strategies.'] },
-        { id: 'section-6', label: '6. LIABILITY', content: ['To the maximum extent permitted by law, The Alpha Collective shall not be liable for any direct, indirect, incidental, or consequential damages resulting from your use of the Site or Program.'] },
-        { id: 'section-7', label: '7. DATA PRIVACY', content: ['We collect minimal personal data to facilitate your participation. By using our services, you consent to our data practices as outlined in our Privacy Policy. We utilize secure encryption and do not share your last name or contact details with unauthorized third parties.'] },
-        { id: 'section-8', label: '8. AI DISCLOSURE', content: ['IMPORTANT DISCLOSURE: The brand persona "Marcus Vance" is an AI-generated digital avatar. All visual representations of Marcus Vance are synthetic. The expertise, methodology, and strategic content are developed by human subject matter experts, but presented through this unified brand persona to maintain institutional focus.'] },
-        { id: 'section-9', label: '9. THIRD PARTY', content: ['Our Site may contain links to third-party services or tools. We are not responsible for the content, privacy policies, or practices of any third-party websites.'] },
-        { id: 'section-10', label: '10. MODIFICATIONS', content: ['We reserve the right to modify these Terms at any time without prior notice. Your continued use of the Site after changes are posted constitutes your acceptance of the revised Terms.'] },
-        { id: 'section-11', label: '11. GOVERNING LAW', content: ['These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which The Alpha Collective is registered, without regard to its conflict of law principles.'] }
+        { 
+          id: 'section-1', 
+          label: '1. CONDITIONS OF USE', 
+          content: [
+            'PLEASE READ THESE CONDITIONS CAREFULLY BEFORE USING THE PLATFORM. By using The Marcus Vance Method Platform, you agree to be bound by these Conditions. If you do not agree, do not use the Platform.',
+            'OVERVIEW: Lucky North Star LLC, operating The Marcus Vance Method Platform, provides access to digital educational content including the free 7-Day Funnel Challenge and the paid Full Program (900+ course library). These Conditions govern all access regardless of whether the user is a paying customer. Marcus Vance is an AI-generated brand persona and is not a real individual.',
+            'ACCEPTABLE USE: You may use the Platform solely for lawful, personal, non-commercial, educational purposes. You agree not to: (a) violate applicable laws; (b) access non-public areas; (c) probe vulnerability; (d) transmit unsolicited commercial communications; (e) interfere with system integrity; (f) impose unreasonable loads; (g) upload viruses or malware; (h) collect personally identifiable information without authorization; (i) use scrapers or robots; (j) circumvent protection measures; (k) frame or mirror content; (l) reverse-engineer Platform software.',
+            'CONTENT ACCURACY: While we endeavour to ensure information accuracy, we make no representations or warranties about the reliability or completeness of content. Course content reflects methodological principles and does not constitute professional advice.',
+            'SITE AVAILABILITY: We do not guarantee uninterrupted or error-free access. The Platform may be suspended for maintenance or updates. We accept no liability for loss caused by unavailability.',
+            'APPLICABLE LAW: These Conditions are governed by the laws of the State of Wyoming, USA. Mandatory consumer protection provisions in your jurisdiction of residence shall also apply.'
+          ] 
+        },
+        { 
+          id: 'section-2', 
+          label: '2. ELECTRONIC COMMUNICATIONS', 
+          content: [
+            'CONSENT: When you create an account or participate in a challenge, you consent to receive electronic communications from Lucky North Star LLC. This includes email, SMS, and in-platform notifications.',
+            'TRANSACTIONAL COMMUNICATIONS: Necessary for account operation, including verification, receipts, security alerts, and legal notices. These cannot be opted out of while the account is active.',
+            'MARKETING COMMUNICATIONS: Promotional offers and newsletters sent only with appropriate consent. You may opt out at any time via account preferences or unsubscribe links.',
+            'CHANNELS: All email comes from our official domain. SMS marketing requires explicit opt-in; reply STOP to cancel. We comply with US CAN-SPAM, UK PECR, and EU ePrivacy Directive requirements.',
+            'EXCLUSIVE CHANNEL: All formal legal notices and support requests MUST be submitted through the internal support portal. Lucky North Star LLC does not process external emails for formal notice purposes.'
+          ] 
+        },
+        { 
+          id: 'section-3', 
+          label: '3. COPYRIGHT & DATABASE RIGHTS', 
+          content: [
+            'OWNERSHIP: All content—course materials, audio, frameworks, logos, and the Marcus Vance brand identity—is owned exclusively by Lucky North Star LLC or its licensors.',
+            'PROTECTION: Content is protected under US Copyright Act, UK CDPA, and EU Directives. We hold sui generis database rights in the collection and arrangement of our resources.',
+            'AUTHORS\' MORAL RIGHTS: To the extent they exist, authors assert their rights of identification and integrity (droit moral) in accordance with applicable laws.',
+            'PERMITTED USE: You are granted a limited license for personal educational use. Reproduction, resale, commercial exploitation, or creation of derivative works is strictly prohibited.',
+            'DMCA COMPLIANCE: We respond to notices of alleged copyright infringement in accordance with the Digital Millennium Copyright Act. Notices must be submitted via the internal support portal.'
+          ] 
+        },
+        { 
+          id: 'section-4', 
+          label: '4. TRADEMARK POLICY', 
+          content: [
+            'OWNED MARKS: "The Marcus Vance Method™", "Marcus Vance™", "Lucky North Star™", and "The 7-Day Funnel Challenge™" are trademarks protected globally.',
+            'PROHIBITIONS: You may not use our marks in connection with any product or service that is not ours, in any manner likely to cause confusion, or disparage the brand.',
+            'PERSONA USE: You must not claim Marcus Vance is a real person or use the persona in ways inconsistent with our AI persona disclosure.',
+            'PERMITTED REFERENCES: Factual and accurate references are allowed provided they do not imply official affiliation, endorsement, or sponsorship.'
+          ] 
+        },
+        { 
+          id: 'section-5', 
+          label: '5. YOUR ACCOUNT', 
+          content: [
+            'REGISTRATION: Access to paid features requires full legal name, valid email, and secure password. You are responsible for account security and maintaining current information.',
+            'NON-TRANSFERABILITY: Your account is strictly personal. It cannot be shared, loaned, assigned, sold, or used by anyone other than the registered holder. Violation results in immediate termination.',
+            'ONE ACCOUNT PER PERSON: Multiple accounts per person are prohibited. We reserve the right to merge or terminate duplicate accounts.',
+            'VERIFICATION: We reserve the right to require identity verification (ID, email confirmation) before processing significant transactions or refund requests.',
+            'INACTIVITY: Accounts inactive for 24 months may be deactivated after prior notice. A 6-month grace period for reactivation applies before permanent deletion.'
+          ] 
+        },
+        { 
+          id: 'section-6', 
+          label: '6. PAYMENT POLICIES', 
+          content: [
+            'FREE VS PAID: The 7-Day Challenge is free. The Full Program is a paid product. Pricing is in USD and subject to modification without notice.',
+            'STRIPE: Card payments are processed by Stripe. We do not store full card details. SSL/TLS encryption is used for all transactions.',
+            'CRYPTOCURRENCY: BTC, ETH, and USDC are accepted. CRYPTOCURRENCY TRANSACTIONS ARE IRREVERSIBLE. Once broadcast, they cannot be cancelled. You bear all responsibility for wallet address accuracy.',
+            'CRYPTO REFUNDS: If eligible, refunds for crypto payments are issued in USD via bank transfer or card credit. We do not issue refunds in cryptocurrency.',
+            'TAXES: Applicable sales tax, VAT, or GST will be calculated at checkout based on your jurisdiction.'
+          ] 
+        },
+        { 
+          id: 'section-7', 
+          label: '7. PURCHASE PROTECTION POLICY', 
+          content: [
+            'COVERAGE: Covers non-delivery of digital access, persistent technical inaccessibility (>72h), material misdescription, unauthorized charges, and duplicate charges.',
+            'EXCLUSIONS: Does not cover dissatisfaction with content quality, failure to achieve specific business results, claims made after 30 days, or third-party tool failures.',
+            'REFUND GUARANTEE: Claims where more than five (5) course items have been accessed are excluded from the 30-day refund guarantee.',
+            'CLAIMS: Must be submitted through the internal support portal within 30 days of purchase. Outcomes include refunds, technical remediation, or re-delivery.',
+            'CHARGEBACKS: We discourage chargebacks before completing the internal dispute process. Fraudulent chargebacks may result in account termination and reporting to authorities.'
+          ] 
+        },
+        { 
+          id: 'section-8', 
+          label: '8. PRIVACY POLICY', 
+          content: [
+            'COLLECTION: We collect identity data (name, username), contact data (email, phone), technical data (IP, browser), and usage data to facilitate the Platform services.',
+            'LEGAL BASIS: We process data based on contract performance (account management), legitimate interests (security, analytics), and legal obligations (tax, AML).',
+            'COOKIES: Necessary cookies enable authentication. Analytics and marketing cookies require your explicit consent.',
+            'SHARING: We do not sell your data. We share only with essential processors (Stripe, email service providers) under strict data processing agreements.',
+            'YOUR RIGHTS: Under GDPR (EU/UK) and CCPA (California), you have rights to access, rectification, erasure, and portability. Submit all requests via the internal support portal.'
+          ] 
+        },
+        { 
+          id: 'section-9', 
+          label: '9. ANTI-COUNTERFEITING POLICY', 
+          content: [
+            'PROHIBITION: Unauthorized reproduction, distribution, or imitation of content, brand identifiers, or the Marcus Vance Method methodology is strictly prohibited.',
+            'ENFORCEMENT: We actively monitor for infringement and issue DMCA takedowns, cease and desist letters, and may terminate accounts participating in counterfeiting.',
+            'AUTHORIZED SOURCE: Only the official Platform is authorized to provide access. Third-party "resellers" or aggregate sites are fraudulent.'
+          ] 
+        },
+        { 
+          id: 'section-10', 
+          label: '10. REPRESENTATIVE COMMUNICATIONS', 
+          content: [
+            'AUTHORIZED CHANNELS: Official communication is restricted to the internal support portal, in-platform notifications, and official Company email domains.',
+            'UNAUTHORIZED CHANNELS: Employees are not authorized to communicate via personal social media, WhatsApp, or Discord regarding Company business.',
+            'FRAUD WARNING: We will never ask for your password or solicit payments outside the official Platform checkout. Report such requests immediately.'
+          ] 
+        },
+        { 
+          id: 'section-11', 
+          label: '11. MANDATORY DISCLOSURES', 
+          content: [
+            'AI DISCLOSURE: Marcus Vance is an AI-generated brand persona and is not a real person. Content represents collective institutional expertise, not individual autobiography.',
+            'NO PROFESSIONAL ADVICE: Nothing in this program constitutes financial, legal, investment, tax, or medical advice. Implementation is at your own risk.',
+            'REGULATORY COMPLIANCE: This suite is designed to comply with FTC Guidelines, GDPR, CCPA, TCPA, and applicable laws in the US, UK, and EU.'
+          ] 
+        }
       ]
     }
   },
