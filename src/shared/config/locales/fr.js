@@ -1,4 +1,4 @@
-export default {
+export const baseFR = {
   marcus: {
     enroll: {
       popupTitle: 'VOTRE SIÈGE AU CLUB.',
