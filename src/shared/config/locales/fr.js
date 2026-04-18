@@ -227,17 +227,17 @@ export const baseFR = {
       subTitle: 'Une fois le défi terminé, vous recevez une invitation. La bibliothèque privée est la ressource la plus dense du marché pour les opérateurs numériques ; voici ce qu\'elle contient.',
       valueStack: 'PILE DE VALEUR — LEGACY LIBRARY',
       items: [
-        { t: 'AFFAIRES & ENTREPRENEURIAT', p: '497', d: '331 ressources · startups · solopreneuriat · leadership' },
-        { t: 'MARKETING & VENTES', p: '697', d: '600+ ressources · tunnels · publicités payantes · SEO · email' },
-        { t: 'BRANDING & CRÉATION', p: '397', d: '280+ ressources · rédaction · contenu · produit' },
-        { t: 'CROISSANCE & ÉTAT D\'ESPRIT', p: '297', d: '400+ ressources · productivité · systèmes · habitudes' },
-        { t: 'TECH, IA & AUTOMATISATION', p: '597', d: '280+ ressources · prompts GPT · n8n · e-commerce' },
-        { t: 'AUDITS MENSUELS + SWIPE FILE EN DIRECT', p: '497', d: 'Études de cas · modèles · Mis à jour mensuellement' }
+        { t: 'AFFAIRES & ENTREPRENEURIAT', p: '1997', d: '331 ressources · startups · solopreneuriat · leadership' },
+        { t: 'MARKETING & VENTES', p: '2497', d: '600+ ressources · tunnels · publicités payantes · SEO · email' },
+        { t: 'BRANDING & CRÉATION', p: '1497', d: '280+ ressources · rédaction · contenu · produit' },
+        { t: 'CROISSANCE & ÉTAT D\'ESPRIT', p: '997', d: '400+ ressources · productivité · systèmes · habitudes' },
+        { t: 'TECH, IA & AUTOMATISATION', p: '1997', d: '280+ ressources · prompts GPT · n8n · e-commerce' },
+        { t: 'AUDITS MENSUELS + SWIPE FILE EN DIRECT', p: '1215', d: 'Études de cas · modèles · Mis à jour mensuellement' }
       ],
       totalLabel: 'VALEUR TOTALE RECONSTRUITE SEULE',
       totalValue: '10 200',
       accessNotice: 'L\'ACCÈS EST DÉVERROUILLÉ UNIQUEMENT POUR CEUX QUI ONT TERMINÉ LE DÉFI DE 7 JOURS.',
-      priceReveal: 'Le prix exact du pass à vie sera révélé au jour 7 ( silver )'
+      priceReveal: 'Le prix exact du pass à vie sera révélé au {day} ( silver )'
     },
     faqCategories: {
       general: "Général",

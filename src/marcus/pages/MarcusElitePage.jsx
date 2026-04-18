@@ -373,7 +373,13 @@ const FAQSection = ({ t }) => {
   );
 };
 
-const LegacyLibrary = ({ t, currency }) => (
+const LegacyLibrary = ({ t, currency }) => {
+  const legacyItems = t.marcus.legacyLibrary.items;
+  const legacySubtotal = legacyItems.reduce((acc, item) => acc + parseInt(item.p.replace(/\s/g, '')), 0);
+  const targetDay = t.marcus.days[dynamicStats.targetDayIndex];
+  const priceRevealTranslated = t.marcus.legacyLibrary.priceReveal.replace('{day}', targetDay);
+
+  return (
   <section className="py-32 md:py-48 bg-[#000000] border-y border-white/5 relative overflow-hidden" id="library">
     <div className="max-w-7xl mx-auto px-8 relative z-10">
       <div className="flex flex-col lg:flex-row gap-20 items-start">
@@ -408,7 +414,7 @@ const LegacyLibrary = ({ t, currency }) => (
             <Reveal delay={0.7}>
               <div className="py-8 flex justify-between items-center opacity-30">
                 <span className="font-oswald text-xs text-white tracking-[0.3em] uppercase">MODULES SUB-TOTAL</span>
-                <span className="font-oswald text-xl text-white tracking-tighter">$ 2 982</span>
+                <span className="font-oswald text-xl text-white tracking-tighter">{currency} {legacySubtotal.toLocaleString()}</span>
               </div>
             </Reveal>
 
@@ -474,7 +480,7 @@ const LegacyLibrary = ({ t, currency }) => (
             <div key={i} className="flex items-center mx-8">
                <span className="font-oswald text-[10px] font-black tracking-[0.3em] uppercase underline mr-4">WARNING:</span>
                <span className="font-oswald text-[10px] font-bold tracking-[0.2em] uppercase italic">
-                 {t.marcus.legacyLibrary.priceReveal} — {t.marcus.legacyLibrary.priceReveal} — {t.marcus.legacyLibrary.priceReveal}
+                 {priceRevealTranslated} — {priceRevealTranslated} — {priceRevealTranslated}
                </span>
             </div>
           ))}

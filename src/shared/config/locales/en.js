@@ -226,12 +226,12 @@ export const baseEN = {
       subTitle: 'Once the challenge is completed you receive an invitation. The private library is the densest resource on the market for digital operators; here is what it contains.',
       valueStack: 'VALUE STACK — LEGACY LIBRARY',
       items: [
-        { t: 'BUSINESS & ENTREPRENEURSHIP', p: '497', d: '331 resources · startups · solopreneurship · leadership' },
-        { t: 'MARKETING & SALES', p: '697', d: '600+ resources · funnels · paid ads · SEO · email' },
-        { t: 'BRANDING & CREATION', p: '397', d: '280+ resources · copywriting · content · product' },
-        { t: 'GROWTH & MINDSET', p: '297', d: '400+ resources · productivity · systems · habits' },
-        { t: 'TECH, AI & AUTOMATION', p: '597', d: '280+ resources · GPT prompts · n8n · e-commerce' },
-        { t: 'MONTHLY AUDITS + LIVE FILE SWIPING', p: '497', d: 'Case studies · templates · Updated monthly' }
+        { t: 'BUSINESS & ENTREPRENEURSHIP', p: '1997', d: '331 resources · startups · solopreneurship · leadership' },
+        { t: 'MARKETING & SALES', p: '2497', d: '600+ resources · funnels · paid ads · SEO · email' },
+        { t: 'BRANDING & CREATION', p: '1497', d: '280+ resources · copywriting · content · product' },
+        { t: 'GROWTH & MINDSET', p: '997', d: '400+ resources · productivity · systems · habits' },
+        { t: 'TECH, AI & AUTOMATION', p: '1997', d: '280+ resources · GPT prompts · n8n · e-commerce' },
+        { t: 'MONTHLY AUDITS + LIVE FILE SWIPING', p: '1215', d: 'Case studies · templates · Updated monthly' }
       ],
       totalLabel: 'TOTAL VALUE RECONSTRUCTED ALONE',
       totalValue: '10 200',
