@@ -664,6 +664,8 @@ const GraduatesSection = ({ t }) => {
 };
 
 const GuaranteeSection = ({ t }) => {
+  const { currentLocale } = useLocale();
+  const getLocalizedPath = (path) => currentLocale === 'default' ? path : `${path}/${currentLocale}`;
   const data = t.marcus.guaranteeSection;
   if (!data) return null;
 
