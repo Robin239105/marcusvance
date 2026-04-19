@@ -327,8 +327,7 @@ export const baseFR = {
       title: "ATTÉNUATION DES RISQUES : 30 JOURS",
       boldTitle: "SI CELA NE PORTE PAS SES FRUITS,",
       goldTitle: "VOUS ÊTES TOTALEMENT REMBOURSÉ",
-      description: "Je ne crois pas qu'il faille retenir les gens prisonniers d'un système qui ne leur convient pas. Si le protocole ne tient pas ses promesses techniques dans les 30 jours, nous vous rembourserons votre investissement. Sans friction. Sans clauses cachées.",
-      legal: "Selon la Section 3.3 des Conditions Globales de Marcus Vance : Toutes les demandes de remboursement sont honorées dans un délai de 30 jours à compter de la date de transmission initiale. Conditions complètes sur marcusvance.com/legal"
+      description: "Je ne crois pas qu'il faille retenir les gens prisonniers d'un système qui ne leur convient pas. Si le protocole ne tient pas ses promesses techniques dans les 30 jours, nous vous rembourserons votre investissement. Sans friction. Sans clauses cachées."
     },
     feedback: {
       badge: 'NOUS VOUS ÉCOUTONS',

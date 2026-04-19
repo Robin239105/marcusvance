@@ -330,8 +330,7 @@ export const baseDE = {
       title: "30-TAGE-RISIKOMINDERUNG",
       boldTitle: "WENN ES NICHT LIEFERT,",
       goldTitle: "ERHALTEN SIE EINE VOLLE RÜCKERSTATTUNG",
-      description: "Ich halte nichts davon, Menschen an ein System zu binden, das nicht zu ihnen passt. Wenn das Protokoll seine technischen Versprechen nicht innerhalb von 30 Tagen erfüllt, erstatten wir Ihre Investition zurück. Ohne Reibung. Ohne versteckte Klauseln.",
-      legal: "Gemäß Abschnitt 3.3 der Allgemeinen Geschäftsbedingungen von Marcus Vance: Alle Rückerstattungsanträge werden innerhalb von 30 Tagen ab dem Datum der ursprünglichen Übermittlung bearbeitet. Vollständige Bedingungen unter marcusvance.com/legal"
+      description: "Ich halte nichts davon, Menschen an ein System zu binden, das nicht zu ihnen passt. Wenn das Protokoll seine technischen Versprechen nicht innerhalb von 30 Tagen erfüllt, erstatten wir Ihre Investition zurück. Ohne Reibung. Ohne versteckte Klauseln."
     },
     feedback: {
       badge: 'WIR HÖREN IHNEN ZU',
