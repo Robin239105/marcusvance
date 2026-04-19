@@ -1034,7 +1034,7 @@ const MarcusElitePage = () => {
                         <button 
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full bg-[#C9A84C] text-black font-oswald text-sm font-black tracking-[0.4em] py-6 rounded-none uppercase hover:bg-white transition-all duration-700 shadow-[0_0_50px_rgba(201,168,76,0.2)] active:scale-[0.98] disabled:opacity-50"
+                          className="w-full bg-[#C9A84C] text-black font-oswald text-xs md:text-sm font-black tracking-[0.2em] md:tracking-[0.4em] py-5 md:py-6 rounded-none uppercase hover:bg-white transition-all duration-700 shadow-[0_0_50px_rgba(201,168,76,0.2)] active:scale-[0.98] disabled:opacity-50"
                         >
                            {isSubmitting ? (t.marcus.ui.processing || "PROCESSING PROTOCOL...") : t.marcus.enroll.submitBtn}
                         </button>
@@ -1052,7 +1052,7 @@ const MarcusElitePage = () => {
                         </p>
                         <button 
                           onClick={() => {setIsEnrollOpen(false); setShowExitPopup(false); setSubmitStatus(null); setFormData({ firstName: '', lastName: '', email: '' });}}
-                          className="mt-8 border border-[#C9A84C] text-[#C9A84C] px-10 py-3 font-oswald text-xl tracking-wider hover:bg-[#C9A84C] hover:text-black transition-all font-bold uppercase"
+                          className="mt-8 border border-[#C9A84C] text-[#C9A84C] px-8 md:px-10 py-3 font-oswald text-lg md:text-xl tracking-wider hover:bg-[#C9A84C] hover:text-black transition-all font-bold uppercase"
                         >
                           {t.marcus.ui.close || "CLOSE"}
                         </button>
