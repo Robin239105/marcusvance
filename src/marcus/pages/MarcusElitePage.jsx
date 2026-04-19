@@ -8,6 +8,7 @@ import LanguageSwitcher from '../../shared/components/LanguageSwitcher';
 
 // --- Icons ---
 const CheckIcon = ({ className }) => <span className={className}>✓</span>;
+const XIcon = ({ className }) => <span className={className}>✕</span>;
 const ChevronDownIcon = ({ className }) => (
   <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="m6 9 6 6 6-6"/>
@@ -540,6 +541,65 @@ const TheVoice = ({ t }) => (
 );
 
 
+
+const QualificationSection = ({ t }) => {
+  const data = t.marcus.qualificationSection;
+  if (!data) return null;
+
+  return (
+    <section className="py-32 bg-[#000000] border-y border-white/5 relative overflow-hidden" id="criteria">
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <SectionHeading 
+          pre={data.pre}
+          title={data.title}
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-20">
+          {/* Positive Column */}
+          <Reveal>
+            <div className="mv-glass-card p-10 md:p-14 border border-[#C9A84C]/20 bg-[#C9A84C]/[0.02] h-full relative group">
+              <div className="flex justify-between items-start mb-12">
+                <h3 className="font-oswald text-4xl text-white font-bold tracking-tight uppercase italic">{data.positive.title}</h3>
+                <span className="bg-[#C9A84C] text-black font-oswald text-[10px] font-black px-3 py-1 tracking-widest">{data.positive.badge}</span>
+              </div>
+              <ul className="space-y-10">
+                {data.positive.items.map((item, i) => (
+                  <li key={i} className="flex gap-6 items-start group/item">
+                    <div className="w-6 h-6 rounded-full border border-[#C9A84C]/30 flex items-center justify-center shrink-0 mt-1 group-hover/item:bg-[#C9A84C] transition-all">
+                      <CheckIcon className="text-[#C9A84C] group-hover/item:text-black text-sm" />
+                    </div>
+                    <p className="text-[#A3A3A3] text-lg font-light leading-relaxed group-hover/item:text-white transition-colors">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+
+          {/* Negative Column */}
+          <Reveal delay={0.2}>
+            <div className="mv-glass-card p-10 md:p-14 border border-white/5 bg-white/[0.01] h-full relative group">
+              <div className="flex justify-between items-start mb-12 opacity-60">
+                <h3 className="font-oswald text-4xl text-white/50 font-bold tracking-tight uppercase italic">{data.negative.title}</h3>
+                <span className="border border-white/20 text-white/40 font-oswald text-[10px] font-black px-3 py-1 tracking-widest">{data.negative.badge}</span>
+              </div>
+              <ul className="space-y-10">
+                {data.negative.items.map((item, i) => (
+                  <li key={i} className="flex gap-6 items-start group/item">
+                    <div className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center shrink-0 mt-1 group-hover/item:border-red-500/50 transition-all">
+                      <XIcon className="text-white/20 group-hover/item:text-red-500/80 text-sm" />
+                    </div>
+                    <p className="text-[#6A6A6A] text-lg font-light leading-relaxed group-hover/item:text-[#A3A3A3] transition-colors italic">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const WhoItIsFor = ({ t }) => (
   <section className="py-32 bg-[#050505] border-y border-white/5">
     <div className="max-w-7xl mx-auto px-8">
@@ -832,9 +892,8 @@ const MarcusElitePage = () => {
           </div>
         </section>
 
+        <QualificationSection t={t} />
         <TheVoice t={t} />
-        <WhoItIsFor t={t} />
-        <QualificationBridge t={t} />
 
 
 

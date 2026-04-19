@@ -269,6 +269,32 @@ export const baseFR = {
       community: 'REJOIGNEZ LA COMMUNAUTÉ DE 12 024+ ANCIENS',
       successRate: '93% DE TAUX DE RÉUSSITE DÈS LE PREMIER MOIS'
     },
+    qualificationSection: {
+      pre: "ÉVALUATION",
+      title: "EST-CE POUR MOI ?",
+      positive: {
+        title: "C'EST POUR VOUS SI",
+        badge: "OUI",
+        items: [
+          "Vous avez une expertise — même partielle — que vous voulez transformer en actif numérique.",
+          "Vous préférez consacrer 45 minutes par jour pendant 7 jours plutôt que de lire 300 pages de théorie.",
+          "Vous voulez comprendre comment fonctionne réellement un business en ligne.",
+          "Vous acceptez de livrer quelque chose d'imparfait mais qui se vend au 7ème jour.",
+          "Vous comprenez que le passage à l'échelle vient plus tard — d'abord, la machine doit tourner."
+        ]
+      },
+      negative: {
+        title: "PASSEZ VOTRE CHEMIN SI",
+        badge: "NON",
+        items: [
+          "Vous cherchez une formule magique pour gagner 10k/mois sans rien proposer.",
+          "Vous voulez déléguer à 100% avant même d'avoir validé votre première offre.",
+          "Vous pensez qu'un business numérique doit être parfait avant d'être publié.",
+          "Vous ne pouvez pas libérer 45 minutes par jour pendant une semaine.",
+          "Vous attendez des garanties d'un programme gratuit qu'aucun programme payant n'oserait offrir."
+        ]
+      }
+    },
     feedback: {
       badge: 'NOUS VOUS ÉCOUTONS',
       title: 'COMMENT NOUS AMÉLIORER ?',

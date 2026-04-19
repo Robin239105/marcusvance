@@ -298,6 +298,32 @@ export const baseEN = {
       community: 'JOIN THE 12,024+ ALUMNI COMMUNITY',
       successRate: '93% SUCCESS RATE WITHIN MONTH 1'
     },
+    qualificationSection: {
+      pre: "EVALUATION",
+      title: "AM I ELIGIBLE?",
+      positive: {
+        title: "THIS IS FOR YOU",
+        badge: "YES",
+        items: [
+          "You have expertise — even partial — that you want to transform into a digital asset.",
+          "You'd rather do 45 minutes a day for 7 days than read 300 pages of theory",
+          "Do you want to understand how a digital business really works?",
+          "You accept that on Day 7 you deliver something imperfect but that sells",
+          "You're assuming that scalability comes later — first, the machine has to run"
+        ]
+      },
+      negative: {
+        title: "MOVE ALONG IF",
+        badge: "NO",
+        items: [
+          "Are you looking for a magic formula to make 10k/month without offering anything?",
+          "You want to delegate 100% before you've even approved your first offer",
+          "Do you think a digital business needs to be perfect before it's published?",
+          "You can't free up 45 minutes a day for a week.",
+          "You expect guarantees from a free program that no paid program would dare to offer."
+        ]
+      }
+    },
     feedback: {
       badge: 'WE HEAR YOU',
       title: 'HOW CAN WE IMPROVE?',

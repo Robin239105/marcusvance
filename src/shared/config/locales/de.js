@@ -272,6 +272,32 @@ export const baseDE = {
       community: 'TRETEN SIE DER 12.024+ ALUMNI COMMUNITY BEI',
       successRate: '93% ERFOLGSRATE IM 1. MONAT'
     },
+    qualificationSection: {
+      pre: "EVALUIERUNG",
+      title: "BIN ICH BERECHTIGT?",
+      positive: {
+        title: "DAS IST FÜR DICH, WENN",
+        badge: "JA",
+        items: [
+          "Du hast Expertise — auch nur teilweise — die du in ein digitales Asset verwandeln willst.",
+          "Du arbeitest lieber 7 Tage lang 45 Minuten pro Tag, als 300 Seiten Theorie zu lesen.",
+          "Du willst verstehen, wie ein digitales Business wirklich funktioniert.",
+          "Du akzeptierst, dass du an Tag 7 etwas Unperfektes lieferst, das sich verkauft.",
+          "Du gehst davon aus, dass Skalierbarkeit später kommt — zuerst muss die Maschine laufen."
+        ]
+      },
+      negative: {
+        title: "GEH WEITER, WENN",
+        badge: "NEIN",
+        items: [
+          "Du suchst nach einer Zauberformel, um 10k/Monat zu verdienen, ohne etwas anzubieten.",
+          "Du willst 100% delegieren, bevor du überhaupt dein erstes Angebot bestätigt hast.",
+          "Glaubst du, dass ein digitales Business perfekt sein muss, bevor es veröffentlicht wird?",
+          "Du kannst keine 45 Minuten am Tag für eine Woche erübrigen.",
+          "Du erwartest Garantien von einem kostenlosen Programm, die kein kostenpflichtiges Programm zu bieten wagt."
+        ]
+      }
+    },
     feedback: {
       badge: 'WIR HÖREN IHNEN ZU',
       title: 'WIE KÖNNEN WIR UNS VERBESSERN?',
