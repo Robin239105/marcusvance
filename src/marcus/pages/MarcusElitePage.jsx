@@ -888,31 +888,37 @@ const MarcusElitePage = () => {
                       </button>
 
                       {/* Mobile Social Proof */}
-                      <div className="lg:hidden flex flex-col items-center gap-6 mt-8">
-                         <div className="flex -space-x-3">
-                          {['1', '2', '3'].map((i) => (
-                            <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-[#111] overflow-hidden grayscale">
-                              <img src={`/avatars/avatar${i}.webp`} className="w-full h-full object-cover" alt="Alumni" />
+                      <div className="lg:hidden flex flex-row items-center gap-5 mt-10">
+                         <div className="flex -space-x-3.5">
+                          {['1', '2', '3', '4', '5'].map((i) => (
+                            <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-[#111] overflow-hidden grayscale brightness-110">
+                              <img 
+                                src={`/avatars/avatar${i}.${i > 3 ? 'png' : 'webp'}`} 
+                                className="w-full h-full object-cover" 
+                                alt="Alumni" 
+                              />
                             </div>
                           ))}
                         </div>
-                        <div className="space-y-1">
-                          <div className="font-oswald text-white text-xs tracking-[0.2em] font-bold uppercase">{t.marcus.heroStatsJoined}</div>
-                          <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.3em] font-bold">{t.marcus.heroStatsHighPerformers}</div>
+                        <div className="flex flex-col text-left">
+                          <div className="font-oswald text-white text-[10px] tracking-[0.15em] font-bold uppercase leading-tight mb-1">{t.marcus.heroStatsJoined}</div>
+                          <div className="font-oswald text-[#C9A84C] text-[9px] uppercase tracking-[0.15em] font-bold leading-tight">{t.marcus.heroStatsHighPerformers}</div>
                         </div>
                       </div>
 
                       {/* Desktop Social Proof */}
                       <div className="hidden lg:flex items-center gap-10 border-t border-white/5 pt-12 w-full">
                         <div className="text-left">
-                            <div className="font-oswald text-white text-2xl font-bold tracking-tighter">1,031</div>
+                            <div className="font-oswald text-white text-2xl font-bold tracking-tighter">12,024+</div>
                             <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">
-                              {t.marcus.heroStatsJoined?.replace('1,031', '').trim()}
+                              {t.marcus.heroStatsJoined}
                             </div>
                         </div>
                         <div className="text-left">
                             <div className="font-oswald text-[#C9A84C] text-2xl font-bold tracking-tighter">93%</div>
-                            <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">{t.marcus.heroCommunity}</div>
+                            <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">
+                              {t.marcus.heroStatsHighPerformers}
+                            </div>
                         </div>
                       </div>
                   </div>

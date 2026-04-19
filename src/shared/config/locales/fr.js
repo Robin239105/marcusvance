@@ -123,8 +123,8 @@ export const baseFR = {
        part3: '7 JOURS.'
     },
     heroSubtitle: 'LE DÉFI DE 7 JOURS POUR VOTRE PREMIER REVENU NUMÉRIQUE — EN PARTANT DE ZÉRO',
-    heroStatsJoined: '1 031 ENTREPRENEURS ONT COMMENCÉ CE MOIS-CI',
-    heroStatsHighPerformers: '992 HAUTS POTENTIELS ONT COMMENCÉ CE MOIS-CI',
+    heroStatsJoined: 'REJOIGNEZ LA COMMUNAUTÉ DE 12 024+ ALUMNI',
+    heroStatsHighPerformers: '93% DE TAUX DE RÉUSSITE DÈS LE 1ER MOIS',
     heroBullets: [
       '01. LE DÉFI GRATUIT PRODUIT PAR NOS SYSTÈMES D\'IA',
       '02. ACCÈS À LA BIBLIOTHÈQUE LEGACY APRÈS QUALIFICATION'

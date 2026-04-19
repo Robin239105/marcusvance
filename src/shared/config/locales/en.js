@@ -100,8 +100,8 @@ export const baseEN = {
       '02. ACCESS TO THE LEGACY LIBRARY AFTER QUALIFICATION'
     ],
     heroScroll: 'EXPOSE THE SYSTEM',
-    heroStatsJoined: '1,031 ENTREPRENEURS STARTED THIS MONTH',
-    heroStatsHighPerformers: '992 HIGH-PERFORMERS STARTED THIS MONTH',
+    heroStatsJoined: 'JOIN THE 12,024+ ALUMNI COMMUNITY',
+    heroStatsHighPerformers: '93% SUCCESS RATE WITHIN MONTH 1',
     ctaPrimary: 'START MY FREE CHALLENGE →',
     ctaInvestment: 'INVESTMENT: {currency}0.00 / COMPLETELY FREE',
     valueStackHeader: 'TOTAL CHALLENGE VALUE: {currency}806+',
