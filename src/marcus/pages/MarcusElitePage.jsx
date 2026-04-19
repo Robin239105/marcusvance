@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Reveal } from '../../shared/components/Reveal';
 import dynamicStats from '../../shared/utils/dynamicStats';
@@ -253,45 +253,158 @@ const LogoScrollTrack = () => {
   );
 };
 
-const TimelineSection = ({ t, currency }) => {
+const TimelineSection = ({ t }) => {
+  const containerRef = React.useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
   const steps = t.marcus.roadmap.stepsFull || [
-    { day: "Day 01", title: "Offer & Customer Avatar", deliverable: "Offer Sentence", desc: "Define exactly who you help, what transformation you deliver, and how you communicate it in one precise sentence. This sentence becomes the headline of everything." },
-    { day: "Day 02", title: "Lead Magnet + Capture Page Live", deliverable: "Live Page", desc: "Build a high-value lead magnet and launch your capture page. Your automated welcome email delivers it within minutes of opt-in." },
-    { day: "Day 03", title: "5-Email Nurturing Sequence Activated", deliverable: "Email Logic", desc: "Configure the complete trust-building email sequence: delivery, empathy, proof, offer, close — running automatically 24/7." },
-    { day: "Day 04", title: "Hubspot CRM Connected", deliverable: "CRM Wired", desc: "Wired to your funnel via automation. Every lead is tracked in a live pipeline. No warm prospect ever falls through the cracks again." },
-    { day: "Day 05", title: "Sales Page Published", deliverable: "Sales Funnel", desc: "A complete sales page live online: transformation headline, value stack, proof, and CTAs — available to prospects globally." },
-    { day: "Day 06", title: "Payment & Booking Active", deliverable: "Payout Mode", desc: "Payment or Cal.com connected to your offer page. You can now take payments or book qualified calls — completely automated." },
-    { day: "Day 07", title: "Launch & First Traffic", deliverable: "Open for Biz", desc: "Full funnel tested on mobile and launched to your first real leads. Your business infrastructure is live. What comes next is shown on Day 7." }
+    { day: "Day 01", title: "Offer & Customer Avatar", deliverable: "Offer Sentence", desc: "Define exactly who you help, what transformation you deliver, and how you communicate it in one precise sentence." },
+    { day: "Day 02", title: "Lead Magnet + Capture Page Live", deliverable: "Live Page", desc: "Build a high-value lead magnet and launch your capture page. Your automated welcome email delivers it within minutes." },
+    { day: "Day 03", title: "5-Email Nurturing Sequence", deliverable: "Email Logic", desc: "Configure the complete trust-building email sequence: delivery, empathy, proof, offer, close — running 24/7." },
+    { day: "Day 04", title: "Hubspot CRM Connected", deliverable: "CRM Wired", desc: "Wired to your funnel via automation. Every lead is tracked in a live pipeline. No prospect falls through the cracks." },
+    { day: "Day 05", title: "Sales Page Published", deliverable: "Sales Funnel", desc: "A complete sales page live online: transformation headline, value stack, proof, and CTAs available globally." },
+    { day: "Day 06", title: "Payment & Booking Active", deliverable: "Payout Mode", desc: "Payment or Cal.com connected to your offer page. You can now take payments or book qualified calls — automated." },
+    { day: "Day 07", title: "Launch & First Traffic", deliverable: "Open for Biz", desc: "Full funnel tested and launched to your first real leads. Your business infrastructure is live. The protocol is active." }
   ];
 
-  const targetDay = t.marcus.days[dynamicStats.targetDayIndex];
-  const roadmapSubtitleTranslated = t.marcus.ui.commonHeadings?.roadmapSubtitle?.replace('{day}', targetDay);
+  const N = steps.length;
 
   return (
-    <section className="py-32 bg-[#000000]" id="roadmap">
-      <div className="max-w-7xl mx-auto px-6">
-        <SectionHeading 
-          pre={t.marcus.ui.commonHeadings?.roadmapPre || t.marcus.programme.stage01Badge}
-          title={t.marcus.ui.commonHeadings?.roadmapTitle || "The 7-Day Challenge Roadmap"}
-          subTitleItalic={t.marcus.ui.commonHeadings?.roadmapSubtitleItalic}
-          subtitle={roadmapSubtitleTranslated || "Each day produces a live, working asset. By Day 7, you have a complete business — not a notebook of ideas."}
+    <section ref={containerRef} className="relative h-[800vh] bg-[#000000]" id="roadmap">
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+        
+        {/* --- Background Ambient Glow --- */}
+        <motion.div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: useTransform(
+              scrollYProgress,
+              [0, 0.2, 0.4, 0.6, 0.8, 1],
+              [
+                "radial-gradient(circle at 60% 40%, rgba(200,169,110,0.1) 0%, transparent 70%)",
+                "radial-gradient(circle at 30% 60%, rgba(200,169,110,0.08) 0%, transparent 70%)",
+                "radial-gradient(circle at 70% 30%, rgba(200,169,110,0.1) 0%, transparent 70%)",
+                "radial-gradient(circle at 45% 55%, rgba(200,169,110,0.08) 0%, transparent 70%)",
+                "radial-gradient(circle at 55% 45%, rgba(200,169,110,0.09) 0%, transparent 70%)",
+                "radial-gradient(circle at 50% 40%, rgba(200,169,110,0.12) 0%, transparent 70%)"
+              ]
+            )
+          }}
         />
-        <div className="relative pl-8 md:pl-16 border-l border-white/10 space-y-12">
-          {steps.map((step, idx) => (
-            <Reveal key={idx} delay={idx * 0.1}>
-              <div className="relative">
-                <div className="absolute -left-[35px] md:-left-[67px] top-6 w-3 h-3 bg-[#C9A84C] rounded-full shadow-[0_0_15px_#C9A84C]" />
-                <div className="mv-glass-card p-10 group relative">
-                    <div className="flex flex-wrap items-center gap-4 mb-6">
-                        <span className="font-oswald text-[#C9A84C] text-3xl tracking-widest font-bold">{step.day}</span>
-                        <span className="font-oswald bg-[#C9A84C]/10 text-[#C9A84C] text-[10px] font-bold px-3 py-1 rounded uppercase tracking-[0.2em]">{step.deliverable}</span>
-                    </div>
-                    <h3 className="font-oswald text-3xl text-white mb-4 group-hover:text-[#C9A84C] transition-colors font-bold uppercase">{step.title}</h3>
-                    <p className="text-[#A3A3A3] text-lg leading-relaxed max-w-2xl font-light">{step.desc}</p>
+
+        {/* --- Scrolling Stage --- */}
+        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
+          {steps.map((step, i) => {
+            const startProgress = i / N;
+            const endProgress = (i + 1) / N;
+            
+            // Custom transform ranges for cinematic effect
+            // focusPoint is the middle of the 'active' scroll range for this step
+            const focusPoint = (startProgress + endProgress) / 2;
+            
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const opacity = useTransform(
+              scrollYProgress,
+              [startProgress, focusPoint, endProgress],
+              [0, 1, 0]
+            );
+
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const y = useTransform(
+              scrollYProgress,
+              [startProgress, focusPoint, endProgress],
+              [100, 0, -100]
+            );
+
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const scale = useTransform(
+              scrollYProgress,
+              [startProgress, focusPoint, endProgress],
+              [0.9, 1, 0.9]
+            );
+
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const blur = useTransform(
+              scrollYProgress,
+              [startProgress, focusPoint - 0.1, focusPoint, focusPoint + 0.1, endProgress],
+              ["blur(10px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(10px)"]
+            );
+
+            return (
+              <motion.div
+                key={i}
+                className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
+                style={{ opacity, y, scale, filter: blur, pointerEvents: useTransform(opacity, o => o > 0.5 ? 'auto' : 'none') }}
+              >
+                <div className="max-w-4xl">
+                  <div className="flex items-center justify-center gap-6 mb-8">
+                    <span className="font-dm-mono text-[#C9A84C] text-xs tracking-[0.4em] uppercase opacity-70 flex items-center gap-4">
+                      {step.day} <span className="w-12 h-[1px] bg-[#C9A84C]/30" />
+                    </span>
+                    <span className="font-oswald bg-[#C9A84C]/10 text-[#C9A84C] text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-[0.2em] border border-[#C9A84C]/20">
+                      {step.deliverable}
+                    </span>
+                  </div>
+                  
+                  <h2 className="font-oswald text-[6vw] md:text-[80px] leading-[0.95] text-white uppercase font-black tracking-tighter mb-8">
+                    {step.title.split(' ').map((word, idx) => (
+                      <React.Fragment key={idx}>
+                        {idx % 2 === 1 ? <em className="italic text-[#C9A84C] not-italic">{word} </em> : word + ' '}
+                      </React.Fragment>
+                    ))}
+                  </h2>
+
+                  <p className="text-[#A3A3A3] text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto italic opacity-80">
+                    {step.desc}
+                  </p>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* --- Navigation Indicator --- */}
+        <div className="fixed right-10 top-1/2 -translate-y-1/2 z-[200] flex flex-col items-center gap-6">
+          <div className="absolute top-0 bottom-0 w-[1px] bg-white/10 left-1/2 -translate-x-1/2" />
+          {steps.map((_, i) => {
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const dotOpacity = useTransform(
+              scrollYProgress,
+              [i / N, (i + 0.5) / N, (i + 1) / N],
+              [0.3, 1, 0.3]
+            );
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const dotScale = useTransform(
+              scrollYProgress,
+              [i / N, (i + 0.5) / N, (i + 1) / N],
+              [1, 1.5, 1]
+            );
+
+            return (
+              <motion.button
+                key={i}
+                onClick={() => {
+                  const target = (i / N) * containerRef.current.offsetHeight;
+                  window.scrollTo({ top: containerRef.current.offsetTop + target, behavior: 'smooth' });
+                }}
+                className="relative w-2 h-2 rounded-full bg-[#C9A84C]"
+                style={{ opacity: dotOpacity, scale: dotScale }}
+              />
+            );
+          })}
+        </div>
+
+        {/* --- Day Label --- */}
+        <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-[200] font-oswald text-[10px] tracking-[0.4em] text-[#6A6A6A] uppercase font-bold">
+           <motion.span>
+              {useTransform(scrollYProgress, p => {
+                const day = Math.min(N, Math.floor(p * N) + 1);
+                return `${String(day).padStart(2, '0')} / 07`;
+              })}
+           </motion.span>
         </div>
       </div>
     </section>
