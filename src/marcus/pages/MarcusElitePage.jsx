@@ -104,8 +104,16 @@ const ScrollProgress = () => {
 };
 
 const UrgencyBar = ({ t }) => (
-  <div className="bg-[#C9A84C] py-2 px-6 text-center text-xs font-oswald font-bold tracking-[0.2em] text-black uppercase relative z-[1000] shadow-xl">
-    {t.marcus.urgencyBar}
+  <div className="bg-[#C9A84C] py-2.5 overflow-hidden relative z-[1000] shadow-xl border-b border-black/5">
+    <div className="flex whitespace-nowrap animate-marquee">
+      {[...Array(10)].map((_, i) => (
+        <span key={i} className="mx-12 flex items-center font-oswald text-[10px] md:text-xs font-bold tracking-[0.3em] text-black uppercase">
+          <span className="mr-3 opacity-60">⚡</span>
+          {t.marcus.urgencyBar}
+          <span className="ml-15"></span>
+        </span>
+      ))}
+    </div>
   </div>
 );
 
