@@ -534,25 +534,7 @@ const FinalCTA = ({ t }) => (
   </section>
 );
 
-const TheVoice = ({ t }) => (
-  <section className="py-40 relative overflow-hidden bg-[#000000]">
-    <div className="max-w-5xl mx-auto px-8 relative z-10 text-center">
-      <Reveal>
-        <div className="font-oswald text-[#C9A84C] tracking-[0.4em] text-xs font-bold mb-12 uppercase">{t.marcus.ui.voice}</div>
-        <blockquote className="font-oswald text-4xl md:text-6xl text-white leading-[1.1] mb-12 uppercase font-bold tracking-tight">
-          "{t.marcus.ui.voiceQuote?.line1 || "The digital era doesn't reward hard work."} <br/>
-          {t.marcus.ui.voiceQuote?.line2?.replace('{highLeverage}', '') || "It rewards "} <span className="text-[#C9A84C]">{t.marcus.ui.voiceQuote?.highLeverage || "High-Leverage Systems"}</span> {t.marcus.ui.voiceQuote?.line2?.split('}')[1] || " that run while you sleep."}"
-        </blockquote>
-        <div className="w-12 h-1px bg-[#C9A84C]/30 mx-auto mb-12" />
-        <p className="text-[#A3A3A3] text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
-          {t.marcus.ui.voiceQuote?.bio || "I've spent the last decade distilling complex wealth generation models into one repeatable protocol. The 7-Day Challenge isn't just a course—it's your baptism into the elite digital economy."}
-        </p>
-      </Reveal>
-    </div>
-    {/* Background accent */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] bg-[#C9A84C]/[0.02] blur-[150px] -z-10" />
-  </section>
-);
+
 
 
 
@@ -1029,12 +1011,7 @@ const MarcusElitePage = () => {
         <QualificationSection t={t} />
         <GraduatesSection t={t} />
         <GuaranteeSection t={t} />
-        <TheVoice t={t} />
-
-
-
         <FAQSection t={t} />
-
         <FinalCTA t={t} />
 
       </main>
