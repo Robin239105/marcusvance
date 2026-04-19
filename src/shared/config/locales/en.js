@@ -91,8 +91,8 @@ export const baseEN = {
     },
     heroTitle: {
        part1: 'YOUR FIRST',
-       part2: 'DIGITAL',
-       part3: 'SYSTEM IN 7 DAYS.'
+       part2: 'HIGH-INCOME STREAM.',
+       part3: '7 DAYS.'
     },
     heroSubtitle: 'THE 7-DAY CHALLENGE TO YOUR FIRST DIGITAL INCOME — STARTING FROM SCRATCH',
     heroBullets: [
@@ -100,7 +100,8 @@ export const baseEN = {
       '02. ACCESS TO THE LEGACY LIBRARY AFTER QUALIFICATION'
     ],
     heroScroll: 'EXPOSE THE SYSTEM',
-    heroStats: `{count} HIGH-PERFORMERS JOINED THE CHALLENGE THIS MONTH`,
+    heroStatsJoined: '1,031 ENTREPRENEURS STARTED THIS MONTH',
+    heroStatsHighPerformers: '992 HIGH-PERFORMERS STARTED THIS MONTH',
     ctaPrimary: 'START MY FREE CHALLENGE →',
     ctaInvestment: 'INVESTMENT: {currency}0.00 / COMPLETELY FREE',
     valueStackHeader: 'TOTAL CHALLENGE VALUE: {currency}806+',

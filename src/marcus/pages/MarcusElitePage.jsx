@@ -104,7 +104,7 @@ const ScrollProgress = () => {
 };
 
 const UrgencyBar = ({ t }) => (
-  <div className="animate-shinebar py-2 px-6 text-center text-xs font-oswald font-bold tracking-widest text-black uppercase relative z-[1000]">
+  <div className="bg-[#C9A84C] py-2 px-6 text-center text-xs font-oswald font-bold tracking-[0.2em] text-black uppercase relative z-[1000] shadow-xl">
     {t.marcus.urgencyBar}
   </div>
 );
@@ -865,23 +865,19 @@ const MarcusElitePage = () => {
       <ToastNotification />
 
       {/* --- Header / Nav --- */}
-      <nav className={`fixed top-[20px] left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
           <Link to={homePath} className="flex items-center gap-4 group">
             <img src="/marcus-logo.png" alt="Marcus Vance Logo" className="h-20 md:h-24 w-auto object-contain transition-all" />
           </Link>
           
           <div className="hidden lg:flex items-center gap-10 font-oswald text-[11px] tracking-[0.25em] font-bold uppercase text-[#A3A3A3]">
-            <a href="#library" onClick={(e) => handleNav(e, 'library')} className="hover:text-white transition-colors">{t.marcus.nav.method}</a>
-            <Link to={getLocalizedPath('/philosophy')} className="hover:text-white transition-colors">{t.marcus.nav.philosophy}</Link>
-            <a href="#roadmap" onClick={(e) => handleNav(e, 'roadmap')} className="hover:text-white transition-colors">{t.marcus.nav.challenge}</a>
-            <a href="#faq" onClick={(e) => handleNav(e, 'faq')} className="hover:text-white transition-colors">{t.marcus.nav.faq}</a>
-            <LanguageSwitcher variant="marcus" />
-            <button onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} className="bg-[#C9A84C] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap ml-4">{t.marcus.navStartBtn}</button>
+             <LanguageSwitcher variant="marcus" />
+             <button onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} className="bg-[#C9A84C] text-black px-6 py-2.5 hover:bg-white transition-all shadow-lg font-bold whitespace-nowrap">{t.marcus.navStartBtn}</button>
           </div>
 
           <div className="lg:hidden text-right flex items-center gap-4">
-             <button onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase whitespace-nowrap">{t.marcus.ui.startBtn}</button>
+             <button onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} className="bg-[#C9A84C] text-black px-4 py-2 text-[10px] font-bold tracking-widest uppercase">{t.marcus.ui.startBtn}</button>
              <LanguageSwitcher variant="marcus" />
           </div>
         </div>
@@ -889,84 +885,64 @@ const MarcusElitePage = () => {
 
       <main>
         {/* --- Hero Section --- */}
-        <section className="relative pt-[120px] lg:pt-[220px] pb-32 overflow-hidden" id="about">
+        <section className="relative pt-[180px] lg:pt-[260px] pb-32 overflow-hidden" id="about">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[700px] bg-[#C9A84C]/[0.05] blur-[150px] rounded-full -translate-y-1/2 pointer-events-none" />
           
-          <div className="max-w-7xl mx-auto px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center text-left">
-              <div>
-                <Reveal>
-                  <div className="inline-flex items-center gap-3 border border-[#C9A84C]/30 bg-[#C9A84C]/10 px-4 py-1.5 rounded-full mb-8">
-                    <span className="w-1.5 h-1.5 bg-[#22c55e] rounded-full animate-pulse" />
-                    <span className="font-oswald text-[#C9A84C] text-[10px] font-bold tracking-[0.4em] uppercase">{t.marcus.heroPreHeader}</span>
-                  </div>
-                </Reveal>
-                
-                <Reveal delay={0.1}>
-                  <h1 className="font-barlow-cond text-[13vw] min-[400px]:text-[64px] md:text-[90px] lg:text-[110px] leading-[0.85] text-white tracking-tighter mb-10 uppercase font-extrabold break-words">
-                    {t.marcus.heroTitle.part1}<br/>
-                    <span className="mv-text-gold-gradient">{t.marcus.heroTitle.part2}</span><br/>
-                    {t.marcus.heroTitle.part3}
-                  </h1>
-                </Reveal>
+          <div className="max-w-4xl mx-auto px-8 relative z-10">
+            <div className="flex flex-col items-center text-center">
+              <Reveal>
+                <div className="flex items-center gap-3 border-l-2 border-[#C9A84C] bg-white/[0.03] px-6 py-2 mb-12">
+                  <span className="font-oswald text-[#C9A84C] text-[11px] font-bold tracking-[0.4em] uppercase">{t.marcus.heroPreHeader}</span>
+                </div>
+              </Reveal>
+              
+              <Reveal delay={0.1}>
+                <h1 className="font-oswald text-[13vw] min-[400px]:text-[64px] md:text-[90px] lg:text-[120px] leading-[0.85] text-white tracking-tighter mb-12 uppercase font-black">
+                  {t.marcus.heroTitle.part1}<br/>
+                  {t.marcus.heroTitle.part2}<br/>
+                  <span className="text-[#C9A84C]">{t.marcus.heroTitle.part3}</span>
+                </h1>
+              </Reveal>
 
-                <Reveal delay={0.2}>
-                  <div className="flex flex-col gap-5 mb-12">
-                    {t.marcus.heroBullets.map((bullet, idx) => (
-                      <div key={idx} className="flex items-center gap-4 group">
-                        <div className="w-1.5 h-1.5 bg-[#C9A84C] group-hover:scale-125 transition-transform" />
-                        <span className="font-oswald text-white/50 text-xs md:text-[13px] tracking-[0.15em] uppercase group-hover:text-[#C9A84C] transition-colors leading-none">
-                          {bullet}
-                        </span>
+              <Reveal delay={0.2}>
+                <p className="font-oswald text-white/60 text-sm md:text-lg tracking-[0.1em] uppercase italic mb-16 max-w-2xl leading-relaxed">
+                  {t.marcus.heroSubtitle}
+                </p>
+              </Reveal>
+
+              <Reveal delay={0.3}>
+                <div className="flex flex-col items-center gap-8 w-full">
+                    <div className="font-oswald text-[#C9A84C] text-[11px] tracking-[0.3em] font-bold uppercase">
+                      {t.marcus.valueStackHeader.replace('{currency}', '$')}
+                    </div>
+                    
+                    <button 
+                      onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} 
+                      className="w-full sm:w-auto bg-[#C9A84C] text-black px-16 py-7 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-extrabold mv-glow whitespace-nowrap"
+                    >
+                      {t.marcus.ctaPrimary}
+                    </button>
+
+                    <div className="flex flex-col items-center gap-6 mt-8">
+                       <div className="flex -space-x-3">
+                        {['1', '2', '3'].map((i) => (
+                          <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-[#111] overflow-hidden grayscale">
+                            <img src={`/avatars/avatar${i}.webp`} className="w-full h-full object-cover" alt="Alumni" />
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </Reveal>
-
-                <Reveal delay={0.3}>
-                  <div className="flex flex-col sm:flex-row items-center gap-6">
-                      <button 
-                        onClick={() => {setIsEnrollOpen(true); setHasTriggeredPopup(true);}} 
-                        className="w-full sm:w-auto bg-[#C9A84C] text-black px-12 py-6 font-oswald text-xl tracking-widest hover:bg-white transition-all shadow-2xl uppercase font-extrabold mv-glow whitespace-nowrap"
-                      >
-                        {t.marcus.ctaPrimary}
-                      </button>
-                  </div>
-                </Reveal>
-
-                <Reveal delay={0.4}>
-                  <div className="mt-12 flex items-center gap-10 border-t border-white/5 pt-12">
-                     <div className="text-left">
-                        <div className="font-oswald text-white text-2xl font-bold tracking-tighter">1,031</div>
-                        <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">
-                           {t.marcus.heroStats.replace('{count}', '').trim()}
+                      
+                      <div className="space-y-1">
+                        <div className="font-oswald text-white text-xs tracking-[0.2em] font-bold uppercase">
+                          {t.marcus.heroStatsJoined}
                         </div>
-                     </div>
-                     <div className="text-left">
-                        <div className="font-oswald text-[#C9A84C] text-2xl font-bold tracking-tighter">93%</div>
-                        <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.2em] font-bold">{t.marcus.heroCommunity}</div>
-                     </div>
-                  </div>
-                </Reveal>
-              </div>
-
-              <div className="relative">
-                <Reveal delay={0.3} direction="left">
-                   <div className="relative z-10 w-full aspect-[4/5] bg-neutral-900 overflow-hidden shadow-2xl border border-white/5 group/portrait">
-                      <img 
-                        src="/marcus-standing.webp" 
-                        alt="Marcus Vance"
-                        className="w-full h-full object-cover grayscale brightness-110 contrast-110 group-hover:scale-105 transition-transform duration-700"
-                      />
-                      {/* Interactive UI Overlays */}
-                      <div className="absolute top-8 left-8 bg-black/80 backdrop-blur-md border border-white/10 p-4 font-oswald text-[10px] tracking-widest uppercase">
-                         <span className="text-[#C9A84C]">PROTOCOL:</span> VERIFIED
+                        <div className="font-oswald text-[#6A6A6A] text-[9px] uppercase tracking-[0.3em] font-bold">
+                           {t.marcus.heroStatsHighPerformers}
+                        </div>
                       </div>
-                   </div>
-                   {/* Cinematic background elements */}
-                   <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#C9A84C]/10 blur-[100px] rounded-full pointer-events-none" />
-                </Reveal>
-              </div>
+                    </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </section>
