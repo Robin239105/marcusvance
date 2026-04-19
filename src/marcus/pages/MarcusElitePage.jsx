@@ -270,10 +270,24 @@ const TimelineSection = ({ t }) => {
     { day: "Day 07", title: "Launch & First Traffic", deliverable: "Open for Biz", desc: "Full funnel tested and launched to your first real leads. Your business infrastructure is live. The protocol is active." }
   ];
 
-  const N = steps.length;
+  const targetDay = t.marcus.days?.[dynamicStats?.targetDayIndex] || "Wednesday";
+  const roadmapSubtitleTranslated = t.marcus.ui.commonHeadings?.roadmapSubtitle?.replace('{day}', targetDay);
+
+  const combinedSteps = [
+    {
+      isIntro: true,
+      pre: t.marcus.ui.commonHeadings?.roadmapPre || "Phase 01",
+      title: t.marcus.ui.commonHeadings?.roadmapTitle || "The 7-Day Challenge Roadmap",
+      italic: t.marcus.ui.commonHeadings?.roadmapSubtitleItalic,
+      desc: roadmapSubtitleTranslated || "Each day produces a live, working asset. By Day 7, you have a complete business."
+    },
+    ...steps
+  ];
+
+  const N = combinedSteps.length;
 
   return (
-    <section ref={containerRef} className="relative h-[800vh] bg-[#000000]" id="roadmap">
+    <section ref={containerRef} className="relative h-[900vh] bg-[#000000]" id="roadmap">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         
         {/* --- Background Ambient Glow --- */}
@@ -296,91 +310,120 @@ const TimelineSection = ({ t }) => {
         />
 
         {/* --- Scrolling Stage --- */}
-        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
-          {steps.map((step, i) => {
+        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full h-full">
+          {combinedSteps.map((step, i) => {
             const startProgress = i / N;
             const endProgress = (i + 1) / N;
-            
-            // Custom transform ranges for cinematic effect
-            // focusPoint is the middle of the 'active' scroll range for this step
             const focusPoint = (startProgress + endProgress) / 2;
             
+            // For the first step (Intro), start fully visible and fade out
+            const opacityRange = i === 0 
+                ? [0, startProgress, focusPoint, endProgress] 
+                : [startProgress, focusPoint, endProgress];
+            const opacityValues = i === 0 
+                ? [1, 1, 1, 0] 
+                : [0, 1, 0];
+
             // eslint-disable-next-line react-hooks/rules-of-hooks
-            const opacity = useTransform(
-              scrollYProgress,
-              [startProgress, focusPoint, endProgress],
-              [0, 1, 0]
-            );
+            const opacity = useTransform(scrollYProgress, opacityRange, opacityValues);
 
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const y = useTransform(
               scrollYProgress,
               [startProgress, focusPoint, endProgress],
-              [100, 0, -100]
+              [i === 0 ? 0 : 100, 0, -100]
             );
 
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const scale = useTransform(
               scrollYProgress,
               [startProgress, focusPoint, endProgress],
-              [0.9, 1, 0.9]
+              [i === 0 ? 1 : 0.9, 1, 0.9]
             );
 
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const blur = useTransform(
               scrollYProgress,
-              [startProgress, focusPoint - 0.1, focusPoint, focusPoint + 0.1, endProgress],
-              ["blur(10px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(10px)"]
+              [startProgress, focusPoint - 0.05, focusPoint, focusPoint + 0.05, endProgress],
+              [i === 0 ? "blur(0px)" : "blur(10px)", "blur(0px)", "blur(0px)", "blur(0px)", "blur(10px)"]
             );
 
             return (
               <motion.div
                 key={i}
                 className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
-                style={{ opacity, y, scale, filter: blur, pointerEvents: useTransform(opacity, o => o > 0.5 ? 'auto' : 'none') }}
+                style={{ 
+                  opacity, 
+                  y, 
+                  scale, 
+                  filter: blur, 
+                  pointerEvents: useTransform(opacity, o => o > 0.4 ? 'auto' : 'none'),
+                  zIndex: useTransform(opacity, o => Math.round(o * 100))
+                }}
               >
-                <div className="max-w-4xl">
-                  <div className="flex items-center justify-center gap-6 mb-8">
-                    <span className="font-dm-mono text-[#C9A84C] text-xs tracking-[0.4em] uppercase opacity-70 flex items-center gap-4">
-                      {step.day} <span className="w-12 h-[1px] bg-[#C9A84C]/30" />
-                    </span>
-                    <span className="font-oswald bg-[#C9A84C]/10 text-[#C9A84C] text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-[0.2em] border border-[#C9A84C]/20">
-                      {step.deliverable}
-                    </span>
-                  </div>
-                  
-                  <h2 className="font-oswald text-[6vw] md:text-[80px] leading-[0.95] text-white uppercase font-black tracking-tighter mb-8">
-                    {step.title.split(' ').map((word, idx) => (
-                      <React.Fragment key={idx}>
-                        {idx % 2 === 1 ? <em className="italic text-[#C9A84C] not-italic">{word} </em> : word + ' '}
-                      </React.Fragment>
-                    ))}
-                  </h2>
+                <div className="max-w-5xl">
+                   {step.isIntro ? (
+                     <div className="space-y-8">
+                        <span className="font-oswald text-[#C9A84C] tracking-[0.4em] text-sm md:text-base uppercase block font-bold">
+                          {step.pre}
+                        </span>
+                        <h2 className="font-oswald text-[10vw] md:text-[110px] text-white leading-[0.85] uppercase tracking-tighter font-black">
+                          {step.title}
+                        </h2>
+                        {step.italic && (
+                          <p className="font-oswald text-[#C9A84C] text-2xl md:text-4xl italic tracking-wider font-medium opacity-90">
+                            {step.italic}
+                          </p>
+                        )}
+                        <p className="text-[#A3A3A3] text-lg md:text-2xl font-light max-w-3xl mx-auto leading-relaxed opacity-70">
+                          {step.desc}
+                        </p>
+                     </div>
+                   ) : (
+                    <>
+                      <div className="flex items-center justify-center gap-6 mb-8">
+                        <span className="font-dm-mono text-[#C9A84C] text-xs tracking-[0.4em] uppercase opacity-70 flex items-center gap-4">
+                          {step.day} <span className="w-12 h-[1px] bg-[#C9A84C]/30" />
+                        </span>
+                        <span className="font-oswald bg-[#C9A84C]/10 text-[#C9A84C] text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-[0.2em] border border-[#C9A84C]/20">
+                          {step.deliverable}
+                        </span>
+                      </div>
+                      
+                      <h2 className="font-oswald text-[6vw] md:text-[80px] leading-[0.95] text-white uppercase font-black tracking-tighter mb-8">
+                        {step.title.split(' ').map((word, idx) => (
+                          <React.Fragment key={idx}>
+                            {idx % 2 === 1 ? <em className="italic text-[#C9A84C] not-italic">{word} </em> : word + ' '}
+                          </React.Fragment>
+                        ))}
+                      </h2>
 
-                  <p className="text-[#A3A3A3] text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto italic opacity-80">
-                    {step.desc}
-                  </p>
+                      <p className="text-[#A3A3A3] text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto italic opacity-80">
+                        {step.desc}
+                      </p>
+                    </>
+                   )}
                 </div>
               </motion.div>
             );
           })}
         </div>
 
-        {/* --- Navigation Indicator --- */}
-        <div className="fixed right-10 top-1/2 -translate-y-1/2 z-[200] flex flex-col items-center gap-6">
+        {/* --- Navigation Indicator (Absolute to section) --- */}
+        <div className="absolute right-10 top-1/2 -translate-y-1/2 z-[200] flex flex-col items-center gap-6">
           <div className="absolute top-0 bottom-0 w-[1px] bg-white/10 left-1/2 -translate-x-1/2" />
-          {steps.map((_, i) => {
+          {combinedSteps.map((_, i) => {
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const dotOpacity = useTransform(
               scrollYProgress,
               [i / N, (i + 0.5) / N, (i + 1) / N],
-              [0.3, 1, 0.3]
+              [i === 0 ? 1 : 0.3, 1, 0.3]
             );
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const dotScale = useTransform(
               scrollYProgress,
               [i / N, (i + 0.5) / N, (i + 1) / N],
-              [1, 1.5, 1]
+              [i === 0 ? 1.5 : 1, 1.5, 1]
             );
 
             return (
@@ -390,7 +433,7 @@ const TimelineSection = ({ t }) => {
                   const target = (i / N) * containerRef.current.offsetHeight;
                   window.scrollTo({ top: containerRef.current.offsetTop + target, behavior: 'smooth' });
                 }}
-                className="relative w-2 h-2 rounded-full bg-[#C9A84C]"
+                className="relative w-2.5 h-2.5 rounded-full bg-[#C9A84C]"
                 style={{ opacity: dotOpacity, scale: dotScale }}
               />
             );
@@ -398,11 +441,12 @@ const TimelineSection = ({ t }) => {
         </div>
 
         {/* --- Day Label --- */}
-        <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-[200] font-oswald text-[10px] tracking-[0.4em] text-[#6A6A6A] uppercase font-bold">
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-[200] font-oswald text-[10px] tracking-[0.4em] text-[#6A6A6A] uppercase font-bold">
            <motion.span>
               {useTransform(scrollYProgress, p => {
-                const day = Math.min(N, Math.floor(p * N) + 1);
-                return `${String(day).padStart(2, '0')} / 07`;
+                const stepIdx = Math.min(N - 1, Math.floor(p * N));
+                if (stepIdx === 0) return "PROTOCOL INITIALIZED";
+                return `${String(stepIdx).padStart(2, '0')} / 07`;
               })}
            </motion.span>
         </div>
