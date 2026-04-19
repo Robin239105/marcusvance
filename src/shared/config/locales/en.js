@@ -332,19 +332,22 @@ export const baseEN = {
           name: "EMAIL FORGE", 
           metric: "98.4%", 
           label: "EFFICIENCY",
-          review: "The technical backbone of our Day 3 automation. Zero latency in broadcast sequences."
+          student: "LUCAS M.",
+          review: "The Email Forge transformed my retention. Open rates jumped from 12% to 44% in 72 hours. Pure efficiency."
         },
         { 
           name: "CAPTURE MODULE", 
           metric: "99.9%", 
           label: "STABILITY",
-          review: "A persistent model for capturing high-potential interest regardless of traffic volume."
+          student: "SOPHIA R.",
+          review: "My system handled 5,400 visitors in one day without a single glitch. This model is exceptionally stable."
         },
         { 
           name: "REVENUE LOGIC", 
           metric: "100%", 
           label: "ACCURACY",
-          review: "Precision wiring between checkout flows and CRM revenue tracking. No data leakage."
+          student: "JULIAN K.",
+          review: "Precision at its finest. I finally have a clear view of my ROI without messy spreadsheets or data leakage."
         }
       ]
     },

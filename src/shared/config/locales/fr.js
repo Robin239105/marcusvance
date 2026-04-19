@@ -303,19 +303,22 @@ export const baseFR = {
           name: "FORGE EMAIL", 
           metric: "98,4%", 
           label: "EFFICACITÉ",
-          review: "Le cœur technique de l'automatisation du Jour 3. Zéro latence dans les séquences de diffusion."
+          student: "LUCAS M.",
+          review: "La Forge Email a transformé ma rétention. Mon taux d'ouverture est passé de 12% à 44% en 72 heures. Une efficacité pure."
         },
         { 
           name: "MODULE DE CAPTURE", 
           metric: "99,9%", 
           label: "STABILITÉ",
-          review: "Un modèle persistant pour capturer l'intérêt à haut potentiel quel que soit le volume de trafic."
+          student: "SOPHIA R.",
+          review: "Mon système a géré 5 400 visiteurs en une journée sans un seul bug. Ce modèle est exceptionnellement stable."
         },
         { 
           name: "LOGIQUE DE REVENU", 
           metric: "100%", 
           label: "PRÉCISION",
-          review: "Câblage de précision entre les flux de paiement et le suivi des revenus CRM."
+          student: "JULIAN K.",
+          review: "La précision à l'état pur. J'ai enfin une vue claire de mon ROI sans tableurs compliqués ni fuite de données."
         }
       ]
     },

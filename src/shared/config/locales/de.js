@@ -306,19 +306,22 @@ export const baseDE = {
           name: "E-MAIL-SCHMIEDE", 
           metric: "98,4%", 
           label: "EFFIZIENZ",
-          review: "Das technische Rückgrat unserer Tag 3 Automatisierung. Keine Latenzzeiten in Broadcast-Sequenzen."
+          student: "LUCAS M.",
+          review: "Die Email-Schmiede hat meine Retention verändert. Die Öffnungsraten stiegen in 72h von 12% auf 44%. Pure Effizienz."
         },
         { 
           name: "LEAD-ERFASSUNGS-MODUL", 
           metric: "99,9%", 
           label: "STABILITÄT",
-          review: "Ein beständiges Modell zur Erfassung von High-Potential-Interessen, unabhängig vom Traffic-Volumen."
+          student: "SOPHIA R.",
+          review: "Mein System bewältigte 5.400 Besucher an einem Tag ohne einen einzigen Fehler. Dieses Modell ist außergewöhnlich stabil."
         },
         { 
           name: "UMSATZ-LOGIK", 
           metric: "100%", 
           label: "GENAUIGKEIT",
-          review: "Präzisionsverkabelung zwischen Checkout-Flows und CRM-Umsatzverfolgung."
+          student: "JULIAN K.",
+          review: "Präzision in Reinform. Ich habe endlich einen klaren Blick auf den ROI ohne unordentliche Tabellenkalkulationen."
         }
       ]
     },

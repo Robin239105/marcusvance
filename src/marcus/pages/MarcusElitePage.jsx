@@ -634,14 +634,24 @@ const DomReviewsSection = ({ t }) => {
                   />
                 </div>
 
-                <p className="text-[#A3A3A3] text-sm font-light leading-relaxed italic uppercase tracking-wider opacity-80 group-hover:opacity-100 transition-opacity">
+                <p className="text-[#A3A3A3] text-sm font-light leading-relaxed italic uppercase tracking-wider opacity-80 group-hover:opacity-100 transition-opacity mb-8">
                   "{item.review}"
                 </p>
                 
-                {/* Technical Meta */}
-                <div className="mt-8 flex items-center gap-3 font-oswald text-[8px] text-[#333] tracking-[0.4em] uppercase font-bold">
-                   <span className="w-1 h-1 bg-[#C9A84C]/30 rounded-full" />
-                   STATUS: VERIFIED BY AUDIT
+                {/* Reviewer Info & Technical Meta */}
+                <div className="mt-auto pt-8 border-t border-white/5 flex items-center justify-between">
+                   <div className="flex items-center gap-4">
+                      <div className="w-8 h-8 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/30 flex items-center justify-center font-oswald text-[10px] text-[#C9A84C] font-bold">
+                        {item.student.split(' ')[0][0]}{item.student.split(' ')[1]?.[0] || ''}
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-oswald text-[10px] text-white font-bold tracking-widest uppercase">{item.student}</span>
+                        <span className="font-oswald text-[8px] text-[#C9A84C] tracking-[0.2em] uppercase font-bold opacity-80">{t.marcus.ui.verifiedAlumni || "VERIFIED ALUMNI"}</span>
+                      </div>
+                   </div>
+                   <div className="font-oswald text-[8px] text-[#333] tracking-[0.2em] uppercase font-bold">
+                      STATUS: OK
+                   </div>
                 </div>
               </div>
             </Reveal>
