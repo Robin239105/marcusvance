@@ -799,10 +799,7 @@ const MarcusElitePage = () => {
         <ProblemSection t={t} />
         <TimelineSection t={t} currency={currency} />
         <LegacyLibrary t={t} currency={currency} />
-        <TheVoice t={t} />
-        <WhoItIsFor t={t} />
-        <QualificationBridge t={t} />
-
+        
         {/* Peek Inside Section with Mockup Animation */}
         <section className="py-32 bg-[#000000] border-t border-white/5 overflow-hidden">
           <div className="max-w-7xl mx-auto px-8">
@@ -834,6 +831,10 @@ const MarcusElitePage = () => {
             </Reveal>
           </div>
         </section>
+
+        <TheVoice t={t} />
+        <WhoItIsFor t={t} />
+        <QualificationBridge t={t} />
 
 
 
