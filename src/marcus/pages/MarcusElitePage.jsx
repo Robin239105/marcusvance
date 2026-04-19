@@ -1002,12 +1002,24 @@ const MarcusElitePage = () => {
                 {t.marcus.ui.tagline}
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
-                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">VISA</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">MASTERCARD</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">AMEX</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/10 rounded font-oswald text-[9px] text-[#A3A3A3] tracking-widest uppercase">APPLE PAY</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#C9A84C] tracking-widest uppercase">₿ BTC</div>
-                <div className="px-3 py-1 bg-white/5 border border-white/20 rounded font-oswald text-[9px] text-[#C9A84C] tracking-widest uppercase">Ξ ETH</div>
+                <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded flex items-center justify-center">
+                  <img src="/payment-visa.png" alt="Visa" className="h-2.5 w-auto object-contain" />
+                </div>
+                <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded flex items-center justify-center">
+                  <img src="/payment-mastercard.png" alt="Mastercard" className="h-3.5 w-auto object-contain" />
+                </div>
+                <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded flex items-center justify-center">
+                  <img src="/payment-amex.png" alt="Amex" className="h-2.5 w-auto object-contain" />
+                </div>
+                <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded flex items-center justify-center">
+                  <img src="/payment-applepay.png" alt="Apple Pay" className="h-3 w-auto object-contain" />
+                </div>
+                <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded flex items-center justify-center">
+                  <img src="/payment-btc.png" alt="BTC" className="h-3 w-auto object-contain" />
+                </div>
+                <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded flex items-center justify-center">
+                  <img src="/payment-eth.png" alt="ETH" className="h-4 w-auto object-contain" />
+                </div>
               </div>
             </div>
 
