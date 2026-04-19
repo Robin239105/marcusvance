@@ -295,6 +295,7 @@ export const baseDE = {
           "Glaubst du, dass ein digitales Business perfekt sein muss, bevor es veröffentlicht wird?",
           "Du kannst keine 45 Minuten am Tag für eine Woche erübrigen.",
           "Du erwartest Garantien von einem kostenlosen Programm, die kein kostenpflichtiges Programm zu bieten wagt."
+        ]
       }
     },
     domReviews: {

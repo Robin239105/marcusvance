@@ -292,6 +292,7 @@ export const baseFR = {
           "Vous pensez qu'un business numérique doit être parfait avant d'être publié.",
           "Vous ne pouvez pas libérer 45 minutes par jour pendant une semaine.",
           "Vous attendez des garanties d'un programme gratuit qu'aucun programme payant n'oserait offrir."
+        ]
       }
     },
     domReviews: {

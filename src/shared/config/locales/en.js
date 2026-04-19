@@ -321,6 +321,7 @@ export const baseEN = {
           "Do you think a digital business needs to be perfect before it's published?",
           "You can't free up 45 minutes a day for a week.",
           "You expect guarantees from a free program that no paid program would dare to offer."
+        ]
       }
     },
     domReviews: {
