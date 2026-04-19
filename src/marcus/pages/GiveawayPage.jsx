@@ -30,7 +30,7 @@ const GiveawayPage = () => {
       <nav className="fixed top-[32px] left-0 right-0 z-[100] bg-black/95 backdrop-blur-md border-b border-white/10 py-4">
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
           <Link to={homePath} className="flex items-center gap-4 group">
-            <img src="/marcus-signature-logo.png" alt="Marcus Vance Logo" className="h-20 md:h-24 w-auto object-contain transition-all" />
+            <img src="/marcus-signature-logo.png" alt="Marcus Vance Logo" className="h-28 md:h-36 w-auto object-contain transition-all" />
           </Link>
           
           <div className="hidden lg:flex items-center gap-10 font-oswald text-[11px] tracking-[0.25em] font-bold uppercase text-[#A3A3A3]">
@@ -116,7 +116,7 @@ const GiveawayPage = () => {
             {/* Brand Column */}
             <div className="space-y-6">
               <Link to={homePath} className="inline-block">
-                <img src="/marcus-signature-logo.png" alt="Marcus Vance Logo" className="h-24 min-[400px]:h-28 w-auto object-contain brightness-110" />
+                <img src="/marcus-signature-logo.png" alt="Marcus Vance Logo" className="h-32 min-[400px]:h-44 w-auto object-contain brightness-110" />
               </Link>
               <p className="text-[#6A6A6A] font-oswald text-[10px] tracking-[0.3em] uppercase leading-relaxed">
                 {t.marcus.ui.tagline}
