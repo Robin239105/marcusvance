@@ -676,7 +676,10 @@ const GuaranteeSection = ({ t }) => {
         />
 
         <Reveal>
-          <div className="mt-20 mv-glass-card p-12 md:p-16 border border-white/10 bg-white/[0.02] relative group overflow-hidden">
+          <Link 
+            to={getLocalizedPath('/terms') + '#section-7'}
+            className="block mt-20 mv-glass-card p-12 md:p-16 border border-white/10 bg-white/[0.02] relative group overflow-hidden cursor-pointer hover:border-[#C9A84C]/40 transition-all"
+          >
             {/* Subtle pulsive glow */}
             <motion.div 
                animate={{ opacity: [0.05, 0.15, 0.05] }}
@@ -704,18 +707,12 @@ const GuaranteeSection = ({ t }) => {
                   {data.goldTitle}
                 </h4>
                 
-                <p className="text-[#A3A3A3] text-sm md:text-base font-light leading-relaxed max-w-2xl mb-10 italic">
+                <p className="text-[#A3A3A3] text-sm md:text-base font-light leading-relaxed max-w-2xl italic">
                   "{data.description}"
                 </p>
-
-                <div className="pt-8 border-t border-white/5">
-                  <p className="font-oswald text-[10px] text-[#444] tracking-[0.2em] uppercase leading-relaxed italic">
-                    {data.legal}
-                  </p>
-                </div>
               </div>
             </div>
-          </div>
+          </Link>
         </Reveal>
       </div>
 
