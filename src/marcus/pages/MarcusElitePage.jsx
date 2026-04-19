@@ -254,30 +254,50 @@ const LogoScrollTrack = () => {
 };
 
 const TimelineStep = ({ step, i, N, scrollYProgress }) => {
-  const center = (i + 0.5) / N;
-  const start = (i - 0.5) / N;
-  const end = (i + 1.5) / N;
-  
-  // Overlapping opacity: Cross-fade logic
-  // Item i is most visible at center. It starts appearing at i/N - buffer and ends at (i+1)/N + buffer.
-  const opacityRange = i === 0 ? [0, 0, center, end] : [start, center, end];
-  const opacityValues = i === 0 ? [1, 1, 1, 0] : [0, 1, 0];
+  // Each step occupies 1/N of scroll. We create OVERLAPPING ranges so there's never a gap.
+  // Clamp all values to [0, 1] — negative values break useTransform.
+  const segmentSize = 1 / N;
+  const midpoint = (i + 0.5) * segmentSize;  // center of this step's segment
+  const fadeIn = Math.max(0, i * segmentSize - segmentSize * 0.3);
+  const fadeOut = Math.min(1, (i + 1) * segmentSize + segmentSize * 0.3);
 
-  const opacity = useTransform(scrollYProgress, opacityRange, opacityValues);
-  const y = useTransform(scrollYProgress, [start, center, end], [i === 0 ? 0 : 80, 0, -80]);
-  const scale = useTransform(scrollYProgress, [start, center, end], [i === 0 ? 1 : 0.96, 1, 0.96]);
-  const blur = useTransform(scrollYProgress, [start, center, end], ["blur(12px)", "blur(0px)", "blur(12px)"]);
+  // For first step: start fully visible, fade out as you scroll
+  const opacityInput = i === 0
+    ? [0, midpoint, fadeOut]
+    : [fadeIn, midpoint, fadeOut];
+  const opacityOutput = i === 0
+    ? [1, 1, 0]
+    : [0, 1, 0];
+
+  const opacity = useTransform(scrollYProgress, opacityInput, opacityOutput);
+  const yVal = useTransform(
+    scrollYProgress,
+    [fadeIn, midpoint, fadeOut],
+    [i === 0 ? 0 : 60, 0, -60]
+  );
+  const scaleVal = useTransform(
+    scrollYProgress,
+    [fadeIn, midpoint, fadeOut],
+    [i === 0 ? 1 : 0.97, 1, 0.97]
+  );
+  const filterVal = useTransform(
+    scrollYProgress,
+    [fadeIn, midpoint, fadeOut],
+    [i === 0 ? "blur(0px)" : "blur(8px)", "blur(0px)", "blur(8px)"]
+  );
+  const pEvents = useTransform(opacity, v => v > 0.3 ? 'auto' : 'none');
+  const zIdx = useTransform(opacity, v => Math.round(v * 100));
 
   return (
     <motion.div
       className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-      style={{ 
-        opacity, 
-        y, 
-        scale, 
-        filter: blur, 
-        pointerEvents: useTransform(opacity, o => o > 0.4 ? 'auto' : 'none'),
-        zIndex: useTransform(opacity, o => Math.round(o * 100))
+      style={{
+        opacity,
+        y: yVal,
+        scale: scaleVal,
+        filter: filterVal,
+        pointerEvents: pEvents,
+        zIndex: zIdx,
       }}
     >
       <div className="max-w-5xl">
@@ -308,7 +328,7 @@ const TimelineStep = ({ step, i, N, scrollYProgress }) => {
                 {step.deliverable}
               </span>
             </div>
-            
+
             <h2 className="font-oswald text-[9vw] md:text-[80px] leading-[0.95] text-white uppercase font-black tracking-tighter mb-10">
               {step.title.split(' ').map((word, idx) => (
                 <React.Fragment key={idx}>
@@ -324,6 +344,26 @@ const TimelineStep = ({ step, i, N, scrollYProgress }) => {
         )}
       </div>
     </motion.div>
+  );
+};
+
+const TimelineNavDot = ({ i, N, scrollYProgress, containerRef }) => {
+  const seg = 1 / N;
+  const mid = Math.max(0, (i + 0.5) * seg);
+  const lo = Math.max(0, mid - seg);
+  const hi = Math.min(1, mid + seg);
+  const dotOpacity = useTransform(scrollYProgress, [lo, mid, hi], [0.2, 1, 0.2]);
+  const dotScale = useTransform(scrollYProgress, [lo, mid, hi], [1, 1.4, 1]);
+
+  return (
+    <motion.button
+      onClick={() => {
+        const scrollOffset = (i / N) * containerRef.current.offsetHeight;
+        window.scrollTo({ top: containerRef.current.offsetTop + scrollOffset, behavior: 'smooth' });
+      }}
+      className="relative w-2.5 h-2.5 rounded-full bg-[#C9A84C] shadow-[0_0_10px_rgba(201,168,76,0.3)] transition-colors hover:bg-white"
+      style={{ opacity: dotOpacity, scale: dotScale }}
+    />
   );
 };
 
@@ -358,14 +398,20 @@ const TimelineSection = ({ t }) => {
     ...steps
   ];
 
-  const N = combinedSteps.length;
+  const N = combinedSteps.length; // 8 (intro + 7 days)
+
+  const phaseLabel = useTransform(scrollYProgress, p => {
+    const stepIdx = Math.min(N - 1, Math.floor(p * N));
+    if (stepIdx === 0) return "PROTOCOL INITIALIZED";
+    return `DAY 0${stepIdx} // DELIVERABLE ACTIVE`;
+  });
 
   return (
-    <section ref={containerRef} className="relative h-[1000vh] bg-[#000000]" id="roadmap">
+    <section ref={containerRef} className="relative bg-[#000000]" id="roadmap" style={{ height: `${N * 100 + 100}vh` }}>
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        
+
         {/* --- Background Ambient Glow --- */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0 pointer-events-none"
           style={{
             background: useTransform(
@@ -393,26 +439,9 @@ const TimelineSection = ({ t }) => {
         {/* --- Navigation Indicator (Absolute to section) --- */}
         <div className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-[200] flex flex-col items-center gap-8">
           <div className="absolute top-0 bottom-0 w-[1px] bg-white/5 left-1/2 -translate-x-1/2" />
-          {combinedSteps.map((_, i) => {
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            const dotActiveRange = [(i - 0.5) / N, (i + 0.5) / N, (i + 1.5) / N];
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            const dotOpacity = useTransform(scrollYProgress, dotActiveRange, [0.2, 1, 0.2]);
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            const dotScale = useTransform(scrollYProgress, dotActiveRange, [1, 1.4, 1]);
-
-            return (
-              <motion.button
-                key={i}
-                onClick={() => {
-                  const scrollOffset = (i / N) * containerRef.current.offsetHeight;
-                  window.scrollTo({ top: containerRef.current.offsetTop + scrollOffset, behavior: 'smooth' });
-                }}
-                className="relative w-2.5 h-2.5 rounded-full bg-[#C9A84C] shadow-[0_0_10px_rgba(201,168,76,0.3)] transition-colors hover:bg-white"
-                style={{ opacity: dotOpacity, scale: dotScale }}
-              />
-            );
-          })}
+          {combinedSteps.map((_, i) => (
+            <TimelineNavDot key={i} i={i} N={N} scrollYProgress={scrollYProgress} containerRef={containerRef} />
+          ))}
         </div>
 
         {/* --- Phase / Progress Indicator --- */}
@@ -421,11 +450,7 @@ const TimelineSection = ({ t }) => {
            <div className="flex flex-col">
               <span className="font-oswald text-[10px] tracking-[0.4em] text-[#6A6A6A] uppercase font-bold mb-1">CURRENT PHASE</span>
               <motion.span className="font-oswald text-xs tracking-[0.2em] text-[#C9A84C] uppercase font-bold">
-                {useTransform(scrollYProgress, p => {
-                  const stepIdx = Math.min(N - 1, Math.floor(p * N));
-                  if (stepIdx === 0) return "PROTOCOL INITIALIZED";
-                  return `DAY 0${stepIdx} // DELIVERABLE ACTIVE`;
-                })}
+                {phaseLabel}
               </motion.span>
            </div>
         </div>
