@@ -600,6 +600,61 @@ const QualificationSection = ({ t }) => {
   );
 };
 
+const DomReviewsSection = ({ t }) => {
+  const data = t.marcus.domReviews;
+  if (!data) return null;
+
+  return (
+    <section className="py-32 bg-[#050505] border-y border-white/5 relative overflow-hidden" id="dom-reviews">
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <SectionHeading 
+          pre={data.pre}
+          title={data.title}
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+          {data.items.map((item, i) => (
+            <Reveal key={i} delay={i * 0.1}>
+              <div className="mv-glass-card p-10 border border-white/5 bg-white/[0.01] hover:border-[#C9A84C]/20 transition-all group h-full relative">
+                <div className="flex justify-between items-start mb-8">
+                  <h3 className="font-oswald text-xl text-white font-bold tracking-[0.2em] uppercase">{item.name}</h3>
+                  <div className="text-right">
+                    <div className="font-oswald text-[#C9A84C] text-2xl font-black tracking-tighter">{item.metric}</div>
+                    <div className="font-oswald text-[8px] text-[#6A6A6A] tracking-[0.3em] font-bold uppercase">{item.label}</div>
+                  </div>
+                </div>
+                
+                {/* Technical Progress Bar */}
+                <div className="w-full h-[1px] bg-white/5 mb-8 relative">
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    whileInView={{ width: item.metric }}
+                    transition={{ duration: 1.5, delay: 0.5 }}
+                    className="absolute top-0 left-0 h-full bg-[#C9A84C]"
+                  />
+                </div>
+
+                <p className="text-[#A3A3A3] text-sm font-light leading-relaxed italic uppercase tracking-wider opacity-80 group-hover:opacity-100 transition-opacity">
+                  "{item.review}"
+                </p>
+                
+                {/* Technical Meta */}
+                <div className="mt-8 flex items-center gap-3 font-oswald text-[8px] text-[#333] tracking-[0.4em] uppercase font-bold">
+                   <span className="w-1 h-1 bg-[#C9A84C]/30 rounded-full" />
+                   STATUS: VERIFIED BY AUDIT
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+      
+      {/* Subtle technical background grid */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#C9A84C 0.5px, transparent 0.5px)', backgroundSize: '40px 40px' }} />
+    </section>
+  );
+};
+
 const WhoItIsFor = ({ t }) => (
   <section className="py-32 bg-[#050505] border-y border-white/5">
     <div className="max-w-7xl mx-auto px-8">
@@ -893,6 +948,7 @@ const MarcusElitePage = () => {
         </section>
 
         <QualificationSection t={t} />
+        <DomReviewsSection t={t} />
         <TheVoice t={t} />
 
 

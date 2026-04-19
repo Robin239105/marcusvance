@@ -321,8 +321,31 @@ export const baseEN = {
           "Do you think a digital business needs to be perfect before it's published?",
           "You can't free up 45 minutes a day for a week.",
           "You expect guarantees from a free program that no paid program would dare to offer."
-        ]
       }
+    },
+    domReviews: {
+      pre: "SYSTEM PERFORMANCE",
+      title: "DOM REVIEWS",
+      items: [
+        { 
+          name: "EMAIL FORGE", 
+          metric: "98.4%", 
+          label: "EFFICIENCY",
+          review: "The technical backbone of our Day 3 automation. Zero latency in broadcast sequences."
+        },
+        { 
+          name: "CAPTURE MODULE", 
+          metric: "99.9%", 
+          label: "STABILITY",
+          review: "A persistent model for capturing high-potential interest regardless of traffic volume."
+        },
+        { 
+          name: "REVENUE LOGIC", 
+          metric: "100%", 
+          label: "ACCURACY",
+          review: "Precision wiring between checkout flows and CRM revenue tracking. No data leakage."
+        }
+      ]
     },
     feedback: {
       badge: 'WE HEAR YOU',

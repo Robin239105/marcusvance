@@ -295,8 +295,31 @@ export const baseDE = {
           "Glaubst du, dass ein digitales Business perfekt sein muss, bevor es veröffentlicht wird?",
           "Du kannst keine 45 Minuten am Tag für eine Woche erübrigen.",
           "Du erwartest Garantien von einem kostenlosen Programm, die kein kostenpflichtiges Programm zu bieten wagt."
-        ]
       }
+    },
+    domReviews: {
+      pre: "SYSTEMLEISTUNG",
+      title: "DOM-BEWERTUNGEN",
+      items: [
+        { 
+          name: "E-MAIL-SCHMIEDE", 
+          metric: "98,4%", 
+          label: "EFFIZIENZ",
+          review: "Das technische Rückgrat unserer Tag 3 Automatisierung. Keine Latenzzeiten in Broadcast-Sequenzen."
+        },
+        { 
+          name: "LEAD-ERFASSUNGS-MODUL", 
+          metric: "99,9%", 
+          label: "STABILITÄT",
+          review: "Ein beständiges Modell zur Erfassung von High-Potential-Interessen, unabhängig vom Traffic-Volumen."
+        },
+        { 
+          name: "UMSATZ-LOGIK", 
+          metric: "100%", 
+          label: "GENAUIGKEIT",
+          review: "Präzisionsverkabelung zwischen Checkout-Flows und CRM-Umsatzverfolgung."
+        }
+      ]
     },
     feedback: {
       badge: 'WIR HÖREN IHNEN ZU',

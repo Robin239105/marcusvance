@@ -292,8 +292,31 @@ export const baseFR = {
           "Vous pensez qu'un business numérique doit être parfait avant d'être publié.",
           "Vous ne pouvez pas libérer 45 minutes par jour pendant une semaine.",
           "Vous attendez des garanties d'un programme gratuit qu'aucun programme payant n'oserait offrir."
-        ]
       }
+    },
+    domReviews: {
+      pre: "PERFORMANCE DU SYSTÈME",
+      title: "REVUES DOM",
+      items: [
+        { 
+          name: "FORGE EMAIL", 
+          metric: "98,4%", 
+          label: "EFFICACITÉ",
+          review: "Le cœur technique de l'automatisation du Jour 3. Zéro latence dans les séquences de diffusion."
+        },
+        { 
+          name: "MODULE DE CAPTURE", 
+          metric: "99,9%", 
+          label: "STABILITÉ",
+          review: "Un modèle persistant pour capturer l'intérêt à haut potentiel quel que soit le volume de trafic."
+        },
+        { 
+          name: "LOGIQUE DE REVENU", 
+          metric: "100%", 
+          label: "PRÉCISION",
+          review: "Câblage de précision entre les flux de paiement et le suivi des revenus CRM."
+        }
+      ]
     },
     feedback: {
       badge: 'NOUS VOUS ÉCOUTONS',
