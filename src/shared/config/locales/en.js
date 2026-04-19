@@ -349,6 +349,14 @@ export const baseEN = {
         }
       ]
     },
+    guaranteeSection: {
+      pre: "PERFORMANCE ASSURANCE",
+      title: "30-DAY RISK MITIGATION",
+      boldTitle: "IF THE SYSTEMS DON'T SCALE,",
+      goldTitle: "WE REVERSE THE TRANSACTION",
+      description: "I don't believe in holding people hostaged to a system that doesn't fit them. If the protocol doesn't deliver on its technical promises within 30 days, we'll return your investment. No friction. No hidden clauses.",
+      legal: "Per Section 3.3 of the Marcus Vance Global Terms: All refund requests are honored within the 30-day window from the date of initial transmission. Full terms available at marcusvance.com/legal"
+    },
     feedback: {
       badge: 'WE HEAR YOU',
       title: 'HOW CAN WE IMPROVE?',
