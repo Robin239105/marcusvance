@@ -295,30 +295,28 @@ export const baseFR = {
         ]
       }
     },
-    domReviews: {
-      pre: "PERFORMANCE DU SYSTÈME",
-      title: "REVUES DOM",
+    graduatesSection: {
+      pre: "RÉSULTATS",
+      title: "CE QUE DISENT LES GRADUÉS",
+      disclaimer: "Les résultats sont individuels et non garantis. Les noms sont utilisés avec permission. Les résultats individuels varient en fonction de l'effort, de la niche, de l'exécution et des conditions du marché.",
       items: [
         { 
-          name: "FORGE EMAIL", 
-          metric: "98,4%", 
-          label: "EFFICACITÉ",
-          student: "LUCAS M.",
-          review: "La Forge Email a transformé ma rétention. Mon taux d'ouverture est passé de 12% à 44% en 72 heures. Une efficacité pure."
+          name: "RYAN M.", 
+          bio: "34 ans — Ancien responsable logistique",
+          highlight: "3 200 £/mois → 11 000 £ en 4 mois.",
+          review: "J'ai acheté des cours en ligne avant Marcus Vance. Des trucs bien packagés, beaucoup de hype, zéro résultat réel. Ce programme est différent. Pas de bla-bla. Pas de discours vague sur l'état d'esprit. On vous dit exactement quoi faire, dans quel ordre et pourquoi. J'ai lancé mon offre de conseil en chaîne d'approvisionnement en 6 semaines. Mes 3 premiers clients à 2 500 £/mois chacun."
         },
         { 
-          name: "MODULE DE CAPTURE", 
-          metric: "99,9%", 
-          label: "STABILITÉ",
-          student: "SOPHIA R.",
-          review: "Mon système a géré 5 400 visiteurs en une journée sans un seul bug. Ce modèle est exceptionnellement stable."
+          name: "SOPHIE K.", 
+          bio: "29 ans — Créatrice de contenu, 22k abonnés",
+          highlight: "Premier mois à 4 000 £ — avec mon audience.",
+          review: "J'avais une audience mais pas de business. Le défi m'a montré exactement comment packager ce que je savais déjà en un produit numérique à 97 £. Lancé au Jour 6 auprès de ma liste email. J'ai fait 4 200 £ au cours des 10 premiers jours. L'automatisation seule valait tout l'investissement."
         },
         { 
-          name: "LOGIQUE DE REVENU", 
-          metric: "100%", 
-          label: "PRÉCISION",
-          student: "JULIAN K.",
-          review: "La précision à l'état pur. J'ai enfin une vue claire de mon ROI sans tableurs compliqués ni fuite de données."
+          name: "ADE O.", 
+          bio: "38 ans — Professionnel des RH, Birmingham",
+          highlight: "Démission 3 mois après le Jour 7.",
+          review: "Le défi m'a forcé à livrer. Pas à réfléchir, pas à planifier — à livrer. Mon tunnel était en ligne au Jour 7. Pas parfait, mais en ligne. J'ai eu mon premier client payant en 11 jours. Au mois 3, j'égalisais mon salaire. Au mois 4, j'ai démissionné. Le système tourne tout seul."
         }
       ]
     },

@@ -298,30 +298,28 @@ export const baseDE = {
         ]
       }
     },
-    domReviews: {
-      pre: "SYSTEMLEISTUNG",
-      title: "DOM-BEWERTUNGEN",
+    graduatesSection: {
+      pre: "ERGEBNISSE",
+      title: "WAS ABSOLVENTEN SAGEN",
+      disclaimer: "Ergebnisse sind individuell und nicht garantiert. Namen werden mit Genehmigung verwendet. Individuelle Ergebnisse variieren je nach Aufwand, Nische, Ausführung und Marktbedingungen.",
       items: [
         { 
-          name: "E-MAIL-SCHMIEDE", 
-          metric: "98,4%", 
-          label: "EFFIZIENZ",
-          student: "LUCAS M.",
-          review: "Die Email-Schmiede hat meine Retention verändert. Die Öffnungsraten stiegen in 72h von 12% auf 44%. Pure Effizienz."
+          name: "RYAN M.", 
+          bio: "34 Jahre — Ehemaliger Logistikmanager",
+          highlight: "3.200 £/Monat → 11.000 £ in 4 Monaten.",
+          review: "Ich habe vor Marcus Vance Online-Kurse gekauft. Gut verpacktes Zeug, viel Hype, null echte Ergebnisse. Dieses Programm ist anders. Kein Schnickschnack. Kein vages Mindset-Gerede. Dir wird genau gesagt, was zu tun ist, in welcher Reihenfolge und warum. Ich habe mein Beratungsangebot für Lieferketten in 6 Wochen gestartet. Die ersten 3 Kunden für jeweils 2.500 £/Monat."
         },
         { 
-          name: "LEAD-ERFASSUNGS-MODUL", 
-          metric: "99,9%", 
-          label: "STABILITÄT",
-          student: "SOPHIA R.",
-          review: "Mein System bewältigte 5.400 Besucher an einem Tag ohne einen einzigen Fehler. Dieses Modell ist außergewöhnlich stabil."
+          name: "SOPHIE K.", 
+          bio: "29 Jahre — Content Creator, 22k Follower",
+          highlight: "Erster 4.000-£-Monat — durch meine Audience.",
+          review: "Ich hatte eine Audience, aber kein Business. Die Challenge hat mir genau gezeigt, wie ich das, was ich bereits wusste, in ein digitales Produkt für 97 £ verpacke. Am 6. Tag an meine E-Mail-Liste veröffentlicht. Habe in den ersten 10 Tagen 4.200 £ verdient. Allein die Automatisierung war alles wert."
         },
         { 
-          name: "UMSATZ-LOGIK", 
-          metric: "100%", 
-          label: "GENAUIGKEIT",
-          student: "JULIAN K.",
-          review: "Präzision in Reinform. Ich habe endlich einen klaren Blick auf den ROI ohne unordentliche Tabellenkalkulationen."
+          name: "ADE O.", 
+          bio: "38 Jahre — Personalreferent, Birmingham",
+          highlight: "Kündigung 3 Monate nach Tag 7.",
+          review: "Die Challenge hat mich gezwungen zu liefern. Nicht nachdenken, nicht planen — liefern. Mein Funnel war an Tag 7 online. Nicht perfekt, aber online. Ich hatte meinen ersten zahlenden Kunden innerhalb von 11 Tagen. Im 3. Monat entsprach es bereits meinem Gehalt. Im 4. Monat habe ich gekündigt. Das System läuft einfach."
         }
       ]
     },

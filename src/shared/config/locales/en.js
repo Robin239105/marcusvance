@@ -324,30 +324,28 @@ export const baseEN = {
         ]
       }
     },
-    domReviews: {
-      pre: "SYSTEM PERFORMANCE",
-      title: "DOM REVIEWS",
+    graduatesSection: {
+      pre: "RESULTS",
+      title: "WHAT GRADUATES ARE SAYING",
+      disclaimer: "Results are individual and not guaranteed. Names used with permission. Individual results vary based on effort, niche, execution, and market conditions.",
       items: [
         { 
-          name: "EMAIL FORGE", 
-          metric: "98.4%", 
-          label: "EFFICIENCY",
-          student: "LUCAS M.",
-          review: "The Email Forge transformed my retention. Open rates jumped from 12% to 44% in 72 hours. Pure efficiency."
+          name: "RYAN M.", 
+          bio: "34 — Former logistics manager",
+          highlight: "£3,200/month → £11,000 in 4 months.",
+          review: "I bought online courses before Marcus Vance. Well-packaged stuff, lots of hype, zero real results. This program is different. No fluff. No vague mindset talk. Tells you exactly what to do, in what order, and why. I launched my supply chain consulting offer in 6 weeks. First 3 clients at £2,500/month each."
         },
         { 
-          name: "CAPTURE MODULE", 
-          metric: "99.9%", 
-          label: "STABILITY",
-          student: "SOPHIA R.",
-          review: "My system handled 5,400 visitors in one day without a single glitch. This model is exceptionally stable."
+          name: "SOPHIE K.", 
+          bio: "29 — Content creator, 22k followers",
+          highlight: "First £4,000 month — from my audience.",
+          review: "I had an audience but no business. The challenge showed me exactly how to package what I already knew into a £97 digital product. Launched on Day 6 to my email list. Made £4,200 in the first 10 days. The automation alone was worth everything."
         },
         { 
-          name: "REVENUE LOGIC", 
-          metric: "100%", 
-          label: "ACCURACY",
-          student: "JULIAN K.",
-          review: "Precision at its finest. I finally have a clear view of my ROI without messy spreadsheets or data leakage."
+          name: "ADE O.", 
+          bio: "38 — HR professional, Birmingham",
+          highlight: "Quit my job 3 months after Day 7.",
+          review: "The challenge forced me to ship. Not think, not plan — ship. My funnel was live on Day 7. Not perfect, but live. I had my first paying client within 11 days. By month 3 I was matching my salary. Month 4 I resigned. The system just runs."
         }
       ]
     },
