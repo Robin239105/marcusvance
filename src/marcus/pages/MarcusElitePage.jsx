@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Reveal } from '../../shared/components/Reveal';
 import dynamicStats from '../../shared/utils/dynamicStats';
@@ -253,209 +253,237 @@ const LogoScrollTrack = () => {
   );
 };
 
-const TimelineStep = ({ step, i, N, scrollYProgress }) => {
-  // Each step occupies 1/N of scroll. We create OVERLAPPING ranges so there's never a gap.
-  // Clamp all values to [0, 1] — negative values break useTransform.
-  const segmentSize = 1 / N;
-  const midpoint = (i + 0.5) * segmentSize;  // center of this step's segment
-  const fadeIn = Math.max(0, i * segmentSize - segmentSize * 0.3);
-  const fadeOut = Math.min(1, (i + 1) * segmentSize + segmentSize * 0.3);
-
-  // For first step: start fully visible, fade out as you scroll
-  const opacityInput = i === 0
-    ? [0, midpoint, fadeOut]
-    : [fadeIn, midpoint, fadeOut];
-  const opacityOutput = i === 0
-    ? [1, 1, 0]
-    : [0, 1, 0];
-
-  const opacity = useTransform(scrollYProgress, opacityInput, opacityOutput);
-  const yVal = useTransform(
-    scrollYProgress,
-    [fadeIn, midpoint, fadeOut],
-    [i === 0 ? 0 : 60, 0, -60]
-  );
-  const scaleVal = useTransform(
-    scrollYProgress,
-    [fadeIn, midpoint, fadeOut],
-    [i === 0 ? 1 : 0.97, 1, 0.97]
-  );
-  const filterVal = useTransform(
-    scrollYProgress,
-    [fadeIn, midpoint, fadeOut],
-    [i === 0 ? "blur(0px)" : "blur(8px)", "blur(0px)", "blur(8px)"]
-  );
-  const pEvents = useTransform(opacity, v => v > 0.3 ? 'auto' : 'none');
-  const zIdx = useTransform(opacity, v => Math.round(v * 100));
-
-  return (
-    <motion.div
-      className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-      style={{
-        opacity,
-        y: yVal,
-        scale: scaleVal,
-        filter: filterVal,
-        pointerEvents: pEvents,
-        zIndex: zIdx,
-      }}
-    >
-      <div className="max-w-5xl">
-        {step.isIntro ? (
-          <div className="space-y-8">
-            <span className="font-oswald text-[#C9A84C] tracking-[0.4em] text-sm md:text-base uppercase block font-bold">
-              {step.pre}
-            </span>
-            <h2 className="font-oswald text-[10vw] md:text-[110px] text-white leading-[0.85] uppercase tracking-tighter font-black">
-              {step.title}
-            </h2>
-            {step.italic && (
-              <p className="font-oswald text-[#C9A84C] text-2xl md:text-4xl italic tracking-wider font-medium opacity-90">
-                {step.italic}
-              </p>
-            )}
-            <p className="text-[#A3A3A3] text-lg md:text-2xl font-light max-w-3xl mx-auto leading-relaxed opacity-70">
-              {step.desc}
-            </p>
-          </div>
-        ) : (
-          <>
-            <div className="flex items-center justify-center gap-6 mb-10">
-              <span className="font-dm-mono text-[#C9A84C] text-[10px] md:text-xs tracking-[0.4em] uppercase opacity-70 flex items-center gap-4">
-                {step.day} <span className="w-12 h-[1px] bg-[#C9A84C]/30" />
-              </span>
-              <span className="font-oswald bg-[#C9A84C]/10 text-[#C9A84C] text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-[0.2em] border border-[#C9A84C]/20">
-                {step.deliverable}
-              </span>
-            </div>
-
-            <h2 className="font-oswald text-[9vw] md:text-[80px] leading-[0.95] text-white uppercase font-black tracking-tighter mb-10">
-              {step.title.split(' ').map((word, idx) => (
-                <React.Fragment key={idx}>
-                  {idx % 2 === 1 ? <em className="italic text-[#C9A84C] not-italic">{word} </em> : word + ' '}
-                </React.Fragment>
-              ))}
-            </h2>
-
-            <p className="text-[#A3A3A3] text-lg md:text-2xl font-light leading-relaxed max-w-3xl mx-auto italic opacity-80">
-              {step.desc}
-            </p>
-          </>
-        )}
-      </div>
-    </motion.div>
-  );
-};
-
-const TimelineNavDot = ({ i, N, scrollYProgress, containerRef }) => {
-  const seg = 1 / N;
-  const mid = Math.max(0, (i + 0.5) * seg);
-  const lo = Math.max(0, mid - seg);
-  const hi = Math.min(1, mid + seg);
-  const dotOpacity = useTransform(scrollYProgress, [lo, mid, hi], [0.2, 1, 0.2]);
-  const dotScale = useTransform(scrollYProgress, [lo, mid, hi], [1, 1.4, 1]);
-
-  return (
-    <motion.button
-      onClick={() => {
-        const scrollOffset = (i / N) * containerRef.current.offsetHeight;
-        window.scrollTo({ top: containerRef.current.offsetTop + scrollOffset, behavior: 'smooth' });
-      }}
-      className="relative w-2.5 h-2.5 rounded-full bg-[#C9A84C] shadow-[0_0_10px_rgba(201,168,76,0.3)] transition-colors hover:bg-white"
-      style={{ opacity: dotOpacity, scale: dotScale }}
-    />
-  );
-};
+// ─────────────────────────────────────────────────────────────────────────────
+// TimelineSection — sticky scroll pattern
+//
+// HOW IT WORKS:
+//   • The outer <div> is  N × 100vh  tall — a normal block in the page flow.
+//   • The inner <div> is  position:sticky; top:0  so it pins while the outer
+//     div scrolls past.
+//   • A RAF loop reads  outerRef.getBoundingClientRect().top  every frame.
+//     That value goes from 0 (outer top just hit viewport top) to
+//     -(outerHeight - vh) (outer bottom just hit viewport bottom).
+//     We map it to a 0→(N-1) float and animate the cards via DOM refs.
+//   • No wheel/touch hijacking needed — the browser's native scroll drives
+//     everything.  Dot clicks scroll the page to the matching position.
+// ─────────────────────────────────────────────────────────────────────────────
 
 const TimelineSection = ({ t }) => {
-  const containerRef = React.useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
+  const outerRef    = React.useRef(null);
+  const rafRef      = React.useRef(null);
+  const sectionRefs = React.useRef([]);
+  const [activeIdx, setActiveIdx] = React.useState(0);
 
-  const steps = t.marcus.roadmap.stepsFull || [
-    { day: "Day 01", title: "Offer & Customer Avatar", deliverable: "Offer Sentence", desc: "Define exactly who you help, what transformation you deliver, and how you communicate it in one precise sentence." },
-    { day: "Day 02", title: "Lead Magnet + Capture Page Live", deliverable: "Live Page", desc: "Build a high-value lead magnet and launch your capture page. Your automated welcome email delivers it within minutes." },
-    { day: "Day 03", title: "5-Email Nurturing Sequence", deliverable: "Email Logic", desc: "Configure the complete trust-building email sequence: delivery, empathy, proof, offer, close — running 24/7." },
-    { day: "Day 04", title: "Hubspot CRM Connected", deliverable: "CRM Wired", desc: "Wired to your funnel via automation. Every lead is tracked in a live pipeline. No prospect falls through the cracks." },
-    { day: "Day 05", title: "Sales Page Published", deliverable: "Sales Funnel", desc: "A complete sales page live online: transformation headline, value stack, proof, and CTAs available globally." },
-    { day: "Day 06", title: "Payment & Booking Active", deliverable: "Payout Mode", desc: "Payment or Cal.com connected to your offer page. You can now take payments or book qualified calls — automated." },
-    { day: "Day 07", title: "Launch & First Traffic", deliverable: "Open for Biz", desc: "Full funnel tested and launched to your first real leads. Your business infrastructure is live. The protocol is active." }
+  // Build steps from locale data (unchanged from your original)
+  const steps = t.marcus.roadmap?.stepsFull || [
+    { day: "Day 01", title: "Offer & Customer Avatar",      deliverable: "Offer Sentence", desc: "Define exactly who you help, what transformation you deliver, and how you communicate it in one precise sentence." },
+    { day: "Day 02", title: "Lead Magnet + Capture Page",   deliverable: "Live Page",      desc: "Build a high-value lead magnet and launch your capture page. Your automated welcome email delivers it within minutes." },
+    { day: "Day 03", title: "5-Email Nurturing Sequence",   deliverable: "Email Logic",    desc: "Configure the complete trust-building email sequence: delivery, empathy, proof, offer, close — running 24/7." },
+    { day: "Day 04", title: "Hubspot CRM Connected",        deliverable: "CRM Wired",      desc: "Wired to your funnel via automation. Every lead is tracked in a live pipeline. No prospect falls through the cracks." },
+    { day: "Day 05", title: "Sales Page Published",         deliverable: "Sales Funnel",   desc: "A complete sales page live online: transformation headline, value stack, proof, and CTAs available globally." },
+    { day: "Day 06", title: "Payment & Booking Active",     deliverable: "Payout Mode",    desc: "Payment or Cal.com connected to your offer page. You can now take payments or book qualified calls — automated." },
+    { day: "Day 07", title: "Launch & First Traffic",       deliverable: "Open for Biz",   desc: "Full funnel tested and launched to your first real leads. Your business infrastructure is live. The protocol is active." },
   ];
 
   const targetDay = t.marcus.days?.[dynamicStats?.targetDayIndex] || "Wednesday";
-  const roadmapSubtitleTranslated = t.marcus.ui.commonHeadings?.roadmapSubtitle?.replace('{day}', targetDay);
+  const roadmapSubtitle = (t.marcus.ui.commonHeadings?.roadmapSubtitle || "Each day produces a live, working asset. By Day 7, you have a complete business.").replace("{day}", targetDay);
 
   const combinedSteps = [
     {
       isIntro: true,
-      pre: t.marcus.ui.commonHeadings?.roadmapPre || "Phase 01",
-      title: t.marcus.ui.commonHeadings?.roadmapTitle || "The 7-Day Challenge Roadmap",
+      pre:    t.marcus.ui.commonHeadings?.roadmapPre    || "STAGE 01: THE 7-DAY CHALLENGE",
+      title:  t.marcus.ui.commonHeadings?.roadmapTitle  || "7 DAYS. 7 DELIVERABLES.",
       italic: t.marcus.ui.commonHeadings?.roadmapSubtitleItalic,
-      desc: roadmapSubtitleTranslated || "Each day produces a live, working asset. By Day 7, you have a complete business."
+      desc:   roadmapSubtitle,
     },
-    ...steps
+    ...steps,
   ];
 
-  const N = combinedSteps.length; // 8 (intro + 7 days)
+  const N = combinedSteps.length;
 
-  const phaseLabel = useTransform(scrollYProgress, p => {
-    const stepIdx = Math.min(N - 1, Math.floor(p * N));
-    if (stepIdx === 0) return "PROTOCOL INITIALIZED";
-    return `DAY 0${stepIdx} // DELIVERABLE ACTIVE`;
-  });
+  // ── RAF loop — reads real scroll position, NO wheel hijacking ────────────
+  React.useEffect(() => {
+    function render() {
+      const outer = outerRef.current;
+      if (!outer) { rafRef.current = requestAnimationFrame(render); return; }
+
+      const vh          = window.innerHeight;
+      const rect        = outer.getBoundingClientRect();
+      // scrolled = how many px the outer top is above the viewport top (0 → totalTravel)
+      const scrolled    = -rect.top;
+      const totalTravel = outer.offsetHeight - vh;   // e.g. (8 * 100vh) - 100vh = 700vh
+      const progress    = Math.max(0, Math.min(1, scrolled / totalTravel));
+      const rawIndex    = progress * (N - 1);         // float 0 → N-1
+
+      setActiveIdx(Math.round(rawIndex));
+
+      // Animate each card
+      sectionRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const dist    = i - rawIndex;
+        const opacity = Math.max(0, 1 - Math.abs(dist) * 1.3);
+        const ty      = dist * 100;
+        const scale   = 1 - Math.min(0.06, Math.abs(dist) * 0.06);
+        const blur    = Math.abs(dist) > 0.05 ? Math.min(10, Math.abs(dist) * 12) : 0;
+
+        el.style.opacity       = opacity;
+        el.style.transform     = `translateY(${ty}px) scale(${scale})`;
+        el.style.filter        = blur > 0.1 ? `blur(${blur}px)` : "none";
+        el.style.pointerEvents = opacity > 0.5 ? "auto" : "none";
+      });
+
+      rafRef.current = requestAnimationFrame(render);
+    }
+
+    rafRef.current = requestAnimationFrame(render);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [N]);
+
+  // ── Dot click — scroll page to the matching position ─────────────────────
+  const goTo = React.useCallback((idx) => {
+    const outer = outerRef.current;
+    if (!outer) return;
+    const vh          = window.innerHeight;
+    const totalTravel = outer.offsetHeight - vh;
+    // outer.offsetTop = distance from page top to outer div top
+    const targetY     = outer.offsetTop + (idx / (N - 1)) * totalTravel;
+    window.scrollTo({ top: targetY, behavior: "smooth" });
+  }, [N]);
 
   return (
-    <section ref={containerRef} className="relative bg-[#000000]" id="roadmap" style={{ height: `${N * 100 + 100}vh` }}>
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-
-        {/* --- Background Ambient Glow --- */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none"
+    // Outer: N × 100vh tall — gives the browser N-1 "pages" of scroll travel
+    <div
+      ref={outerRef}
+      id="roadmap"
+      style={{ height: `${N * 100}vh` }}
+    >
+      {/* Sticky viewport — pins to top while outer div scrolls */}
+      <div
+        className="sticky top-0 w-full overflow-hidden bg-[#000000]"
+        style={{ height: "100vh" }}
+      >
+        {/* Ambient glow — shifts slightly with activeIdx for variety */}
+        <div
+          className="absolute inset-0 pointer-events-none z-[1] transition-all duration-1000"
           style={{
-            background: useTransform(
-              scrollYProgress,
-              [0, 0.2, 0.4, 0.6, 0.8, 1],
-              [
-                "radial-gradient(circle at 60% 40%, rgba(200,169,110,0.1) 0%, transparent 70%)",
-                "radial-gradient(circle at 30% 60%, rgba(200,169,110,0.08) 0%, transparent 70%)",
-                "radial-gradient(circle at 70% 30%, rgba(200,169,110,0.1) 0%, transparent 70%)",
-                "radial-gradient(circle at 45% 55%, rgba(200,169,110,0.08) 0%, transparent 70%)",
-                "radial-gradient(circle at 55% 45%, rgba(200,169,110,0.09) 0%, transparent 70%)",
-                "radial-gradient(circle at 50% 40%, rgba(200,169,110,0.12) 0%, transparent 70%)"
-              ]
-            )
+            background: `radial-gradient(circle at ${50 + (activeIdx % 3) * 10}% ${40 + (activeIdx % 2) * 15}%, rgba(200,169,110,0.1) 0%, transparent 70%)`,
           }}
         />
 
-        {/* --- Scrolling Stage --- */}
-        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full h-full">
-          {combinedSteps.map((step, i) => (
-            <TimelineStep key={i} step={step} i={i} N={N} scrollYProgress={scrollYProgress} />
-          ))}
-        </div>
+        {/* Cards */}
+        {combinedSteps.map((step, i) => (
+          <div
+            key={i}
+            ref={(el) => (sectionRefs.current[i] = el)}
+            className="absolute inset-0 flex items-center justify-center z-[2]"
+            style={{
+              opacity:   i === 0 ? 1 : 0,
+              transform: `translateY(${i * 100}px) scale(${Math.max(0.94, 1 - i * 0.06)})`,
+              willChange: "transform, opacity",
+            }}
+          >
+            <div className="max-w-5xl w-full px-8 text-center">
+              {step.isIntro ? (
+                <div className="space-y-6 md:space-y-8">
+                  <span className="font-oswald text-[#C9A84C] tracking-[0.4em] text-xs md:text-sm uppercase block font-bold">
+                    {step.pre}
+                  </span>
+                  <h2 className="font-oswald text-[11vw] md:text-[110px] text-white leading-[0.85] uppercase tracking-tighter font-black">
+                    {step.title}
+                  </h2>
+                  {step.italic && (
+                    <p className="font-oswald text-[#C9A84C] text-2xl md:text-4xl italic tracking-wider font-medium opacity-90">
+                      {step.italic}
+                    </p>
+                  )}
+                  <p className="text-[#A3A3A3] text-base md:text-xl font-light max-w-3xl mx-auto leading-relaxed opacity-70">
+                    {step.desc}
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <div className="flex items-center justify-center gap-4 md:gap-6 mb-8 md:mb-10">
+                    <span className="font-dm-mono text-[#C9A84C] text-[10px] md:text-xs tracking-[0.4em] uppercase opacity-70 flex items-center gap-3 md:gap-4">
+                      {step.day}
+                      <span className="w-8 md:w-12 h-[1px] bg-[#C9A84C]/30 inline-block" />
+                    </span>
+                    <span className="font-oswald bg-[#C9A84C]/10 text-[#C9A84C] text-[10px] font-bold px-3 md:px-4 py-1.5 rounded-full uppercase tracking-[0.2em] border border-[#C9A84C]/20">
+                      {step.deliverable}
+                    </span>
+                  </div>
 
-        {/* --- Navigation Indicator (Absolute to section) --- */}
-        <div className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-[200] flex flex-col items-center gap-8">
+                  <h2 className="font-oswald text-[8vw] md:text-[80px] leading-[0.95] text-white uppercase font-black tracking-tighter mb-8 md:mb-10">
+                    {step.title.split(" ").map((word, idx) => (
+                      <React.Fragment key={idx}>
+                        {idx % 2 === 1
+                          ? <span className="text-[#C9A84C]">{word} </span>
+                          : word + " "}
+                      </React.Fragment>
+                    ))}
+                  </h2>
+
+                  <p className="text-[#A3A3A3] text-base md:text-xl font-light leading-relaxed max-w-3xl mx-auto italic opacity-80">
+                    {step.desc}
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+        ))}
+
+        {/* Navigation dots */}
+        <div className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 z-[200] flex flex-col items-center gap-3 md:gap-4">
           <div className="absolute top-0 bottom-0 w-[1px] bg-white/5 left-1/2 -translate-x-1/2" />
           {combinedSteps.map((_, i) => (
-            <TimelineNavDot key={i} i={i} N={N} scrollYProgress={scrollYProgress} containerRef={containerRef} />
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className={`relative w-2 h-2 md:w-2.5 md:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                i === activeIdx
+                  ? "bg-[#C9A84C] scale-[1.8] shadow-[0_0_12px_rgba(201,168,76,0.5)]"
+                  : "bg-white/20 hover:bg-[#C9A84C]/50"
+              }`}
+            />
           ))}
         </div>
 
-        {/* --- Phase / Progress Indicator --- */}
-        <div className="absolute bottom-10 left-12 z-[200] flex items-center gap-6">
-           <div className="w-[1px] h-12 bg-gradient-to-t from-[#C9A84C] to-transparent" />
-           <div className="flex flex-col">
-              <span className="font-oswald text-[10px] tracking-[0.4em] text-[#6A6A6A] uppercase font-bold mb-1">CURRENT PHASE</span>
-              <motion.span className="font-oswald text-xs tracking-[0.2em] text-[#C9A84C] uppercase font-bold">
-                {phaseLabel}
-              </motion.span>
-           </div>
+        {/* Phase indicator — bottom left */}
+        <div className="absolute bottom-6 md:bottom-10 left-6 md:left-12 z-[200] flex items-center gap-4 md:gap-6 pointer-events-none">
+          <div className="w-[1px] h-10 md:h-12 bg-gradient-to-t from-[#C9A84C] to-transparent" />
+          <div className="flex flex-col">
+            <span className="font-oswald text-[9px] md:text-[10px] tracking-[0.4em] text-[#6A6A6A] uppercase font-bold mb-1">
+              {t.marcus.ui.commonHeadings?.currentPhase || "CURRENT PHASE"}
+            </span>
+            <span className="font-oswald text-[10px] md:text-xs tracking-[0.2em] text-[#C9A84C] uppercase font-bold">
+              {activeIdx === 0
+                ? (t.marcus.ui.commonHeadings?.protocolInitialized || "PROTOCOL INITIALIZED")
+                : (t.marcus.ui.commonHeadings?.dayDeliverableActive || "DAY {day} // DELIVERABLE ACTIVE").replace('{day}', `0${activeIdx}`)}
+            </span>
+          </div>
+        </div>
+
+        {/* Section counter — bottom centre */}
+        <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-[200] pointer-events-none">
+          <span className="font-dm-mono text-[10px] tracking-[0.2em] text-[#5A5650]">
+            {String(activeIdx + 1).padStart(2, "0")} / {String(N).padStart(2, "0")}
+          </span>
+        </div>
+
+        {/* Scroll hint — intro slide only */}
+        <div
+          className="absolute bottom-6 md:bottom-10 right-6 md:right-24 z-[200] flex flex-col items-center gap-2 pointer-events-none transition-opacity duration-500"
+          style={{ opacity: activeIdx === 0 ? 0.6 : 0 }}
+        >
+          <span
+            className="font-dm-mono text-[9px] tracking-[0.2em] text-[#6A6A6A] uppercase"
+            style={{ writingMode: "vertical-rl" }}
+          >
+            {t.marcus.ui.commonHeadings?.scroll || "Scroll"}
+          </span>
+          <div className="w-[1px] h-8 bg-gradient-to-b from-transparent to-[#C9A84C]/50 animate-pulse" />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -964,7 +992,7 @@ const MarcusElitePage = () => {
   if (loading) return null;
 
   return (
-    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Barlow'] overflow-x-hidden group/main">
+    <div className="bg-[#000000] min-h-screen text-[#F5F5F5] font-['Barlow'] overflow-clip group/main">
       <ScrollProgress />
       <UrgencyBar t={t} />
       <ToastNotification />

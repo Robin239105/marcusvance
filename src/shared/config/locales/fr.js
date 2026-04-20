@@ -70,7 +70,11 @@ export const baseFR = {
         faqPre: 'Questions Fréquentes',
         faqTitle: 'L\'Audit du Protocole',
         dashboardPre: 'Le Tableau de Bord',
-        dashboardTitle: 'Un Aperçu du Système'
+        dashboardTitle: 'Un Aperçu du Système',
+        currentPhase: 'PHASE ACTUELLE',
+        protocolInitialized: 'PROTOCOLE INITIALISÉ',
+        dayDeliverableActive: 'JOUR {day} // LIVRABLE ACTIF',
+        scroll: 'Défiler'
       },
       voiceQuote: {
         line1: "L'ère numérique ne récompense pas le travail acharné.",

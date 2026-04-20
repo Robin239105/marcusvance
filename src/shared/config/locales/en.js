@@ -42,7 +42,11 @@ export const baseEN = {
         faqPre: 'Common Questions',
         faqTitle: 'The Protocol Audit',
         dashboardPre: 'The Dashboard',
-        dashboardTitle: 'A Peek Inside the System'
+        dashboardTitle: 'A Peek Inside the System',
+        currentPhase: 'CURRENT PHASE',
+        protocolInitialized: 'PROTOCOL INITIALIZED',
+        dayDeliverableActive: 'DAY {day} // DELIVERABLE ACTIVE',
+        scroll: 'Scroll'
       },
       voiceQuote: {
         line1: "The digital era doesn't reward hard work.",

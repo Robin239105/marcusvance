@@ -43,7 +43,11 @@ export const baseDE = {
         faqPre: 'Häufige Fragen',
         faqTitle: 'Das Protokoll-Audit',
         dashboardPre: 'Das Dashboard',
-        dashboardTitle: 'Ein Blick in das System'
+        dashboardTitle: 'Ein Blick in das System',
+        currentPhase: 'AKTUELLE PHASE',
+        protocolInitialized: 'PROTOKOLL INITIALISIERT',
+        dayDeliverableActive: 'TAG {day} // ERGEBNIS AKTIV',
+        scroll: 'Scrollen'
       },
       voiceQuote: {
         line1: "Die digitale Ära belohnt keine harte Arbeit.",
